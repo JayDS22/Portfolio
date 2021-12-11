@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Jay Guwalani</title>
-    <link>https://jayds22.github.io/My-Data-Science-Portfolio/post/</link>
+    <link>https://jayds22.github.io/Portfolio/post/</link>
     <description>Recent content in Projects on Jay Guwalani</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 09 Dec 2021 12:00:00 -0500</lastBuildDate>
     
-	<atom:link href="https://jayds22.github.io/My-Data-Science-Portfolio/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jayds22.github.io/Portfolio/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Project-1 : E-commerce Shipping</title>
-      <link>https://jayds22.github.io/My-Data-Science-Portfolio/post/chapter-6/</link>
+      <link>https://jayds22.github.io/Portfolio/post/chapter-6/</link>
       <pubDate>Thu, 09 Dec 2021 10:58:08 -0400</pubDate>
       
-      <guid>https://jayds22.github.io/My-Data-Science-Portfolio/post/chapter-6/</guid>
+      <guid>https://jayds22.github.io/Portfolio/post/chapter-6/</guid>
       <description>Aim of the Project : To build an End-to-End Web App using Data Science &amp;amp; Machine Learning for an International E-commerce Company to predict whether their products will reach on committed Delivery Time or not.
 Life Cycle of the Project :
 Collected the dataset from Kaggle Preprocessed the data well and built an ML model by tuning the Hyperparameters of Random-Forest Classifier using Randomized-Search-CV Saved the Best Performing model in a Pickle file Built a Web App using Python at the Backend with Flask API and HTML &amp;amp; Bootstrap serving at the Frontend.</description>
@@ -24,10 +24,10 @@ Collected the dataset from Kaggle Preprocessed the data well and built an ML mod
     
     <item>
       <title>Project-2: Face-Mask-Detection</title>
-      <link>https://jayds22.github.io/My-Data-Science-Portfolio/post/chapter-5/</link>
+      <link>https://jayds22.github.io/Portfolio/post/chapter-5/</link>
       <pubDate>Tue, 09 Nov 2021 10:58:08 -0400</pubDate>
       
-      <guid>https://jayds22.github.io/My-Data-Science-Portfolio/post/chapter-5/</guid>
+      <guid>https://jayds22.github.io/Portfolio/post/chapter-5/</guid>
       <description>Aim of the Project
 To build a Web App using Deep Convolutional Neural Networks to predict whether a person is Wearing a Mask or Not
 Life Cycle of the Project
@@ -36,10 +36,10 @@ Collected the dataset from Kaggle which contained 12,000 images in total for bot
     
     <item>
       <title>Project-3: Customer Churn Prediction</title>
-      <link>https://jayds22.github.io/My-Data-Science-Portfolio/post/chapter-4/</link>
+      <link>https://jayds22.github.io/Portfolio/post/chapter-4/</link>
       <pubDate>Sat, 09 Oct 2021 10:58:08 -0400</pubDate>
       
-      <guid>https://jayds22.github.io/My-Data-Science-Portfolio/post/chapter-4/</guid>
+      <guid>https://jayds22.github.io/Portfolio/post/chapter-4/</guid>
       <description>Aim of the Project : To predict, analyze and provide the counter measures to prevent the customers&amp;rsquo; from Churning. Build a Model to predict the Customers&amp;rsquo; likely to be churned using Data Science, and Machine Learning Applications.
 Business Understanding : The data used to build a Customer Churn Prediction Model, consists of data related Telecom domain, and their behavioral trends w.r.t. Churning across 4 years of time span.
 Life Cycle of the Project: Extracted the data from Kaggle open source.</description>
@@ -47,10 +47,10 @@ Life Cycle of the Project: Extracted the data from Kaggle open source.</descript
     
     <item>
       <title>Project-4: Risk-Analytics-Fraud-Detection</title>
-      <link>https://jayds22.github.io/My-Data-Science-Portfolio/post/chapter-3/</link>
+      <link>https://jayds22.github.io/Portfolio/post/chapter-3/</link>
       <pubDate>Thu, 09 Sep 2021 10:58:08 -0400</pubDate>
       
-      <guid>https://jayds22.github.io/My-Data-Science-Portfolio/post/chapter-3/</guid>
+      <guid>https://jayds22.github.io/Portfolio/post/chapter-3/</guid>
       <description>Aim of the Project
 To predict and analyze the fraudulent transactions that happen on daily basis, using Credit cards. Provide countermeasures for the same. Build a Model to prevent such transactions using Data Science, and Machine Learning Applications.
 Life Cycle of the Project
@@ -59,10 +59,10 @@ Extracted the data from Kaggle open source. Performed Data Exploration to unders
     
     <item>
       <title>Project-6: Breast-Cancer Wisconsin Diagnostic</title>
-      <link>https://jayds22.github.io/My-Data-Science-Portfolio/post/chapter-1/</link>
+      <link>https://jayds22.github.io/Portfolio/post/chapter-1/</link>
       <pubDate>Thu, 09 Sep 2021 10:58:08 -0400</pubDate>
       
-      <guid>https://jayds22.github.io/My-Data-Science-Portfolio/post/chapter-1/</guid>
+      <guid>https://jayds22.github.io/Portfolio/post/chapter-1/</guid>
       <description>Aim of the Project
 Predict if the patients have Breast Cancer or not. And also classify that it is Malignant / Benign using UCI dataset
 Life Cycle of the Project
@@ -71,10 +71,10 @@ Collected the dataset from Kaggle open source. Performed Data Cleaning using Pan
     
     <item>
       <title>Project-5: Spam Detection</title>
-      <link>https://jayds22.github.io/My-Data-Science-Portfolio/post/chapter-2/</link>
+      <link>https://jayds22.github.io/Portfolio/post/chapter-2/</link>
       <pubDate>Fri, 09 Jul 2021 10:58:08 -0400</pubDate>
       
-      <guid>https://jayds22.github.io/My-Data-Science-Portfolio/post/chapter-2/</guid>
+      <guid>https://jayds22.github.io/Portfolio/post/chapter-2/</guid>
       <description>Aim of the Project
 To predict, analyze and provide the counter measures to prevent the Spamming. Build a Model to predict the Spam Messages&amp;rsquo; likely to be churned using Data Science, NLP and Machine Learning Applications.
 Life Cycle of the Project
