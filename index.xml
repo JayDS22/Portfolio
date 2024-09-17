@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My Data Science Portfolio on Jay Guwalani</title>
+    <title>My Data Science (ML & AI) Portfolio on Jay Guwalani</title>
     <link>https://jayds22.github.io/Portfolio/</link>
-    <description>Recent content in My Data Science Portfolio on Jay Guwalani</description>
+    <description>Recent content in My Data Science (ML & AI) Portfolio on Jay Guwalani</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Dec 2021 12:00:00 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 09 Dec 2024 12:00:00 -0500</lastBuildDate>
     
 	<atom:link href="https://jayds22.github.io/Portfolio/index.xml" rel="self" type="application/rss+xml" />
     
@@ -37,7 +37,7 @@ Collected the dataset from Kaggle which contained 12,000 images in total for bot
     <item>
       <title>Project-3: Customer Churn Prediction</title>
       <link>https://jayds22.github.io/Portfolio/post/chapter-4/</link>
-      <pubDate>Sat, 09 Oct 2021 10:58:08 -0400</pubDate>
+      <pubDate>Sat, 09 Oct 2023 10:58:08 -0400</pubDate>
       
       <guid>https://jayds22.github.io/Portfolio/post/chapter-4/</guid>
       <description>Aim of the Project : To predict, analyze and provide the counter measures to prevent the customers&amp;rsquo; from Churning. Build a Model to predict the Customers&amp;rsquo; likely to be churned using Data Science, and Machine Learning Applications.
@@ -48,7 +48,7 @@ Life Cycle of the Project: Extracted the data from Kaggle open source.</descript
     <item>
       <title>Project-4: Risk-Analytics-Fraud-Detection</title>
       <link>https://jayds22.github.io/Portfolio/post/chapter-3/</link>
-      <pubDate>Thu, 09 Sep 2021 10:58:08 -0400</pubDate>
+      <pubDate>Thu, 09 Sep 2023 10:58:08 -0400</pubDate>
       
       <guid>https://jayds22.github.io/Portfolio/post/chapter-3/</guid>
       <description>Aim of the Project
@@ -60,7 +60,7 @@ Extracted the data from Kaggle open source. Performed Data Exploration to unders
     <item>
       <title>Project-5: Spam Detection</title>
       <link>https://jayds22.github.io/Portfolio/post/chapter-2/</link>
-      <pubDate>Fri, 09 Jul 2021 10:58:08 -0400</pubDate>
+      <pubDate>Fri, 09 Jul 2022 10:58:08 -0400</pubDate>
       
       <guid>https://jayds22.github.io/Portfolio/post/chapter-2/</guid>
       <description>Aim of the Project
@@ -72,7 +72,7 @@ Extracted the data from Kaggle open source. Performed Data Exploration to unders
     <item>
       <title>Project-6: Breast-Cancer Wisconsin Diagnostic</title>
       <link>https://jayds22.github.io/Portfolio/post/chapter-1/</link>
-      <pubDate>Thu, 09 Sep 2021 10:58:08 -0400</pubDate>
+      <pubDate>Thu, 09 Sep 2024 10:58:08 -0400</pubDate>
       
       <guid>https://jayds22.github.io/Portfolio/post/chapter-1/</guid>
       <description>Aim of the Project
@@ -88,7 +88,7 @@ Collected the dataset from Kaggle open source. Performed Data Cleaning using Pan
       
       <guid>https://jayds22.github.io/Portfolio/contact/</guid>
       <description>You can contact me here:
-   Platform URL     G-Mail: Jay Guwalani - Gmail   GitHub: https://github.com/JayDS22   LinkedIn: https://www.linkedin.com/in/jay-guwalani-66763b191/   Kaggle: https://www.kaggle.com/jayds22   Instagram: https://www.instagram.com/jay___20_4/    </description>
+   Platform URL     G-Mail: Jay Guwalani - Gmail   GitHub: https://github.com/JayDS22   LinkedIn: https://www.linkedin.com/in/jay-guwalani-66763b191/   Kaggle: https://www.kaggle.com/jayds22   Instagram: https://www.instagram.com/jay.ipynb    </description>
     </item>
     
   </channel>
