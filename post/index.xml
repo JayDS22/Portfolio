@@ -56,6 +56,18 @@ To predict and analyze the fraudulent transactions that happen on daily basis, u
 Life Cycle of the Project
 Extracted the data from Kaggle open source. Performed Data Exploration to understand the descriptive stats w.r.t. the data, in order to manipulate the data to build a robust ML model.</description>
     </item>
+
+    <item>
+      <title>Project-5: Spam Detection</title>
+      <link>https://jayds22.github.io/My-Data-Science-Portfolio/post/chapter-2/</link>
+      <pubDate>Fri, 09 Jul 2021 10:58:08 -0400</pubDate>
+      
+      <guid>https://jayds22.github.io/My-Data-Science-Portfolio/post/chapter-2/</guid>
+      <description>Aim of the Project
+To predict, analyze and provide the counter measures to prevent the Spamming. Build a Model to predict the Spam Messages&amp;rsquo; likely to be churned using Data Science, NLP and Machine Learning Applications.
+Life Cycle of the Project
+Extracted the data from Kaggle open source. Performed Data Exploration to understand the descriptive stats w.r.t. the data, in order to manipulate the data to build a robust ML model.</description>
+    </item>
     
     <item>
       <title>Project-6: Breast-Cancer Wisconsin Diagnostic</title>
@@ -67,18 +79,6 @@ Extracted the data from Kaggle open source. Performed Data Exploration to unders
 Predict if the patients have Breast Cancer or not. And also classify that it is Malignant / Benign using UCI dataset
 Life Cycle of the Project
 Collected the dataset from Kaggle open source. Performed Data Cleaning using Pandas and Seaborn. Used Pandas, matplotlib &amp;amp; Numpy for Data Pre-processing, to decrease the redundancy, by taking care of the missing values, and duplicates. Used Label Encoder to handle the imbalanced dataset, in order to avoid the OVERFITTING.</description>
-    </item>
-    
-    <item>
-      <title>Project-5: Spam Detection</title>
-      <link>https://jayds22.github.io/My-Data-Science-Portfolio/post/chapter-2/</link>
-      <pubDate>Fri, 09 Jul 2021 10:58:08 -0400</pubDate>
-      
-      <guid>https://jayds22.github.io/My-Data-Science-Portfolio/post/chapter-2/</guid>
-      <description>Aim of the Project
-To predict, analyze and provide the counter measures to prevent the Spamming. Build a Model to predict the Spam Messages&amp;rsquo; likely to be churned using Data Science, NLP and Machine Learning Applications.
-Life Cycle of the Project
-Extracted the data from Kaggle open source. Performed Data Exploration to understand the descriptive stats w.r.t. the data, in order to manipulate the data to build a robust ML model.</description>
     </item>
     
   </channel>
