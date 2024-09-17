@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>scene on Jay Guwalani</title>
-    <link>https://jayds22.github.io/My-Data-Science-Portfolio/tags/scene/</link>
+    <link>https://jayds22.github.io/Portfolio/tags/scene/</link>
     <description>Recent content in scene on Jay Guwalani</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 09 Oct 2021 10:58:08 -0400</lastBuildDate>
     
-	<atom:link href="https://jayds22.github.io/My-Data-Science-Portfolio/tags/scene/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jayds22.github.io/Portfolio/tags/scene/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Project-3: Customer Churn Prediction</title>
-      <link>https://jayds22.github.io/My-Data-Science-Portfolio/post/chapter-4/</link>
+      <link>https://jayds22.github.io/Portfolio/post/chapter-4/</link>
       <pubDate>Sat, 09 Oct 2021 10:58:08 -0400</pubDate>
       
-      <guid>https://jayds22.github.io/My-Data-Science-Portfolio/post/chapter-4/</guid>
+      <guid>https://jayds22.github.io/Portfolio/post/chapter-4/</guid>
       <description>Aim of the Project : To predict, analyze and provide the counter measures to prevent the customers&amp;rsquo; from Churning. Build a Model to predict the Customers&amp;rsquo; likely to be churned using Data Science, and Machine Learning Applications.
 Business Understanding : The data used to build a Customer Churn Prediction Model, consists of data related Telecom domain, and their behavioral trends w.r.t. Churning across 4 years of time span.
 Life Cycle of the Project: Extracted the data from Kaggle open source.</description>
@@ -24,10 +24,10 @@ Life Cycle of the Project: Extracted the data from Kaggle open source.</descript
     
     <item>
       <title>Project-6: Breast-Cancer Wisconsin Diagnostic</title>
-      <link>https://jayds22.github.io/My-Data-Science-Portfolio/post/chapter-1/</link>
+      <link>https://jayds22.github.io/Portfolio/post/chapter-1/</link>
       <pubDate>Thu, 09 Sep 2021 10:58:08 -0400</pubDate>
       
-      <guid>https://jayds22.github.io/My-Data-Science-Portfolio/post/chapter-1/</guid>
+      <guid>https://jayds22.github.io/Portfolio/post/chapter-1/</guid>
       <description>Aim of the Project
 Predict if the patients have Breast Cancer or not. And also classify that it is Malignant / Benign using UCI dataset
 Life Cycle of the Project
