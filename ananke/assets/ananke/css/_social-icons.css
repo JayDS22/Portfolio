@@ -19,3 +19,30 @@
 .link-transition:hover .new-window{
   opacity: 1;
 }
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.big {
+  font-size: 18px;
+}
+
+.wide {
+  width: 100%;
+}
+
+.smooth-scroll-middle {
+  scroll-behavior: smooth;
+}
