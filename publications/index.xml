@@ -1,85 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on Jay Guwalani</title>
-    <link>https://jayds22.github.io/Portfolio/post/</link>
-    <description>Recent content in Projects on Jay Guwalani</description>
+    <title>Publications on Jay Guwalani</title>
+    <link>https://jayds22.github.io/Portfolio/publications/</link>
+    <description>Recent content in Publications on Jay Guwalani</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 09 Dec 2024 12:00:00 -0500</lastBuildDate>
     
-	<atom:link href="https://jayds22.github.io/Portfolio/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jayds22.github.io/Portfolio/publications/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Project-1 : E-commerce Shipping</title>
-      <link>https://jayds22.github.io/Portfolio/post/chapter-6/</link>
-      <pubDate>Thu, 09 Dec 2021 10:58:08 -0400</pubDate>
+      <title>Title: Supply Chain Management Through Data Science And Artificial Intelligence: A Data-Driven Approach</title>
+      <link>https://jayds22.github.io/Portfolio/publications/publish-1/</link>
+      <pubDate>Thu, 09 Dec 2023 10:58:08 -0400</pubDate>
       
-      <guid>https://jayds22.github.io/Portfolio/post/chapter-6/</guid>
-      <description>Aim of the Project : To build an End-to-End Web App using Data Science &amp;amp; Machine Learning for an International E-commerce Company to predict whether their products will reach on committed Delivery Time or not.
-Life Cycle of the Project :
-Collected the dataset from Kaggle Preprocessed the data well and built an ML model by tuning the Hyperparameters of Random-Forest Classifier using Randomized-Search-CV Saved the Best Performing model in a Pickle file Built a Web App using Python at the Backend with Flask API and HTML &amp;amp; Bootstrap serving at the Frontend.</description>
-    </item>
-    
-    <item>
-      <title>Project-2: Face-Mask-Detection</title>
-      <link>https://jayds22.github.io/Portfolio/post/chapter-5/</link>
-      <pubDate>Tue, 09 Nov 2021 10:58:08 -0400</pubDate>
-      
-      <guid>https://jayds22.github.io/Portfolio/post/chapter-5/</guid>
-      <description>Aim of the Project
-To build a Web App using Deep Convolutional Neural Networks to predict whether a person is Wearing a Mask or Not
-Life Cycle of the Project
-Collected the dataset from Kaggle which contained 12,000 images in total for both the classes Used Data Augmentation to generate extra data from the existing dataset Applied Transfer Learning using Pre-trained VGG16 model and built a High Performance Custom CNN Model providing an Accuracy of 99.</description>
-    </item>
-    
-    <item>
-      <title>Project-3: Customer Churn Prediction</title>
-      <link>https://jayds22.github.io/Portfolio/post/chapter-4/</link>
-      <pubDate>Sat, 09 Oct 2023 10:58:08 -0400</pubDate>
-      
-      <guid>https://jayds22.github.io/Portfolio/post/chapter-4/</guid>
-      <description>Aim of the Project : To predict, analyze and provide the counter measures to prevent the customers&amp;rsquo; from Churning. Build a Model to predict the Customers&amp;rsquo; likely to be churned using Data Science, and Machine Learning Applications.
-Business Understanding : The data used to build a Customer Churn Prediction Model, consists of data related Telecom domain, and their behavioral trends w.r.t. Churning across 4 years of time span.
-Life Cycle of the Project: Extracted the data from Kaggle open source.</description>
-    </item>
-    
-    <item>
-      <title>Project-4: Risk-Analytics-Fraud-Detection</title>
-      <link>https://jayds22.github.io/Portfolio/post/chapter-3/</link>
-      <pubDate>Thu, 09 Sep 2023 10:58:08 -0400</pubDate>
-      
-      <guid>https://jayds22.github.io/Portfolio/post/chapter-3/</guid>
-      <description>Aim of the Project
-To predict and analyze the fraudulent transactions that happen on daily basis, using Credit cards. Provide countermeasures for the same. Build a Model to prevent such transactions using Data Science, and Machine Learning Applications.
-Life Cycle of the Project
-Extracted the data from Kaggle open source. Performed Data Exploration to understand the descriptive stats w.r.t. the data, in order to manipulate the data to build a robust ML model.</description>
+      <guid>https://jayds22.github.io/Portfolio/publications/publish-1/</guid>
+      <description>This research investigates the optimization of supply chain processes through advanced data analytics and machine learning methodologies. We focus on enhancing supply chain efficiency and resilience by employing predictive analytics to analyze large-scale datasets, identify operational bottlenecks, and forecast demand variability. A comprehensive framework is developed that integrates statistical process control, machine learning algorithms, and real-time data processing techniques, utilizing tools such as Python, R, and SQL for data manipulation and analysis.
+
+        The study employs a hybrid approach combining descriptive and prescriptive analytics to evaluate supply chain performance metrics, including lead time, inventory turnover, and order fulfillment rates. Case studies from diverse sectors, such as manufacturing and logistics, are utilized to demonstrate the efficacy of data-driven decision-making. Our findings underscore the critical importance of data integration, machine learning models, and simulation techniques in achieving supply chain agility and responsiveness. This research paves the way for the implementation of advanced analytics in optimizing supply chain networks and enhancing overall operational efficiency. (Refer to the link below for the full paper)</description>
     </item>
 
     <item>
-      <title>Project-5: Spam Detection</title>
-      <link>https://jayds22.github.io/Portfolio/post/chapter-2/</link>
-      <pubDate>Fri, 09 Jul 2022 10:58:08 -0400</pubDate>
+      <title>Title: Predictive Maintenence in Automotive using Machine Learning</title>
+      <link>https://jayds22.github.io/Portfolio/publications/publish-2/</link>
+      <pubDate>Thu, 20 September 2024 10:58:08 -0400</pubDate>
       
-      <guid>https://jayds22.github.io/Portfolio/post/chapter-2/</guid>
-      <description>Aim of the Project
-To predict, analyze and provide the counter measures to prevent the Spamming. Build a Model to predict the Spam Messages&amp;rsquo; likely to be churned using Data Science, NLP and Machine Learning Applications.
-Life Cycle of the Project
-Extracted the data from Kaggle open source. Performed Data Exploration to understand the descriptive stats w.r.t. the data, in order to manipulate the data to build a robust ML model.</description>
+      <guid>https://jayds22.github.io/Portfolio/publications/publish-2/</guid>
+      <description>This research focuses on applying advanced Machine Learning (ML) techniques for predictive maintenance in automotive systems to minimize unplanned downtime. High-frequency time-series sensor data from critical components like engines and brakes are analyzed using supervised learning models such as Random Forest, Support Vector Machines (SVM), and Long Short-Term Memory (LSTM) networks. Data preprocessing, including noise reduction and feature engineering, enhances model accuracy, while Grid Search and Cross-Validation optimize hyperparameters. Feature importance is further assessed using SHAP to ensure model interpretability.
+
+The study uses Python libraries like Scikit-learn, TensorFlow, and PySpark for model training and leverages distributed computing on Apache Hadoop and Spark for large-scale data handling. Models are deployed on cloud platforms like AWS Lambda for real-time failure prediction, demonstrating how predictive maintenance can significantly reduce failure risks, improve vehicle reliability, and lower maintenance costs.
+
+(Refer to the link below for the full paper)</description>
     </item>
-    
-    <item>
-      <title>Project-6: Breast-Cancer Wisconsin Diagnostic</title>
-      <link>https://jayds22.github.io/Portfolio/post/chapter-1/</link>
-      <pubDate>Thu, 09 Sep 2024 10:58:08 -0400</pubDate>
-      
-      <guid>https://jayds22.github.io/Portfolio/post/chapter-1/</guid>
-      <description>Aim of the Project
-Predict if the patients have Breast Cancer or not. And also classify that it is Malignant / Benign using UCI dataset
-Life Cycle of the Project
-Collected the dataset from Kaggle open source. Performed Data Cleaning using Pandas and Seaborn. Used Pandas, matplotlib &amp;amp; Numpy for Data Pre-processing, to decrease the redundancy, by taking care of the missing values, and duplicates. Used Label Encoder to handle the imbalanced dataset, in order to avoid the OVERFITTING.</description>
-    </item>
+
     
 
   </channel>
