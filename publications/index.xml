@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications on Jay Guwalani</title>
+    <link>https://jayds22.github.io/Portfolio/publications/</link>
+    <description>Recent content in Publications on Jay Guwalani</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Dec 2024 12:00:00 -0500</lastBuildDate>
+    
+	<atom:link href="https://jayds22.github.io/Portfolio/publications/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Title: Supply Chain Management Through Data Science And Artificial Intelligence: A Data-Driven Approach</title>
+      <link>https://jayds22.github.io/Portfolio/publications/publish-1/</link>
+      <pubDate>Thu, 09 Dec 2023 10:58:08 -0400</pubDate>
+      
+      <guid>https://jayds22.github.io/Portfolio/publications/publish-1/</guid>
+      <description>This research investigates the optimization of supply chain processes through advanced data analytics and machine learning methodologies. We focus on enhancing supply chain efficiency and resilience by employing predictive analytics to analyze large-scale datasets, identify operational bottlenecks, and forecast demand variability. A comprehensive framework is developed that integrates statistical process control, machine learning algorithms, and real-time data processing techniques, utilizing tools such as Python, R, and SQL for data manipulation and analysis.
+
+        The study employs a hybrid approach combining descriptive and prescriptive analytics to evaluate supply chain performance metrics, including lead time, inventory turnover, and order fulfillment rates. Case studies from diverse sectors, such as manufacturing and logistics, are utilized to demonstrate the efficacy of data-driven decision-making. Our findings underscore the critical importance of data integration, machine learning models, and simulation techniques in achieving supply chain agility and responsiveness. This research paves the way for the implementation of advanced analytics in optimizing supply chain networks and enhancing overall operational efficiency. (Refer to the link below for the full paper)</description>
+    </item>
+
+    <item>
+      <title>Title: Predictive Maintenence in Automotive using Machine Learning</title>
+      <link>https://jayds22.github.io/Portfolio/publications/publish-2/</link>
+      <pubDate>Thu, 20 September 2024 10:58:08 -0400</pubDate>
+      
+      <guid>https://jayds22.github.io/Portfolio/publications/publish-2/</guid>
+      <description>This research focuses on applying advanced Machine Learning (ML) techniques for predictive maintenance in automotive systems to minimize unplanned downtime. High-frequency time-series sensor data from critical components like engines and brakes are analyzed using supervised learning models such as Random Forest, Support Vector Machines (SVM), and Long Short-Term Memory (LSTM) networks. Data preprocessing, including noise reduction and feature engineering, enhances model accuracy, while Grid Search and Cross-Validation optimize hyperparameters. Feature importance is further assessed using SHAP to ensure model interpretability.
+
+The study uses Python libraries like Scikit-learn, TensorFlow, and PySpark for model training and leverages distributed computing on Apache Hadoop and Spark for large-scale data handling. Models are deployed on cloud platforms like AWS Lambda for real-time failure prediction, demonstrating how predictive maintenance can significantly reduce failure risks, improve vehicle reliability, and lower maintenance costs.
+
+(Refer to the link below for the full paper)</description>
+    </item>
+
+    
+
+  </channel>
+</rss>
