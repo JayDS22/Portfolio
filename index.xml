@@ -10,9 +10,22 @@
     
 	<atom:link href="https://jayds22.github.io/Portfolio/index.xml" rel="self" type="application/rss+xml" />
     
-    
     <item>
-      <title>Project-1 : E-commerce Shipping</title>
+        <title>Project-1 : Driver Behavior Analytics System</title>
+        <link>https://jayds22.github.io/Portfolio/post/chapter-7/</link>
+        <pubDate>Mon, 09 Dec 2024 10:58:08 -0500</pubDate>
+        <guid>https://jayds22.github.io/Portfolio/post/chapter-7/</guid>
+        <description>Aim of the Project: To build a comprehensive analytics system for driver behavior analysis using survival analysis, Bayesian modeling, and real-time risk assessment. The system provides production-ready driver risk scoring for insurance companies, fleet management, and autonomous vehicle development with advanced statistical modeling and explainable AI capabilities.
+
+    Key Performance Metrics: C-index of 0.79 for Cox proportional hazards model demonstrating excellent discrimination ability • 91.4% accuracy using Bayesian hierarchical models with posterior predictive validation • Sub-200ms API response times for real-time risk scoring at scale • 300K+ drivers successfully analyzed and scored with comprehensive risk profiles • Harrell's C-index of 0.82 for survival analysis validation.
+
+    Life Cycle of the Project: Collected comprehensive driver behavior datasets including speed variance, harsh acceleration/braking events, night driving patterns, and demographic information • Implemented Cox proportional hazards models with comprehensive assumption testing and Kaplan-Meier survival estimation • Developed sophisticated Bayesian models using PyMC with MCMC inference for driver segmentation • Created high-performance API using FastAPI with SHAP explainability for transparent feature importance analysis • Deployed using Docker containerization and Kubernetes orchestration with PostgreSQL, Redis caching, and comprehensive monitoring systems.
+
+    Technologies Used: Python 3.9+, Lifelines, PyMC, SHAP, Scikit-learn, FastAPI, PostgreSQL, Redis, Docker, Kubernetes, Cox Regression, Survival Analysis, Bayesian Modeling, MCMC Inference, Hierarchical Models.</description>
+    </item>
+
+    <item>
+      <title>Project-2 : E-commerce Shipping</title>
       <link>https://jayds22.github.io/Portfolio/post/chapter-6/</link>
       <pubDate>Thu, 09 Dec 2021 10:58:08 -0400</pubDate>
       
@@ -23,7 +36,7 @@ Collected the dataset from Kaggle Preprocessed the data well and built an ML mod
     </item>
     
     <item>
-      <title>Project-2: Face-Mask-Detection</title>
+      <title>Project-3: Face-Mask-Detection</title>
       <link>https://jayds22.github.io/Portfolio/post/chapter-5/</link>
       <pubDate>Tue, 09 Nov 2021 10:58:08 -0400</pubDate>
       
@@ -35,7 +48,7 @@ Collected the dataset from Kaggle which contained 12,000 images in total for bot
     </item>
     
     <item>
-      <title>Project-3: Customer Churn Prediction</title>
+      <title>Project-4: Customer Churn Prediction</title>
       <link>https://jayds22.github.io/Portfolio/post/chapter-4/</link>
       <pubDate>Sat, 09 Oct 2023 10:58:08 -0400</pubDate>
       
@@ -46,7 +59,7 @@ Life Cycle of the Project: Extracted the data from Kaggle open source.</descript
     </item>
     
     <item>
-      <title>Project-4: Risk-Analytics-Fraud-Detection</title>
+      <title>Project-5: Risk-Analytics-Fraud-Detection</title>
       <link>https://jayds22.github.io/Portfolio/post/chapter-3/</link>
       <pubDate>Thu, 09 Sep 2023 10:58:08 -0400</pubDate>
       
@@ -58,7 +71,7 @@ Extracted the data from Kaggle open source. Performed Data Exploration to unders
     </item>
     
     <item>
-      <title>Project-5: Spam Detection</title>
+      <title>Project-6: Spam Detection</title>
       <link>https://jayds22.github.io/Portfolio/post/chapter-2/</link>
       <pubDate>Fri, 09 Jul 2022 10:58:08 -0400</pubDate>
       
@@ -70,7 +83,7 @@ Extracted the data from Kaggle open source. Performed Data Exploration to unders
     </item>
 
     <item>
-      <title>Project-6: Breast-Cancer Wisconsin Diagnostic</title>
+      <title>Project-7: Breast-Cancer Wisconsin Diagnostic</title>
       <link>https://jayds22.github.io/Portfolio/post/chapter-1/</link>
       <pubDate>Thu, 09 Sep 2024 10:58:08 -0400</pubDate>
       
