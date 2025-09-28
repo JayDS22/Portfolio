@@ -58,16 +58,16 @@ Business Understanding : The data used to build a Customer Churn Prediction Mode
 Life Cycle of the Project: Extracted the data from Kaggle open source.</description>
     </item>
     
+
     <item>
-      <title>Project-5: Risk-Analytics-Fraud-Detection</title>
+      <title>Project-5: Real-Time Payment Fraud Detection System</title>
       <link>https://jayds22.github.io/Portfolio/post/chapter-3/</link>
-      <pubDate>Thu, 09 Sep 2023 10:58:08 -0400</pubDate>
-      
+      <pubDate>Mon, 09 Sep 2024 10:58:08 -0400</pubDate>
+          
       <guid>https://jayds22.github.io/Portfolio/post/chapter-3/</guid>
-      <description>Aim of the Project
-To predict and analyze the fraudulent transactions that happen on daily basis, using Credit cards. Provide countermeasures for the same. Build a Model to prevent such transactions using Data Science, and Machine Learning Applications.
-Life Cycle of the Project
-Extracted the data from Kaggle open source. Performed Data Exploration to understand the descriptive stats w.r.t. the data, in order to manipulate the data to build a robust ML model.</description>
+      <description>
+      Aim of the Project: To build a production-ready, real-time fraud detection system capable of processing 500K+ daily transactions with high accuracy and low latency. The system provides instant fraud detection, automated monitoring, and comprehensive explainability for regulatory compliance while preventing millions in fraudulent transactions. 
+      Life Cycle of the Project: Designed and implemented a scalable microservices architecture using Apache Kafka for real-time streaming and Spark for distributed processing. Built ensemble machine learning models (Random Forest + XGBoost + LightGBM) achieving 94.2% accuracy with less than 3% false positive rate.</description>
     </item>
     
     <item>
