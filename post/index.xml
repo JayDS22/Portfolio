@@ -73,20 +73,39 @@ Life Cycle of the Project
 Designed and implemented a scalable microservices architecture using Apache Kafka for real-time streaming and Spark for distributed processing. Built ensemble machine learning models (Random Forest + XGBoost + LightGBM) achieving 94.2% accuracy with less than 3% false positive rate. Developed advanced feature engineering pipeline with 50+ behavioral and statistical features including transaction velocity, amount deviation, merchant patterns, and geographical anomalies.</description>
     </item>
 
+
     <item>
-      <title>Project-5: Spam Detection</title>
-      <link>https://jayds22.github.io/Portfolio/post/chapter-2/</link>
-      <pubDate>Fri, 09 Jul 2022 10:58:08 -0400</pubDate>
+      <title>Project-6: Production LLM Serving Optimization Framework</title>
+      <link>https://jayds22.github.io/Portfolio/post/chapter-8/</link>
+      <pubDate>Mon, 15 Sep 2025 10:58:08 -0500</pubDate>
       
-      <guid>https://jayds22.github.io/Portfolio/post/chapter-2/</guid>
+      <guid>https://jayds22.github.io/Portfolio/post/chapter-8/</guid>
       <description>Aim of the Project
-To predict, analyze and provide the counter measures to prevent the Spamming. Build a Model to predict the Spam Messages&amp;rsquo; likely to be churned using Data Science, NLP and Machine Learning Applications.
-Life Cycle of the Project
-Extracted the data from Kaggle open source. Performed Data Exploration to understand the descriptive stats w.r.t. the data, in order to manipulate the data to build a robust ML model.</description>
+    To build a high-performance, production-grade LLM serving framework that maximizes throughput and minimizes latency while maintaining quality. The system provides enterprise-ready LLM inference with advanced optimization techniques including continuous batching, quantization, multi-GPU tensor parallelism, and real-time token streaming for AI applications at scale.
+
+    Key Performance Metrics
+    - 12.3K+ requests/sec throughput achieved using vLLM continuous batching with multi-GPU optimization
+    - 42ms P50 latency and 178ms P99 latency for production-grade response times  
+    - 70% memory reduction using INT8/INT4 quantization while maintaining &gt;95% model accuracy
+    - 1500+ concurrent users supported with auto-scaling and load balancing capabilities
+    - Custom CUDA kernels achieving 2.3x speedup over standard PyTorch implementations
+
+    Life Cycle of the Project
+    1. High-Performance Inference Engine Design - Architected vLLM-powered continuous batching system for maximum throughput optimization. Implemented fallback mechanisms supporting both GPU and CPU inference with Transformers backend.
+
+    2. Advanced Quantization &amp; Memory Optimization - Developed sophisticated INT8/INT4 quantization pipeline maintaining &gt;95% model accuracy with 70% memory reduction. Implemented custom CUDA kernels for optimized quantized operations.
+
+    3. Multi-GPU Tensor Parallelism Implementation - Created distributed inference system using tensor parallelism across multiple GPUs for large model serving. Integrated automatic GPU memory utilization optimization.
+
+    4. Real-time Streaming &amp; API Infrastructure - Built FastAPI-based serving layer with token-by-token streaming for real-time response generation. Implemented WebSocket connections for low-latency streaming.
+
+    5. Production Deployment &amp; Monitoring Architecture - Deployed using Docker containerization with Kubernetes orchestration for auto-scaling and high availability. Integrated Prometheus metrics collection with Grafana dashboards.
+
+    Technologies Used: vLLM, Transformers, TensorRT, CUDA, Flash Attention V2, FastAPI, Docker, Kubernetes, Prometheus, Grafana, Custom CUDA Kernels, INT8/INT4 Quantization, Tensor Parallelism, Real-time Streaming</description>
     </item>
     
     <item>
-      <title>Project-6: Breast-Cancer Wisconsin Diagnostic</title>
+      <title>Project-7: Breast-Cancer Wisconsin Diagnostic</title>
       <link>https://jayds22.github.io/Portfolio/post/chapter-1/</link>
       <pubDate>Thu, 09 Sep 2024 10:58:08 -0400</pubDate>
       
