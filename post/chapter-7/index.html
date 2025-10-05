@@ -230,12 +230,23 @@
 
 <p>Check out the Detailed Project Overview on <a href="https://github.com/JayDS22/Search-Relevance-and-Ranking-System">GitHub Repository</a></p>
 
+<p><strong>A/B Testing Results:</strong> Statistical comparison between baseline (BM25) and treatment (LambdaMART) algorithms over a 2-week experiment with 50,000 users. The visualization demonstrates LambdaMART's superior performance across five key metrics: CTR improvement of 18.3%, zero-result rate reduction of 11.3%, user satisfaction increase from 3.2 to 4.1/5, session duration increase of 28.1%, and overall dwell time improvement of 22.8%. All improvements achieved statistical significance with p-value < 0.01 at 95% confidence level.</p>
 <p><img src="../../images/search_r_ab_test_results.png" alt="A/B Test Results"></p>
+
+<p><strong>Algorithm Performance Comparison:</strong> Comprehensive evaluation of three ranking algorithms (TF-IDF, BM25, LambdaMART) across five standard information retrieval metrics. LambdaMART achieved the highest scores with nDCG@10 of 0.847, MAP of 0.782, MRR of 0.813, Precision@5 of 0.890, and Recall@10 of 0.760. BM25 provided a strong middle ground with 0.823 nDCG@10, while TF-IDF served as the baseline with 0.721 nDCG@10. The evaluation was conducted on 500K queries with 30K test queries for validation.</p>
 <p><img src="../../images/search_r_algorithm_comparison.png" alt="Algorithm Comparison"></p>
+
+<p><strong>Feature Importance Analysis:</strong> XGBoost-based feature importance scores for the LambdaMART model revealing the relative contribution of 45+ engineered features. Text similarity features (TF-IDF similarity, BM25 score, semantic embeddings) dominate with a combined importance of 0.328, followed by query-level signals (0.128), document quality metrics (0.087), user engagement signals (0.076), and positional features (0.068). The top 10 features account for 65% of the model's decision-making, with TF-IDF similarity being the single most important feature at 0.10 importance score.</p>
 <p><img src="../../images/search_r_feature_importance.png" alt="Feature Importance Analysis"></p>
+
+<p><strong>Latency Distribution Analysis:</strong> Performance benchmarking across three algorithms measuring query response times at P50, P95, and P99 percentiles. TF-IDF demonstrates the fastest performance with P50 at 35ms, P95 at 45ms, and P99 at 58ms. BM25 shows moderate latency with P50 at 42ms, P95 at 52ms, and P99 at 68ms. LambdaMART, while providing superior relevance, exhibits higher latency with P50 at 165ms, P95 at 187ms, and P99 at 215ms. The P95 latency threshold of 200ms makes LambdaMART suitable for production deployment despite its computational complexity.</p>
 <p><img src="../../images/search_r_latency_distribution.png" alt="Algorithm Latency Performance"></p>
+
+<p><strong>Multi-dimensional Performance Radar:</strong> Six-dimensional radar chart comparing TF-IDF, BM25, and LambdaMART across balanced metrics including nDCG@10, MAP, MRR, Precision@5, Recall@10, and Speed (inverse latency). LambdaMART dominates in relevance metrics (nDCG, MAP, MRR, Precision) with near-perfect scores, while TF-IDF excels in speed. BM25 provides an optimal balance between relevance and computational efficiency, making it suitable for real-time applications where sub-100ms latency is critical.</p>
 <p><img src="../../images/search_r_metrics_radar_chart.png" alt="Multi-dimensional Performance Radar"></p>
-<p><img src="../../images/search_r_ncdg_distribution.png" alt="NCDG Distribution Analysis"></p>
+
+<p><strong>nDCG Distribution Analysis:</strong> Probability density curves showing the distribution of nDCG@10 scores across test queries for all three algorithms. LambdaMART exhibits a right-skewed distribution centered at μ=0.847 with lower variance, indicating consistent high-quality rankings. BM25 shows a broader distribution centered at μ=0.823, while TF-IDF demonstrates the widest variance centered at μ=0.721. The vertical dashed lines indicate mean performance, clearly illustrating LambdaMART's 17.5% improvement over TF-IDF and 2.9% improvement over BM25 in terms of normalized discounted cumulative gain.</p>
+<p><img src="../../images/search_r_ndcg_distribution.png" alt="NCDG Distribution Analysis"></p>
 
 <p><strong>Technologies Used</strong></p>
 <p>| Python | XGBoost | scikit-learn | Flask | NumPy | Pandas |</p>

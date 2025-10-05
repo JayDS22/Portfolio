@@ -235,14 +235,29 @@
 
 <p><strong>Results from the Project:</strong></p>
 
-<p><img src="../../images/quant_equity.png" alt="Portfolio Performance"></p>
-<p><img src="../../images/quant_model.png" alt="Model Performance"></p>
-<p><img src="../../images/quant_monthly.png" alt="Monthly Returns"></p>
-<p><img src="../../images/quant_risk.png" alt="Strategy Comparison"></p>
 <p><img src="../../images/quant_platform.png" alt="Trading Dashboard"></p>
+<p>The live trading dashboard showcases real-time portfolio performance with comprehensive metrics including total return of +24.7%, Sharpe ratio of 2.1, maximum drawdown of -3.2%, and win rate of 68.5%. The interface displays key performance indicators, risk metrics, and execution statistics with sub-50ms latency updates. Interactive charts provide instant visibility into P&L tracking, position monitoring, and trade execution quality across multiple asset classes.</p>
+
+<p><img src="../../images/quant_equity.png" alt="Portfolio Performance"></p>
+<p>The portfolio equity curve demonstrates consistent growth over the backtesting period, rising from an initial capital of $100K to $124.7K. The smooth upward trajectory with minimal drawdowns indicates robust risk management and stable trading performance. Notable features include steady capital appreciation, controlled volatility, and strong recovery from minor pullbacks, validating the effectiveness of the LSTM and Transformer ensemble approach.</p>
+
+<p><img src="../../images/quant_model.png" alt="Model Performance"></p>
+<p>Comparative analysis of LSTM versus Sentiment-based models across five key metrics: Sharpe ratio, Sortino ratio, Calmar ratio, Information ratio, and Omega ratio. The radar chart reveals that both models achieve high accuracy (87.3% for LSTM, 94.2% for Sentiment), with the LSTM model showing superior precision while the Sentiment model excels in directional prediction. This visualization guided the ensemble strategy that combines strengths of both architectures.</p>
+
+<p><img src="../../images/quant_monthly.png" alt="Monthly Returns"></p>
+<p>Monthly return distribution across a 12-month period shows consistent profitability with 10 positive months and only 2 negative months. The strongest performance occurred in September (+3.8%) and December (+4.1%), while March and July experienced minor losses (-0.5% and -0.8% respectively). The overall positive skew and limited downside demonstrate effective risk management and the platform's ability to capitalize on market opportunities across varying conditions.</p>
+
+<p><img src="../../images/quant_risk.png" alt="Strategy Comparison"></p>
+<p>Strategy performance comparison benchmarking five different approaches against baseline metrics. The Calmar strategy shows the highest risk-adjusted returns, significantly outperforming the benchmark. Sharpe, Sortino, and Omega strategies demonstrate consistent excess returns with varying risk profiles, while the Information ratio strategy provides moderate but stable performance. This analysis informed optimal strategy selection for live trading deployment.</p>
+
 <p><img src="../../images/quant_returns.png" alt="Return Distribution"></p>
-<p><img src="../../images/quant_sentiment.png" alt="Drawdown Analysis"></p>
+<p>Return distribution histogram reveals the frequency of trades across different return brackets. The distribution shows concentration in the 0-2% return range with 47 profitable trades, while negative returns between -3% to -1% account for fewer occurrences. The asymmetric distribution with positive skew indicates the platform's ability to capture larger gains while limiting losses, contributing to the overall 68.5% win rate and positive expected value per trade.</p>
+
+<p><img src="../../images/quant_sentiment.png" alt="Sentiment Analysis Performance"></p>
+<p>Sentiment-based model performance metrics demonstrate 94.2% accuracy in predicting market direction using natural language processing on financial news feeds and social media data. The model processes real-time sentiment indicators from multiple sources, combining them with technical price action to generate high-confidence trading signals. This auxiliary model enhances the primary LSTM predictions and improves overall system reliability during high-volatility periods.</p>
+
 <p><img src="../../images/quant_latency.png" alt="Processing Latency"></p>
+<p>System latency analysis across a 24-hour trading session shows two distinct performance bands: data processing consistently maintains 15-25ms latency (blue line), while model inference operates at 35-45ms (orange line). Both metrics remain well below the target threshold of 50ms end-to-end latency, ensuring the platform can execute high-frequency strategies effectively. The consistent performance throughout the session demonstrates robust infrastructure capable of handling 1M+ market data ticks per second without degradation.</p>
 
 <p>Check out the Detail Project Overview on <a href="https://github.com/JayDS22/Quantitative-Trading-Platform">GitHub Repository</a></p>
 
