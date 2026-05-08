@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Ranking System - Visualization Generator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .visualization {
+            margin: 30px 0;
+            padding: 25px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            background: #fafafa;
+        }
+        .chart-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .chart-subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+            text-align: center;
+            font-style: italic;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        .download-section {
+            text-align: center;
+            margin: 25px 0;
+            padding: 25px;
+            background: linear-gradient(135deg, #e8f0ff 0%, #f0e8ff 100%);
+            border-radius: 12px;
+        }
+        svg {
+            display: block;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+        }
+        .metric-badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Search Ranking System - Visualization Generator</h1>
+        <p class="subtitle">Generate professional portfolio visualizations for your IR/ML project</p>
+        
+        <div class="download-section">
+            <h2>📥 Download Generated Visualizations</h2>
+            <p style="margin-bottom: 15px;">Click to download high-quality PNG images for your portfolio</p>
+            <button onclick="downloadAlgoComparison()">Download Algorithm Comparison</button>
+            <button onclick="downloadMetricsRadar()">Download Metrics Radar Chart</button>
+            <button onclick="downloadABTest()">Download A/B Test Results</button>
+            <button onclick="downloadFeatureImportance()">Download Feature Importance</button>
+            <button onclick="downloadLatency()">Download Latency Distribution</button>
+            <button onclick="downloadNDCG()">Download nDCG Distribution</button>
+            <button onclick="downloadAll()">Download All Charts</button>
+        </div>
+
+        <!-- Algorithm Performance Comparison -->
+        <div class="visualization">
+            <div class="chart-title">🏆 Algorithm Performance Comparison</div>
+            <div class="chart-subtitle">
+                Comparative analysis across 500K+ queries
+                <span class="metric-badge">nDCG@10: 0.847</span>
+                <span class="metric-badge">MAP: 0.782</span>
+                <span class="metric-badge">MRR: 0.813</span>
+            </div>
+            <svg id="algo-comparison" width="1200" height="700"></svg>
+        </div>
+
+        <!-- Metrics Radar Chart -->
+        <div class="visualization">
+            <div class="chart-title">🎯 Multi-Dimensional Performance Metrics</div>
+            <div class="chart-subtitle">
+                Radar chart showing algorithm strengths across different metrics
+            </div>
+            <svg id="metrics-radar" width="900" height="900"></svg>
+        </div>
+
+        <!-- A/B Test Results -->
+        <div class="visualization">
+            <div class="chart-title">🧪 A/B Test Statistical Analysis</div>
+            <div class="chart-subtitle">
+                BM25 vs LambdaMART comparison | 2000 users | p-value < 0.01
+                <span class="metric-badge">18.3% CTR Improvement</span>
+                <span class="metric-badge">95% Confidence</span>
+            </div>
+            <svg id="ab-test" width="1200" height="700"></svg>
+        </div>
+
+        <!-- Feature Importance -->
+        <div class="visualization">
+            <div class="chart-title">🔍 LambdaMART Feature Importance Analysis</div>
+            <div class="chart-subtitle">
+                Top 10 features ranked by impact on ranking quality (45+ features total)
+            </div>
+            <svg id="feature-importance" width="1200" height="750"></svg>
+        </div>
+
+        <!-- Query Performance Distribution -->
+        <div class="visualization">
+            <div class="chart-title">⚡ Query Latency Distribution</div>
+            <div class="chart-subtitle">
+                Performance benchmarks across algorithms (P50, P95, P99 percentiles)
+            </div>
+            <svg id="latency-dist" width="1200" height="700"></svg>
+        </div>
+
+        <!-- nDCG Score Distribution -->
+        <div class="visualization">
+            <div class="chart-title">📈 nDCG Score Distribution by Algorithm</div>
+            <div class="chart-subtitle">
+                Quality distribution across 30,000 test queries
+            </div>
+            <svg id="ndcg-dist" width="1200" height="700"></svg>
+        </div>
+    </div>
+
+    <script>
+        // Algorithm Comparison Chart
+        function generateAlgoComparison() {
+            const svg = document.getElementById('algo-comparison');
+            svg.innerHTML = '';
+            
+            const width = 1200, height = 700;
+            const margin = {top: 120, right: 150, bottom: 120, left: 120};
+            const chartWidth = width - margin.left - margin.right;
+            const chartHeight = height - margin.top - margin.bottom;
+            
+            const bg = createSVGElement('rect', {width, height, fill: 'white'});
+            svg.appendChild(bg);
+            
+            // Data
+            const metrics = ['nDCG@10', 'MAP', 'MRR', 'P@5', 'R@10'];
+            const algorithms = [
+                {name: 'TF-IDF', values: [0.721, 0.687, 0.745, 0.78, 0.69], color: '#3498db'},
+                {name: 'BM25', values: [0.823, 0.762, 0.801, 0.87, 0.74], color: '#f39c12'},
+                {name: 'LambdaMART', values: [0.847, 0.782, 0.813, 0.89, 0.76], color: '#2ecc71'}
+            ];
+            
+            const barWidth = chartWidth / (metrics.length * algorithms.length + metrics.length);
+            const groupSpacing = barWidth;
+            
+            // Draw axes
+            drawLine(svg, margin.left, height - margin.bottom, width - margin.right, height - margin.bottom, '#333', 3);
+            drawLine(svg, margin.left, margin.top, margin.left, height - margin.bottom, '#333', 3);
+            
+            // Draw bars
+            metrics.forEach((metric, i) => {
+                algorithms.forEach((algo, j) => {
+                    const x = margin.left + i * (barWidth * algorithms.length + groupSpacing) + j * barWidth;
+                    const barHeight = algo.values[i] * chartHeight;
+                    const y = height - margin.bottom - barHeight;
+                    
+                    const bar = createSVGElement('rect', {
+                        x, y, 
+                        width: barWidth, 
+                        height: barHeight,
+                        fill: algo.color,
+                        stroke: '#333',
+                        'stroke-width': 1
+                    });
+                    svg.appendChild(bar);
+                    
+                    // Value label on top of bar
+                    const label = createSVGElement('text', {
+                        x: x + barWidth / 2,
+                        y: y - 8,
+                        'text-anchor': 'middle',
+                        'font-size': '12',
+                        fill: '#333',
+                        'font-weight': 'bold'
+                    });
+                    label.textContent = algo.values[i].toFixed(3);
+                    svg.appendChild(label);
+                });
+                
+                // Metric labels
+                const metricX = margin.left + i * (barWidth * algorithms.length + groupSpacing) + (barWidth * algorithms.length) / 2;
+                const metricLabel = createSVGElement('text', {
+                    x: metricX,
+                    y: height - margin.bottom + 35,
+                    'text-anchor': 'middle',
+                    'font-size': '16',
+                    fill: '#333',
+                    'font-weight': 'bold'
+                });
+                metricLabel.textContent = metric;
+                svg.appendChild(metricLabel);
+            });
+            
+            // Legend - top right, no overlap
+            algorithms.forEach((algo, i) => {
+                const legendX = width - margin.right + 20;
+                const legendY = margin.top + 20 + i * 35;
+                
+                const rect = createSVGElement('rect', {
+                    x: legendX, y: legendY,
+                    width: 25, height: 25,
+                    fill: algo.color
+                });
+                svg.appendChild(rect);
+                
+                const text = createSVGElement('text', {
+                    x: legendX + 35,
+                    y: legendY + 18,
+                    'font-size': '15',
+                    fill: '#333',
+                    'font-weight': 'bold'
+                });
+                text.textContent = algo.name;
+                svg.appendChild(text);
+            });
+            
+            // Stats box - top left corner
+            const stats = [
+                'Evaluation Details:',
+                '• Dataset: 500K queries',
+                '• Test set: 30K queries',
+                '• Documents: 100K',
+                '• Winner: LambdaMART',
+                '• Improvement: 17.5%'
+            ];
+            
+            const statsBoxX = margin.left + 20;
+            const statsBoxY = 20;
+            const statsBoxWidth = 220;
+            const statsBoxHeight = stats.length * 22 + 20;
+            
+            const statsBox = createSVGElement('rect', {
+                x: statsBoxX, y: statsBoxY,
+                width: statsBoxWidth, height: statsBoxHeight,
+                fill: '#f8f9fa',
+                stroke: '#dee2e6',
+                'stroke-width': 2,
+                rx: 8
+            });
+            svg.appendChild(statsBox);
+            
+            stats.forEach((text, i) => {
+                const statsText = createSVGElement('text', {
+                    x: statsBoxX + 15,
+                    y: statsBoxY + 28 + i * 22,
+                    'font-size': i === 0 ? '14' : '13',
+                    'font-weight': i === 0 ? 'bold' : 'normal',
+                    fill: '#333'
+                });
+                statsText.textContent = text;
+                svg.appendChild(statsText);
+            });
+            
+            // Axis labels
+            addText(svg, width / 2, height - 35, 'Evaluation Metrics', '18', 'middle', 'bold');
+            addRotatedText(svg, 35, height / 2, 'Score', '18', 'bold');
+        }
+        
+        // Metrics Radar Chart
+        function generateMetricsRadar() {
+            const svg = document.getElementById('metrics-radar');
+            svg.innerHTML = '';
+            
+            const width = 900, height = 900;
+            const centerX = width / 2, centerY = height / 2;
+            const radius = 280;
+            
+            const bg = createSVGElement('rect', {width, height, fill: 'white'});
+            svg.appendChild(bg);
+            
+            const metrics = ['nDCG@10', 'MAP', 'MRR', 'Precision@5', 'Recall@10', 'Speed'];
+            const algorithms = [
+                {name: 'TF-IDF', values: [0.721, 0.687, 0.745, 0.78, 0.69, 0.95], color: '#3498db', opacity: 0.3},
+                {name: 'BM25', values: [0.823, 0.762, 0.801, 0.87, 0.74, 0.92], color: '#f39c12', opacity: 0.3},
+                {name: 'LambdaMART', values: [0.847, 0.782, 0.813, 0.89, 0.76, 0.65], color: '#2ecc71', opacity: 0.3}
+            ];
+            
+            // Draw grid circles
+            for (let i = 1; i <= 5; i++) {
+                const r = (radius / 5) * i;
+                const circle = createSVGElement('circle', {
+                    cx: centerX, cy: centerY, r,
+                    fill: 'none',
+                    stroke: '#ddd',
+                    'stroke-width': 2
+                });
+                svg.appendChild(circle);
+                
+                // Grid labels - positioned to not overlap
+                const label = createSVGElement('text', {
+                    x: centerX + 8,
+                    y: centerY - r + 5,
+                    'font-size': '12',
+                    fill: '#999'
+                });
+                label.textContent = (i * 0.2).toFixed(1);
+                svg.appendChild(label);
+            }
+            
+            // Draw axes
+            metrics.forEach((metric, i) => {
+                const angle = (Math.PI * 2 / metrics.length) * i - Math.PI / 2;
+                const x2 = centerX + Math.cos(angle) * radius;
+                const y2 = centerY + Math.sin(angle) * radius;
+                
+                drawLine(svg, centerX, centerY, x2, y2, '#ccc', 2);
+                
+                // Metric labels - positioned further out to avoid overlap
+                const labelDistance = radius + 60;
+                const labelX = centerX + Math.cos(angle) * labelDistance;
+                const labelY = centerY + Math.sin(angle) * labelDistance;
+                const label = createSVGElement('text', {
+                    x: labelX,
+                    y: labelY,
+                    'text-anchor': 'middle',
+                    'font-size': '15',
+                    fill: '#333',
+                    'font-weight': 'bold'
+                });
+                label.textContent = metric;
+                svg.appendChild(label);
+            });
+            
+            // Draw algorithm polygons
+            algorithms.forEach(algo => {
+                let pathData = '';
+                algo.values.forEach((value, i) => {
+                    const angle = (Math.PI * 2 / metrics.length) * i - Math.PI / 2;
+                    const r = value * radius;
+                    const x = centerX + Math.cos(angle) * r;
+                    const y = centerY + Math.sin(angle) * r;
+                    pathData += (i === 0 ? 'M' : 'L') + ` ${x} ${y}`;
+                });
+                pathData += ' Z';
+                
+                const path = createSVGElement('path', {
+                    d: pathData,
+                    fill: algo.color,
+                    'fill-opacity': algo.opacity,
+                    stroke: algo.color,
+                    'stroke-width': 4
+                });
+                svg.appendChild(path);
+                
+                // Draw points
+                algo.values.forEach((value, i) => {
+                    const angle = (Math.PI * 2 / metrics.length) * i - Math.PI / 2;
+                    const r = value * radius;
+                    const x = centerX + Math.cos(angle) * r;
+                    const y = centerY + Math.sin(angle) * r;
+                    
+                    const circle = createSVGElement('circle', {
+                        cx: x, cy: y, r: 6,
+                        fill: algo.color,
+                        stroke: 'white',
+                        'stroke-width': 3
+                    });
+                    svg.appendChild(circle);
+                });
+            });
+            
+            // Legend - bottom center
+            const legendY = height - 100;
+            algorithms.forEach((algo, i) => {
+                const legendX = width / 2 - 150 + i * 130;
+                const rect = createSVGElement('rect', {
+                    x: legendX, y: legendY,
+                    width: 25, height: 25,
+                    fill: algo.color
+                });
+                svg.appendChild(rect);
+                
+                const text = createSVGElement('text', {
+                    x: legendX + 35,
+                    y: legendY + 18,
+                    'font-size': '15',
+                    fill: '#333',
+                    'font-weight': 'bold'
+                });
+                text.textContent = algo.name;
+                svg.appendChild(text);
+            });
+        }
+        
+        // A/B Test Results
+        function generateABTest() {
+            const svg = document.getElementById('ab-test');
+            svg.innerHTML = '';
+            
+            const width = 1200, height = 700;
+            const margin = {top: 120, right: 150, bottom: 120, left: 120};
+            const chartWidth = width - margin.left - margin.right;
+            const chartHeight = height - margin.top - margin.bottom;
+            
+            const bg = createSVGElement('rect', {width, height, fill: 'white'});
+            svg.appendChild(bg);
+            
+            // Data
+            const metrics = ['CTR', 'Dwell Time', 'Zero Results', 'User Satisfaction', 'Session Duration'];
+            const baseline = [0.15, 45, 0.08, 3.2, 180];
+            const treatment = [0.1775, 52, 0.071, 4.1, 221];
+            const improvements = [18.3, 15.6, -11.3, 28.1, 22.8];
+            
+            const barWidth = chartWidth / (metrics.length * 3);
+            const groupWidth = chartWidth / metrics.length;
+            
+            // Draw axes
+            drawLine(svg, margin.left, height - margin.bottom, width - margin.right, height - margin.bottom, '#333', 3);
+            drawLine(svg, margin.left, margin.top, margin.left, height - margin.bottom, '#333', 3);
+            
+            // Draw bars
+            metrics.forEach((metric, i) => {
+                const groupX = margin.left + i * groupWidth;
+                const maxValue = Math.max(baseline[i], treatment[i]);
+                const scale = i < 2 ? 1 : (i === 2 ? 10 : (i === 3 ? 0.25 : 0.005));
+                
+                // Baseline bar
+                const baseHeight = (baseline[i] * scale) * chartHeight;
+                const baseY = height - margin.bottom - baseHeight;
+                const baseBar = createSVGElement('rect', {
+                    x: groupX + barWidth,
+                    y: baseY,
+                    width: barWidth,
+                    height: baseHeight,
+                    fill: '#e74c3c',
+                    stroke: '#333',
+                    'stroke-width': 1
+                });
+                svg.appendChild(baseBar);
+                
+                // Treatment bar
+                const treatHeight = (treatment[i] * scale) * chartHeight;
+                const treatY = height - margin.bottom - treatHeight;
+                const treatBar = createSVGElement('rect', {
+                    x: groupX + barWidth * 2,
+                    y: treatY,
+                    width: barWidth,
+                    height: treatHeight,
+                    fill: '#2ecc71',
+                    stroke: '#333',
+                    'stroke-width': 1
+                });
+                svg.appendChild(treatBar);
+                
+                // Improvement label - positioned well above bars
+                const arrowY = Math.min(baseY, treatY) - 35;
+                const improvement = improvements[i];
+                const arrowColor = improvement > 0 ? '#2ecc71' : '#e74c3c';
+                const arrowDir = improvement > 0 ? '▲' : '▼';
+                
+                const impLabel = createSVGElement('text', {
+                    x: groupX + groupWidth / 2,
+                    y: arrowY,
+                    'text-anchor': 'middle',
+                    'font-size': '16',
+                    'font-weight': 'bold',
+                    fill: arrowColor
+                });
+                impLabel.textContent = `${arrowDir} ${Math.abs(improvement).toFixed(1)}%`;
+                svg.appendChild(impLabel);
+                
+                // Metric label
+                const metricLabel = createSVGElement('text', {
+                    x: groupX + groupWidth / 2,
+                    y: height - margin.bottom + 40,
+                    'text-anchor': 'middle',
+                    'font-size': '15',
+                    fill: '#333',
+                    'font-weight': 'bold'
+                });
+                metricLabel.textContent = metric;
+                svg.appendChild(metricLabel);
+            });
+            
+            // Legend - top right
+            const legendData = [
+                {name: 'Baseline (BM25)', color: '#e74c3c'},
+                {name: 'Treatment (LambdaMART)', color: '#2ecc71'}
+            ];
+            legendData.forEach((item, i) => {
+                const legendX = width - margin.right + 20;
+                const legendY = margin.top + 20 + i * 35;
+                
+                const rect = createSVGElement('rect', {
+                    x: legendX, y: legendY,
+                    width: 25, height: 25,
+                    fill: item.color
+                });
+                svg.appendChild(rect);
+                
+                const text = createSVGElement('text', {
+                    x: legendX + 35,
+                    y: legendY + 18,
+                    'font-size': '13',
+                    fill: '#333',
+                    'font-weight': 'bold'
+                });
+                text.textContent = item.name;
+                svg.appendChild(text);
+            });
+            
+            // Stats box - top left
+            const stats = [
+                'A/B Test Results:',
+                '• Duration: 2 weeks',
+                '• Users: 2,000',
+                '• p-value: < 0.01',
+                '• Confidence: 95%',
+                '• Winner: LambdaMART'
+            ];
+            
+            const statsBoxX = margin.left + 20;
+            const statsBoxY = 20;
+            const statsBox = createSVGElement('rect', {
+                x: statsBoxX, y: statsBoxY,
+                width: 200, height: stats.length * 22 + 20,
+                fill: '#f8f9fa',
+                stroke: '#dee2e6',
+                'stroke-width': 2,
+                rx: 8
+            });
+            svg.appendChild(statsBox);
+            
+            stats.forEach((text, i) => {
+                const statsText = createSVGElement('text', {
+                    x: statsBoxX + 15,
+                    y: statsBoxY + 28 + i * 22,
+                    'font-size': i === 0 ? '14' : '13',
+                    'font-weight': i === 0 ? 'bold' : 'normal',
+                    fill: '#333'
+                });
+                statsText.textContent = text;
+                svg.appendChild(statsText);
+            });
+            
+            addText(svg, width / 2, height - 35, 'Metrics Comparison', '18', 'middle', 'bold');
+            addRotatedText(svg, 35, height / 2, 'Normalized Score', '18', 'bold');
+        }
+        
+        // Feature Importance
+        function generateFeatureImportance() {
+            const svg = document.getElementById('feature-importance');
+            svg.innerHTML = '';
+            
+            const width = 1200, height = 750;
+            const margin = {top: 80, right: 350, bottom: 80, left: 220};
+            const chartWidth = width - margin.left - margin.right;
+            const chartHeight = height - margin.top - margin.bottom;
+            
+            const bg = createSVGElement('rect', {width, height, fill: 'white'});
+            svg.appendChild(bg);
+            
+            const features = [
+                'TF-IDF Similarity',
+                'BM25 Score',
+                'Title Similarity',
+                'Query Coverage',
+                'Doc Quality Score',
+                'PageRank',
+                'Content Freshness',
+                'Exact Match',
+                'Title Matches',
+                'First Occurrence'
+            ];
+            const importance = [0.142, 0.128, 0.115, 0.098, 0.087, 0.076, 0.068, 0.059, 0.052, 0.045];
+            const colors = ['#e74c3c', '#e67e22', '#f39c12', '#f1c40f', '#2ecc71', '#27ae60', '#3498db', '#2980b9', '#9b59b6', '#8e44ad'];
+            
+            const barHeight = chartHeight / features.length * 0.75;
+            const barSpacing = chartHeight / features.length * 0.25;
+            const maxImportance = Math.max(...importance);
+            
+            // Draw axes
+            drawLine(svg, margin.left, height - margin.bottom, width - margin.right, height - margin.bottom, '#333', 3);
+            
+            // Draw bars
+            features.forEach((feature, i) => {
+                const barWidth = (importance[i] / maxImportance) * chartWidth;
+                const x = margin.left;
+                const y = margin.top + i * (barHeight + barSpacing);
+                
+                const bar = createSVGElement('rect', {
+                    x, y,
+                    width: barWidth,
+                    height: barHeight,
+                    fill: colors[i],
+                    stroke: '#333',
+                    'stroke-width': 1
+                });
+                svg.appendChild(bar);
+                
+                // Feature label - left side
+                const label = createSVGElement('text', {
+                    x: margin.left - 15,
+                    y: y + barHeight / 2 + 6,
+                    'text-anchor': 'end',
+                    'font-size': '14',
+                    fill: '#333',
+                    'font-weight': 'bold'
+                });
+                label.textContent = feature;
+                svg.appendChild(label);
+                
+                // Value label - right of bar
+                const valueLabel = createSVGElement('text', {
+                    x: x + barWidth + 12,
+                    y: y + barHeight / 2 + 6,
+                    'font-size': '14',
+                    'font-weight': 'bold',
+                    fill: '#333'
+                });
+                valueLabel.textContent = importance[i].toFixed(3);
+                svg.appendChild(valueLabel);
+            });
+            
+            // Info box - positioned on right side, well separated
+            const infoBoxX = width - margin.right + 30;
+            const infoBoxY = margin.top;
+            const infoBoxWidth = 300;
+            const infoBoxHeight = chartHeight;
+            
+            const infoBox = createSVGElement('rect', {
+                x: infoBoxX, y: infoBoxY,
+                width: infoBoxWidth, height: infoBoxHeight,
+                fill: '#f8f9fa',
+                stroke: '#dee2e6',
+                'stroke-width': 2,
+                rx: 8
+            });
+            svg.appendChild(infoBox);
+            
+            const info = [
+                'Model Details:',
+                '',
+                '• Algorithm: XGBoost',
+                '• Trees: 500',
+                '• Learning rate: 0.1',
+                '• Max depth: 6',
+                '',
+                'Performance:',
+                '',
+                '• Training: 94.2%',
+                '• Test: 91.4%',
+                '• Features: 45 total',
+                '• Top 10 shown',
+                '',
+                'Key Insights:',
+                '',
+                '• Text similarity dominates',
+                '• Quality signals matter',
+                '• Position features help',
+                '• Balanced feature set'
+            ];
+            
+            info.forEach((text, i) => {
+                if (text === '') return;
+                const infoText = createSVGElement('text', {
+                    x: infoBoxX + 20,
+                    y: infoBoxY + 35 + i * 22,
+                    'font-size': text.includes(':') ? '14' : '12',
+                    'font-weight': text.includes(':') ? 'bold' : 'normal',
+                    fill: '#333'
+                });
+                infoText.textContent = text;
+                svg.appendChild(infoText);
+            });
+            
+            addText(svg, margin.left + chartWidth / 2, height - 30, 'Feature Importance Score', '18', 'middle', 'bold');
+        }
+        
+        // Latency Distribution
+        function generateLatencyDist() {
+            const svg = document.getElementById('latency-dist');
+            svg.innerHTML = '';
+            
+            const width = 1200, height = 700;
+            const margin = {top: 120, right: 150, bottom: 120, left: 120};
+            const chartWidth = width - margin.left - margin.right;
+            const chartHeight = height - margin.top - margin.bottom;
+            
+            const bg = createSVGElement('rect', {width, height, fill: 'white'});
+            svg.appendChild(bg);
+            
+            const algorithms = ['TF-IDF', 'BM25', 'LambdaMART'];
+            const latencies = {
+                'TF-IDF': {p50: 35, p95: 45, p99: 58, color: '#3498db'},
+                'BM25': {p50: 42, p95: 52, p99: 68, color: '#f39c12'},
+                'LambdaMART': {p50: 165, p95: 187, p99: 215, color: '#2ecc71'}
+            };
+            
+            const barWidth = chartWidth / (algorithms.length * 4);
+            const groupWidth = chartWidth / algorithms.length;
+            
+            // Draw axes
+            drawLine(svg, margin.left, height - margin.bottom, width - margin.right, height - margin.bottom, '#333', 3);
+            drawLine(svg, margin.left, margin.top, margin.left, height - margin.bottom, '#333', 3);
+            
+            algorithms.forEach((algo, i) => {
+                const groupX = margin.left + i * groupWidth;
+                const data = latencies[algo];
+                const percentiles = ['p50', 'p95', 'p99'];
+                
+                percentiles.forEach((p, j) => {
+                    const value = data[p];
+                    const barHeight = (value / 220) * chartHeight;
+                    const x = groupX + (j + 0.5) * barWidth;
+                    const y = height - margin.bottom - barHeight;
+                    
+                    const bar = createSVGElement('rect', {
+                        x, y,
+                        width: barWidth,
+                        height: barHeight,
+                        fill: data.color,
+                        stroke: '#333',
+                        'stroke-width': 1
+                    });
+                    svg.appendChild(bar);
+                    
+                    // Value label on top
+                    const label = createSVGElement('text', {
+                        x: x + barWidth / 2,
+                        y: y - 8,
+                        'text-anchor': 'middle',
+                        'font-size': '13',
+                        'font-weight': 'bold',
+                        fill: '#333'
+                    });
+                    label.textContent = `${value}ms`;
+                    svg.appendChild(label);
+                    
+                    // Percentile label
+                    const pLabel = createSVGElement('text', {
+                        x: x + barWidth / 2,
+                        y: height - margin.bottom + 30,
+                        'text-anchor': 'middle',
+                        'font-size': '12',
+                        fill: '#666'
+                    });
+                    pLabel.textContent = p.toUpperCase();
+                    svg.appendChild(pLabel);
+                });
+                
+                // Algorithm label
+                const algoLabel = createSVGElement('text', {
+                    x: groupX + groupWidth / 2,
+                    y: height - margin.bottom + 60,
+                    'text-anchor': 'middle',
+                    'font-size': '16',
+                    'font-weight': 'bold',
+                    fill: '#333'
+                });
+                algoLabel.textContent = algo;
+                svg.appendChild(algoLabel);
+            });
+            
+            // SLA line - positioned to not overlap
+            const slaY = height - margin.bottom - (200 / 220) * chartHeight;
+            const slaLine = createSVGElement('line', {
+                x1: margin.left,
+                y1: slaY,
+                x2: width - margin.right,
+                y2: slaY,
+                stroke: '#e74c3c',
+                'stroke-width': 3,
+                'stroke-dasharray': '8,8'
+            });
+            svg.appendChild(slaLine);
+            
+            const slaLabel = createSVGElement('text', {
+                x: width - margin.right - 15,
+                y: slaY - 8,
+                'text-anchor': 'end',
+                'font-size': '14',
+                fill: '#e74c3c',
+                'font-weight': 'bold'
+            });
+            slaLabel.textContent = 'SLA: 200ms';
+            svg.appendChild(slaLabel);
+            
+            addText(svg, width / 2, height - 35, 'Algorithm Performance by Percentile', '18', 'middle', 'bold');
+            addRotatedText(svg, 35, height / 2, 'Latency (milliseconds)', '18', 'bold');
+        }
+        
+        // nDCG Distribution
+        function generateNDCGDist() {
+            const svg = document.getElementById('ndcg-dist');
+            svg.innerHTML = '';
+            
+            const width = 1200, height = 700;
+            const margin = {top: 120, right: 150, bottom: 120, left: 120};
+            const chartWidth = width - margin.left - margin.right;
+            const chartHeight = height - margin.top - margin.bottom;
+            
+            const bg = createSVGElement('rect', {width, height, fill: 'white'});
+            svg.appendChild(bg);
+            
+            const algorithms = [
+                {name: 'TF-IDF', mean: 0.721, std: 0.15, color: '#3498db'},
+                {name: 'BM25', mean: 0.823, std: 0.12, color: '#f39c12'},
+                {name: 'LambdaMART', mean: 0.847, std: 0.10, color: '#2ecc71'}
+            ];
+            
+            // Draw axes
+            drawLine(svg, margin.left, height - margin.bottom, width - margin.right, height - margin.bottom, '#333', 3);
+            drawLine(svg, margin.left, margin.top, margin.left, height - margin.bottom, '#333', 3);
+            
+            algorithms.forEach(algo => {
+                const points = [];
+                for (let x = 0; x <= 100; x++) {
+                    const score = x / 100;
+                    const z = (score - algo.mean) / algo.std;
+                    const density = Math.exp(-0.5 * z * z) / (algo.std * Math.sqrt(2 * Math.PI));
+                    points.push({x: score, y: density});
+                }
+                
+                let pathData = '';
+                points.forEach((p, i) => {
+                    const px = margin.left + p.x * chartWidth;
+                    const py = height - margin.bottom - (p.y * chartHeight * 0.75);
+                    pathData += (i === 0 ? 'M' : 'L') + ` ${px} ${py}`;
+                });
+                
+                const path = createSVGElement('path', {
+                    d: pathData,
+                    stroke: algo.color,
+                    'stroke-width': 4,
+                    fill: 'none'
+                });
+                svg.appendChild(path);
+                
+                // Mean line
+                const meanX = margin.left + algo.mean * chartWidth;
+                const meanLine = createSVGElement('line', {
+                    x1: meanX,
+                    y1: margin.top,
+                    x2: meanX,
+                    y2: height - margin.bottom,
+                    stroke: algo.color,
+                    'stroke-width': 3,
+                    'stroke-dasharray': '6,6'
+                });
+                svg.appendChild(meanLine);
+            });
+            
+            // Legend - top right, well separated
+            algorithms.forEach((algo, i) => {
+                const legendX = width - margin.right + 20;
+                const legendY = margin.top + 20 + i * 35;
+                
+                const rect = createSVGElement('rect', {
+                    x: legendX, y: legendY,
+                    width: 25, height: 25,
+                    fill: algo.color
+                });
+                svg.appendChild(rect);
+                
+                const text = createSVGElement('text', {
+                    x: legendX + 35,
+                    y: legendY + 18,
+                    'font-size': '13',
+                    fill: '#333',
+                    'font-weight': 'bold'
+                });
+                text.textContent = `${algo.name} (μ=${algo.mean.toFixed(3)})`;
+                svg.appendChild(text);
+            });
+            
+            addText(svg, width / 2, height - 35, 'nDCG@10 Score', '18', 'middle', 'bold');
+            addRotatedText(svg, 35, height / 2, 'Density', '18', 'bold');
+        }
+        
+        // Utility functions
+        function createSVGElement(type, attrs) {
+            const el = document.createElementNS('http://www.w3.org/2000/svg', type);
+            for (const [key, value] of Object.entries(attrs)) {
+                el.setAttribute(key, value);
+            }
+            return el;
+        }
+        
+        function drawLine(svg, x1, y1, x2, y2, color, width) {
+            const line = createSVGElement('line', {x1, y1, x2, y2, stroke: color, 'stroke-width': width});
+            svg.appendChild(line);
+        }
+        
+        function addText(svg, x, y, text, size, anchor, weight) {
+            const el = createSVGElement('text', {
+                x, y, 'text-anchor': anchor || 'start',
+                'font-size': size, 'font-weight': weight || 'normal',
+                fill: '#333'
+            });
+            el.textContent = text;
+            svg.appendChild(el);
+        }
+        
+        function addRotatedText(svg, x, y, text, size, weight) {
+            const el = createSVGElement('text', {
+                x, y, 'text-anchor': 'middle',
+                'font-size': size, 'font-weight': weight,
+                fill: '#333',
+                transform: `rotate(-90, ${x}, ${y})`
+            });
+            el.textContent = text;
+            svg.appendChild(el);
+        }
+        
+        // Download functions
+        function downloadSVG(svgId, filename) {
+            const svg = document.getElementById(svgId);
+            const serializer = new XMLSerializer();
+            const svgStr = serializer.serializeToString(svg);
+            
+            const canvas = document.createElement('canvas');
+            canvas.width = svg.getAttribute('width');
+            canvas.height = svg.getAttribute('height');
+            const ctx = canvas.getContext('2d');
+            
+            const img = new Image();
+            img.onload = function() {
+                ctx.fillStyle = 'white';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(img, 0, 0);
+                
+                canvas.toBlob(function(blob) {
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.download = filename;
+                    link.href = url;
+                    link.click();
+                    URL.revokeObjectURL(url);
+                });
+            };
+            
+            const blob = new Blob([svgStr], {type: 'image/svg+xml;charset=utf-8'});
+            const url = URL.createObjectURL(blob);
+            img.src = url;
+        }
+        
+        function downloadAlgoComparison() {
+            downloadSVG('algo-comparison', 'algorithm_comparison.png');
+        }
+        
+        function downloadMetricsRadar() {
+            downloadSVG('metrics-radar', 'metrics_radar_chart.png');
+        }
+        
+        function downloadABTest() {
+            downloadSVG('ab-test', 'ab_test_results.png');
+        }
+        
+        function downloadFeatureImportance() {
+            downloadSVG('feature-importance', 'feature_importance.png');
+        }
+        
+        function downloadLatency() {
+            downloadSVG('latency-dist', 'latency_distribution.png');
+        }
+        
+        function downloadNDCG() {
+            downloadSVG('ndcg-dist', 'ndcg_distribution.png');
+        }
+        
+        function downloadAll() {
+            const downloads = [
+                {id: 'algo-comparison', name: 'algorithm_comparison.png'},
+                {id: 'metrics-radar', name: 'metrics_radar_chart.png'},
+                {id: 'ab-test', name: 'ab_test_results.png'},
+                {id: 'feature-importance', name: 'feature_importance.png'},
+                {id: 'latency-dist', name: 'latency_distribution.png'},
+                {id: 'ndcg-dist', name: 'ndcg_distribution.png'}
+            ];
+            
+            downloads.forEach((d, i) => {
+                setTimeout(() => downloadSVG(d.id, d.name), i * 500);
+            });
+        }
+        
+        // Generate all charts on load
+        window.onload = function() {
+            generateAlgoComparison();
+            generateMetricsRadar();
+            generateABTest();
+            generateFeatureImportance();
+            generateLatencyDist();
+            generateNDCGDist();
+        };
+    </script>
+</body>
+</html>

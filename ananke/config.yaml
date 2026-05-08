@@ -1,3 +1,84 @@
-module:
-  hugoVersion:
-    min: "0.64.0"
+baseURL: 'https://jayds22.github.io/Portfolio'
+languageCode: en-us
+title: "Jay Guwalani"
+theme: "ananke"
+
+# Enable Git information for better date sorting
+enableGitInfo: true
+
+# Pagination and section configuration
+paginate: 3
+mainSections: ["post"]
+
+# Parameters for theme customization
+params:
+  author: "Jay Guwalani"
+  description: "My Data Science (ML & AI) Portfolio"
+  
+  # Number of recent posts to show on homepage
+  recent_posts_number: 6
+  
+  # Background and styling
+  background_color_class: "bg-near-black"
+  featured_image: "/images/new.jpg"
+  
+  # Custom CSS for gap removal
+  custom_css: ["/css/custom.css"]
+  
+  # Recent copy text
+  recent_copy: "Recent Projects"
+  
+  # Body classes for consistent styling
+  body_classes: "avenir bg-near-white"
+
+# Menu configuration
+menu:
+  main:
+    - name: "About"
+      url: "/about/"
+      weight: 10
+    - name: "Projects"
+      url: "/post/"
+      weight: 20
+    - name: "Publications"
+      url: "/publications/"
+      weight: 30
+    - name: "Contact"
+      url: "/contact/"
+      weight: 40
+
+# Social media links
+social:
+  github: "https://github.com/JayDS22"
+  linkedin: "https://linkedin.com/in/jayds22"
+
+# Markup configuration for better rendering
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: "github"
+    lineNos: true
+
+# Taxonomies
+taxonomies:
+  tag: tags
+  category: categories
+
+# Output formats
+outputs:
+  home: ["HTML", "RSS", "JSON"]
+  page: ["HTML"]
+  section: ["HTML", "RSS"]
+
+# Related content configuration
+related:
+  includeNewer: true
+  indices:
+    - name: "tags"
+      weight: 100
+    - name: "date"
+      weight: 10
+  threshold: 80
+  toLower: false
