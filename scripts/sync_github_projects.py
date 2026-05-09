@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Fetch JayDS22's public GitHub repos, infer a domain for each,
-and write data/github.json — the data source for the 3D project graph
+and write data/github.json - the data source for the 3D project graph
 on /explore/."""
 
 import json
@@ -21,7 +21,7 @@ EXCLUDE_REPOS = {
     "portfolioweb",
 }
 
-# Domain hubs. First match wins (order matters — put more specific domains
+# Domain hubs. First match wins (order matters - put more specific domains
 # above broader ones like ML & Classification, which is the fallback).
 DOMAINS = [
     {

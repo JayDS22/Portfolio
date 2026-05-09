@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Explore — Project Knowledge Graph — Jay Guwalani</title>
+  <title>Explore - Project Knowledge Graph - Jay Guwalani</title>
   <meta name="description" content="Interactive 3D map of all public GitHub projects by Jay Guwalani, grouped by domain.">
   <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -13,54 +13,102 @@
   <style>
     .graph-stage {
       position: relative;
-      height: clamp(520px, 72vh, 820px);
-      border: 1px solid var(--border, #2a2d3a);
+      height: clamp(540px, 76vh, 860px);
+      border: 1px solid rgba(124,92,255,0.18);
       border-radius: var(--radius-xl, 20px);
       overflow: hidden;
-      background: radial-gradient(ellipse at center, #0e1018 0%, #06070b 100%);
+      box-shadow:
+        inset 0 0 80px rgba(124,92,255,0.06),
+        0 24px 60px -20px rgba(0,0,0,0.55),
+        0 0 0 1px rgba(255,255,255,0.02);
+      background:
+        radial-gradient(1.4px 1.4px at 12% 22%, rgba(255,255,255,0.55), transparent 60%),
+        radial-gradient(1px 1px at 28% 68%, rgba(255,255,255,0.35), transparent 60%),
+        radial-gradient(1.6px 1.6px at 44% 14%, rgba(255,255,255,0.55), transparent 60%),
+        radial-gradient(1px 1px at 62% 78%, rgba(255,255,255,0.32), transparent 60%),
+        radial-gradient(1.4px 1.4px at 78% 32%, rgba(255,255,255,0.45), transparent 60%),
+        radial-gradient(1px 1px at 88% 64%, rgba(255,255,255,0.30), transparent 60%),
+        radial-gradient(1.2px 1.2px at 18% 84%, rgba(255,255,255,0.30), transparent 60%),
+        radial-gradient(1.4px 1.4px at 56% 50%, rgba(255,255,255,0.35), transparent 60%),
+        radial-gradient(1px 1px at 8% 56%, rgba(255,255,255,0.25), transparent 60%),
+        radial-gradient(1.2px 1.2px at 70% 8%, rgba(255,255,255,0.40), transparent 60%),
+        radial-gradient(ellipse at 50% 45%, #131532 0%, #0a0b18 55%, #05060c 100%);
+    }
+    .graph-stage::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 30% 25%, rgba(124,92,255,0.18), transparent 45%),
+                  radial-gradient(circle at 75% 70%, rgba(34,211,238,0.12), transparent 50%);
+      pointer-events: none; z-index: 1;
     }
     .graph-status {
-      position: absolute; top: 16px; left: 18px; z-index: 3;
+      position: absolute; top: 18px; left: 22px; z-index: 4;
       font-family: var(--font-mono, ui-monospace, monospace);
-      font-size: 12px; letter-spacing: .04em; text-transform: uppercase;
-      color: var(--text-dim, #9aa0b4); pointer-events: none;
+      font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55); pointer-events: none;
+    }
+    .graph-status .pulse {
+      display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+      background: #7c5cff; margin-right: 8px;
+      box-shadow: 0 0 0 0 rgba(124,92,255,0.7);
+      animation: graph-pulse 2.4s infinite;
+      vertical-align: middle;
+    }
+    @keyframes graph-pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(124,92,255,0.7); }
+      70%  { box-shadow: 0 0 0 10px rgba(124,92,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(124,92,255,0); }
     }
     .graph-meta {
-      position: absolute; top: 16px; right: 18px; z-index: 3;
+      position: absolute; top: 18px; right: 22px; z-index: 4;
       font-family: var(--font-mono, ui-monospace, monospace);
-      font-size: 11px; color: var(--text-dim, #9aa0b4);
-      text-align: right; pointer-events: none;
+      font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.45); text-align: right; pointer-events: none;
+      line-height: 1.6;
     }
     .graph-legend {
-      position: absolute; bottom: 16px; left: 18px; right: 18px; z-index: 3;
+      position: absolute; bottom: 18px; left: 22px; right: 22px; z-index: 4;
       display: flex; flex-wrap: wrap; gap: 8px;
       pointer-events: none;
     }
     .graph-legend .chip {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 4px 10px; border-radius: 999px;
-      font-size: 12px; font-weight: 500;
-      background: rgba(15,17,25,.7); border: 1px solid;
-      backdrop-filter: blur(6px);
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 5px 12px; border-radius: 999px;
+      font-size: 11px; font-weight: 500; letter-spacing: .02em;
+      background: rgba(10,11,24,0.78); border: 1px solid;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
     .graph-legend .chip .dot {
-      width: 8px; height: 8px; border-radius: 50%;
+      width: 7px; height: 7px; border-radius: 50%;
+      box-shadow: 0 0 8px currentColor;
     }
     .graph-tip {
-      background: rgba(12,14,22,.96);
+      background: rgba(10,11,22,0.96);
       border: 1px solid;
-      border-radius: 10px;
-      padding: 10px 14px;
-      max-width: 320px;
+      border-radius: 12px;
+      padding: 12px 14px;
+      max-width: 340px;
       color: #fff;
       font-family: var(--font-sans, system-ui, sans-serif);
-      box-shadow: 0 8px 28px rgba(0,0,0,.4);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.55), 0 0 24px rgba(124,92,255,0.18);
+      backdrop-filter: blur(8px);
     }
-    .graph-tip .t-title { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
-    .graph-tip .t-meta { font-size: 11px; opacity: .7; margin-bottom: 6px; font-family: var(--font-mono, monospace); }
-    .graph-tip .t-desc { font-size: 12px; line-height: 1.45; opacity: .9; }
-    .graph-tip .t-hint { font-size: 11px; opacity: .55; margin-top: 8px; }
-    #graph canvas { outline: none; }
+    .graph-tip .t-title { font-weight: 600; font-size: 14px; margin-bottom: 6px; letter-spacing: -.005em; }
+    .graph-tip .t-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 7px; }
+    .graph-tip .t-chips .c {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 2px 7px; border-radius: 999px;
+      font-size: 10px; font-weight: 500;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.85);
+      font-family: var(--font-mono, monospace); letter-spacing: .02em;
+    }
+    .graph-tip .t-chips .c.star { color: #facc15; border-color: rgba(250,204,21,0.3); background: rgba(250,204,21,0.08); }
+    .graph-tip .t-desc { font-size: 12px; line-height: 1.5; opacity: 0.88; }
+    .graph-tip .t-hint { font-size: 10px; opacity: 0.5; margin-top: 9px; letter-spacing: .04em; text-transform: uppercase; }
+    .graph-tip .t-meta { font-size: 10px; opacity: 0.55; letter-spacing: .1em; text-transform: uppercase; font-family: var(--font-mono, monospace); }
+    #graph canvas { outline: none; display: block; }
   </style>
 </head>
 
@@ -121,7 +169,7 @@
   <div class="container">
 
     <div class="graph-stage">
-      <div class="graph-status" id="graph-status">Loading graph…</div>
+      <div class="graph-status" id="graph-status"><span class="pulse"></span>Loading graph</div>
       <div class="graph-meta" id="graph-meta"></div>
       <div class="graph-legend" id="graph-legend"></div>
       <div id="graph"></div>
@@ -130,7 +178,7 @@
     <p style="margin-top:18px;color:var(--text-dim);font-size:14px;">
       Don't see a project? Check the
       <a href="https://github.com/JayDS22?tab=repositories" target="_blank" rel="noopener">full repo list</a>
-      — or jump back to the
+      - or jump back to the
       <a href="../post/">curated case studies</a>.
     </p>
 
@@ -178,11 +226,11 @@
     .then(data => {
       const repos   = data.nodes.filter(n => n.type === 'repo').length;
       const domains = data.nodes.filter(n => n.type === 'domain');
-      statusEl.textContent = repos + ' projects · ' + domains.length + ' domains';
+      statusEl.innerHTML = '<span class="pulse"></span>' + repos + ' projects across ' + domains.length + ' domains';
 
       const synced = data.generated_at ? new Date(data.generated_at) : null;
       if (synced) {
-        metaEl.innerHTML = 'last sync<br>' + synced.toISOString().slice(0,10);
+        metaEl.innerHTML = 'last sync<br><span style="color:rgba(255,255,255,0.7);">' + synced.toISOString().slice(0,10) + '</span>';
       }
 
       domains.forEach(d => {
@@ -198,40 +246,59 @@
         legendEl.appendChild(chip);
       });
 
+      // Build a quick lookup so link colors can match the source repo's domain color
+      const nodeById = new Map(data.nodes.map(n => [n.id, n]));
+
       const Graph = ForceGraph3D()(mount)
         .graphData(data)
-        .backgroundColor('#06070b')
+        .backgroundColor('rgba(0,0,0,0)')
         .showNavInfo(false)
-        .nodeRelSize(4)
+        .nodeRelSize(5)
         .nodeVal(n => n.val)
         .nodeColor(n => n.color)
-        .nodeOpacity(0.92)
-        .nodeResolution(16)
-        .linkColor(() => 'rgba(255,255,255,0.18)')
+        .nodeOpacity(0.95)
+        .nodeResolution(20)
+        .linkColor(l => {
+          const src = typeof l.source === 'object' ? l.source : nodeById.get(l.source);
+          const c = (src && src.color) || '#7c5cff';
+          return c + '55';
+        })
         .linkOpacity(0.55)
-        .linkWidth(0.6)
+        .linkWidth(0.7)
+        .linkDirectionalParticles(2)
+        .linkDirectionalParticleWidth(1.6)
+        .linkDirectionalParticleSpeed(0.004)
+        .linkDirectionalParticleColor(l => {
+          const src = typeof l.source === 'object' ? l.source : nodeById.get(l.source);
+          return (src && src.color) || '#7c5cff';
+        })
         .nodeLabel(n => {
           if (n.type === 'domain') {
+            const count = data.links.filter(l => {
+              const t = typeof l.target === 'object' ? l.target.id : l.target;
+              return t === n.id;
+            }).length;
             return '<div class="graph-tip" style="border-color:' + n.color + ';">'
               + '<div class="t-title" style="color:' + n.color + ';">' + escapeHtml(n.name) + '</div>'
+              + '<div class="t-chips"><span class="c">' + count + ' projects</span></div>'
               + '<div class="t-meta">domain hub</div>'
               + '</div>';
           }
-          const meta = [n.language, n.stars ? '★ ' + n.stars : null]
-            .filter(Boolean).join(' · ');
+          const chips = [];
+          if (n.language) chips.push('<span class="c">' + escapeHtml(n.language) + '</span>');
+          if (n.stars)    chips.push('<span class="c star">★ ' + n.stars + '</span>');
           return '<div class="graph-tip" style="border-color:' + n.color + ';">'
             + '<div class="t-title" style="color:' + n.color + ';">' + escapeHtml(n.name) + '</div>'
-            + (meta ? '<div class="t-meta">' + escapeHtml(meta) + '</div>' : '')
+            + (chips.length ? '<div class="t-chips">' + chips.join('') + '</div>' : '')
             + (n.description ? '<div class="t-desc">' + escapeHtml(n.description) + '</div>' : '')
-            + '<div class="t-hint">click to open on GitHub →</div>'
+            + '<div class="t-hint">click to open on GitHub</div>'
             + '</div>';
         })
         .onNodeClick(n => {
           if (n.type === 'repo' && n.url) {
             window.open(n.url, '_blank', 'noopener,noreferrer');
           } else {
-            // center camera on domain hub
-            const distance = 180;
+            const distance = 200;
             const distRatio = 1 + distance / Math.hypot(n.x || 1, n.y || 1, n.z || 1);
             Graph.cameraPosition(
               { x: (n.x || 0) * distRatio, y: (n.y || 0) * distRatio, z: (n.z || 0) * distRatio },
@@ -246,25 +313,50 @@
           if (n.type !== 'domain') return null;
           const sprite = new SpriteText(n.name);
           sprite.color = n.color;
-          sprite.textHeight = 5;
-          sprite.fontWeight = '600';
-          sprite.backgroundColor = 'rgba(6,7,11,0.8)';
-          sprite.padding = 2;
-          sprite.borderRadius = 4;
-          sprite.position.y = 12;
+          sprite.textHeight = 5.5;
+          sprite.fontWeight = '700';
+          sprite.fontFace = 'Inter, system-ui, sans-serif';
+          sprite.backgroundColor = 'rgba(6,7,15,0.85)';
+          sprite.padding = 3;
+          sprite.borderRadius = 5;
+          sprite.borderWidth = 0.6;
+          sprite.borderColor = n.color;
+          sprite.position.y = 14;
           return sprite;
         });
       }
 
-      // Tune force layout: pull repos toward their domain hub
-      Graph.d3Force('link').distance(l => l.target && l.target.type === 'domain' ? 60 : 90);
-      Graph.d3Force('charge').strength(-160);
+      // Tune force layout
+      Graph.d3Force('link').distance(l => {
+        const t = typeof l.target === 'object' ? l.target : nodeById.get(l.target);
+        return t && t.type === 'domain' ? 65 : 95;
+      });
+      Graph.d3Force('charge').strength(-180);
+
+      // Slow auto-rotate that pauses while the user interacts, resumes after idle
+      const controls = Graph.controls();
+      if (controls) {
+        controls.autoRotate = true;
+        controls.autoRotateSpeed = 0.45;
+        let idleTimer = null;
+        const pause = () => {
+          controls.autoRotate = false;
+          clearTimeout(idleTimer);
+          idleTimer = setTimeout(() => { controls.autoRotate = true; }, 6000);
+        };
+        const canvas = mount.querySelector('canvas');
+        if (canvas) {
+          ['pointerdown', 'wheel', 'touchstart'].forEach(ev =>
+            canvas.addEventListener(ev, pause, { passive: true })
+          );
+        }
+      }
 
       const fit = () => Graph.width(stage.clientWidth).height(stage.clientHeight);
       fit();
       window.addEventListener('resize', fit);
 
-      setTimeout(() => Graph.zoomToFit(800, 80), 1200);
+      setTimeout(() => Graph.zoomToFit(900, 90), 1200);
     })
     .catch(err => {
       console.error(err);

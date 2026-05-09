@@ -4,21 +4,115 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Jay Guwalani — Senior AI / ML Engineer</title>
-  <meta name="description" content="Jay Guwalani — Senior AI/ML Engineer specializing in GenAI, LLM infrastructure, MLOps and large-scale data systems.">
+  <title>Jay Guwalani - Senior AI / ML Engineer</title>
+  <meta name="description" content="Jay Guwalani - Senior AI/ML Engineer specializing in GenAI, LLM infrastructure, MLOps and large-scale data systems.">
   <meta name="generator" content="Hugo (revamp 2026)" />
   <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
   <link rel="stylesheet" href="css/modern.css">
 
+  <style>
+    .constellation {
+      position: relative;
+      height: clamp(480px, 64vh, 680px);
+      border: 1px solid rgba(124,92,255,0.18);
+      border-radius: var(--radius-xl, 20px);
+      overflow: hidden;
+      box-shadow:
+        inset 0 0 80px rgba(124,92,255,0.06),
+        0 24px 60px -20px rgba(0,0,0,0.55);
+      background:
+        radial-gradient(1.4px 1.4px at 12% 22%, rgba(255,255,255,0.55), transparent 60%),
+        radial-gradient(1px 1px at 28% 68%, rgba(255,255,255,0.35), transparent 60%),
+        radial-gradient(1.6px 1.6px at 44% 14%, rgba(255,255,255,0.55), transparent 60%),
+        radial-gradient(1px 1px at 62% 78%, rgba(255,255,255,0.32), transparent 60%),
+        radial-gradient(1.4px 1.4px at 78% 32%, rgba(255,255,255,0.45), transparent 60%),
+        radial-gradient(1px 1px at 88% 64%, rgba(255,255,255,0.30), transparent 60%),
+        radial-gradient(1.2px 1.2px at 18% 84%, rgba(255,255,255,0.30), transparent 60%),
+        radial-gradient(1.4px 1.4px at 56% 50%, rgba(255,255,255,0.35), transparent 60%),
+        radial-gradient(1px 1px at 8% 56%, rgba(255,255,255,0.25), transparent 60%),
+        radial-gradient(1.2px 1.2px at 70% 8%, rgba(255,255,255,0.40), transparent 60%),
+        radial-gradient(ellipse at 50% 45%, #131532 0%, #0a0b18 55%, #05060c 100%);
+    }
+    .constellation::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+      background: radial-gradient(circle at 30% 25%, rgba(124,92,255,0.18), transparent 45%),
+                  radial-gradient(circle at 75% 70%, rgba(34,211,238,0.12), transparent 50%);
+    }
+    .constellation-status {
+      position: absolute; top: 18px; left: 22px; z-index: 4;
+      font-family: var(--font-mono, ui-monospace, monospace);
+      font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55); pointer-events: none;
+    }
+    .constellation-status .pulse {
+      display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+      background: #7c5cff; margin-right: 8px; vertical-align: middle;
+      box-shadow: 0 0 0 0 rgba(124,92,255,0.7);
+      animation: constellation-pulse 2.4s infinite;
+    }
+    @keyframes constellation-pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(124,92,255,0.7); }
+      70%  { box-shadow: 0 0 0 10px rgba(124,92,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(124,92,255,0); }
+    }
+    .constellation-meta {
+      position: absolute; top: 18px; right: 22px; z-index: 4;
+      font-family: var(--font-mono, ui-monospace, monospace);
+      font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.45); text-align: right; pointer-events: none;
+      line-height: 1.6;
+    }
+    .constellation-legend {
+      position: absolute; bottom: 18px; left: 22px; right: 22px; z-index: 4;
+      display: flex; flex-wrap: wrap; gap: 8px; pointer-events: none;
+    }
+    .constellation-legend .chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 5px 12px; border-radius: 999px;
+      font-size: 11px; font-weight: 500; letter-spacing: .02em;
+      background: rgba(10,11,24,0.78); border: 1px solid;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .constellation-legend .chip .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      box-shadow: 0 0 8px currentColor;
+    }
+    .graph-tip {
+      background: rgba(10,11,22,0.96);
+      border: 1px solid;
+      border-radius: 12px; padding: 12px 14px; max-width: 340px;
+      color: #fff;
+      font-family: var(--font-sans, system-ui, sans-serif);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.55), 0 0 24px rgba(124,92,255,0.18);
+      backdrop-filter: blur(8px);
+    }
+    .graph-tip .t-title { font-weight: 600; font-size: 14px; margin-bottom: 6px; }
+    .graph-tip .t-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 7px; }
+    .graph-tip .t-chips .c {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 2px 7px; border-radius: 999px;
+      font-size: 10px; font-weight: 500;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.85);
+      font-family: var(--font-mono, monospace); letter-spacing: .02em;
+    }
+    .graph-tip .t-chips .c.star { color: #facc15; border-color: rgba(250,204,21,0.3); background: rgba(250,204,21,0.08); }
+    .graph-tip .t-desc { font-size: 12px; line-height: 1.5; opacity: 0.88; }
+    .graph-tip .t-hint { font-size: 10px; opacity: 0.5; margin-top: 9px; letter-spacing: .04em; text-transform: uppercase; }
+    .graph-tip .t-meta { font-size: 10px; opacity: 0.55; letter-spacing: .1em; text-transform: uppercase; font-family: var(--font-mono, monospace); }
+    #constellation-graph canvas { outline: none; display: block; }
+  </style>
+
   <link href="index.xml" rel="alternate" type="application/rss+xml" title="Jay Guwalani" />
 
-  <meta property="og:title" content="Jay Guwalani — Senior AI / ML Engineer" />
+  <meta property="og:title" content="Jay Guwalani - Senior AI / ML Engineer" />
   <meta property="og:description" content="GenAI · LLM Infrastructure · MLOps" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://jayds22.github.io/Portfolio/" />
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Jay Guwalani — Senior AI / ML Engineer"/>
+  <meta name="twitter:title" content="Jay Guwalani - Senior AI / ML Engineer"/>
 </head>
 
 <body>
@@ -118,7 +212,7 @@
       <div class="portrait-frame">
         <div class="portrait-img-wrap">
           <img src="images/Jay-Headshot-Professional.png"
-               alt="Jay Guwalani — professional headshot">
+               alt="Jay Guwalani - professional headshot">
         </div>
         <div class="portrait-badge portrait-badge--top">
           <svg><use href="#i-spark"/></svg>
@@ -133,14 +227,35 @@
   </div>
 </section>
 
+<!-- Project Constellation: lazy-loaded 3D knowledge graph -->
+<section class="section" id="constellation-section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker"><svg width="14" height="14"><use href="#i-globe"/></svg> Project constellation</div>
+        <h2 class="section-title">Every project, <span class="grad">in 3D</span>.</h2>
+        <p class="section-sub">Public GitHub repos grouped by domain. Drag to rotate, scroll to zoom, click any node to open the repo.</p>
+      </div>
+      <a class="btn btn-secondary" href="explore/">Open full screen <svg><use href="#i-arrow"/></svg></a>
+    </div>
+
+    <div class="constellation" id="constellation-stage">
+      <div class="constellation-status" id="constellation-status"><span class="pulse"></span>Scroll to activate</div>
+      <div class="constellation-meta" id="constellation-meta"></div>
+      <div class="constellation-legend" id="constellation-legend"></div>
+      <div id="constellation-graph"></div>
+    </div>
+  </div>
+</section>
+
 <!-- Featured Projects -->
 <section class="section">
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="section-kicker"><svg width="14" height="14"><use href="#i-spark"/></svg> Featured work</div>
-        <h2 class="section-title">Recent projects</h2>
-        <p class="section-sub">Production systems built end-to-end — from data pipelines to deployed APIs and dashboards.</p>
+        <div class="section-kicker"><svg width="14" height="14"><use href="#i-spark"/></svg> Recent highlights</div>
+        <h2 class="section-title">Selected case studies</h2>
+        <p class="section-sub">Production systems built end-to-end, from data pipelines to deployed APIs and dashboards.</p>
       </div>
       <a class="btn btn-secondary" href="post/">All projects <svg><use href="#i-arrow"/></svg></a>
     </div>
@@ -282,6 +397,196 @@
   // Reveal-on-scroll
   const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('in')), { threshold: 0.1 });
   document.querySelectorAll('.featured-card, .more-item, .hero-stat').forEach(el => { el.classList.add('reveal'); io.observe(el); });
+</script>
+
+<script>
+// Project Constellation: lazy-load three.js + 3d-force-graph + data only when the
+// section enters the viewport, so the home-page hero paints fast on slow connections.
+(function () {
+  const stage    = document.getElementById('constellation-stage');
+  const statusEl = document.getElementById('constellation-status');
+  const metaEl   = document.getElementById('constellation-meta');
+  const legendEl = document.getElementById('constellation-legend');
+  const mount    = document.getElementById('constellation-graph');
+  if (!stage || !mount) return;
+
+  const escapeHtml = s => String(s || '')
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+
+  const setStatus = (html, danger) => {
+    statusEl.innerHTML = '<span class="pulse"' + (danger ? ' style="background:#ef4444;"' : '') + '></span>' + html;
+  };
+
+  const loadScript = src => new Promise((res, rej) => {
+    const s = document.createElement('script');
+    s.src = src; s.async = true;
+    s.onload = res;
+    s.onerror = () => rej(new Error('Failed to load ' + src));
+    document.head.appendChild(s);
+  });
+
+  let booted = false;
+  const boot = () => {
+    if (booted) return;
+    booted = true;
+    setStatus('Loading three.js');
+
+    Promise.resolve()
+      .then(() => loadScript('https://unpkg.com/three@0.160.0/build/three.min.js'))
+      .then(() => loadScript('https://unpkg.com/three-spritetext@1.8.2/dist/three-spritetext.min.js'))
+      .then(() => loadScript('https://unpkg.com/3d-force-graph@1.73.4/dist/3d-force-graph.min.js'))
+      .then(() => fetch('data/github.json', { cache: 'no-cache' }))
+      .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(buildGraph)
+      .catch(e => { console.error(e); setStatus('Could not load: ' + e.message, true); });
+  };
+
+  const buildGraph = (data) => {
+    if (typeof ForceGraph3D !== 'function') {
+      setStatus('3D library unavailable', true);
+      return;
+    }
+    const repos   = data.nodes.filter(n => n.type === 'repo').length;
+    const domains = data.nodes.filter(n => n.type === 'domain');
+    setStatus(repos + ' projects across ' + domains.length + ' domains');
+
+    const synced = data.generated_at ? new Date(data.generated_at) : null;
+    if (synced) {
+      metaEl.innerHTML = 'last sync<br><span style="color:rgba(255,255,255,0.7);">' + synced.toISOString().slice(0,10) + '</span>';
+    }
+
+    domains.forEach(d => {
+      const chip = document.createElement('span');
+      chip.className = 'chip';
+      chip.style.borderColor = d.color;
+      chip.style.color = d.color;
+      const dot = document.createElement('span');
+      dot.className = 'dot'; dot.style.background = d.color;
+      chip.appendChild(dot);
+      chip.appendChild(document.createTextNode(d.name));
+      legendEl.appendChild(chip);
+    });
+
+    const nodeById = new Map(data.nodes.map(n => [n.id, n]));
+
+    const Graph = ForceGraph3D()(mount)
+      .graphData(data)
+      .backgroundColor('rgba(0,0,0,0)')
+      .showNavInfo(false)
+      .nodeRelSize(5)
+      .nodeVal(n => n.val)
+      .nodeColor(n => n.color)
+      .nodeOpacity(0.95)
+      .nodeResolution(20)
+      .linkColor(l => {
+        const src = typeof l.source === 'object' ? l.source : nodeById.get(l.source);
+        return ((src && src.color) || '#7c5cff') + '55';
+      })
+      .linkOpacity(0.55)
+      .linkWidth(0.7)
+      .linkDirectionalParticles(2)
+      .linkDirectionalParticleWidth(1.6)
+      .linkDirectionalParticleSpeed(0.004)
+      .linkDirectionalParticleColor(l => {
+        const src = typeof l.source === 'object' ? l.source : nodeById.get(l.source);
+        return (src && src.color) || '#7c5cff';
+      })
+      .nodeLabel(n => {
+        if (n.type === 'domain') {
+          const count = data.links.filter(l => {
+            const t = typeof l.target === 'object' ? l.target.id : l.target;
+            return t === n.id;
+          }).length;
+          return '<div class="graph-tip" style="border-color:' + n.color + ';">'
+            + '<div class="t-title" style="color:' + n.color + ';">' + escapeHtml(n.name) + '</div>'
+            + '<div class="t-chips"><span class="c">' + count + ' projects</span></div>'
+            + '<div class="t-meta">domain hub</div>'
+            + '</div>';
+        }
+        const chips = [];
+        if (n.language) chips.push('<span class="c">' + escapeHtml(n.language) + '</span>');
+        if (n.stars)    chips.push('<span class="c star">★ ' + n.stars + '</span>');
+        return '<div class="graph-tip" style="border-color:' + n.color + ';">'
+          + '<div class="t-title" style="color:' + n.color + ';">' + escapeHtml(n.name) + '</div>'
+          + (chips.length ? '<div class="t-chips">' + chips.join('') + '</div>' : '')
+          + (n.description ? '<div class="t-desc">' + escapeHtml(n.description) + '</div>' : '')
+          + '<div class="t-hint">click to open on GitHub</div>'
+          + '</div>';
+      })
+      .onNodeClick(n => {
+        if (n.type === 'repo' && n.url) {
+          window.open(n.url, '_blank', 'noopener,noreferrer');
+        } else {
+          const distance = 200;
+          const distRatio = 1 + distance / Math.hypot(n.x || 1, n.y || 1, n.z || 1);
+          Graph.cameraPosition(
+            { x: (n.x || 0) * distRatio, y: (n.y || 0) * distRatio, z: (n.z || 0) * distRatio },
+            n, 1500
+          );
+        }
+      });
+
+    if (typeof SpriteText === 'function') {
+      Graph.nodeThreeObjectExtend(true).nodeThreeObject(n => {
+        if (n.type !== 'domain') return null;
+        const sprite = new SpriteText(n.name);
+        sprite.color = n.color;
+        sprite.textHeight = 5.5;
+        sprite.fontWeight = '700';
+        sprite.fontFace = 'Inter, system-ui, sans-serif';
+        sprite.backgroundColor = 'rgba(6,7,15,0.85)';
+        sprite.padding = 3;
+        sprite.borderRadius = 5;
+        sprite.borderWidth = 0.6;
+        sprite.borderColor = n.color;
+        sprite.position.y = 14;
+        return sprite;
+      });
+    }
+
+    Graph.d3Force('link').distance(l => {
+      const t = typeof l.target === 'object' ? l.target : nodeById.get(l.target);
+      return t && t.type === 'domain' ? 65 : 95;
+    });
+    Graph.d3Force('charge').strength(-180);
+
+    const controls = Graph.controls();
+    if (controls) {
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 0.45;
+      let idleTimer = null;
+      const pause = () => {
+        controls.autoRotate = false;
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(() => { controls.autoRotate = true; }, 6000);
+      };
+      const canvas = mount.querySelector('canvas');
+      if (canvas) {
+        ['pointerdown', 'wheel', 'touchstart'].forEach(ev =>
+          canvas.addEventListener(ev, pause, { passive: true })
+        );
+      }
+    }
+
+    const fit = () => Graph.width(stage.clientWidth).height(stage.clientHeight);
+    fit();
+    window.addEventListener('resize', fit);
+    setTimeout(() => Graph.zoomToFit(900, 90), 1200);
+  };
+
+  // Lazy boot when the constellation enters the viewport
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { obs.disconnect(); boot(); }
+      });
+    }, { rootMargin: '200px 0px' });
+    obs.observe(stage);
+  } else {
+    boot();
+  }
+})();
 </script>
 
 </body>
