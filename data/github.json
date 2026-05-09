@@ -1,0 +1,1382 @@
+{
+  "generated_at": "2026-05-09T05:00:19+00:00",
+  "user": "JayDS22",
+  "domain_count": 9,
+  "repo_count": 77,
+  "nodes": [
+    {
+      "id": "domain:computer-vision",
+      "name": "Computer Vision",
+      "type": "domain",
+      "color": "#7c5cff",
+      "val": 50
+    },
+    {
+      "id": "domain:llm-agents",
+      "name": "LLM & Agents",
+      "type": "domain",
+      "color": "#22d3ee",
+      "val": 50
+    },
+    {
+      "id": "domain:nlp-speech",
+      "name": "NLP & Speech",
+      "type": "domain",
+      "color": "#f472b6",
+      "val": 50
+    },
+    {
+      "id": "domain:stats-bayesian",
+      "name": "Statistics & Bayesian",
+      "type": "domain",
+      "color": "#facc15",
+      "val": 50
+    },
+    {
+      "id": "domain:quant-finance",
+      "name": "Quant & Finance",
+      "type": "domain",
+      "color": "#10b981",
+      "val": 50
+    },
+    {
+      "id": "domain:time-series",
+      "name": "Time Series",
+      "type": "domain",
+      "color": "#fb923c",
+      "val": 50
+    },
+    {
+      "id": "domain:rl-robotics",
+      "name": "RL & Robotics",
+      "type": "domain",
+      "color": "#ef4444",
+      "val": 50
+    },
+    {
+      "id": "domain:mlops-infra",
+      "name": "MLOps & Data Infra",
+      "type": "domain",
+      "color": "#a855f7",
+      "val": 50
+    },
+    {
+      "id": "domain:ml-general",
+      "name": "ML & Classification",
+      "type": "domain",
+      "color": "#94a3b8",
+      "val": 50
+    },
+    {
+      "id": "repo:AIOps-Roadmap",
+      "name": "AIOps Roadmap",
+      "type": "repo",
+      "domain": "ml-general",
+      "color": "#94a3b8",
+      "val": 23,
+      "stars": 5,
+      "language": "",
+      "description": "For Experienced Engineers (with Background in CS/DS/AI/IT)",
+      "url": "https://github.com/JayDS22/AIOps-Roadmap",
+      "updated_at": "2026-04-13T17:48:01Z"
+    },
+    {
+      "id": "repo:ConstellationAI-Multi-Agentic-RAG",
+      "name": "ConstellationAI Multi Agentic RAG",
+      "type": "repo",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
+      "val": 11,
+      "stars": 2,
+      "language": "Python",
+      "description": "Production-ready multi-agent RAG system with LangGraph orchestration, real-time token optimization, GPU monitoring, semantic caching, and comprehensive performance analytics. Built for scale.",
+      "url": "https://github.com/JayDS22/ConstellationAI-Multi-Agentic-RAG",
+      "updated_at": "2025-12-12T10:01:45Z"
+    },
+    {
+      "id": "repo:Real-Time-Medical-Image-Enhancement-System",
+      "name": "Real Time Medical Image Enhancement System",
+      "type": "repo",
+      "domain": "computer-vision",
+      "color": "#7c5cff",
+      "val": 11,
+      "stars": 2,
+      "language": "Python",
+      "description": "State-of-the-art medical image enhancement system using Denoising Diffusion Probabilistic Models (DDPM) with 3D U-Net architecture that achieves 35% SNR improvement and processes 512\u00b3 volumetric CT/MRI scans in under 2 seconds with 92% radiologist approval.",
+      "url": "https://github.com/JayDS22/Real-Time-Medical-Image-Enhancement-System",
+      "updated_at": "2026-01-24T03:46:22Z"
+    },
+    {
+      "id": "repo:Real-Time-Recommendation-Engine",
+      "name": "Real Time Recommendation Engine",
+      "type": "repo",
+      "domain": "mlops-infra",
+      "color": "#a855f7",
+      "val": 11,
+      "stars": 2,
+      "language": "Python",
+      "description": "Real-Time Recommendation Engine with sub-100ms latency using PySpark, Delta Lake, MLflow & Kafka. Achieves NDCG@10: 0.78, MAP@10: 0.73, Hit Rate@20: 0.91 through advanced matrix factorization (SVD/NMF).",
+      "url": "https://github.com/JayDS22/Real-Time-Recommendation-Engine",
+      "updated_at": "2025-11-27T08:13:25Z"
+    },
+    {
+      "id": "repo:Transformer-based-Trajectory-Forecasting-system",
+      "name": "Transformer based Trajectory Forecasting system",
+      "type": "repo",
+      "domain": "computer-vision",
+      "color": "#7c5cff",
+      "val": 11,
+      "stars": 2,
+      "language": "Python",
+      "description": "Transformer + Diffusion (DDPM) architecture for multi-agent pedestrian trajectory forecasting with temporal self-attention, social cross-attention, and DDIM sampling - evaluated on ETH/UCY benchmark with ablation study",
+      "url": "https://github.com/JayDS22/Transformer-based-Trajectory-Forecasting-system",
+      "updated_at": "2026-05-07T00:53:24Z"
+    },
+    {
+      "id": "repo:Vehicle-Durability-Forecasting-and-Predictive-Maintanence-System",
+      "name": "Vehicle Durability Forecasting and Predictive Maintanence System",
+      "type": "repo",
+      "domain": "stats-bayesian",
+      "color": "#facc15",
+      "val": 11,
+      "stars": 2,
+      "language": "",
+      "description": "ML-powered predictive maintenance system achieving $122.9M+ cost savings through vehicle durability forecasting (MAPE: 2.8%), customer complaint analysis (F1: 0.91), and survival modeling (C-index: 0.78) with automated SQL pipelines and Power BI reporting.",
+      "url": "https://github.com/JayDS22/Vehicle-Durability-Forecasting-and-Predictive-Maintanence-System",
+      "updated_at": "2026-04-02T02:50:42Z"
+    },
+    {
+      "id": "repo:Blog_Generator",
+      "name": "Blog Generator",
+      "type": "repo",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
+      "val": 7,
+      "stars": 1,
+      "language": "PowerShell",
+      "description": "Used LLama 3.1 70B and Orchestrated the entire end to end work flow on AWS Cloud using AWS Bedrock",
+      "url": "https://github.com/JayDS22/Blog_Generator",
+      "updated_at": "2025-04-29T02:45:57Z"
+    },
+    {
+      "id": "repo:ChatGPT-Code-Review-GPT-Action",
+      "name": "ChatGPT Code Review GPT Action",
+      "type": "repo",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
+      "val": 7,
+      "stars": 1,
+      "language": "Python",
+      "description": "CodeLens: Production-grade FastAPI + React GPT Action delivering AI-powered code reviews via GitHub API integration, GPT-4o-mini structured analysis with token-aware chunking, Redis-backed caching, SSE streaming, PostgreSQL persistence, Prometheus observability, and a complete OpenAPI 3.1 schema for ChatGPT GPT Store deployment.",
+      "url": "https://github.com/JayDS22/ChatGPT-Code-Review-GPT-Action",
+      "updated_at": "2026-04-02T02:50:11Z"
+    },
+    {
+      "id": "repo:Multi-GPU-Distributed-Training-Framework",
+      "name": "Multi GPU Distributed Training Framework",
+      "type": "repo",
+      "domain": "rl-robotics",
+      "color": "#ef4444",
+      "val": 7,
+      "stars": 1,
+      "language": "Python",
+      "description": "Production-ready multi-GPU distributed training framework with DDP/FSDP, gradient compression, and 89% scaling efficiency at 16 GPUs. Includes TensorBoard monitoring, auto-checkpointing, and Kubernetes deployment.",
+      "url": "https://github.com/JayDS22/Multi-GPU-Distributed-Training-Framework",
+      "updated_at": "2026-02-13T18:52:51Z"
+    },
+    {
+      "id": "repo:Multi-Robot-Coordination-Framework",
+      "name": "Multi Robot Coordination Framework",
+      "type": "repo",
+      "domain": "rl-robotics",
+      "color": "#ef4444",
+      "val": 7,
+      "stars": 1,
+      "language": "Python",
+      "description": "Multi-Robot Coordination Framework with distributed reinforcement learning achieving 92% convergence, <50ms allocation, and 99.9% availability Scalable autonomous robot fleet coordination using Q-learning, auction algorithms, and fault-tolerant ROS2 architecture supporting 50+ agents",
+      "url": "https://github.com/JayDS22/Multi-Robot-Coordination-Framework",
+      "updated_at": "2026-04-01T15:54:15Z"
+    },
+    {
+      "id": "repo:NeMo-Speech-Alignment-and-Text-Normalization",
+      "name": "NeMo Speech Alignment and Text Normalization",
+      "type": "repo",
+      "domain": "nlp-speech",
+      "color": "#f472b6",
+      "val": 7,
+      "stars": 1,
+      "language": "Python",
+      "description": "Production-grade speech data preparation pipeline using NVIDIA NeMo for text normalization (numbers, currency, dates, abbreviations), CTC-based forced alignment with word-level timestamps, and automated quality validation (WER/CER/confidence), featuring an interactive Streamlit demo.",
+      "url": "https://github.com/JayDS22/NeMo-Speech-Alignment-and-Text-Normalization",
+      "updated_at": "2026-04-02T02:50:19Z"
+    },
+    {
+      "id": "repo:Prediction-market-calibration-analysis",
+      "name": "Prediction market calibration analysis",
+      "type": "repo",
+      "domain": "stats-bayesian",
+      "color": "#facc15",
+      "val": 7,
+      "stars": 1,
+      "language": "Python",
+      "description": "Quantitative calibration analysis of binary event contracts in prediction markets, examining favorite-longshot bias, pricing dynamics, and forecasting accuracy with statistical validation and interactive visualizations.",
+      "url": "https://github.com/JayDS22/Prediction-market-calibration-analysis",
+      "updated_at": "2026-04-08T16:01:35Z"
+    },
+    {
+      "id": "repo:Real-Time-Multi-Target-Detection-and-Tracking-Pipeline",
+      "name": "Real Time Multi Target Detection and Tracking Pipeline",
+      "type": "repo",
+      "domain": "computer-vision",
+      "color": "#7c5cff",
+      "val": 7,
+      "stars": 1,
+      "language": "C++",
+      "description": "Real-time multi-target detection & tracking in C++17. Python prototype \u2192 optimized native implementation. Zero external deps. Includes benchmarks and 17 unit tests.",
+      "url": "https://github.com/JayDS22/Real-Time-Multi-Target-Detection-and-Tracking-Pipeline",
+      "updated_at": "2026-04-02T02:50:25Z"
+    },
+    {
+      "id": "repo:Risk-Analytics-Fraud-Detection",
+      "name": "Risk Analytics Fraud Detection",
+      "type": "repo",
+      "domain": "quant-finance",
+      "color": "#10b981",
+      "val": 7,
+      "stars": 1,
+      "language": "Jupyter Notebook",
+      "description": "Built an End to End Data Science project to analyze the risk of Fraud transactions and create a predictive model to prevent it.",
+      "url": "https://github.com/JayDS22/Risk-Analytics-Fraud-Detection",
+      "updated_at": "2023-09-25T08:31:45Z"
+    },
+    {
+      "id": "repo:Search-Relevance-and-Ranking-System",
+      "name": "Search Relevance and Ranking System",
+      "type": "repo",
+      "domain": "stats-bayesian",
+      "color": "#facc15",
+      "val": 7,
+      "stars": 1,
+      "language": "Python",
+      "description": "Advanced information retrieval system with machine learning-based ranking (LambdaMART) achieving 91.4% accuracy across 500K+ queries, complete with statistical A/B testing and explainability analysis.",
+      "url": "https://github.com/JayDS22/Search-Relevance-and-Ranking-System",
+      "updated_at": "2025-10-13T11:49:52Z"
+    },
+    {
+      "id": "repo:Space-Image-Detection-pipeline",
+      "name": "Space Image Detection pipeline",
+      "type": "repo",
+      "domain": "computer-vision",
+      "color": "#7c5cff",
+      "val": 7,
+      "stars": 1,
+      "language": "C++",
+      "description": "Point-source and streak detection pipeline for space surveillance imagery \u2014 C++ (OpenCV) with Python prototypes, sub-pixel centroid refinement, and Hough-based streak clustering",
+      "url": "https://github.com/JayDS22/Space-Image-Detection-pipeline",
+      "updated_at": "2026-04-02T02:50:25Z"
+    },
+    {
+      "id": "repo:5g-Service-and-Network-Orchestrator",
+      "name": "5g Service and Network Orchestrator",
+      "type": "repo",
+      "domain": "mlops-infra",
+      "color": "#a855f7",
+      "val": 3,
+      "stars": 0,
+      "language": "Shell",
+      "description": "Intelligent 5G network platform deployed on Kubernetes with AI-powered prediction to dynamically optimize network slicing and enhance user Quality of Experience in real-time.",
+      "url": "https://github.com/JayDS22/5g-Service-and-Network-Orchestrator",
+      "updated_at": "2026-05-06T22:01:40Z"
+    },
+    {
+      "id": "repo:Adult_Census_Income",
+      "name": "Adult Census Income",
+      "type": "repo",
+      "domain": "ml-general",
+      "color": "#94a3b8",
+      "val": 3,
+      "stars": 0,
+      "language": "Jupyter Notebook",
+      "description": "",
+      "url": "https://github.com/JayDS22/Adult_Census_Income",
+      "updated_at": "2023-09-27T00:23:57Z"
+    },
+    {
+      "id": "repo:Advertising-Campaign-Analytics-Real-Time-Bidding-Platform",
+      "name": "Advertising Campaign Analytics Real Time Bidding Platform",
+      "type": "repo",
+      "domain": "stats-bayesian",
+      "color": "#facc15",
+      "val": 3,
+      "stars": 0,
+      "language": "",
+      "description": "Real-time advertising analytics platform with bidding engine (<100ms), streaming pipelines (Kafka/Spark), data warehouse (Redshift), A/B testing framework (23% lift), and advertiser dashboards processing 1M+ events/sec with 99.95% uptime.",
+      "url": "https://github.com/JayDS22/Advertising-Campaign-Analytics-Real-Time-Bidding-Platform",
+      "updated_at": "2025-11-06T17:09:46Z"
+    },
+    {
+      "id": "repo:apap-mcp-poc",
+      "name": "apap mcp poc",
+      "type": "repo",
+      "domain": "ml-general",
+      "color": "#94a3b8",
+      "val": 3,
+      "stars": 0,
+      "language": "TypeScript",
+      "description": "POC: Shared service layer refactor for APAP/MCP server",
+      "url": "https://github.com/JayDS22/apap-mcp-poc",
+      "updated_at": "2026-04-22T16:58:46Z"
+    },
+    {
+      "id": "repo:Architecture-Building-Concepts",
+      "name": "Architecture Building Concepts",
+      "type": "repo",
+      "domain": "mlops-infra",
+      "color": "#a855f7",
+      "val": 3,
+      "stars": 0,
+      "language": "",
+      "description": "This repository consists of the concepts, theories, resources related to DevOps, Engineering, MLOps, and Architecture Building",
+      "url": "https://github.com/JayDS22/Architecture-Building-Concepts",
+      "updated_at": "2023-11-08T03:51:39Z"
+    },
+    {
+      "id": "repo:Autogen-Retrieve-Chat-System",
+      "name": "Autogen Retrieve Chat System",
+      "type": "repo",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "Production-ready RAG system using AutoGen's multi-agent framework for intelligent document analysis, automated code generation, and complex question answering with dynamic context management.",
+      "url": "https://github.com/JayDS22/Autogen-Retrieve-Chat-System",
+      "updated_at": "2025-09-06T13:11:03Z"
+    },
+    {
+      "id": "repo:Automated-Infrastructure-Provisioning-System",
+      "name": "Automated Infrastructure Provisioning System",
+      "type": "repo",
+      "domain": "mlops-infra",
+      "color": "#a855f7",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "Enterprise IaC solution for automated VM provisioning using Terraform, Ansible, Chef, and Puppet with VMware vSphere/NSX-T integration, delivering 85% faster deployments and 95% compliance.",
+      "url": "https://github.com/JayDS22/Automated-Infrastructure-Provisioning-System",
+      "updated_at": "2026-04-29T18:04:09Z"
+    },
+    {
+      "id": "repo:Azure-Business-Intelligence-Modernization",
+      "name": "Azure Business Intelligence Modernization",
+      "type": "repo",
+      "domain": "mlops-infra",
+      "color": "#a855f7",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "Azure Business Intelligence Modernization Platform - Complete enterprise-grade solution with Data Factory pipelines, Purview governance, and Power BI analytics delivering self-service capabilities for 300+ users.",
+      "url": "https://github.com/JayDS22/Azure-Business-Intelligence-Modernization",
+      "updated_at": "2025-09-08T18:32:08Z"
+    },
+    {
+      "id": "repo:Bank_Customer_Churn_Model",
+      "name": "Bank Customer Churn Model",
+      "type": "repo",
+      "domain": "ml-general",
+      "color": "#94a3b8",
+      "val": 3,
+      "stars": 0,
+      "language": "Jupyter Notebook",
+      "description": "This repository consists of all the files related to Bank Customer Churn Model",
+      "url": "https://github.com/JayDS22/Bank_Customer_Churn_Model",
+      "updated_at": "2026-02-20T15:55:13Z"
+    },
+    {
+      "id": "repo:Blockchain-Transaction-Analytics-Pipeline",
+      "name": "Blockchain Transaction Analytics Pipeline",
+      "type": "repo",
+      "domain": "quant-finance",
+      "color": "#10b981",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "Production-grade blockchain analytics pipeline with real-time Ethereum/Bitcoin ingestion via Kafka, ML-powered wallet clustering and anomaly detection (scikit-learn/XGBoost), FastAPI REST APIs, and full Docker infrastructure (PostgreSQL, Redis, Prometheus/Grafana).",
+      "url": "https://github.com/JayDS22/Blockchain-Transaction-Analytics-Pipeline",
+      "updated_at": "2026-01-25T04:00:20Z"
+    },
+    {
+      "id": "repo:Breast-Cancer-Wisconsin-Diagnostic",
+      "name": "Breast Cancer Wisconsin Diagnostic",
+      "type": "repo",
+      "domain": "computer-vision",
+      "color": "#7c5cff",
+      "val": 3,
+      "stars": 0,
+      "language": "Jupyter Notebook",
+      "description": "Build an End to End Data Science project to Detect Breast Cancer using UCI dataset",
+      "url": "https://github.com/JayDS22/Breast-Cancer-Wisconsin-Diagnostic",
+      "updated_at": "2021-12-09T20:44:19Z"
+    },
+    {
+      "id": "repo:Bridgestone-Vehicle-Safety-Computer-Vision",
+      "name": "Bridgestone Vehicle Safety Computer Vision",
+      "type": "repo",
+      "domain": "computer-vision",
+      "color": "#7c5cff",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "Real-time vehicle safety system using YOLOv7 object detection (mAP@0.5: 64.53%) and computer vision pipeline (AUC: 0.91) for crash prediction across 300K+ vehicles, achieving <150ms inference with 1000 predictions/sec throughput.",
+      "url": "https://github.com/JayDS22/Bridgestone-Vehicle-Safety-Computer-Vision",
+      "updated_at": "2025-09-09T03:16:11Z"
+    },
+    {
+      "id": "repo:Churn-Prediction",
+      "name": "Churn Prediction",
+      "type": "repo",
+      "domain": "ml-general",
+      "color": "#94a3b8",
+      "val": 3,
+      "stars": 0,
+      "language": "Jupyter Notebook",
+      "description": "Build an End-to-End Data Science Project to predict customer churn for the Telecom industry and provide prescriptive countermeasures.",
+      "url": "https://github.com/JayDS22/Churn-Prediction",
+      "updated_at": "2022-04-29T02:52:26Z"
+    },
+    {
+      "id": "repo:Coursera-ML-Assignments",
+      "name": "Coursera ML Assignments",
+      "type": "repo",
+      "domain": "ml-general",
+      "color": "#94a3b8",
+      "val": 3,
+      "stars": 0,
+      "language": "MATLAB",
+      "description": "This repository consists of all the solutions related to Coursera ML Programming Assignments",
+      "url": "https://github.com/JayDS22/Coursera-ML-Assignments",
+      "updated_at": "2021-12-17T16:04:19Z"
+    },
+    {
+      "id": "repo:Credit-Risk-PD-LGD-EAD-Modeling-Platform",
+      "name": "Credit Risk PD LGD EAD Modeling Platform",
+      "type": "repo",
+      "domain": "stats-bayesian",
+      "color": "#facc15",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "Comprehensive credit risk modeling platform implementing Probability of Default (PD), Loss Given Default (LGD), and Exposure at Default (EAD) models for Basel compliance.",
+      "url": "https://github.com/JayDS22/Credit-Risk-PD-LGD-EAD-Modeling-Platform",
+      "updated_at": "2026-05-02T02:14:22Z"
+    },
+    {
+      "id": "repo:data604",
+      "name": "data604",
+      "type": "repo",
+      "domain": "ml-general",
+      "color": "#94a3b8",
+      "val": 3,
+      "stars": 0,
+      "language": "Jupyter Notebook",
+      "description": "",
+      "url": "https://github.com/JayDS22/data604",
+      "updated_at": "2026-05-04T14:46:55Z"
+    },
+    {
+      "id": "repo:DBT_Shipping_project",
+      "name": "DBT Shipping project",
+      "type": "repo",
+      "domain": "mlops-infra",
+      "color": "#a855f7",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "Utilizing Snowflake(DWH) - DBT - Airflow",
+      "url": "https://github.com/JayDS22/DBT_Shipping_project",
+      "updated_at": "2024-11-27T02:16:49Z"
+    },
+    {
+      "id": "repo:Deep-Learning-Recommendation-System-for-Financial-Services",
+      "name": "Deep Learning Recommendation System for Financial Services",
+      "type": "repo",
+      "domain": "quant-finance",
+      "color": "#10b981",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "Deep learning-based recommendation engine for financial products that personalizes investment suggestions and banking services using customer behavior analysis.",
+      "url": "https://github.com/JayDS22/Deep-Learning-Recommendation-System-for-Financial-Services",
+      "updated_at": "2026-05-02T15:39:18Z"
+    },
+    {
+      "id": "repo:Digital-Twin-Transportation-Infrastructure-Platform",
+      "name": "Digital Twin Transportation Infrastructure Platform",
+      "type": "repo",
+      "domain": "computer-vision",
+      "color": "#7c5cff",
+      "val": 3,
+      "stars": 0,
+      "language": "TypeScript",
+      "description": "Interactive 3D visualization platform processing LiDAR point clouds from 100+ miles of infrastructure",
+      "url": "https://github.com/JayDS22/Digital-Twin-Transportation-Infrastructure-Platform",
+      "updated_at": "2025-10-01T14:15:15Z"
+    },
+    {
+      "id": "repo:Distributed-Big-Data-Query-Platform-on-Kubernetes",
+      "name": "Distributed Big Data Query Platform on Kubernetes",
+      "type": "repo",
+      "domain": "mlops-infra",
+      "color": "#a855f7",
+      "val": 3,
+      "stars": 0,
+      "language": "Go",
+      "description": "Production-grade Kubernetes platform for deploying and managing Trino/Spark clusters with disaggregated compute-storage architecture, featuring a Go CLI tool, Python benchmarking suite (TPC-H/TPC-DS), custom operators (CRDs), HPA autoscaling, and complete GitHub Actions CI/CD pipeline.",
+      "url": "https://github.com/JayDS22/Distributed-Big-Data-Query-Platform-on-Kubernetes",
+      "updated_at": "2026-03-29T16:43:08Z"
+    },
+    {
+      "id": "repo:Driver-Behavior-Analytics-Crash-Prediction-System",
+      "name": "Driver Behavior Analytics Crash Prediction System",
+      "type": "repo",
+      "domain": "ml-general",
+      "color": "#94a3b8",
+      "val": 3,
+      "stars": 0,
+      "language": "",
+      "description": "ML-powered analytics platform that predicts crash risk by analyzing driver behavior patterns from telematics data with real-time risk scoring and alerting.",
+      "url": "https://github.com/JayDS22/Driver-Behavior-Analytics-Crash-Prediction-System",
+      "updated_at": "2025-10-15T15:13:00Z"
+    },
+    {
+      "id": "repo:Driver-Behavior-Analytics-System",
+      "name": "Driver Behavior Analytics System",
+      "type": "repo",
+      "domain": "stats-bayesian",
+      "color": "#facc15",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "\ud83d\ude99 Comprehensive driver risk analytics using Cox proportional hazards (C-index: 0.79) and Bayesian hierarchical models (91.4% accuracy) \u26a1 Production-ready system with real-time scoring for 300K+ drivers, SHAP explainability, and full Docker/Kubernetes deployment stack",
+      "url": "https://github.com/JayDS22/Driver-Behavior-Analytics-System",
+      "updated_at": "2025-09-28T14:42:42Z"
+    },
+    {
+      "id": "repo:E-Commerce-Shipping",
+      "name": "E Commerce Shipping",
+      "type": "repo",
+      "domain": "ml-general",
+      "color": "#94a3b8",
+      "val": 3,
+      "stars": 0,
+      "language": "Jupyter Notebook",
+      "description": "This is an End-to-End Data Science Project built in order to help an International E-commerce Company to predict whether their product will be delivered on the committed Delivery Time or not",
+      "url": "https://github.com/JayDS22/E-Commerce-Shipping",
+      "updated_at": "2022-04-29T02:52:24Z"
+    },
+    {
+      "id": "repo:Enterprise-Data-Warehouse",
+      "name": "Enterprise Data Warehouse",
+      "type": "repo",
+      "domain": "mlops-infra",
+      "color": "#a855f7",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "Enterprise Data Warehouse & ML Platform - High-performance platform processing 24B records with <60s latency and 100K records/sec throughput, featuring 32 fact tables, 128 dimensions, and automated ML pipelines achieving 91.2% accuracy. Real-time ML inference serving 300K+ predictions/hour with ensemble models.",
+      "url": "https://github.com/JayDS22/Enterprise-Data-Warehouse",
+      "updated_at": "2025-09-09T01:48:56Z"
+    },
+    {
+      "id": "repo:ETL-Pipeline-Airflow",
+      "name": "ETL Pipeline Airflow",
+      "type": "repo",
+      "domain": "mlops-infra",
+      "color": "#a855f7",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "This repository contains ETL Pipeline Projects built using various applications.",
+      "url": "https://github.com/JayDS22/ETL-Pipeline-Airflow",
+      "updated_at": "2024-10-19T18:24:24Z"
+    },
+    {
+      "id": "repo:Face-Mask-Detection",
+      "name": "Face Mask Detection",
+      "type": "repo",
+      "domain": "computer-vision",
+      "color": "#7c5cff",
+      "val": 3,
+      "stars": 0,
+      "language": "Jupyter Notebook",
+      "description": "High Performance Neural Network Web App: Face Mask Detection",
+      "url": "https://github.com/JayDS22/Face-Mask-Detection",
+      "updated_at": "2022-04-29T02:52:28Z"
+    },
+    {
+      "id": "repo:Financial-Budget-Planner",
+      "name": "Financial Budget Planner",
+      "type": "repo",
+      "domain": "computer-vision",
+      "color": "#7c5cff",
+      "val": 3,
+      "stars": 0,
+      "language": "JavaScript",
+      "description": "VisionFi \u2014 A full-stack AI-powered financial planner built with Node.js, Express, sql.js, and the Anthropic Claude API, featuring budgeting, credit monitoring, investment tracking, smart automations, and goal-oriented chat.",
+      "url": "https://github.com/JayDS22/Financial-Budget-Planner",
+      "updated_at": "2026-02-17T00:53:20Z"
+    },
+    {
+      "id": "repo:Game-Monetization-LiveOps-Analytics",
+      "name": "Game Monetization LiveOps Analytics",
+      "type": "repo",
+      "domain": "stats-bayesian",
+      "color": "#facc15",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "End-to-end F2P game analytics on 310K+ players: whale detection (RFM/K-Means), LTV forecasting (Cox/XGBoost/BG-NBD), churn prediction (SHAP), A/B testing (CUPED/Bayesian), Streamlit live-ops dashboard",
+      "url": "https://github.com/JayDS22/Game-Monetization-LiveOps-Analytics",
+      "updated_at": "2026-03-25T19:18:06Z"
+    },
+    {
+      "id": "repo:Indian_StartUps",
+      "name": "Indian StartUps",
+      "type": "repo",
+      "domain": "ml-general",
+      "color": "#94a3b8",
+      "val": 3,
+      "stars": 0,
+      "language": "Jupyter Notebook",
+      "description": "",
+      "url": "https://github.com/JayDS22/Indian_StartUps",
+      "updated_at": "2025-10-24T21:06:47Z"
+    },
+    {
+      "id": "repo:Industrial-Quality-Control-Computer-Vision-System-",
+      "name": "Industrial Quality Control Computer Vision System ",
+      "type": "repo",
+      "domain": "computer-vision",
+      "color": "#7c5cff",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "Complete production-ready system achieving 94.2% accuracy with YOLOv8 + ResNet-50 ensemble, processing 500+ images/minute with <150ms inference time for automated defect detection in manufacturing environments.",
+      "url": "https://github.com/JayDS22/Industrial-Quality-Control-Computer-Vision-System-",
+      "updated_at": "2025-09-19T16:16:45Z"
+    },
+    {
+      "id": "repo:Insurance_Modelling",
+      "name": "Insurance Modelling",
+      "type": "repo",
+      "domain": "ml-general",
+      "color": "#94a3b8",
+      "val": 3,
+      "stars": 0,
+      "language": "Jupyter Notebook",
+      "description": "This repository contains a ML Project utilizing Linear Regression Models, GLMs, and various methodlogies to perform indepth analysis of a Motor Insurnace Data.",
+      "url": "https://github.com/JayDS22/Insurance_Modelling",
+      "updated_at": "2024-11-28T04:31:41Z"
+    },
+    {
+      "id": "repo:jenkins-workflow-chatbot",
+      "name": "jenkins workflow chatbot",
+      "type": "repo",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "Context-aware multi-agent Jenkins AI chatbot with RAG",
+      "url": "https://github.com/JayDS22/jenkins-workflow-chatbot",
+      "updated_at": "2026-03-30T23:48:34Z"
+    },
+    {
+      "id": "repo:Kidney-Disease-Classification-Deep-Learning-Project",
+      "name": "Kidney Disease Classification Deep Learning Project",
+      "type": "repo",
+      "domain": "computer-vision",
+      "color": "#7c5cff",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "ML Modelling and MLOps deployment",
+      "url": "https://github.com/JayDS22/Kidney-Disease-Classification-Deep-Learning-Project",
+      "updated_at": "2024-07-19T20:10:06Z"
+    },
+    {
+      "id": "repo:kubeflow-docs-agent-clone",
+      "name": "kubeflow docs agent clone",
+      "type": "repo",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "",
+      "url": "https://github.com/JayDS22/kubeflow-docs-agent-clone",
+      "updated_at": "2026-03-27T21:21:43Z"
+    },
+    {
+      "id": "repo:kubeflow-docs-agent-poc",
+      "name": "kubeflow docs agent poc",
+      "type": "repo",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "",
+      "url": "https://github.com/JayDS22/kubeflow-docs-agent-poc",
+      "updated_at": "2026-04-22T16:58:16Z"
+    },
+    {
+      "id": "repo:Large-Scale-Speech-Recognition-Understanding-System",
+      "name": "Large Scale Speech Recognition Understanding System",
+      "type": "repo",
+      "domain": "nlp-speech",
+      "color": "#f472b6",
+      "val": 3,
+      "stars": 0,
+      "language": "",
+      "description": "Production-scale speech recognition and NLU system with multi-language support, real-time transcription, and intent classification for voice-enabled applications.",
+      "url": "https://github.com/JayDS22/Large-Scale-Speech-Recognition-Understanding-System",
+      "updated_at": "2025-10-15T15:14:50Z"
+    },
+    {
+      "id": "repo:Limited_Submissions",
+      "name": "Limited Submissions",
+      "type": "repo",
+      "domain": "ml-general",
+      "color": "#94a3b8",
+      "val": 3,
+      "stars": 0,
+      "language": "HTML",
+      "description": "",
+      "url": "https://github.com/JayDS22/Limited_Submissions",
+      "updated_at": "2026-04-13T14:09:52Z"
+    },
+    {
+      "id": "repo:Lucid-by-Levvate-AI",
+      "name": "Lucid by Levvate AI",
+      "type": "repo",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
+      "val": 3,
+      "stars": 0,
+      "language": "TypeScript",
+      "description": "AI-powered website clarity analyzer for service-based businesses, built with Next.js 14 and Claude Sonnet 4.5. Scores any URL on a 5-dimension rubric and exports a branded PDF with embedded architecture diagram.",
+      "url": "https://github.com/JayDS22/Lucid-by-Levvate-AI",
+      "updated_at": "2026-05-07T01:02:15Z"
+    },
+    {
+      "id": "repo:Machine-Learning-NLP-Deep-Learning",
+      "name": "Machine Learning NLP Deep Learning",
+      "type": "repo",
+      "domain": "nlp-speech",
+      "color": "#f472b6",
+      "val": 3,
+      "stars": 0,
+      "language": "Jupyter Notebook",
+      "description": "This repository consists of assignments and Models trained on various ML, NLP, & Deep Learning Algorithms.",
+      "url": "https://github.com/JayDS22/Machine-Learning-NLP-Deep-Learning",
+      "updated_at": "2022-04-29T02:52:23Z"
+    },
+    {
+      "id": "repo:Marketplace_Optimization_Engine",
+      "name": "Marketplace Optimization Engine",
+      "type": "repo",
+      "domain": "quant-finance",
+      "color": "#10b981",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "\ud83c\udfaf Two-sided marketplace optimization using Hungarian algorithm and linear programming achieving 97.2% matching efficiency \ud83d\udd27 Game theory implementation with Nash equilibrium solvers, dynamic pricing models, and constraint optimization frameworks",
+      "url": "https://github.com/JayDS22/Marketplace_Optimization_Engine",
+      "updated_at": "2026-01-17T12:46:09Z"
+    },
+    {
+      "id": "repo:Metal-Surface-Detection-Pipeline",
+      "name": "Metal Surface Detection Pipeline",
+      "type": "repo",
+      "domain": "computer-vision",
+      "color": "#7c5cff",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "ResNet18 transfer learning pipeline for industrial metal surface defect classification with Grad-CAM interpretability",
+      "url": "https://github.com/JayDS22/Metal-Surface-Detection-Pipeline",
+      "updated_at": "2026-04-04T04:49:12Z"
+    },
+    {
+      "id": "repo:ML-Model-Integration-for-Chip-Design-Automation",
+      "name": "ML Model Integration for Chip Design Automation",
+      "type": "repo",
+      "domain": "mlops-infra",
+      "color": "#a855f7",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "Machine learning integration framework for semiconductor design automation that optimizes placement, routing, and timing closure in chip design workflows.",
+      "url": "https://github.com/JayDS22/ML-Model-Integration-for-Chip-Design-Automation",
+      "updated_at": "2026-04-15T05:26:47Z"
+    },
+    {
+      "id": "repo:Multi-Agent-Reinforcement-Learning-for-Autonomous-Navigation",
+      "name": "Multi Agent Reinforcement Learning for Autonomous Navigation",
+      "type": "repo",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "Multi-agent reinforcement learning system for coordinated autonomous vehicle navigation with collision avoidance and cooperative path planning in dynamic environments.",
+      "url": "https://github.com/JayDS22/Multi-Agent-Reinforcement-Learning-for-Autonomous-Navigation",
+      "updated_at": "2026-04-22T18:40:01Z"
+    },
+    {
+      "id": "repo:Multi-Modal-Content-Recommendation-Advertiser-Analytics-Platform",
+      "name": "Multi Modal Content Recommendation Advertiser Analytics Platform",
+      "type": "repo",
+      "domain": "computer-vision",
+      "color": "#7c5cff",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "A production-grade hybrid recommendation system combining computer vision and NLP for visual content discovery, with comprehensive advertiser analytics and A/B testing frameworks.",
+      "url": "https://github.com/JayDS22/Multi-Modal-Content-Recommendation-Advertiser-Analytics-Platform",
+      "updated_at": "2025-10-12T14:28:06Z"
+    },
+    {
+      "id": "repo:music-streaming-analytics",
+      "name": "music streaming analytics",
+      "type": "repo",
+      "domain": "stats-bayesian",
+      "color": "#facc15",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "Full-stack analytics pipeline for music streaming data: processes 1M+ listening sessions, engineers behavioral features (streaks, genre diversity, playlist completion), trains predictive ML models for skip behavior and session duration, and includes A/B testing with p<0.05 significance testing and Tableau-ready dashboard exports.",
+      "url": "https://github.com/JayDS22/music-streaming-analytics",
+      "updated_at": "2026-03-28T03:40:10Z"
+    },
+    {
+      "id": "repo:Network-Intrusion-Detection-System-NIDS-with-ML",
+      "name": "Network Intrusion Detection System NIDS with ML",
+      "type": "repo",
+      "domain": "time-series",
+      "color": "#fb923c",
+      "val": 3,
+      "stars": 0,
+      "language": "",
+      "description": "Production-ready Network Intrusion Detection System with ensemble ML models (Isolation Forest + Random Forest + LSTM) achieving 94.2% accuracy and detecting 15+ attack patterns in real-time.",
+      "url": "https://github.com/JayDS22/Network-Intrusion-Detection-System-NIDS-with-ML",
+      "updated_at": "2025-10-15T15:15:39Z"
+    },
+    {
+      "id": "repo:Pedestrian-Safety-ADA-Compliance-ML-System",
+      "name": "Pedestrian Safety ADA Compliance ML System",
+      "type": "repo",
+      "domain": "computer-vision",
+      "color": "#7c5cff",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "AI-Powered Pedestrian Infrastructure Assessment & ADA Compliance",
+      "url": "https://github.com/JayDS22/Pedestrian-Safety-ADA-Compliance-ML-System",
+      "updated_at": "2025-10-01T04:43:08Z"
+    },
+    {
+      "id": "repo:Power-BI-Projects",
+      "name": "Power BI Projects",
+      "type": "repo",
+      "domain": "ml-general",
+      "color": "#94a3b8",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "This file consists of Projects, developed using Power-BI for Data-Manipulation and Data Visualization.",
+      "url": "https://github.com/JayDS22/Power-BI-Projects",
+      "updated_at": "2026-04-10T20:57:35Z"
+    },
+    {
+      "id": "repo:Predictive-Maintenance-for-Industrial-Equipment",
+      "name": "Predictive Maintenance for Industrial Equipment",
+      "type": "repo",
+      "domain": "time-series",
+      "color": "#fb923c",
+      "val": 3,
+      "stars": 0,
+      "language": "",
+      "description": "IoT-enabled predictive maintenance system using ML to forecast equipment failures and optimize maintenance schedules, reducing downtime by up to 40%.",
+      "url": "https://github.com/JayDS22/Predictive-Maintenance-for-Industrial-Equipment",
+      "updated_at": "2025-10-15T15:15:30Z"
+    },
+    {
+      "id": "repo:Product-Analytics-and-User-Retention-Platform",
+      "name": "Product Analytics and User Retention Platform",
+      "type": "repo",
+      "domain": "computer-vision",
+      "color": "#7c5cff",
+      "val": 3,
+      "stars": 0,
+      "language": "",
+      "description": "End-to-end ML platform for churn prediction and product analytics with 120+ engineered features, GLM modeling (86.17% accuracy), and interactive Looker dashboards tracking DAU/MAU, retention, and user journeys.",
+      "url": "https://github.com/JayDS22/Product-Analytics-and-User-Retention-Platform",
+      "updated_at": "2025-10-04T21:43:37Z"
+    },
+    {
+      "id": "repo:Production-LLM-Serving-Optimization-Framework",
+      "name": "Production LLM Serving Optimization Framework",
+      "type": "repo",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "High-performance LLM inference platform with vLLM continuous batching achieving 12.3K+ req/sec, 42ms P50/178ms P99 latency, INT8/INT4 quantization (70% memory savings), tensor parallelism across 4 GPUs, and comprehensive monitoring serving 1500+ concurrent users.",
+      "url": "https://github.com/JayDS22/Production-LLM-Serving-Optimization-Framework",
+      "updated_at": "2026-03-18T18:39:38Z"
+    },
+    {
+      "id": "repo:Python",
+      "name": "Python",
+      "type": "repo",
+      "domain": "ml-general",
+      "color": "#94a3b8",
+      "val": 3,
+      "stars": 0,
+      "language": "Jupyter Notebook",
+      "description": "This Repository consists of assignments based on Python Programming from Beginner to Intermediate.",
+      "url": "https://github.com/JayDS22/Python",
+      "updated_at": "2021-12-08T14:12:30Z"
+    },
+    {
+      "id": "repo:Quantitative-Portfolio-Management-And-Trading-Platform",
+      "name": "Quantitative Portfolio Management And Trading Platform",
+      "type": "repo",
+      "domain": "stats-bayesian",
+      "color": "#facc15",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "\ud83d\udcc8 High-frequency algorithmic trading platform with LSTM/Transformer models achieving 87.3% directional accuracy, Sharpe ratio 2.1, real-time market data processing (1M+ ticks/sec), comprehensive Tableau analytics, and Monte Carlo backtesting framework.",
+      "url": "https://github.com/JayDS22/Quantitative-Portfolio-Management-And-Trading-Platform",
+      "updated_at": "2025-10-10T21:27:50Z"
+    },
+    {
+      "id": "repo:Real-Time-Experimentation-Platform",
+      "name": "Real Time Experimentation Platform",
+      "type": "repo",
+      "domain": "stats-bayesian",
+      "color": "#facc15",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "\ud83e\uddea A/B testing platform with Thompson sampling multi-armed bandits achieving 23% higher conversion rates \ud83d\udcca Sequential testing framework with Benjamini-Hochberg correction, causal inference, and Bayesian analysis for robust experimentation",
+      "url": "https://github.com/JayDS22/Real-Time-Experimentation-Platform",
+      "updated_at": "2025-09-07T21:21:00Z"
+    },
+    {
+      "id": "repo:Real-Time-Payment-Fraud-Detection-System",
+      "name": "Real Time Payment Fraud Detection System",
+      "type": "repo",
+      "domain": "quant-finance",
+      "color": "#10b981",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "\ud83d\udea8 Production-ready fraud detection engine processing 500K+ daily transactions with 94.2% accuracy using ensemble ML (Random Forest + XGBoost), real-time Kafka streaming, Power BI dashboards, and automated model retraining achieving $2.1M+ fraud prevention.",
+      "url": "https://github.com/JayDS22/Real-Time-Payment-Fraud-Detection-System",
+      "updated_at": "2025-09-28T15:45:22Z"
+    },
+    {
+      "id": "repo:Regulatory-Capital-Stress-Testing",
+      "name": "Regulatory Capital Stress Testing",
+      "type": "repo",
+      "domain": "stats-bayesian",
+      "color": "#facc15",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "Banking regulatory compliance platform for automated stress testing and capital adequacy analysis under Basel III/IV frameworks with scenario simulation.",
+      "url": "https://github.com/JayDS22/Regulatory-Capital-Stress-Testing",
+      "updated_at": "2026-05-02T02:15:01Z"
+    },
+    {
+      "id": "repo:resources-ai-chatbot-plugin-jenkins",
+      "name": "resources ai chatbot plugin jenkins",
+      "type": "repo",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "",
+      "url": "https://github.com/JayDS22/resources-ai-chatbot-plugin-jenkins",
+      "updated_at": "2026-03-28T02:07:37Z"
+    },
+    {
+      "id": "repo:Spam-Detection",
+      "name": "Spam Detection",
+      "type": "repo",
+      "domain": "nlp-speech",
+      "color": "#f472b6",
+      "val": 3,
+      "stars": 0,
+      "language": "Jupyter Notebook",
+      "description": "Build an End-to-End Data Science project to predict the Spam & Legit emails",
+      "url": "https://github.com/JayDS22/Spam-Detection",
+      "updated_at": "2021-12-09T20:02:09Z"
+    },
+    {
+      "id": "repo:SQL-MySQL-Excercises",
+      "name": "SQL MySQL Excercises",
+      "type": "repo",
+      "domain": "mlops-infra",
+      "color": "#a855f7",
+      "val": 3,
+      "stars": 0,
+      "language": "",
+      "description": "This repository consists of assignments performed using SQL for Data-Warehousing.",
+      "url": "https://github.com/JayDS22/SQL-MySQL-Excercises",
+      "updated_at": "2021-11-06T05:43:09Z"
+    },
+    {
+      "id": "repo:Tableau-Repository",
+      "name": "Tableau Repository",
+      "type": "repo",
+      "domain": "mlops-infra",
+      "color": "#a855f7",
+      "val": 3,
+      "stars": 0,
+      "language": "",
+      "description": "This Repository consists of assignments and projects, based on DA, performed using Tableau Desktop.",
+      "url": "https://github.com/JayDS22/Tableau-Repository",
+      "updated_at": "2021-10-11T15:40:31Z"
+    },
+    {
+      "id": "repo:Transportation_And_Demand_Forecasting",
+      "name": "Transportation And Demand Forecasting",
+      "type": "repo",
+      "domain": "time-series",
+      "color": "#fb923c",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "\ud83d\ude97 Advanced LSTM-based transportation demand forecasting achieving MAPE: 2.8% with multivariate time-series analysis \u26a1 Real-time prediction API with external regressors (weather, events) and statistical validation using Granger causality tests",
+      "url": "https://github.com/JayDS22/Transportation_And_Demand_Forecasting",
+      "updated_at": "2025-09-07T21:24:32Z"
+    }
+  ],
+  "links": [
+    {
+      "source": "repo:AIOps-Roadmap",
+      "target": "domain:ml-general"
+    },
+    {
+      "source": "repo:ConstellationAI-Multi-Agentic-RAG",
+      "target": "domain:llm-agents"
+    },
+    {
+      "source": "repo:Real-Time-Medical-Image-Enhancement-System",
+      "target": "domain:computer-vision"
+    },
+    {
+      "source": "repo:Real-Time-Recommendation-Engine",
+      "target": "domain:mlops-infra"
+    },
+    {
+      "source": "repo:Transformer-based-Trajectory-Forecasting-system",
+      "target": "domain:computer-vision"
+    },
+    {
+      "source": "repo:Vehicle-Durability-Forecasting-and-Predictive-Maintanence-System",
+      "target": "domain:stats-bayesian"
+    },
+    {
+      "source": "repo:Blog_Generator",
+      "target": "domain:llm-agents"
+    },
+    {
+      "source": "repo:ChatGPT-Code-Review-GPT-Action",
+      "target": "domain:llm-agents"
+    },
+    {
+      "source": "repo:Multi-GPU-Distributed-Training-Framework",
+      "target": "domain:rl-robotics"
+    },
+    {
+      "source": "repo:Multi-Robot-Coordination-Framework",
+      "target": "domain:rl-robotics"
+    },
+    {
+      "source": "repo:NeMo-Speech-Alignment-and-Text-Normalization",
+      "target": "domain:nlp-speech"
+    },
+    {
+      "source": "repo:Prediction-market-calibration-analysis",
+      "target": "domain:stats-bayesian"
+    },
+    {
+      "source": "repo:Real-Time-Multi-Target-Detection-and-Tracking-Pipeline",
+      "target": "domain:computer-vision"
+    },
+    {
+      "source": "repo:Risk-Analytics-Fraud-Detection",
+      "target": "domain:quant-finance"
+    },
+    {
+      "source": "repo:Search-Relevance-and-Ranking-System",
+      "target": "domain:stats-bayesian"
+    },
+    {
+      "source": "repo:Space-Image-Detection-pipeline",
+      "target": "domain:computer-vision"
+    },
+    {
+      "source": "repo:5g-Service-and-Network-Orchestrator",
+      "target": "domain:mlops-infra"
+    },
+    {
+      "source": "repo:Adult_Census_Income",
+      "target": "domain:ml-general"
+    },
+    {
+      "source": "repo:Advertising-Campaign-Analytics-Real-Time-Bidding-Platform",
+      "target": "domain:stats-bayesian"
+    },
+    {
+      "source": "repo:apap-mcp-poc",
+      "target": "domain:ml-general"
+    },
+    {
+      "source": "repo:Architecture-Building-Concepts",
+      "target": "domain:mlops-infra"
+    },
+    {
+      "source": "repo:Autogen-Retrieve-Chat-System",
+      "target": "domain:llm-agents"
+    },
+    {
+      "source": "repo:Automated-Infrastructure-Provisioning-System",
+      "target": "domain:mlops-infra"
+    },
+    {
+      "source": "repo:Azure-Business-Intelligence-Modernization",
+      "target": "domain:mlops-infra"
+    },
+    {
+      "source": "repo:Bank_Customer_Churn_Model",
+      "target": "domain:ml-general"
+    },
+    {
+      "source": "repo:Blockchain-Transaction-Analytics-Pipeline",
+      "target": "domain:quant-finance"
+    },
+    {
+      "source": "repo:Breast-Cancer-Wisconsin-Diagnostic",
+      "target": "domain:computer-vision"
+    },
+    {
+      "source": "repo:Bridgestone-Vehicle-Safety-Computer-Vision",
+      "target": "domain:computer-vision"
+    },
+    {
+      "source": "repo:Churn-Prediction",
+      "target": "domain:ml-general"
+    },
+    {
+      "source": "repo:Coursera-ML-Assignments",
+      "target": "domain:ml-general"
+    },
+    {
+      "source": "repo:Credit-Risk-PD-LGD-EAD-Modeling-Platform",
+      "target": "domain:stats-bayesian"
+    },
+    {
+      "source": "repo:data604",
+      "target": "domain:ml-general"
+    },
+    {
+      "source": "repo:DBT_Shipping_project",
+      "target": "domain:mlops-infra"
+    },
+    {
+      "source": "repo:Deep-Learning-Recommendation-System-for-Financial-Services",
+      "target": "domain:quant-finance"
+    },
+    {
+      "source": "repo:Digital-Twin-Transportation-Infrastructure-Platform",
+      "target": "domain:computer-vision"
+    },
+    {
+      "source": "repo:Distributed-Big-Data-Query-Platform-on-Kubernetes",
+      "target": "domain:mlops-infra"
+    },
+    {
+      "source": "repo:Driver-Behavior-Analytics-Crash-Prediction-System",
+      "target": "domain:ml-general"
+    },
+    {
+      "source": "repo:Driver-Behavior-Analytics-System",
+      "target": "domain:stats-bayesian"
+    },
+    {
+      "source": "repo:E-Commerce-Shipping",
+      "target": "domain:ml-general"
+    },
+    {
+      "source": "repo:Enterprise-Data-Warehouse",
+      "target": "domain:mlops-infra"
+    },
+    {
+      "source": "repo:ETL-Pipeline-Airflow",
+      "target": "domain:mlops-infra"
+    },
+    {
+      "source": "repo:Face-Mask-Detection",
+      "target": "domain:computer-vision"
+    },
+    {
+      "source": "repo:Financial-Budget-Planner",
+      "target": "domain:computer-vision"
+    },
+    {
+      "source": "repo:Game-Monetization-LiveOps-Analytics",
+      "target": "domain:stats-bayesian"
+    },
+    {
+      "source": "repo:Indian_StartUps",
+      "target": "domain:ml-general"
+    },
+    {
+      "source": "repo:Industrial-Quality-Control-Computer-Vision-System-",
+      "target": "domain:computer-vision"
+    },
+    {
+      "source": "repo:Insurance_Modelling",
+      "target": "domain:ml-general"
+    },
+    {
+      "source": "repo:jenkins-workflow-chatbot",
+      "target": "domain:llm-agents"
+    },
+    {
+      "source": "repo:Kidney-Disease-Classification-Deep-Learning-Project",
+      "target": "domain:computer-vision"
+    },
+    {
+      "source": "repo:kubeflow-docs-agent-clone",
+      "target": "domain:llm-agents"
+    },
+    {
+      "source": "repo:kubeflow-docs-agent-poc",
+      "target": "domain:llm-agents"
+    },
+    {
+      "source": "repo:Large-Scale-Speech-Recognition-Understanding-System",
+      "target": "domain:nlp-speech"
+    },
+    {
+      "source": "repo:Limited_Submissions",
+      "target": "domain:ml-general"
+    },
+    {
+      "source": "repo:Lucid-by-Levvate-AI",
+      "target": "domain:llm-agents"
+    },
+    {
+      "source": "repo:Machine-Learning-NLP-Deep-Learning",
+      "target": "domain:nlp-speech"
+    },
+    {
+      "source": "repo:Marketplace_Optimization_Engine",
+      "target": "domain:quant-finance"
+    },
+    {
+      "source": "repo:Metal-Surface-Detection-Pipeline",
+      "target": "domain:computer-vision"
+    },
+    {
+      "source": "repo:ML-Model-Integration-for-Chip-Design-Automation",
+      "target": "domain:mlops-infra"
+    },
+    {
+      "source": "repo:Multi-Agent-Reinforcement-Learning-for-Autonomous-Navigation",
+      "target": "domain:llm-agents"
+    },
+    {
+      "source": "repo:Multi-Modal-Content-Recommendation-Advertiser-Analytics-Platform",
+      "target": "domain:computer-vision"
+    },
+    {
+      "source": "repo:music-streaming-analytics",
+      "target": "domain:stats-bayesian"
+    },
+    {
+      "source": "repo:Network-Intrusion-Detection-System-NIDS-with-ML",
+      "target": "domain:time-series"
+    },
+    {
+      "source": "repo:Pedestrian-Safety-ADA-Compliance-ML-System",
+      "target": "domain:computer-vision"
+    },
+    {
+      "source": "repo:Power-BI-Projects",
+      "target": "domain:ml-general"
+    },
+    {
+      "source": "repo:Predictive-Maintenance-for-Industrial-Equipment",
+      "target": "domain:time-series"
+    },
+    {
+      "source": "repo:Product-Analytics-and-User-Retention-Platform",
+      "target": "domain:computer-vision"
+    },
+    {
+      "source": "repo:Production-LLM-Serving-Optimization-Framework",
+      "target": "domain:llm-agents"
+    },
+    {
+      "source": "repo:Python",
+      "target": "domain:ml-general"
+    },
+    {
+      "source": "repo:Quantitative-Portfolio-Management-And-Trading-Platform",
+      "target": "domain:stats-bayesian"
+    },
+    {
+      "source": "repo:Real-Time-Experimentation-Platform",
+      "target": "domain:stats-bayesian"
+    },
+    {
+      "source": "repo:Real-Time-Payment-Fraud-Detection-System",
+      "target": "domain:quant-finance"
+    },
+    {
+      "source": "repo:Regulatory-Capital-Stress-Testing",
+      "target": "domain:stats-bayesian"
+    },
+    {
+      "source": "repo:resources-ai-chatbot-plugin-jenkins",
+      "target": "domain:llm-agents"
+    },
+    {
+      "source": "repo:Spam-Detection",
+      "target": "domain:nlp-speech"
+    },
+    {
+      "source": "repo:SQL-MySQL-Excercises",
+      "target": "domain:mlops-infra"
+    },
+    {
+      "source": "repo:Tableau-Repository",
+      "target": "domain:mlops-infra"
+    },
+    {
+      "source": "repo:Transportation_And_Demand_Forecasting",
+      "target": "domain:time-series"
+    }
+  ]
+}

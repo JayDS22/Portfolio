@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Explore — Project Knowledge Graph — Jay Guwalani</title>
+  <meta name="description" content="Interactive 3D map of all public GitHub projects by Jay Guwalani, grouped by domain.">
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+  <link rel="stylesheet" href="../css/modern.css">
+
+  <style>
+    .graph-stage {
+      position: relative;
+      height: clamp(520px, 72vh, 820px);
+      border: 1px solid var(--border, #2a2d3a);
+      border-radius: var(--radius-xl, 20px);
+      overflow: hidden;
+      background: radial-gradient(ellipse at center, #0e1018 0%, #06070b 100%);
+    }
+    .graph-status {
+      position: absolute; top: 16px; left: 18px; z-index: 3;
+      font-family: var(--font-mono, ui-monospace, monospace);
+      font-size: 12px; letter-spacing: .04em; text-transform: uppercase;
+      color: var(--text-dim, #9aa0b4); pointer-events: none;
+    }
+    .graph-meta {
+      position: absolute; top: 16px; right: 18px; z-index: 3;
+      font-family: var(--font-mono, ui-monospace, monospace);
+      font-size: 11px; color: var(--text-dim, #9aa0b4);
+      text-align: right; pointer-events: none;
+    }
+    .graph-legend {
+      position: absolute; bottom: 16px; left: 18px; right: 18px; z-index: 3;
+      display: flex; flex-wrap: wrap; gap: 8px;
+      pointer-events: none;
+    }
+    .graph-legend .chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 10px; border-radius: 999px;
+      font-size: 12px; font-weight: 500;
+      background: rgba(15,17,25,.7); border: 1px solid;
+      backdrop-filter: blur(6px);
+    }
+    .graph-legend .chip .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+    }
+    .graph-tip {
+      background: rgba(12,14,22,.96);
+      border: 1px solid;
+      border-radius: 10px;
+      padding: 10px 14px;
+      max-width: 320px;
+      color: #fff;
+      font-family: var(--font-sans, system-ui, sans-serif);
+      box-shadow: 0 8px 28px rgba(0,0,0,.4);
+    }
+    .graph-tip .t-title { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+    .graph-tip .t-meta { font-size: 11px; opacity: .7; margin-bottom: 6px; font-family: var(--font-mono, monospace); }
+    .graph-tip .t-desc { font-size: 12px; line-height: 1.45; opacity: .9; }
+    .graph-tip .t-hint { font-size: 11px; opacity: .55; margin-top: 8px; }
+    #graph canvas { outline: none; }
+  </style>
+</head>
+
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.01c-3.2.7-3.87-1.37-3.87-1.37-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.34.95.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.93 10.93 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.13v3.16c0 .31.21.68.8.56C20.22 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5Z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.39-1.85 3.62 0 4.29 2.39 4.29 5.49v6.25ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0Z"/></symbol>
+    <symbol id="i-medium" viewBox="0 0 24 24"><path fill="currentColor" d="M2.846 6.887c.03-.295-.083-.586-.303-.784L.292 3.6V3.18h7.034l5.435 11.92L17.54 3.18H24.246v.42l-1.927 1.85a.564.564 0 0 0-.214.541v13.583a.564.564 0 0 0 .214.541l1.882 1.85v.42h-9.466v-.42l1.95-1.895c.192-.192.192-.249.192-.541V8.106L11.452 21.81h-.733L5.396 8.106v9.184c-.053.388.076.78.351 1.058L7.51 20.81v.42H1.5v-.42l1.762-2.462c.273-.279.396-.671.341-1.058V6.887Z"/></symbol>
+    <symbol id="i-kaggle" viewBox="0 0 24 24"><path fill="currentColor" d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.272 6.226 6.823 8.661c.118.117.118.234.012.34"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.71 3.71 0 0 1-1.38-.9 3.71 3.71 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07ZM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.86 5.86 0 0 0-2.13 1.38A5.86 5.86 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13.67.65 1.34 1.07 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.13-1.38c.65-.67 1.07-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.13A5.86 5.86 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0Zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.41-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8"/></symbol>
+    <symbol id="i-stack" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2 14 9 21 11 14 13 12 20 10 13 3 11 10 9z"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../">
+      <span class="nav-brand-mark">JG</span>
+      <span>Jay Guwalani</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('open')">
+      <svg width="20" height="20"><use href="#i-menu"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="../">Home</a></li>
+      <li><a href="../about/">About</a></li>
+      <li><a class="active" href="../post/">Projects</a></li>
+      <li><a href="../publications/">Publications</a></li>
+      <li><a href="../contact/">Contact</a></li>
+    </ul>
+    <div class="nav-socials">
+      <a href="https://github.com/JayDS22" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a>
+      <a href="https://www.linkedin.com/in/jay-guwalani-66763b191/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
+      <a href="https://medium.com/@guwalanijj" target="_blank" rel="noopener" aria-label="Medium"><svg><use href="#i-medium"/></svg></a>
+      <a href="https://www.kaggle.com/jayds22" target="_blank" rel="noopener" aria-label="Kaggle"><svg><use href="#i-kaggle"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="page-header">
+  <div class="container">
+    <div class="section-kicker"><svg width="14" height="14"><use href="#i-globe"/></svg> Explore</div>
+    <h1>Project knowledge graph in <span class="grad">3D</span>.</h1>
+    <p>An interactive map of every public project on my GitHub, grouped by domain. Drag to rotate, scroll to zoom, click a node to open the repo. Auto-synced daily from the GitHub API.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 8px;">
+  <div class="container">
+
+    <div class="graph-stage">
+      <div class="graph-status" id="graph-status">Loading graph…</div>
+      <div class="graph-meta" id="graph-meta"></div>
+      <div class="graph-legend" id="graph-legend"></div>
+      <div id="graph"></div>
+    </div>
+
+    <p style="margin-top:18px;color:var(--text-dim);font-size:14px;">
+      Don't see a project? Check the
+      <a href="https://github.com/JayDS22?tab=repositories" target="_blank" rel="noopener">full repo list</a>
+      — or jump back to the
+      <a href="../post/">curated case studies</a>.
+    </p>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-copy">© 2025 Jay Guwalani · Built with intent.</div>
+    <div class="footer-socials">
+      <a href="https://github.com/JayDS22" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a>
+      <a href="https://www.linkedin.com/in/jay-guwalani-66763b191/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
+      <a href="https://medium.com/@guwalanijj" target="_blank" rel="noopener" aria-label="Medium"><svg><use href="#i-medium"/></svg></a>
+      <a href="https://www.kaggle.com/jayds22" target="_blank" rel="noopener" aria-label="Kaggle"><svg><use href="#i-kaggle"/></svg></a>
+      <a href="https://www.instagram.com/jay.ipynb" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-instagram"/></svg></a>
+      <a href="mailto:guwalanijj@gmail.com" aria-label="Email"><svg><use href="#i-mail"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+<script src="https://unpkg.com/three-spritetext@1.8.2/dist/three-spritetext.min.js"></script>
+<script src="https://unpkg.com/3d-force-graph@1.73.4/dist/3d-force-graph.min.js"></script>
+<script>
+(function () {
+  const statusEl = document.getElementById('graph-status');
+  const metaEl   = document.getElementById('graph-meta');
+  const legendEl = document.getElementById('graph-legend');
+  const stage    = document.querySelector('.graph-stage');
+  const mount    = document.getElementById('graph');
+
+  if (typeof ForceGraph3D !== 'function') {
+    statusEl.textContent = 'Failed to load 3D graph library.';
+    return;
+  }
+
+  const escapeHtml = s => String(s || '')
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+
+  fetch('../data/github.json', { cache: 'no-cache' })
+    .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(data => {
+      const repos   = data.nodes.filter(n => n.type === 'repo').length;
+      const domains = data.nodes.filter(n => n.type === 'domain');
+      statusEl.textContent = repos + ' projects · ' + domains.length + ' domains';
+
+      const synced = data.generated_at ? new Date(data.generated_at) : null;
+      if (synced) {
+        metaEl.innerHTML = 'last sync<br>' + synced.toISOString().slice(0,10);
+      }
+
+      domains.forEach(d => {
+        const chip = document.createElement('span');
+        chip.className = 'chip';
+        chip.style.borderColor = d.color;
+        chip.style.color = d.color;
+        const dot = document.createElement('span');
+        dot.className = 'dot';
+        dot.style.background = d.color;
+        chip.appendChild(dot);
+        chip.appendChild(document.createTextNode(d.name));
+        legendEl.appendChild(chip);
+      });
+
+      const Graph = ForceGraph3D()(mount)
+        .graphData(data)
+        .backgroundColor('#06070b')
+        .showNavInfo(false)
+        .nodeRelSize(4)
+        .nodeVal(n => n.val)
+        .nodeColor(n => n.color)
+        .nodeOpacity(0.92)
+        .nodeResolution(16)
+        .linkColor(() => 'rgba(255,255,255,0.18)')
+        .linkOpacity(0.55)
+        .linkWidth(0.6)
+        .nodeLabel(n => {
+          if (n.type === 'domain') {
+            return '<div class="graph-tip" style="border-color:' + n.color + ';">'
+              + '<div class="t-title" style="color:' + n.color + ';">' + escapeHtml(n.name) + '</div>'
+              + '<div class="t-meta">domain hub</div>'
+              + '</div>';
+          }
+          const meta = [n.language, n.stars ? '★ ' + n.stars : null]
+            .filter(Boolean).join(' · ');
+          return '<div class="graph-tip" style="border-color:' + n.color + ';">'
+            + '<div class="t-title" style="color:' + n.color + ';">' + escapeHtml(n.name) + '</div>'
+            + (meta ? '<div class="t-meta">' + escapeHtml(meta) + '</div>' : '')
+            + (n.description ? '<div class="t-desc">' + escapeHtml(n.description) + '</div>' : '')
+            + '<div class="t-hint">click to open on GitHub →</div>'
+            + '</div>';
+        })
+        .onNodeClick(n => {
+          if (n.type === 'repo' && n.url) {
+            window.open(n.url, '_blank', 'noopener,noreferrer');
+          } else {
+            // center camera on domain hub
+            const distance = 180;
+            const distRatio = 1 + distance / Math.hypot(n.x || 1, n.y || 1, n.z || 1);
+            Graph.cameraPosition(
+              { x: (n.x || 0) * distRatio, y: (n.y || 0) * distRatio, z: (n.z || 0) * distRatio },
+              n, 1500
+            );
+          }
+        });
+
+      // Domain hub labels: floating text sprites
+      if (typeof SpriteText === 'function') {
+        Graph.nodeThreeObjectExtend(true).nodeThreeObject(n => {
+          if (n.type !== 'domain') return null;
+          const sprite = new SpriteText(n.name);
+          sprite.color = n.color;
+          sprite.textHeight = 5;
+          sprite.fontWeight = '600';
+          sprite.backgroundColor = 'rgba(6,7,11,0.8)';
+          sprite.padding = 2;
+          sprite.borderRadius = 4;
+          sprite.position.y = 12;
+          return sprite;
+        });
+      }
+
+      // Tune force layout: pull repos toward their domain hub
+      Graph.d3Force('link').distance(l => l.target && l.target.type === 'domain' ? 60 : 90);
+      Graph.d3Force('charge').strength(-160);
+
+      const fit = () => Graph.width(stage.clientWidth).height(stage.clientHeight);
+      fit();
+      window.addEventListener('resize', fit);
+
+      setTimeout(() => Graph.zoomToFit(800, 80), 1200);
+    })
+    .catch(err => {
+      console.error(err);
+      statusEl.textContent = 'Failed to load graph data: ' + err.message;
+    });
+})();
+</script>
+
+</body>
+</html>
