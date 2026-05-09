@@ -6,35 +6,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --bg: #0a0a0f;
-  --bg-elev: #11121a;
-  --bg-elev-2: #161824;
-  --surface: rgba(255, 255, 255, 0.03);
-  --surface-hover: rgba(255, 255, 255, 0.06);
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.14);
+  /* Light editorial theme. Dark surfaces are reserved for the constellation
+     "island" so the 3D graph still reads as a dramatic feature. */
+  --bg: #f6f7fb;
+  --bg-elev: #ffffff;
+  --bg-elev-2: #eef1fa;
+  --surface: rgba(13, 17, 48, 0.04);
+  --surface-hover: rgba(13, 17, 48, 0.08);
+  --border: rgba(13, 17, 48, 0.10);
+  --border-strong: rgba(13, 17, 48, 0.18);
 
-  --text: #f4f4f6;
-  --text-muted: #a1a1ab;
-  --text-dim: #6b6b78;
+  --text: #0d1130;
+  --text-muted: #4a5072;
+  --text-dim: #6c7396;
 
-  --accent: #7c5cff;
-  --accent-2: #21d4fd;
-  --accent-3: #ff5c8a;
+  --accent: #5b3df5;
+  --accent-2: #0a9fbf;
+  --accent-3: #e0457b;
 
-  --gradient-primary: linear-gradient(135deg, #7c5cff 0%, #21d4fd 100%);
-  --gradient-warm: linear-gradient(135deg, #ff5c8a 0%, #ffb86c 100%);
-  --gradient-text: linear-gradient(135deg, #f4f4f6 0%, #a78bfa 50%, #21d4fd 100%);
+  --gradient-primary: linear-gradient(135deg, #5b3df5 0%, #0a9fbf 100%);
+  --gradient-warm: linear-gradient(135deg, #e0457b 0%, #f59e6b 100%);
+  --gradient-text: linear-gradient(135deg, #0d1130 0%, #5b3df5 50%, #0a9fbf 100%);
 
   --radius-sm: 8px;
   --radius: 14px;
   --radius-lg: 20px;
   --radius-xl: 28px;
 
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.5);
-  --glow: 0 0 80px rgba(124, 92, 255, 0.25);
+  --shadow-sm: 0 2px 10px rgba(13, 17, 48, 0.06);
+  --shadow: 0 12px 32px rgba(13, 17, 48, 0.10);
+  --shadow-lg: 0 32px 80px rgba(13, 17, 48, 0.16);
+  --glow: 0 0 80px rgba(91, 61, 245, 0.18);
 
   --maxw: 1200px;
   --maxw-narrow: 880px;
@@ -60,9 +62,9 @@ body {
   color: var(--text);
   background: var(--bg);
   background-image:
-    radial-gradient(circle at 15% 10%, rgba(124, 92, 255, 0.15), transparent 45%),
-    radial-gradient(circle at 85% 0%, rgba(33, 212, 253, 0.12), transparent 40%),
-    radial-gradient(circle at 50% 100%, rgba(255, 92, 138, 0.08), transparent 50%);
+    radial-gradient(circle at 12% 8%, rgba(91, 61, 245, 0.08), transparent 50%),
+    radial-gradient(circle at 88% 4%, rgba(10, 159, 191, 0.06), transparent 45%),
+    linear-gradient(180deg, #f6f7fb 0%, #eef1fa 100%);
   background-attachment: fixed;
   min-height: 100vh;
   overflow-x: hidden;
@@ -80,7 +82,7 @@ a {
 a:hover { color: var(--text); }
 
 ::selection {
-  background: rgba(124, 92, 255, 0.4);
+  background: rgba(91, 61, 245, 0.20);
   color: var(--text);
 }
 
@@ -105,7 +107,7 @@ a:hover { color: var(--text); }
   z-index: 100;
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  background: rgba(10, 10, 15, 0.72);
+  background: rgba(255, 255, 255, 0.78);
   border-bottom: 1px solid var(--border);
 }
 .nav-inner {
@@ -317,13 +319,14 @@ a:hover { color: var(--text); }
   box-shadow: 0 12px 32px rgba(124, 92, 255, 0.5);
 }
 .btn-secondary {
-  background: var(--surface);
+  background: var(--bg-elev);
   color: var(--text);
   border-color: var(--border-strong);
+  box-shadow: var(--shadow-sm);
 }
 .btn-secondary:hover {
   color: var(--text);
-  background: var(--surface-hover);
+  background: var(--bg-elev-2);
   transform: translateY(-2px);
 }
 
@@ -618,7 +621,7 @@ a:hover { color: var(--text); }
 .tech-tag {
   font-size: 0.74rem;
   color: var(--text-muted);
-  background: var(--surface);
+  background: var(--bg-elev-2);
   border: 1px solid var(--border);
   padding: 4px 10px;
   border-radius: 6px;
@@ -927,7 +930,7 @@ a:hover { color: var(--text); }
   margin-top: 80px;
   padding: 48px 0 32px;
   border-top: 1px solid var(--border);
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.6);
 }
 .footer-inner {
   display: flex;
