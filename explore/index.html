@@ -68,8 +68,7 @@
     }
     .graph-legend {
       position: absolute; bottom: 18px; left: 22px; right: 22px; z-index: 4;
-      display: flex; flex-wrap: wrap; gap: 8px;
-      pointer-events: none;
+      display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
     }
     .graph-legend .chip {
       display: inline-flex; align-items: center; gap: 7px;
@@ -78,11 +77,32 @@
       background: rgba(10,11,24,0.78); border: 1px solid;
       backdrop-filter: blur(8px);
       box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      cursor: pointer; user-select: none;
+      transition: transform .15s ease, background .2s ease, box-shadow .2s ease, opacity .2s ease;
     }
+    .graph-legend .chip:hover { transform: translateY(-1px); background: rgba(20,22,38,0.9); }
+    .graph-legend .chip.on {
+      background: var(--chip-color, #7c5cff);
+      color: #06070b !important;
+      box-shadow: 0 4px 18px var(--chip-color, #7c5cff), 0 0 0 1px rgba(255,255,255,0.1) inset;
+    }
+    .graph-legend .chip.on .dot { background: rgba(6,7,11,0.85) !important; box-shadow: none; }
+    .graph-legend.has-selection .chip:not(.on) { opacity: 0.5; }
     .graph-legend .chip .dot {
       width: 7px; height: 7px; border-radius: 50%;
       box-shadow: 0 0 8px currentColor;
     }
+    .graph-legend .reset {
+      display: none; margin-left: auto;
+      padding: 5px 12px; border-radius: 999px;
+      font-size: 11px; font-weight: 500; letter-spacing: .02em;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.85); cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition: background .2s ease;
+    }
+    .graph-legend .reset:hover { background: rgba(255,255,255,0.12); }
+    .graph-legend.has-selection .reset { display: inline-flex; align-items: center; gap: 5px; }
     .graph-tip {
       background: rgba(10,11,22,0.96);
       border: 1px solid;
@@ -234,21 +254,44 @@
         metaEl.innerHTML = 'last sync<br><span style="color:rgba(255,255,255,0.7);">' + synced.toISOString().slice(0,10) + '</span>';
       }
 
+      // Build a quick lookup so link colors can match the source repo's domain color
+      const nodeById = new Map(data.nodes.map(n => [n.id, n]));
+
+      // Filter state: when set, show only this domain's hub + repos
+      let selectedDomain = null;
+      let focusDomain;
+      const isVisibleNode = n => {
+        if (!selectedDomain) return true;
+        return n.type === 'domain' ? n.id === 'domain:' + selectedDomain
+                                   : n.domain === selectedDomain;
+      };
+      const isVisibleLink = l => {
+        if (!selectedDomain) return true;
+        const t = typeof l.target === 'object' ? l.target : nodeById.get(l.target);
+        return !!t && t.id === 'domain:' + selectedDomain;
+      };
+
       domains.forEach(d => {
         const chip = document.createElement('span');
         chip.className = 'chip';
         chip.style.borderColor = d.color;
         chip.style.color = d.color;
+        chip.style.setProperty('--chip-color', d.color);
+        chip.dataset.domain = d.id.replace('domain:', '');
         const dot = document.createElement('span');
         dot.className = 'dot';
         dot.style.background = d.color;
         chip.appendChild(dot);
         chip.appendChild(document.createTextNode(d.name));
+        chip.addEventListener('click', () => focusDomain(chip.dataset.domain, d));
         legendEl.appendChild(chip);
       });
-
-      // Build a quick lookup so link colors can match the source repo's domain color
-      const nodeById = new Map(data.nodes.map(n => [n.id, n]));
+      const resetBtn = document.createElement('button');
+      resetBtn.className = 'reset';
+      resetBtn.type = 'button';
+      resetBtn.textContent = 'Show all';
+      resetBtn.addEventListener('click', () => focusDomain(null));
+      legendEl.appendChild(resetBtn);
 
       const Graph = ForceGraph3D()(mount)
         .graphData(data)
@@ -259,6 +302,8 @@
         .nodeColor(n => n.color)
         .nodeOpacity(0.95)
         .nodeResolution(20)
+        .nodeVisibility(isVisibleNode)
+        .linkVisibility(isVisibleLink)
         .linkColor(l => {
           const src = typeof l.source === 'object' ? l.source : nodeById.get(l.source);
           const c = (src && src.color) || '#7c5cff';
@@ -352,6 +397,34 @@
           );
         }
       }
+
+      // Click a legend chip: filter the graph to that domain and fly the camera in.
+      // Click the same chip again, or click "Show all", to reset.
+      focusDomain = (domainId) => {
+        if (selectedDomain === domainId) domainId = null;
+        selectedDomain = domainId;
+        legendEl.classList.toggle('has-selection', !!selectedDomain);
+        legendEl.querySelectorAll('.chip').forEach(c => {
+          c.classList.toggle('on', c.dataset.domain === selectedDomain);
+        });
+        Graph.nodeVisibility(isVisibleNode).linkVisibility(isVisibleLink);
+
+        if (selectedDomain) {
+          if (controls) controls.autoRotate = false;
+          const hub = data.nodes.find(n => n.id === 'domain:' + selectedDomain);
+          if (hub && hub.x !== undefined) {
+            const dist = 130;
+            const r = 1 + dist / Math.hypot(hub.x || 1, hub.y || 1, hub.z || 1);
+            Graph.cameraPosition(
+              { x: (hub.x || 0) * r, y: (hub.y || 0) * r, z: (hub.z || 0) * r },
+              hub, 1200
+            );
+          }
+        } else {
+          if (controls) controls.autoRotate = true;
+          setTimeout(() => Graph.zoomToFit(900, 90), 80);
+        }
+      };
 
       const fit = () => Graph.width(stage.clientWidth).height(stage.clientHeight);
       fit();
