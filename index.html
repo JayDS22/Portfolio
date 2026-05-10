@@ -124,6 +124,26 @@
     .graph-tip .t-hint { font-size: 10px; opacity: 0.5; margin-top: 9px; letter-spacing: .04em; text-transform: uppercase; }
     .graph-tip .t-meta { font-size: 10px; opacity: 0.55; letter-spacing: .1em; text-transform: uppercase; font-family: var(--font-mono, monospace); }
     #constellation-graph canvas { outline: none; display: block; }
+
+    @media (max-width: 600px) {
+      .constellation { height: clamp(380px, 64vh, 540px); }
+      .constellation-meta { display: none; }
+      .constellation-status { font-size: 10px; left: 14px; top: 14px; max-width: calc(100% - 28px); }
+      .constellation-legend {
+        bottom: 12px; left: 12px; right: 12px;
+        flex-wrap: nowrap;
+        overflow-x: auto; overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        touch-action: pan-x;
+      }
+      .constellation-legend::-webkit-scrollbar { display: none; }
+      .constellation-legend .chip { flex-shrink: 0; font-size: 10px; padding: 4px 10px; }
+      .constellation-legend .chip .dot { width: 6px; height: 6px; }
+      .constellation-legend .reset { flex-shrink: 0; margin-left: 0; font-size: 10px; padding: 4px 10px; }
+      .graph-tip { max-width: 260px; padding: 10px 12px; }
+      .graph-tip .t-title { font-size: 13px; }
+    }
   </style>
 
   <link href="index.xml" rel="alternate" type="application/rss+xml" title="Jay Guwalani" />
