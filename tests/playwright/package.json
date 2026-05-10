@@ -1,0 +1,14 @@
+{
+  "name": "portfolio-playwright-tests",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Playwright suite for the click-to-focus interaction on the project knowledge graph.",
+  "scripts": {
+    "test": "node test.mjs",
+    "test:prod": "BASE_URL=https://jayds22.github.io/Portfolio node test.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.59.1"
+  }
+}
