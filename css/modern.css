@@ -966,6 +966,84 @@ a:hover { color: var(--text); }
 }
 .footer-socials svg { width: 16px; height: 16px; }
 
+/* ---------- Filter bar (project list search) ---------- */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px 10px 18px;
+  margin-bottom: 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--t), box-shadow var(--t);
+}
+.filter-bar:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(91, 61, 245, 0.10);
+}
+.filter-search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.filter-search svg { color: var(--text-dim); flex-shrink: 0; }
+.filter-search input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  padding: 8px 0;
+}
+.filter-search input::placeholder { color: var(--text-dim); }
+.filter-clear {
+  display: none;
+  padding: 6px;
+  border-radius: 50%;
+  border: none;
+  background: var(--surface);
+  color: var(--text-dim);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--t);
+}
+.filter-clear:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+.filter-bar.active .filter-clear { display: inline-flex; }
+.filter-status {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+}
+.filter-empty {
+  padding: 32px 20px;
+  margin-bottom: 28px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.92rem;
+}
+.filter-empty a { color: var(--accent); }
+.filter-empty a:hover { color: var(--accent-2); }
+@media (max-width: 600px) {
+  .filter-bar { gap: 10px; padding: 8px 12px 8px 14px; }
+  .filter-search input { font-size: 0.9rem; padding: 6px 0; }
+  .filter-status { display: none; }
+}
+
 /* ---------- Pagination ---------- */
 .pagination {
   list-style: none;
