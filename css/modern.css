@@ -44,6 +44,36 @@
   --t: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Dark variant. Activated by setting data-theme="dark" on <html>. The
+   constellation / graph stages keep their own dark gradients regardless,
+   so the site only really has one component palette to swap. */
+html[data-theme="dark"] {
+  --bg: #0a0a0f;
+  --bg-elev: #11121a;
+  --bg-elev-2: #161824;
+  --surface: rgba(255, 255, 255, 0.03);
+  --surface-hover: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  --text: #f4f4f6;
+  --text-muted: #a1a1ab;
+  --text-dim: #6b6b78;
+
+  --accent: #7c5cff;
+  --accent-2: #21d4fd;
+  --accent-3: #ff5c8a;
+
+  --gradient-primary: linear-gradient(135deg, #7c5cff 0%, #21d4fd 100%);
+  --gradient-warm: linear-gradient(135deg, #ff5c8a 0%, #ffb86c 100%);
+  --gradient-text: linear-gradient(135deg, #f4f4f6 0%, #a78bfa 50%, #21d4fd 100%);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.5);
+  --glow: 0 0 80px rgba(124, 92, 255, 0.25);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -71,6 +101,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+html[data-theme="dark"] body {
+  background:
+    radial-gradient(circle at 15% 10%, rgba(124, 92, 255, 0.15), transparent 45%),
+    radial-gradient(circle at 85% 0%, rgba(33, 212, 253, 0.12), transparent 40%),
+    radial-gradient(circle at 50% 100%, rgba(255, 92, 138, 0.08), transparent 50%),
+    var(--bg);
+  background-attachment: fixed;
+}
+html[data-theme="dark"] .nav { background: rgba(10, 10, 15, 0.72); }
+html[data-theme="dark"] .footer { background: rgba(0, 0, 0, 0.3); }
+html[data-theme="dark"] .tech-tag { background: var(--surface); }
+html[data-theme="dark"] .btn-secondary { box-shadow: none; }
+html[data-theme="dark"] ::selection { background: rgba(124, 92, 255, 0.4); color: var(--text); }
 
 img { max-width: 100%; display: block; }
 
@@ -200,6 +243,28 @@ a:hover { color: var(--text); }
   align-items: center;
   justify-content: center;
 }
+
+.nav-theme {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all var(--t);
+  flex-shrink: 0;
+  padding: 0;
+}
+.nav-theme:hover {
+  color: var(--text);
+  background: var(--surface-hover);
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+}
+.nav-theme svg { width: 16px; height: 16px; }
 
 @media (max-width: 860px) {
   .nav-links, .nav-socials { display: none; }

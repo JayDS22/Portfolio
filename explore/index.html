@@ -154,6 +154,7 @@
   <meta property="og:image" content="https://jayds22.github.io/Portfolio/og-image.png">
   <meta name="twitter:image" content="https://jayds22.github.io/Portfolio/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
 </head>
 
 <body>
@@ -170,6 +171,8 @@
     <symbol id="i-stack" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"/></symbol>
     <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2 14 9 21 11 14 13 12 20 10 13 3 11 10 9z"/></symbol>
     <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 2v3M12 19v3M5 12H2M22 12h-3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
   </defs>
 </svg>
@@ -180,6 +183,9 @@
       <span class="nav-brand-mark">JG</span>
       <span>Jay Guwalani</span>
     </a>
+    <button id="theme-toggle" type="button" class="nav-theme" aria-label="Toggle theme">
+      <svg><use href="#i-moon"/></svg>
+    </button>
     <button class="nav-toggle" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('open')">
       <svg width="20" height="20"><use href="#i-menu"/></svg>
     </button>
@@ -463,5 +469,6 @@
 })();
 </script>
 
+<script src="../js/theme.js" defer></script>
 </body>
 </html>
