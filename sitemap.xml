@@ -66,20 +66,6 @@
   </url>
   
   <url>
-    <loc>https://jayds22.github.io/Portfolio/tags/scene/</loc>
-    <lastmod>2024-10-09T10:58:08-04:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jayds22.github.io/Portfolio/tags/</loc>
-    <lastmod>2024-10-09T10:58:08-04:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://jayds22.github.io/Portfolio/post/chapter-2/</loc>
     <lastmod>2023-09-09T10:58:08-04:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -109,12 +95,6 @@
   </url>
   
   <url>
-    <loc>https://jayds22.github.io/Portfolio/categories/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://jayds22.github.io/Portfolio/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -126,10 +106,4 @@
     <priority>0.5</priority>
   </url>
 
-  <url>
-    <loc>https://jayds22.github.io/Portfolio/publications/publish-1</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
 </urlset>
