@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-12T09:31:36+00:00",
+  "generated_at": "2026-05-12T19:43:51+00:00",
   "user": "JayDS22",
   "domain_count": 9,
-  "repo_count": 77,
+  "repo_count": 65,
   "nodes": [
     {
       "id": "domain:computer-vision",
@@ -66,19 +66,6 @@
       "type": "domain",
       "color": "#94a3b8",
       "val": 50
-    },
-    {
-      "id": "repo:AIOps-Roadmap",
-      "name": "AIOps Roadmap",
-      "type": "repo",
-      "domain": "ml-general",
-      "color": "#94a3b8",
-      "val": 23,
-      "stars": 5,
-      "language": "",
-      "description": "For Experienced Engineers (with Background in CS/DS/AI/IT)",
-      "url": "https://github.com/JayDS22/AIOps-Roadmap",
-      "updated_at": "2026-04-13T17:48:01Z"
     },
     {
       "id": "repo:ConstellationAI-Multi-Agentic-RAG",
@@ -328,19 +315,6 @@
       "updated_at": "2026-04-22T16:58:46Z"
     },
     {
-      "id": "repo:Architecture-Building-Concepts",
-      "name": "Architecture Building Concepts",
-      "type": "repo",
-      "domain": "mlops-infra",
-      "color": "#a855f7",
-      "val": 3,
-      "stars": 0,
-      "language": "",
-      "description": "This repository consists of the concepts, theories, resources related to DevOps, Engineering, MLOps, and Architecture Building",
-      "url": "https://github.com/JayDS22/Architecture-Building-Concepts",
-      "updated_at": "2023-11-08T03:51:39Z"
-    },
-    {
       "id": "repo:Autogen-Retrieve-Chat-System",
       "name": "Autogen Retrieve Chat System",
       "type": "repo",
@@ -445,19 +419,6 @@
       "updated_at": "2022-04-29T02:52:26Z"
     },
     {
-      "id": "repo:Coursera-ML-Assignments",
-      "name": "Coursera ML Assignments",
-      "type": "repo",
-      "domain": "ml-general",
-      "color": "#94a3b8",
-      "val": 3,
-      "stars": 0,
-      "language": "MATLAB",
-      "description": "This repository consists of all the solutions related to Coursera ML Programming Assignments",
-      "url": "https://github.com/JayDS22/Coursera-ML-Assignments",
-      "updated_at": "2021-12-17T16:04:19Z"
-    },
-    {
       "id": "repo:Credit-Risk-PD-LGD-EAD-Modeling-Platform",
       "name": "Credit Risk PD LGD EAD Modeling Platform",
       "type": "repo",
@@ -469,19 +430,6 @@
       "description": "Comprehensive credit risk modeling platform implementing Probability of Default (PD), Loss Given Default (LGD), and Exposure at Default (EAD) models for Basel compliance.",
       "url": "https://github.com/JayDS22/Credit-Risk-PD-LGD-EAD-Modeling-Platform",
       "updated_at": "2026-05-02T02:14:22Z"
-    },
-    {
-      "id": "repo:data604",
-      "name": "data604",
-      "type": "repo",
-      "domain": "ml-general",
-      "color": "#94a3b8",
-      "val": 3,
-      "stars": 0,
-      "language": "Jupyter Notebook",
-      "description": "",
-      "url": "https://github.com/JayDS22/data604",
-      "updated_at": "2026-05-04T14:46:55Z"
     },
     {
       "id": "repo:DBT_Shipping_project",
@@ -705,19 +653,6 @@
       "updated_at": "2024-07-19T20:10:06Z"
     },
     {
-      "id": "repo:kubeflow-docs-agent-clone",
-      "name": "kubeflow docs agent clone",
-      "type": "repo",
-      "domain": "llm-agents",
-      "color": "#22d3ee",
-      "val": 3,
-      "stars": 0,
-      "language": "Python",
-      "description": "",
-      "url": "https://github.com/JayDS22/kubeflow-docs-agent-clone",
-      "updated_at": "2026-03-27T21:21:43Z"
-    },
-    {
       "id": "repo:kubeflow-docs-agent-poc",
       "name": "kubeflow docs agent poc",
       "type": "repo",
@@ -744,19 +679,6 @@
       "updated_at": "2025-10-15T15:14:50Z"
     },
     {
-      "id": "repo:Limited_Submissions",
-      "name": "Limited Submissions",
-      "type": "repo",
-      "domain": "ml-general",
-      "color": "#94a3b8",
-      "val": 3,
-      "stars": 0,
-      "language": "HTML",
-      "description": "",
-      "url": "https://github.com/JayDS22/Limited_Submissions",
-      "updated_at": "2026-04-13T14:09:52Z"
-    },
-    {
       "id": "repo:Lucid-by-Levvate-AI",
       "name": "Lucid by Levvate AI",
       "type": "repo",
@@ -768,19 +690,6 @@
       "description": "AI-powered website clarity analyzer for service-based businesses, built with Next.js 14 and Claude Sonnet 4.5. Scores any URL on a 5-dimension rubric and exports a branded PDF with embedded architecture diagram.",
       "url": "https://github.com/JayDS22/Lucid-by-Levvate-AI",
       "updated_at": "2026-05-07T01:02:15Z"
-    },
-    {
-      "id": "repo:Machine-Learning-NLP-Deep-Learning",
-      "name": "Machine Learning NLP Deep Learning",
-      "type": "repo",
-      "domain": "nlp-speech",
-      "color": "#f472b6",
-      "val": 3,
-      "stars": 0,
-      "language": "Jupyter Notebook",
-      "description": "This repository consists of assignments and Models trained on various ML, NLP, & Deep Learning Algorithms.",
-      "url": "https://github.com/JayDS22/Machine-Learning-NLP-Deep-Learning",
-      "updated_at": "2022-04-29T02:52:23Z"
     },
     {
       "id": "repo:Marketplace_Optimization_Engine",
@@ -887,19 +796,6 @@
       "updated_at": "2025-10-01T04:43:08Z"
     },
     {
-      "id": "repo:Power-BI-Projects",
-      "name": "Power BI Projects",
-      "type": "repo",
-      "domain": "ml-general",
-      "color": "#94a3b8",
-      "val": 3,
-      "stars": 0,
-      "language": "Python",
-      "description": "This file consists of Projects, developed using Power-BI for Data-Manipulation and Data Visualization.",
-      "url": "https://github.com/JayDS22/Power-BI-Projects",
-      "updated_at": "2026-04-10T20:57:35Z"
-    },
-    {
       "id": "repo:Predictive-Maintenance-for-Industrial-Equipment",
       "name": "Predictive Maintenance for Industrial Equipment",
       "type": "repo",
@@ -937,19 +833,6 @@
       "description": "High-performance LLM inference platform with vLLM continuous batching achieving 12.3K+ req/sec, 42ms P50/178ms P99 latency, INT8/INT4 quantization (70% memory savings), tensor parallelism across 4 GPUs, and comprehensive monitoring serving 1500+ concurrent users.",
       "url": "https://github.com/JayDS22/Production-LLM-Serving-Optimization-Framework",
       "updated_at": "2026-03-18T18:39:38Z"
-    },
-    {
-      "id": "repo:Python",
-      "name": "Python",
-      "type": "repo",
-      "domain": "ml-general",
-      "color": "#94a3b8",
-      "val": 3,
-      "stars": 0,
-      "language": "Jupyter Notebook",
-      "description": "This Repository consists of assignments based on Python Programming from Beginner to Intermediate.",
-      "url": "https://github.com/JayDS22/Python",
-      "updated_at": "2021-12-08T14:12:30Z"
     },
     {
       "id": "repo:Quantitative-Portfolio-Management-And-Trading-Platform",
@@ -1004,19 +887,6 @@
       "updated_at": "2026-05-02T02:15:01Z"
     },
     {
-      "id": "repo:resources-ai-chatbot-plugin-jenkins",
-      "name": "resources ai chatbot plugin jenkins",
-      "type": "repo",
-      "domain": "llm-agents",
-      "color": "#22d3ee",
-      "val": 3,
-      "stars": 0,
-      "language": "Python",
-      "description": "",
-      "url": "https://github.com/JayDS22/resources-ai-chatbot-plugin-jenkins",
-      "updated_at": "2026-03-28T02:07:37Z"
-    },
-    {
       "id": "repo:Spam-Detection",
       "name": "Spam Detection",
       "type": "repo",
@@ -1028,32 +898,6 @@
       "description": "Build an End-to-End Data Science project to predict the Spam & Legit emails",
       "url": "https://github.com/JayDS22/Spam-Detection",
       "updated_at": "2021-12-09T20:02:09Z"
-    },
-    {
-      "id": "repo:SQL-MySQL-Excercises",
-      "name": "SQL MySQL Excercises",
-      "type": "repo",
-      "domain": "mlops-infra",
-      "color": "#a855f7",
-      "val": 3,
-      "stars": 0,
-      "language": "",
-      "description": "This repository consists of assignments performed using SQL for Data-Warehousing.",
-      "url": "https://github.com/JayDS22/SQL-MySQL-Excercises",
-      "updated_at": "2021-11-06T05:43:09Z"
-    },
-    {
-      "id": "repo:Tableau-Repository",
-      "name": "Tableau Repository",
-      "type": "repo",
-      "domain": "mlops-infra",
-      "color": "#a855f7",
-      "val": 3,
-      "stars": 0,
-      "language": "",
-      "description": "This Repository consists of assignments and projects, based on DA, performed using Tableau Desktop.",
-      "url": "https://github.com/JayDS22/Tableau-Repository",
-      "updated_at": "2021-10-11T15:40:31Z"
     },
     {
       "id": "repo:Transportation_And_Demand_Forecasting",
@@ -1070,10 +914,6 @@
     }
   ],
   "links": [
-    {
-      "source": "repo:AIOps-Roadmap",
-      "target": "domain:ml-general"
-    },
     {
       "source": "repo:ConstellationAI-Multi-Agentic-RAG",
       "target": "domain:llm-agents"
@@ -1151,10 +991,6 @@
       "target": "domain:ml-general"
     },
     {
-      "source": "repo:Architecture-Building-Concepts",
-      "target": "domain:mlops-infra"
-    },
-    {
       "source": "repo:Autogen-Retrieve-Chat-System",
       "target": "domain:llm-agents"
     },
@@ -1187,16 +1023,8 @@
       "target": "domain:ml-general"
     },
     {
-      "source": "repo:Coursera-ML-Assignments",
-      "target": "domain:ml-general"
-    },
-    {
       "source": "repo:Credit-Risk-PD-LGD-EAD-Modeling-Platform",
       "target": "domain:stats-bayesian"
-    },
-    {
-      "source": "repo:data604",
-      "target": "domain:ml-general"
     },
     {
       "source": "repo:DBT_Shipping_project",
@@ -1267,10 +1095,6 @@
       "target": "domain:computer-vision"
     },
     {
-      "source": "repo:kubeflow-docs-agent-clone",
-      "target": "domain:llm-agents"
-    },
-    {
       "source": "repo:kubeflow-docs-agent-poc",
       "target": "domain:llm-agents"
     },
@@ -1279,16 +1103,8 @@
       "target": "domain:nlp-speech"
     },
     {
-      "source": "repo:Limited_Submissions",
-      "target": "domain:ml-general"
-    },
-    {
       "source": "repo:Lucid-by-Levvate-AI",
       "target": "domain:llm-agents"
-    },
-    {
-      "source": "repo:Machine-Learning-NLP-Deep-Learning",
-      "target": "domain:nlp-speech"
     },
     {
       "source": "repo:Marketplace_Optimization_Engine",
@@ -1323,10 +1139,6 @@
       "target": "domain:computer-vision"
     },
     {
-      "source": "repo:Power-BI-Projects",
-      "target": "domain:ml-general"
-    },
-    {
       "source": "repo:Predictive-Maintenance-for-Industrial-Equipment",
       "target": "domain:time-series"
     },
@@ -1337,10 +1149,6 @@
     {
       "source": "repo:Production-LLM-Serving-Optimization-Framework",
       "target": "domain:llm-agents"
-    },
-    {
-      "source": "repo:Python",
-      "target": "domain:ml-general"
     },
     {
       "source": "repo:Quantitative-Portfolio-Management-And-Trading-Platform",
@@ -1359,20 +1167,8 @@
       "target": "domain:stats-bayesian"
     },
     {
-      "source": "repo:resources-ai-chatbot-plugin-jenkins",
-      "target": "domain:llm-agents"
-    },
-    {
       "source": "repo:Spam-Detection",
       "target": "domain:nlp-speech"
-    },
-    {
-      "source": "repo:SQL-MySQL-Excercises",
-      "target": "domain:mlops-infra"
-    },
-    {
-      "source": "repo:Tableau-Repository",
-      "target": "domain:mlops-infra"
     },
     {
       "source": "repo:Transportation_And_Demand_Forecasting",

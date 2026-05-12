@@ -13,12 +13,29 @@ from pathlib import Path
 
 GITHUB_USER = "JayDS22"
 
-# Repos to skip entirely (the portfolio site itself, GH profile config, etc.)
+# Repos to skip entirely. Two buckets:
+#   1. Site infra (the portfolio itself, GH profile config, etc.)
+#   2. Learning / coursework / exercise / collection repos that are not
+#      standalone projects. The graph is meant to surface project work,
+#      not assignments or generic language notes.
 EXCLUDE_REPOS = {
+    # site infra
     "Portfolio",
     "JayDS22",
     "jayds22.github.io",
     "portfolioweb",
+    # coursework, exercises, learning notes, generic collections
+    "AIOps-Roadmap",
+    "Architecture-Building-Concepts",
+    "Coursera-ML-Assignments",
+    "data604",
+    "Limited_Submissions",
+    "Machine-Learning-NLP-Deep-Learning",
+    "Power-BI-Projects",
+    "Python",
+    "SQL-Basic-Excercises",
+    "SQL-MySQL-Excercises",
+    "Tableau-Repository",
 }
 
 # Domain hubs. First match wins (order matters - put more specific domains
