@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-14T09:29:24+00:00",
+  "generated_at": "2026-05-15T09:41:55+00:00",
   "user": "JayDS22",
   "domain_count": 9,
-  "repo_count": 67,
+  "repo_count": 68,
   "nodes": [
     {
       "id": "domain:computer-vision",
@@ -127,10 +127,10 @@
       "color": "#facc15",
       "val": 11,
       "stars": 2,
-      "language": "",
+      "language": "Python",
       "description": "ML-powered predictive maintenance system achieving $122.9M+ cost savings through vehicle durability forecasting (MAPE: 2.8%), customer complaint analysis (F1: 0.91), and survival modeling (C-index: 0.78) with automated SQL pipelines and Power BI reporting.",
       "url": "https://github.com/JayDS22/Vehicle-Durability-Forecasting-and-Predictive-Maintanence-System",
-      "updated_at": "2026-04-02T02:50:42Z"
+      "updated_at": "2026-05-14T18:28:57Z"
     },
     {
       "id": "repo:Blog_Generator",
@@ -296,10 +296,10 @@
       "color": "#facc15",
       "val": 3,
       "stars": 0,
-      "language": "",
+      "language": "Python",
       "description": "Real-time advertising analytics platform with bidding engine (<100ms), streaming pipelines (Kafka/Spark), data warehouse (Redshift), A/B testing framework (23% lift), and advertiser dashboards processing 1M+ events/sec with 99.95% uptime.",
       "url": "https://github.com/JayDS22/Advertising-Campaign-Analytics-Real-Time-Bidding-Platform",
-      "updated_at": "2025-11-06T17:09:46Z"
+      "updated_at": "2026-05-14T13:40:14Z"
     },
     {
       "id": "repo:apap-mcp-poc",
@@ -504,10 +504,10 @@
       "color": "#94a3b8",
       "val": 3,
       "stars": 0,
-      "language": "",
+      "language": "Python",
       "description": "ML-powered analytics platform that predicts crash risk by analyzing driver behavior patterns from telematics data with real-time risk scoring and alerting.",
       "url": "https://github.com/JayDS22/Driver-Behavior-Analytics-Crash-Prediction-System",
-      "updated_at": "2025-10-15T15:13:00Z"
+      "updated_at": "2026-05-14T17:30:25Z"
     },
     {
       "id": "repo:Driver-Behavior-Analytics-System",
@@ -686,10 +686,10 @@
       "color": "#f472b6",
       "val": 3,
       "stars": 0,
-      "language": "",
+      "language": "Python",
       "description": "Production-scale speech recognition and NLU system with multi-language support, real-time transcription, and intent classification for voice-enabled applications.",
       "url": "https://github.com/JayDS22/Large-Scale-Speech-Recognition-Understanding-System",
-      "updated_at": "2025-10-15T15:14:50Z"
+      "updated_at": "2026-05-14T19:01:47Z"
     },
     {
       "id": "repo:Lucid-by-Levvate-AI",
@@ -744,6 +744,19 @@
       "updated_at": "2026-04-15T05:26:47Z"
     },
     {
+      "id": "repo:MLOps-Production-Pipeline",
+      "name": "MLOps Production Pipeline",
+      "type": "repo",
+      "domain": "mlops-infra",
+      "color": "#a855f7",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "",
+      "url": "https://github.com/JayDS22/MLOps-Production-Pipeline",
+      "updated_at": "2026-05-14T18:29:46Z"
+    },
+    {
       "id": "repo:Multi-Agent-Reinforcement-Learning-for-Autonomous-Navigation",
       "name": "Multi Agent Reinforcement Learning for Autonomous Navigation",
       "type": "repo",
@@ -790,10 +803,10 @@
       "color": "#fb923c",
       "val": 3,
       "stars": 0,
-      "language": "",
+      "language": "Python",
       "description": "Production-ready Network Intrusion Detection System with ensemble ML models (Isolation Forest + Random Forest + LSTM) achieving 94.2% accuracy and detecting 15+ attack patterns in real-time.",
       "url": "https://github.com/JayDS22/Network-Intrusion-Detection-System-NIDS-with-ML",
-      "updated_at": "2025-10-15T15:15:39Z"
+      "updated_at": "2026-05-14T16:20:06Z"
     },
     {
       "id": "repo:Pedestrian-Safety-ADA-Compliance-ML-System",
@@ -816,10 +829,10 @@
       "color": "#fb923c",
       "val": 3,
       "stars": 0,
-      "language": "",
+      "language": "Python",
       "description": "IoT-enabled predictive maintenance system using ML to forecast equipment failures and optimize maintenance schedules, reducing downtime by up to 40%.",
       "url": "https://github.com/JayDS22/Predictive-Maintenance-for-Industrial-Equipment",
-      "updated_at": "2025-10-15T15:15:30Z"
+      "updated_at": "2026-05-14T17:01:32Z"
     },
     {
       "id": "repo:Product-Analytics-and-User-Retention-Platform",
@@ -829,10 +842,10 @@
       "color": "#7c5cff",
       "val": 3,
       "stars": 0,
-      "language": "",
+      "language": "Python",
       "description": "End-to-end ML platform for churn prediction and product analytics with 120+ engineered features, GLM modeling (86.17% accuracy), and interactive Looker dashboards tracking DAU/MAU, retention, and user journeys.",
       "url": "https://github.com/JayDS22/Product-Analytics-and-User-Retention-Platform",
-      "updated_at": "2025-10-04T21:43:37Z"
+      "updated_at": "2026-05-14T17:59:31Z"
     },
     {
       "id": "repo:Production-LLM-Serving-Optimization-Framework",
@@ -1146,6 +1159,10 @@
     },
     {
       "source": "repo:ML-Model-Integration-for-Chip-Design-Automation",
+      "target": "domain:mlops-infra"
+    },
+    {
+      "source": "repo:MLOps-Production-Pipeline",
       "target": "domain:mlops-infra"
     },
     {
