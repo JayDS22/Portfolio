@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T10:20:30+00:00",
+  "generated_at": "2026-05-23T08:59:39+00:00",
   "user": "JayDS22",
   "domain_count": 9,
   "repo_count": 68,
@@ -157,6 +157,19 @@
       "description": "CodeLens: Production-grade FastAPI + React GPT Action delivering AI-powered code reviews via GitHub API integration, GPT-4o-mini structured analysis with token-aware chunking, Redis-backed caching, SSE streaming, PostgreSQL persistence, Prometheus observability, and a complete OpenAPI 3.1 schema for ChatGPT GPT Store deployment.",
       "url": "https://github.com/JayDS22/ChatGPT-Code-Review-GPT-Action",
       "updated_at": "2026-05-17T03:36:10Z"
+    },
+    {
+      "id": "repo:Driver-Behavior-Analytics-System",
+      "name": "Driver Behavior Analytics System",
+      "type": "repo",
+      "domain": "stats-bayesian",
+      "color": "#facc15",
+      "val": 7,
+      "stars": 1,
+      "language": "Python",
+      "description": "\ud83d\ude99 Comprehensive driver risk analytics using Cox proportional hazards (C-index: 0.79) and Bayesian hierarchical models (91.4% accuracy) \u26a1 Production-ready system with real-time scoring for 300K+ drivers, SHAP explainability, and full Docker/Kubernetes deployment stack",
+      "url": "https://github.com/JayDS22/Driver-Behavior-Analytics-System",
+      "updated_at": "2026-05-22T14:00:40Z"
     },
     {
       "id": "repo:Multi-GPU-Distributed-Training-Framework",
@@ -508,19 +521,6 @@
       "description": "ML-powered analytics platform that predicts crash risk by analyzing driver behavior patterns from telematics data with real-time risk scoring and alerting.",
       "url": "https://github.com/JayDS22/Driver-Behavior-Analytics-Crash-Prediction-System",
       "updated_at": "2026-05-17T03:45:33Z"
-    },
-    {
-      "id": "repo:Driver-Behavior-Analytics-System",
-      "name": "Driver Behavior Analytics System",
-      "type": "repo",
-      "domain": "stats-bayesian",
-      "color": "#facc15",
-      "val": 3,
-      "stars": 0,
-      "language": "Python",
-      "description": "\ud83d\ude99 Comprehensive driver risk analytics using Cox proportional hazards (C-index: 0.79) and Bayesian hierarchical models (91.4% accuracy) \u26a1 Production-ready system with real-time scoring for 300K+ drivers, SHAP explainability, and full Docker/Kubernetes deployment stack",
-      "url": "https://github.com/JayDS22/Driver-Behavior-Analytics-System",
-      "updated_at": "2026-05-17T03:04:39Z"
     },
     {
       "id": "repo:E-Commerce-Shipping",
@@ -982,6 +982,10 @@
       "target": "domain:llm-agents"
     },
     {
+      "source": "repo:Driver-Behavior-Analytics-System",
+      "target": "domain:stats-bayesian"
+    },
+    {
       "source": "repo:Multi-GPU-Distributed-Training-Framework",
       "target": "domain:rl-robotics"
     },
@@ -1088,10 +1092,6 @@
     {
       "source": "repo:Driver-Behavior-Analytics-Crash-Prediction-System",
       "target": "domain:ml-general"
-    },
-    {
-      "source": "repo:Driver-Behavior-Analytics-System",
-      "target": "domain:stats-bayesian"
     },
     {
       "source": "repo:E-Commerce-Shipping",
