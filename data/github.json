@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-25T11:06:12+00:00",
+  "generated_at": "2026-05-27T10:55:29+00:00",
   "user": "JayDS22",
   "domain_count": 9,
-  "repo_count": 68,
+  "repo_count": 69,
   "nodes": [
     {
       "id": "domain:computer-vision",
@@ -601,6 +601,19 @@
       "updated_at": "2026-05-17T03:36:15Z"
     },
     {
+      "id": "repo:HPC-llm-bench",
+      "name": "HPC llm bench",
+      "type": "repo",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "",
+      "url": "https://github.com/JayDS22/HPC-llm-bench",
+      "updated_at": "2026-05-25T16:18:12Z"
+    },
+    {
       "id": "repo:Indian_StartUps",
       "name": "Indian StartUps",
       "type": "repo",
@@ -1116,6 +1129,10 @@
     {
       "source": "repo:Game-Monetization-LiveOps-Analytics",
       "target": "domain:stats-bayesian"
+    },
+    {
+      "source": "repo:HPC-llm-bench",
+      "target": "domain:llm-agents"
     },
     {
       "source": "repo:Indian_StartUps",
