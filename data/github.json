@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-01T12:31:25+00:00",
+  "generated_at": "2026-06-02T11:13:50+00:00",
   "user": "JayDS22",
   "domain_count": 9,
   "repo_count": 69,
@@ -609,9 +609,9 @@
       "val": 3,
       "stars": 0,
       "language": "Python",
-      "description": "",
+      "description": "FSDP fine-tuning of Qwen2.5-7B on MMLU auxiliary_train with 3.6x inference throughput optimization (1.8x PagedAttention + continuous batching, 2.0x tensor parallelism) validated on 2-node H200 cluster; reproducible scaling path for multi-GPU HPC deployments.",
       "url": "https://github.com/JayDS22/HPC-llm-bench",
-      "updated_at": "2026-05-25T16:18:12Z"
+      "updated_at": "2026-06-01T14:08:57Z"
     },
     {
       "id": "repo:Indian_StartUps",
