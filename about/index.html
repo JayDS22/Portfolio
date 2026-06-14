@@ -152,11 +152,37 @@
             already ships with <strong>53 passing tests</strong> and <strong>98.55% statement coverage</strong>, plus five prior accepted contributions to the Accord codebase.
             <a href="../post/chapter-10/">Full case study &rarr;</a>
           </p>
+
+          <p style="margin-top: 18px;"><strong>Additional Linux Foundation engagements (GSoC 2026 proposals):</strong></p>
+          <ul class="lf-list">
+            <li>
+              <strong><span class="accent">Kubeflow (CNCF)</span> &mdash; "Agentic RAG on Kubeflow":</strong>
+              proposal to production-harden <code>kubeflow/docs-agent</code> with CI/CD pipelines, test coverage, monitoring, RAGAS benchmarks and idempotent ingestion. Prior contributions to the project include three filed issues
+              (<a href="https://github.com/kubeflow/docs-agent/issues/181" target="_blank" rel="noopener">#181</a> content truncation,
+              <a href="https://github.com/kubeflow/docs-agent/issues/182" target="_blank" rel="noopener">#182</a> Feast VARCHAR monkey-patch,
+              <a href="https://github.com/kubeflow/docs-agent/issues/183" target="_blank" rel="noopener">#183</a> SentenceTransformer/Milvus reload overhead),
+              KEP document comments, and a working
+              <a href="https://github.com/JayDS22/kubeflow-docs-agent-poc" target="_blank" rel="noopener">end-to-end POC repository</a>.
+              Mentors: Chase Christensen, Tarek Abouzeid, Francisco Javier Arceo.
+            </li>
+            <li>
+              <strong><span class="accent">Jenkins (CDF)</span> &mdash; "AI Chatbot to Guide User Workflow":</strong>
+              proposal for a context-aware, multi-agent assistant for Jenkins CI/CD that reads live instance state (build logs, installed plugins, job configs) and routes queries to four specialised agents - Troubleshoot, Workflow, Recommend, General. Built on open-source LLMs (LangChain, FAISS + BM25 retrieval, Llama 3.x via <code>llama.cpp</code>, Ollama for model management), self-hosted with no vendor lock-in. Extends the GSoC 2025
+              <a href="https://github.com/jenkinsci/resources-ai-chatbot-plugin" target="_blank" rel="noopener">resources-ai-chatbot-plugin</a>.
+              Mentors: Kris Stern, Shivay Lamba, Chirag Gupta.
+            </li>
+          </ul>
         </article>
 
         <style>
           .about-block-icon--gsoc { background: #ffffff !important; padding: 4px; border: 1px solid var(--border); }
           .about-block-icon--gsoc img { width: 100%; height: 100%; object-fit: contain; display: block; }
+          .lf-list { margin: 8px 0 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; }
+          .lf-list li { position: relative; padding-left: 18px; color: var(--text-muted); line-height: 1.65; }
+          .lf-list li::before { content: ""; position: absolute; left: 0; top: 12px; width: 8px; height: 1px; background: var(--accent); }
+          .lf-list li strong:first-child { color: var(--text); }
+          .lf-list code { font-family: 'JetBrains Mono', monospace; font-size: 0.88em; background: var(--surface); padding: 1px 6px; border-radius: 4px; }
+          .lf-list a { color: var(--accent); }
         </style>
 
         <article class="about-block">
