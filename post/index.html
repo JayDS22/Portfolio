@@ -77,16 +77,19 @@
 
 <section class="section" style="padding-top: 8px; padding-bottom: 8px;">
   <div class="container">
-    <a href="../explore/" style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 22px;border-radius:var(--radius-xl, 18px);border:1px solid var(--border, #2a2d3a);background:linear-gradient(135deg, rgba(124,92,255,0.10), rgba(34,211,238,0.06));text-decoration:none;color:inherit;transition:transform .15s ease, border-color .15s ease;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='rgba(124,92,255,0.5)';" onmouseout="this.style.transform='';this.style.borderColor='';">
+    <a class="explore-cta" href="../explore/" style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 22px;border-radius:var(--radius-lg, 18px);border:1px solid var(--border-strong);background:var(--bg-elev);text-decoration:none;color:inherit;transition:transform .15s ease, border-color .15s ease, box-shadow .2s ease;box-shadow:var(--shadow-sm);">
       <div style="display:flex;align-items:center;gap:16px;">
-        <span style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:rgba(124,92,255,0.15);color:#7c5cff;flex-shrink:0;"><svg width="22" height="22"><use href="#i-globe"/></svg></span>
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;background:rgba(29,78,216,0.10);color:var(--accent);flex-shrink:0;"><svg width="22" height="22"><use href="#i-globe"/></svg></span>
         <div>
-          <div style="font-weight:600;font-size:16px;margin-bottom:2px;">Explore the full project graph in 3D</div>
-          <div style="color:var(--text-dim, #9aa0b4);font-size:13px;">Every public GitHub repo, grouped by domain - Computer Vision, LLMs, Stats, MLOps, more.</div>
+          <div style="font-weight:600;font-size:16px;margin-bottom:2px;color:var(--text);">Explore the full project graph in 3D</div>
+          <div style="color:var(--text-muted);font-size:13px;">Every public GitHub repo, grouped by domain - Computer Vision, LLMs, Stats, MLOps, more.</div>
         </div>
       </div>
-      <span style="display:inline-flex;align-items:center;gap:6px;color:#7c5cff;font-weight:500;font-size:14px;flex-shrink:0;">Open <svg width="16" height="16"><use href="#i-arrow"/></svg></span>
+      <span style="display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-weight:600;font-size:14px;flex-shrink:0;">Open <svg width="16" height="16"><use href="#i-arrow"/></svg></span>
     </a>
+    <style>
+      .explore-cta:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: var(--shadow); }
+    </style>
   </div>
 </section>
 
@@ -101,7 +104,7 @@
       <button type="button" class="filter-clear" id="filter-clear" aria-label="Clear search">
         <svg width="14" height="14"><use href="#i-x"/></svg>
       </button>
-      <div class="filter-status" id="filter-status">10 projects</div>
+      <div class="filter-status" id="filter-status">11 projects</div>
     </div>
 
     <div class="filter-empty" id="filter-empty" hidden>
@@ -109,6 +112,28 @@
     </div>
 
     <div class="projects-grid" id="projects-grid">
+
+      <article class="project-card">
+        <div class="project-thumb">
+          <img src="../images/gsoc-2026-accord-card.png" alt="GSoC 2026 - Linux Foundation - Accord Project: APAP and MCP Server" style="object-fit:contain;background:#f3f4ee;">
+        </div>
+        <div class="project-body">
+          <div class="project-meta"><span>GSoC 2026</span> <span>·</span> <span>Linux Foundation · Accord Project</span></div>
+          <h3 class="project-title">
+            <a href="../post/chapter-10/">APAP/MCP Hardening - Google Summer of Code 2026</a>
+          </h3>
+          <p class="project-desc">Selected as a Google Summer of Code 2026 contributor with The Linux Foundation (Accord Project). Service layer refactor, four-tier testing and multi-client docs for the APAP Model Context Protocol server.</p>
+          <div class="project-metrics">
+            <span class="metric-chip">175 hrs · 12 wks</span>
+            <span class="metric-chip">53 tests · 98.55% cov</span>
+            <span class="metric-chip">5 prior PRs</span>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">TypeScript</span><span class="tech-tag">MCP</span><span class="tech-tag">Drizzle ORM</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Docker</span>
+          </div>
+          <a class="project-link" href="../post/chapter-10/">View case study <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
 
       <article class="project-card">
         <div class="project-thumb">

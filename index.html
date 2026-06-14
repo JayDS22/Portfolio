@@ -15,11 +15,11 @@
     .constellation {
       position: relative;
       height: clamp(480px, 64vh, 680px);
-      border: 1px solid rgba(124,92,255,0.18);
+      border: 1px solid rgba(125,163,255,0.20);
       border-radius: var(--radius-xl, 20px);
       overflow: hidden;
       box-shadow:
-        inset 0 0 80px rgba(124,92,255,0.06),
+        inset 0 0 80px rgba(125,163,255,0.06),
         0 24px 60px -20px rgba(0,0,0,0.55);
       background:
         radial-gradient(1.4px 1.4px at 12% 22%, rgba(255,255,255,0.55), transparent 60%),
@@ -36,8 +36,8 @@
     }
     .constellation::before {
       content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1;
-      background: radial-gradient(circle at 30% 25%, rgba(124,92,255,0.18), transparent 45%),
-                  radial-gradient(circle at 75% 70%, rgba(34,211,238,0.12), transparent 50%);
+      background: radial-gradient(circle at 30% 25%, rgba(125,163,255,0.18), transparent 45%),
+                  radial-gradient(circle at 75% 70%, rgba(212,165,116,0.10), transparent 50%);
     }
     .constellation-status {
       position: absolute; top: 18px; left: 22px; z-index: 4;
@@ -47,14 +47,14 @@
     }
     .constellation-status .pulse {
       display: inline-block; width: 6px; height: 6px; border-radius: 50%;
-      background: #7c5cff; margin-right: 8px; vertical-align: middle;
-      box-shadow: 0 0 0 0 rgba(124,92,255,0.7);
+      background: #7da3ff; margin-right: 8px; vertical-align: middle;
+      box-shadow: 0 0 0 0 rgba(125,163,255,0.7);
       animation: constellation-pulse 2.4s infinite;
     }
     @keyframes constellation-pulse {
-      0%   { box-shadow: 0 0 0 0 rgba(124,92,255,0.7); }
-      70%  { box-shadow: 0 0 0 10px rgba(124,92,255,0); }
-      100% { box-shadow: 0 0 0 0 rgba(124,92,255,0); }
+      0%   { box-shadow: 0 0 0 0 rgba(125,163,255,0.7); }
+      70%  { box-shadow: 0 0 0 10px rgba(125,163,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(125,163,255,0); }
     }
     .constellation-meta {
       position: absolute; top: 18px; right: 22px; z-index: 4;
@@ -79,9 +79,9 @@
     }
     .constellation-legend .chip:hover { transform: translateY(-1px); background: rgba(20,22,38,0.9); }
     .constellation-legend .chip.on {
-      background: var(--chip-color, #7c5cff);
+      background: var(--chip-color, #7da3ff);
       color: #06070b !important;
-      box-shadow: 0 4px 18px var(--chip-color, #7c5cff), 0 0 0 1px rgba(255,255,255,0.1) inset;
+      box-shadow: 0 4px 18px var(--chip-color, #7da3ff), 0 0 0 1px rgba(255,255,255,0.1) inset;
     }
     .constellation-legend .chip.on .dot { background: rgba(6,7,11,0.85) !important; box-shadow: none; }
     .constellation-legend.has-selection .chip:not(.on) { opacity: 0.5; }
@@ -106,7 +106,7 @@
       border-radius: 12px; padding: 12px 14px; max-width: 340px;
       color: #fff;
       font-family: var(--font-sans, system-ui, sans-serif);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.55), 0 0 24px rgba(124,92,255,0.18);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.55), 0 0 24px rgba(125,163,255,0.20);
       backdrop-filter: blur(8px);
     }
     .graph-tip .t-title { font-weight: 600; font-size: 14px; margin-bottom: 6px; }
@@ -275,6 +275,50 @@
     </div>
   </div>
 </section>
+
+<!-- GSoC 2026 recognition banner -->
+<section class="section" style="padding-top: 24px; padding-bottom: 8px;">
+  <div class="container">
+    <a class="gsoc-banner" href="post/chapter-10/" style="display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:0;align-items:stretch;border-radius:var(--radius-lg, 20px);overflow:hidden;border:1px solid var(--border-strong);background:var(--bg-elev);text-decoration:none;color:inherit;transition:transform .15s ease, border-color .15s ease, box-shadow .2s ease;box-shadow:var(--shadow);">
+      <div style="padding:34px 36px;display:flex;flex-direction:column;justify-content:center;gap:14px;">
+        <div style="display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono, ui-monospace, monospace);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-2);">
+          <span style="display:inline-block;width:24px;height:1px;background:var(--accent-2);"></span>
+          New recognition
+        </div>
+        <h2 style="margin:0;font-size:clamp(22px, 3vw, 30px);line-height:1.2;letter-spacing:-0.01em;">
+          Selected as a <span class="grad">Google Summer of Code 2026</span> contributor with <strong>The Linux Foundation</strong>.
+        </h2>
+        <p style="margin:0;color:var(--text-muted);font-size:15px;line-height:1.6;">
+          Working on the <strong>Accord Project</strong>'s APAP / MCP server - shared service layer refactor, four-tier testing and multi-client documentation. 175 hours over 12 weeks, mentored by Niall Roche and Dan Selman.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;">
+          <span class="metric-chip">Idea #4 · APAP &amp; MCP</span>
+          <span class="metric-chip">POC: 53 tests · 98.55% cov</span>
+          <span class="metric-chip">5 prior PRs to Accord</span>
+        </div>
+        <span style="display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-weight:600;font-size:14px;margin-top:6px;">
+          Read the case study <svg width="16" height="16"><use href="#i-arrow"/></svg>
+        </span>
+      </div>
+      <div style="background:#f3f4ee;display:flex;align-items:center;justify-content:center;overflow:hidden;min-height:240px;border-left:1px solid var(--border);">
+        <img src="images/gsoc-2026-accord-card.png" alt="GSoC 2026 - The Linux Foundation - Accord Project - APAP and MCP Server - Contributor Jay Guwalani" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+    </a>
+  </div>
+</section>
+
+<style>
+  .gsoc-banner:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-lg);
+  }
+  @media (max-width: 720px) {
+    .gsoc-banner { grid-template-columns: 1fr !important; }
+    .gsoc-banner > div:first-child { padding: 26px 22px !important; }
+    .gsoc-banner > div:last-child { min-height: 180px !important; order: -1; border-left: none !important; border-bottom: 1px solid var(--border); }
+  }
+</style>
 
 <!-- Project Constellation: lazy-loaded 3D knowledge graph -->
 <section class="section" id="constellation-section">
@@ -552,7 +596,7 @@
       .linkVisibility(isVisibleLink)
       .linkColor(l => {
         const src = typeof l.source === 'object' ? l.source : nodeById.get(l.source);
-        return ((src && src.color) || '#7c5cff') + '55';
+        return ((src && src.color) || '#7da3ff') + '55';
       })
       .linkOpacity(0.55)
       .linkWidth(0.7)
@@ -561,7 +605,7 @@
       .linkDirectionalParticleSpeed(0.004)
       .linkDirectionalParticleColor(l => {
         const src = typeof l.source === 'object' ? l.source : nodeById.get(l.source);
-        return (src && src.color) || '#7c5cff';
+        return (src && src.color) || '#7da3ff';
       })
       .nodeLabel(n => {
         if (n.type === 'domain') {

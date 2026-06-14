@@ -13,6 +13,14 @@
     
 
     <item>
+      <title>GSoC 2026: APAP/MCP Hardening for the Accord Project</title>
+      <link>https://jayds22.github.io/Portfolio/post/chapter-10/</link>
+      <pubDate>Tue, 31 Mar 2026 12:00:00 -0400</pubDate>
+      <guid>https://jayds22.github.io/Portfolio/post/chapter-10/</guid>
+      <description>Selected as a Google Summer of Code 2026 contributor with The Linux Foundation (Accord Project). Idea #4: hardening the APAP Model Context Protocol server through a shared service layer refactor, four-tier testing (unit, integration, contract, E2E) with 90%+ coverage, and multi-client documentation for Claude, ChatGPT and MCP Inspector. 175 hours over 12 weeks, mentored by Niall Roche and Dan Selman. A working proof-of-concept already ships at github.com/JayDS22/apap-mcp-poc with 53 passing tests and 98.55% statement coverage.</description>
+    </item>
+
+    <item>
       <title>Project-1 : Driver Behavior Analytics System</title>
       <link>https://jayds22.github.io/Portfolio/post/chapter-9/</link>
       <pubDate>Mon, 09 Dec 2024 10:58:08 -0500</pubDate>
