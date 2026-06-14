@@ -479,24 +479,6 @@ a:hover { color: var(--text); }
   object-fit: cover;
 }
 
-.portrait-badge {
-  position: absolute;
-  z-index: 2;
-  background: var(--bg-elev-2);
-  border: 1px solid var(--border-strong);
-  border-radius: 14px;
-  padding: 10px 14px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: var(--shadow);
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-.portrait-badge svg { width: 18px; height: 18px; color: var(--accent-2); }
-.portrait-badge--top { top: 8%; left: -8%; }
-.portrait-badge--bottom { bottom: 12%; right: -8%; }
-
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
   .eyebrow, .hero-actions { justify-content: center; }
@@ -1191,34 +1173,6 @@ a:hover { color: var(--text); }
   .featured-card-img { min-height: 240px; }
   .featured-card-body { padding: 28px 24px; }
 }
-
-/* ---------- More projects list ---------- */
-.more-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 12px;
-  margin-top: 24px;
-}
-.more-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 14px 18px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  color: var(--text);
-  transition: all var(--t);
-}
-.more-item:hover {
-  color: var(--text);
-  border-color: var(--border-strong);
-  background: var(--surface-hover);
-  transform: translateX(4px);
-}
-.more-item span { font-size: 0.92rem; font-weight: 500; }
-.more-item svg { width: 14px; height: 14px; color: var(--accent-2); flex-shrink: 0; }
 
 /* Article (single post) page */
 .post-article {
