@@ -96,6 +96,7 @@
         <ul class="about-card-meta">
           <li><svg><use href="#i-pin"/></svg> College Park, MD &middot; USA</li>
           <li><svg><use href="#i-bag"/></svg> Graduate Research Assistant - UMD</li>
+          <li><svg><use href="#i-spark"/></svg> GSoC 2026 contributor &middot; The Linux Foundation</li>
           <li><svg><use href="#i-mail"/></svg> <a href="mailto:guwalanijj@gmail.com">guwalanijj@gmail.com</a></li>
           <li><svg><use href="#i-github"/></svg> <a href="https://github.com/JayDS22" target="_blank" rel="noopener">github.com/JayDS22</a></li>
           <li><svg><use href="#i-linkedin"/></svg> <a href="https://www.linkedin.com/in/jay-guwalani-66763b191/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -139,11 +140,32 @@
 
         <article class="about-block">
           <div class="about-block-head">
-            <div class="about-block-icon"><svg><use href="#i-rocket"/></svg></div>
-            <h2>Open-Source &amp; Advanced Projects</h2>
+            <div class="about-block-icon about-block-icon--gsoc"><img src="../images/gsoc-symbol.png" alt="" loading="lazy"></div>
+            <h2>Open Source · GSoC 2026 with The Linux Foundation</h2>
           </div>
           <p>
-            My <strong>GitHub portfolio (JayDS22)</strong> showcases 30+ production-ready projects including the
+            Selected as a <span class="accent">Google Summer of Code 2026 contributor</span> with <strong>The Linux Foundation</strong>, working on the <span class="accent">Accord Project</span>'s APAP / MCP server - the reference implementation for exposing smart legal templates and agreements to AI clients via the <strong>Model Context Protocol</strong>.
+          </p>
+          <p>
+            The project (Idea #4: 175 hours over 12 weeks, mentored by <strong>Niall Roche</strong> and <strong>Dan Selman</strong>) covers a shared service-layer refactor that replaces the internal HTTP loop, four-tier testing (unit, integration, contract, E2E) with <strong>90%+ coverage</strong> enforced in CI, and multi-client documentation for Claude, ChatGPT and MCP Inspector. A working
+            <a href="https://github.com/JayDS22/apap-mcp-poc" target="_blank" rel="noopener">proof-of-concept</a>
+            already ships with <strong>53 passing tests</strong> and <strong>98.55% statement coverage</strong>, plus five prior accepted contributions to the Accord codebase.
+            <a href="../post/chapter-10/">Full case study &rarr;</a>
+          </p>
+        </article>
+
+        <style>
+          .about-block-icon--gsoc { background: #ffffff !important; padding: 4px; border: 1px solid var(--border); }
+          .about-block-icon--gsoc img { width: 100%; height: 100%; object-fit: contain; display: block; }
+        </style>
+
+        <article class="about-block">
+          <div class="about-block-head">
+            <div class="about-block-icon"><svg><use href="#i-rocket"/></svg></div>
+            <h2>Independent Projects &amp; Side Work</h2>
+          </div>
+          <p>
+            Beyond the Accord Project work, my <strong>GitHub portfolio (JayDS22)</strong> spans 30+ production-grade projects including the
             <em>AgentForge Multi-Agent RAG Platform</em> (98.5% success rate, <span class="accent">LangGraph</span> orchestration),
             a <em>Real-Time Recommendation Engine</em> (sub-100ms latency on <span class="accent">PySpark + Delta Lake</span>),
             and a <em>Transportation Demand Forecasting System</em> (MAPE 2.8% with <span class="accent">LSTM</span>).
