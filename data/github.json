@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T08:14:07+00:00",
+  "generated_at": "2026-08-14T08:08:36+00:00",
   "user": "JayDS22",
   "domain_count": 9,
   "repo_count": 70,
@@ -170,6 +170,19 @@
       "description": "\ud83d\ude99 Comprehensive driver risk analytics using Cox proportional hazards (C-index: 0.79) and Bayesian hierarchical models (91.4% accuracy) \u26a1 Production-ready system with real-time scoring for 300K+ drivers, SHAP explainability, and full Docker/Kubernetes deployment stack",
       "url": "https://github.com/JayDS22/Driver-Behavior-Analytics-System",
       "updated_at": "2026-05-22T14:00:40Z"
+    },
+    {
+      "id": "repo:Game-Monetization-LiveOps-Analytics",
+      "name": "Game Monetization LiveOps Analytics",
+      "type": "repo",
+      "domain": "stats-bayesian",
+      "color": "#facc15",
+      "val": 7,
+      "stars": 1,
+      "language": "Python",
+      "description": "End-to-end F2P game analytics on 310K+ players: whale detection (RFM/K-Means), LTV forecasting (Cox/XGBoost/BG-NBD), churn prediction (SHAP), A/B testing (CUPED/Bayesian), Streamlit live-ops dashboard",
+      "url": "https://github.com/JayDS22/Game-Monetization-LiveOps-Analytics",
+      "updated_at": "2026-08-13T14:28:38Z"
     },
     {
       "id": "repo:Multi-GPU-Distributed-Training-Framework",
@@ -588,19 +601,6 @@
       "updated_at": "2026-05-17T03:36:14Z"
     },
     {
-      "id": "repo:Game-Monetization-LiveOps-Analytics",
-      "name": "Game Monetization LiveOps Analytics",
-      "type": "repo",
-      "domain": "stats-bayesian",
-      "color": "#facc15",
-      "val": 3,
-      "stars": 0,
-      "language": "Python",
-      "description": "End-to-end F2P game analytics on 310K+ players: whale detection (RFM/K-Means), LTV forecasting (Cox/XGBoost/BG-NBD), churn prediction (SHAP), A/B testing (CUPED/Bayesian), Streamlit live-ops dashboard",
-      "url": "https://github.com/JayDS22/Game-Monetization-LiveOps-Analytics",
-      "updated_at": "2026-05-17T03:36:15Z"
-    },
-    {
       "id": "repo:HPC-llm-bench",
       "name": "HPC llm bench",
       "type": "repo",
@@ -1012,6 +1012,10 @@
       "target": "domain:stats-bayesian"
     },
     {
+      "source": "repo:Game-Monetization-LiveOps-Analytics",
+      "target": "domain:stats-bayesian"
+    },
+    {
       "source": "repo:Multi-GPU-Distributed-Training-Framework",
       "target": "domain:rl-robotics"
     },
@@ -1138,10 +1142,6 @@
     {
       "source": "repo:Financial-Budget-Planner",
       "target": "domain:computer-vision"
-    },
-    {
-      "source": "repo:Game-Monetization-LiveOps-Analytics",
-      "target": "domain:stats-bayesian"
     },
     {
       "source": "repo:HPC-llm-bench",
