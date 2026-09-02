@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T12:16:13+00:00",
+  "generated_at": "2026-09-02T11:53:50+00:00",
   "user": "JayDS22",
   "domain_count": 9,
   "repo_count": 70,
@@ -131,6 +131,19 @@
       "description": "ML-powered predictive maintenance system achieving $122.9M+ cost savings through vehicle durability forecasting (MAPE: 2.8%), customer complaint analysis (F1: 0.91), and survival modeling (C-index: 0.78) with automated SQL pipelines and Power BI reporting.",
       "url": "https://github.com/JayDS22/Vehicle-Durability-Forecasting-and-Predictive-Maintanence-System",
       "updated_at": "2026-05-17T03:10:23Z"
+    },
+    {
+      "id": "repo:apap-mcp-poc",
+      "name": "apap mcp poc",
+      "type": "repo",
+      "domain": "ml-general",
+      "color": "#94a3b8",
+      "val": 7,
+      "stars": 1,
+      "language": "TypeScript",
+      "description": "POC: Shared service layer refactor for APAP/MCP server",
+      "url": "https://github.com/JayDS22/apap-mcp-poc",
+      "updated_at": "2026-09-01T13:40:57Z"
     },
     {
       "id": "repo:Blog_Generator",
@@ -326,19 +339,6 @@
       "description": "Real-time advertising analytics platform with bidding engine (<100ms), streaming pipelines (Kafka/Spark), data warehouse (Redshift), A/B testing framework (23% lift), and advertiser dashboards processing 1M+ events/sec with 99.95% uptime.",
       "url": "https://github.com/JayDS22/Advertising-Campaign-Analytics-Real-Time-Bidding-Platform",
       "updated_at": "2026-05-14T13:40:14Z"
-    },
-    {
-      "id": "repo:apap-mcp-poc",
-      "name": "apap mcp poc",
-      "type": "repo",
-      "domain": "ml-general",
-      "color": "#94a3b8",
-      "val": 3,
-      "stars": 0,
-      "language": "TypeScript",
-      "description": "POC: Shared service layer refactor for APAP/MCP server",
-      "url": "https://github.com/JayDS22/apap-mcp-poc",
-      "updated_at": "2026-08-28T15:57:44Z"
     },
     {
       "id": "repo:Autogen-Retrieve-Chat-System",
@@ -1000,6 +1000,10 @@
       "target": "domain:stats-bayesian"
     },
     {
+      "source": "repo:apap-mcp-poc",
+      "target": "domain:ml-general"
+    },
+    {
       "source": "repo:Blog_Generator",
       "target": "domain:llm-agents"
     },
@@ -1058,10 +1062,6 @@
     {
       "source": "repo:Advertising-Campaign-Analytics-Real-Time-Bidding-Platform",
       "target": "domain:stats-bayesian"
-    },
-    {
-      "source": "repo:apap-mcp-poc",
-      "target": "domain:ml-general"
     },
     {
       "source": "repo:Autogen-Retrieve-Chat-System",
