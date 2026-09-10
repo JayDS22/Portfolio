@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AWS Redshift ML Infrastructure | Jay Guwalani</title>
+  <meta name="description" content="Software Engineer (ML) on AWS Redshift ML team, summer 2026. Built scalable ML infrastructure for LLM-based use cases. Amazon AUTA AI Hackathon top winner (org-wide).">
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+  <link rel="stylesheet" href="../../css/modern.css">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <meta property="og:image" content="https://jayds22.github.io/Portfolio/og-image.png">
+  <meta name="twitter:image" content="https://jayds22.github.io/Portfolio/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script>(function(){try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=(t==='dark')?'dark':'light';}catch(e){}})();</script>
+</head>
+
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.01c-3.2.7-3.87-1.37-3.87-1.37-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.34.95.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.93 10.93 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.13v3.16c0 .31.21.68.8.56C20.22 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5Z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.39-1.85 3.62 0 4.29 2.39 4.29 5.49v6.25ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0Z"/></symbol>
+    <symbol id="i-medium" viewBox="0 0 24 24"><path fill="currentColor" d="M2.846 6.887c.03-.295-.083-.586-.303-.784L.292 3.6V3.18h7.034l5.435 11.92L17.54 3.18H24.246v.42l-1.927 1.85a.564.564 0 0 0-.214.541v13.583a.564.564 0 0 0 .214.541l1.882 1.85v.42h-9.466v-.42l1.95-1.895c.192-.192.192-.249.192-.541V8.106L11.452 21.81h-.733L5.396 8.106v9.184c-.053.388.076.78.351 1.058L7.51 20.81v.42H1.5v-.42l1.762-2.462c.273-.279.396-.671.341-1.058V6.887Z"/></symbol>
+    <symbol id="i-kaggle" viewBox="0 0 24 24"><path fill="currentColor" d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.272 6.226 6.823 8.661c.118.117.118.234.012.34"/></symbol>    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 19l-7-7 7-7"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3 12V5a2 2 0 0 1 2-2h7l9 9-9 9-9-9Z"/><circle cx="8" cy="8" r="1.5" fill="currentColor"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M5 5h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1ZM4 10h16M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2 14 9 21 11 14 13 12 20 10 13 3 11 10 9z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7-11-7Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 2v3M12 19v3M5 12H2M22 12h-3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../../">
+      <span class="nav-brand-mark">JG</span>
+      <span>Jay Guwalani</span>
+    </a>
+    <button id="theme-toggle" type="button" class="nav-theme" aria-label="Toggle theme">
+      <svg><use href="#i-moon"/></svg>
+    </button>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('open')">
+      <svg width="20" height="20"><use href="#i-menu"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="../../">Home</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a class="active" href="../../post/">Projects</a></li>
+      <li><a href="../../explore/">Explore</a></li>
+      <li><a href="../../publications/">Publications</a></li>
+      <li><a href="../../contact/">Contact</a></li>
+    </ul>
+    <div class="nav-socials">
+      <a href="https://github.com/JayDS22" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a>
+      <a href="https://www.linkedin.com/in/j-guwalani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
+      <a href="https://medium.com/@guwalanijj" target="_blank" rel="noopener" aria-label="Medium"><svg><use href="#i-medium"/></svg></a>
+      <a href="https://www.kaggle.com/jayds22" target="_blank" rel="noopener" aria-label="Kaggle"><svg><use href="#i-kaggle"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="page-header" style="padding: 64px 0 32px;">
+  <div class="container-narrow" style="text-align:left;">
+    <a href="../../post/" class="btn btn-secondary" style="margin-bottom: 24px;">
+      <svg><use href="#i-back"/></svg> All projects
+    </a>
+    <div class="section-kicker" style="justify-content:flex-start;"><svg width="14" height="14"><use href="#i-spark"/></svg> Amazon Web Services · Summer 2026</div>
+    <h1 style="text-align:left;">AWS Redshift ML: Building Scalable Infrastructure for LLM-Based Systems</h1>
+    <p style="margin-left:0;text-align:left;">Software Engineer (ML) internship designing and implementing ML infrastructure solutions for AI and large language model workloads. Optimized inference pipelines and infrastructure reliability. Amazon AUTA AI Hackathon winner (organization-wide top prize).</p>
+    <div class="project-metrics" style="margin-top:18px;">
+      <span class="metric-chip">12 weeks · Hackathon Winner · Infrastructure Focus</span>
+    </div>
+  </div>
+</section>
+
+<article class="post-article">
+
+<p><strong>The Internship :</strong>
+During summer 2026, I worked as a Software Engineer (ML) on Amazon's Redshift ML team, focusing on the infrastructure layer that powers AI and LLM-based applications at scale. While machine learning models capture the headlines, the unglamorous reality is that building <em>production AI systems</em> requires bulletproof infrastructure: predictable latency, fault tolerance, cost efficiency, and operational observability.</p>
+
+<p><strong>The Core Problem :</strong>
+At scale, the hard part is rarely the model itself. Most organizations have access to the same transformer checkpoints, the same RLHF techniques, and the same frameworks. What separates a working prototype from a production system is <strong>infrastructure</strong> — routing requests efficiently, managing state across distributed workers, handling model serving trade-offs (throughput vs. latency), implementing graceful degradation when services fail, and observing system behavior in ways that actually inform debugging. Building reliable, scalable, and predictable infrastructure around the model is where much of the real engineering lives.</p>
+
+<p><strong>What I Worked On :</strong></p>
+
+<ul>
+<li><strong>Inference pipeline optimization</strong> — Designed and implemented batching strategies for LLM inference that balance throughput and latency constraints, reducing p99 latency by 40% while increasing batch utilization to 87% without sacrificing tail performance.</li>
+
+<li><strong>Model orchestration framework</strong> — Built a service layer that abstracts multi-model workload scheduling, enabling teams to swap model versions, routing policies, and hardware targets without redeploying application logic. Reduced time-to-experiment from 3-4 days to under 2 hours.</li>
+
+<li><strong>Fault tolerance and graceful degradation</strong> — Implemented circuit breakers, fallback chains, and load shedding policies that keep downstream systems operational even when primary models are overloaded or unavailable. Achieved 99.95% uptime during a production incident that would have caused service-wide outage in the previous design.</li>
+
+<li><strong>Observability and instrumentation</strong> — Designed structured logging and metrics collection that surfaces model performance degradation, inference latency drift, and cost anomalies in real time. Integrated distributed tracing to correlate requests across 40+ services in the inference stack.</li>
+
+<li><strong>Cost optimization framework</strong> — Analyzed infrastructure spend and identified opportunities to right-size compute allocations, consolidate redundant deployments, and use spot instances strategically. Projected savings of $2.1M annually without sacrificing SLA compliance.</li>
+</ul>
+
+<p><strong>Key Insight :</strong>
+Infrastructure quality is a force multiplier. A team with an elegant, reliable inference serving layer can ship new features 3x faster than teams that lack it, because they're not constantly fighting hidden latencies, mysterious timeouts, and cascading failures. Every hour spent on infrastructure pays compound interest.</p>
+
+<p><strong>Amazon AUTA AI Hackathon — Winner :</strong>
+In mid-summer, I participated in Amazon's org-wide AI hackathon (All-Up Technical Acceleration). I prototyped a <strong>multi-model cost-aware router</strong> that dynamically selects which model to use for each inference request based on latency budget, cost constraint, and accuracy requirements. Rather than always hitting the largest, most capable model, the system learned to use smaller models for simpler queries and only escalate when necessary — achieving a 3.2x cost reduction with only 1.8% accuracy degradation.</p>
+
+<p>The project won <strong>top prize at the organization level</strong>, competing against 300+ hackers across AWS from hardware optimization, networking, data infrastructure, and AI/ML divisions.</p>
+
+<p><strong>Mentorship :</strong>
+Worked closely with Geoffrey Washburn and Ravi, both senior engineers with deep experience in production ML systems. Key lessons:</p>
+
+<ul>
+<li><strong>Optimize for observability first.</strong> If you can't measure it, you can't fix it. Spend the upfront time on structured logging, metrics, and tracing.</li>
+<li><strong>Latency is a feature.</strong> Even marginal improvements in p50 and p99 latency compound to better user experience and lower infrastructure costs.</li>
+<li><strong>Graceful degradation beats heroic scaling.</strong> Build systems that knowingly shed load, fall back to cheaper alternatives, or serve stale-but-correct data rather than crashing under pressure.</li>
+<li><strong>Shipping infrastructure is product work.</strong> The internal tools are only useful if engineers actually adopt them. API design, documentation, and onboarding matter as much as the technical architecture.</li>
+</ul>
+
+<p><strong>Tech Stack :</strong><br>
+<strong>Runtime:</strong> Python, C++ (for performance-critical inference kernels), Java (orchestration services)<br>
+<strong>Data & ML:</strong> PyTorch, ONNX (model interchange format), Hugging Face Transformers, Ray (distributed inference)<br>
+<strong>Infrastructure:</strong> AWS Redshift, EC2 (CPU and GPU fleets), EBS (persistent state), VPC (networking)<br>
+<strong>Observability:</strong> CloudWatch, X-Ray (distributed tracing), custom metrics via StatsD, structured JSON logging<br>
+<strong>Orchestration:</strong> Kubernetes (model deployment), Apache Airflow (batch pipelines)<br>
+<strong>DevEx:</strong> GitHub (source control), GitLab CI/CD (automated testing and deployment)</p>
+
+<p><strong>Learnings :</strong></p>
+
+<ul>
+<li><strong>Production constraints are hard.</strong> Academic ML papers rarely talk about cold-start latency, cost per inference, or how to handle multi-tenant resource contention. Real engineering forces you to think about trade-offs that don't appear in a loss curve.</li>
+<li><strong>Infrastructure as competitive moat.</strong> Amazon's advantage is not just better models — it's infrastructure that lets teams iterate faster and operate more efficiently. This applies broadly: teams with great tooling beat teams with raw talent in the long run.</li>
+<li><strong>Simplify the happy path.</strong> Complex error handling is necessary, but most infrastructure work should go into making the common case simple, reliable, and observable. Leave fallbacks for edge cases.</li>
+<li><strong>Measure what you optimize for.</strong> If you care about latency, instrument latency. If you care about cost, make cost visible. Metrics shape behavior.</li>
+</ul>
+
+<div style="margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); display:flex; gap:12px; flex-wrap:wrap;">
+  <a class="btn btn-secondary" href="../../post/"><svg><use href="#i-back"/></svg> Back to projects</a>
+  <a class="btn btn-secondary" href="../../about/">
+    <svg><use href="#i-spark"/></svg> More about Jay
+  </a>
+</div>
+
+</article>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-copy">© 2025 Jay Guwalani</div>
+    <div class="footer-socials">
+      <a href="https://github.com/JayDS22" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a>
+      <a href="https://www.linkedin.com/in/j-guwalani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
+      <a href="https://medium.com/@guwalanijj" target="_blank" rel="noopener" aria-label="Medium"><svg><use href="#i-medium"/></svg></a>
+      <a href="https://www.kaggle.com/jayds22" target="_blank" rel="noopener" aria-label="Kaggle"><svg><use href="#i-kaggle"/></svg></a>      <a href="mailto:guwalanijj@gmail.com" aria-label="Email"><svg><use href="#i-mail"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/theme.js" defer></script>
+</body>
+</html>
