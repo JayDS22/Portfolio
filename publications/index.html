@@ -45,14 +45,16 @@
     <button class="nav-toggle" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('open')">
       <svg width="20" height="20"><use href="#i-menu"/></svg>
     </button>
-    <ul class="nav-links">
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
       <li><a href="../">Home</a></li>
       <li><a href="../about/">About</a></li>
       <li><a href="../post/">Projects</a></li>
       <li><a href="../explore/">Explore</a></li>
-      <li><a class="active" href="../publications/">Publications</a></li>
+      <li><a class="active" aria-current="page" href="../publications/">Publications</a></li>
       <li><a href="../contact/">Contact</a></li>
     </ul>
+    </nav>
     <div class="nav-socials">
       <a href="https://github.com/JayDS22" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a>
       <a href="https://www.linkedin.com/in/j-guwalani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
