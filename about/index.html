@@ -31,7 +31,7 @@
     <symbol id="i-kaggle" viewBox="0 0 24 24"><path fill="currentColor" d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.272 6.226 6.823 8.661c.118.117.118.234.012.34"/></symbol>    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m3 7 9 6 9-6"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8"/></symbol>
     <symbol id="i-cpu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M5 7h14v10H5zM9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4"/></symbol>
-    <symbol id="i-aws" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 8 Q12 14 20 8"/><path fill="none" stroke="var(--accent-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 14 Q12 20 20 14 M17 12 L20 14 L18 17"/></symbol>
+    <symbol id="i-aws" viewBox="0 0 40 24" aria-hidden="true"><text x="20" y="14" text-anchor="middle" font-family="Arial Black, Helvetica, sans-serif" font-weight="900" font-size="13" fill="currentColor" letter-spacing="-0.5" style="user-select:none;-webkit-user-select:none;pointer-events:none;">aws</text><path fill="none" stroke="var(--accent-2)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 20 Q20 25 35 20 M31 18 L35 20 L32.5 23"/></symbol>
     <symbol id="i-stack" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"/></symbol>
     <symbol id="i-chart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 15l3-4 4 3 5-7"/></symbol>
     <symbol id="i-book" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M4 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4Zm16 0h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8Z"/></symbol>
@@ -100,7 +100,7 @@
         <ul class="about-card-meta">
           <li><svg><use href="#i-pin"/></svg> College Park, MD &middot; USA</li>
           <li><svg><use href="#i-bag"/></svg> Grad Research Assistant &middot; UMD (Dr. Alan Sussman) &middot; HPC I/O · OSC &times; PPPL</li>
-          <li><svg><use href="#i-aws"/></svg> AWS Redshift ML &middot; Summer 2026 &middot; <strong>AUTA Hackathon Winner</strong></li>
+          <li><svg style="width:30px;height:18px;flex-shrink:0"><use href="#i-aws"/></svg> AWS Redshift ML &middot; Summer 2026 &middot; <strong>AUTA Hackathon Winner</strong></li>
           <li><svg><use href="#i-spark"/></svg> GSoC 2026 (Accord Project) &middot; The Linux Foundation</li>
           <li><svg><use href="#i-mail"/></svg> <a href="mailto:guwalanijj@gmail.com">guwalanijj@gmail.com</a></li>
           <li><svg><use href="#i-github"/></svg> <a href="https://github.com/JayDS22" target="_blank" rel="noopener">github.com/JayDS22</a></li>
@@ -127,6 +127,8 @@
         <style>
           .about-block-icon--gsoc { background: #ffffff !important; padding: 4px; border: 1px solid var(--border); }
           .about-block-icon--gsoc img { width: 100%; height: 100%; object-fit: contain; display: block; }
+          .about-block-icon--aws { width: 64px; padding: 0 8px; }
+          .about-block-icon--aws svg { width: 100%; height: 28px; }
           .lf-list { margin: 8px 0 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; }
           .lf-list li { position: relative; padding-left: 18px; color: var(--text-muted); line-height: 1.65; }
           .lf-list li::before { content: ""; position: absolute; left: 2px; top: 10px; width: 5px; height: 5px; background: var(--accent); border-radius: 50%; }
@@ -137,7 +139,7 @@
 
         <article class="about-block">
           <div class="about-block-head">
-            <div class="about-block-icon"><svg><use href="#i-aws"/></svg></div>
+            <div class="about-block-icon about-block-icon--aws"><svg><use href="#i-aws"/></svg></div>
             <h2>AWS Redshift ML Infrastructure · Summer 2026</h2>
           </div>
           <ul class="lf-list">
