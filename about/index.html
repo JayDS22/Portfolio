@@ -156,7 +156,7 @@
           .about-block-icon--gsoc img { width: 100%; height: 100%; object-fit: contain; display: block; }
           .lf-list { margin: 8px 0 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; }
           .lf-list li { position: relative; padding-left: 18px; color: var(--text-muted); line-height: 1.65; }
-          .lf-list li::before { content: ""; position: absolute; left: 0; top: 12px; width: 8px; height: 1px; background: var(--accent); }
+          .lf-list li::before { content: ""; position: absolute; left: 2px; top: 10px; width: 5px; height: 5px; background: var(--accent); border-radius: 50%; }
           .lf-list li strong:first-child { color: var(--text); }
           .lf-list code { font-family: 'JetBrains Mono', monospace; font-size: 0.88em; background: var(--surface); padding: 1px 6px; border-radius: 4px; }
           .lf-list a { color: var(--accent); }
@@ -168,9 +168,9 @@
             <h2>AWS Redshift ML Infrastructure · Summer 2026</h2>
           </div>
           <ul class="lf-list">
-            <li><strong>Amazon AUTA AI Hackathon</strong> Org-wide winner among 800+ interns across global AWS regions</li>
-            <li><strong>Native Vector Search</strong> Demonstrated on 10B+ row production datasets with sub-100ms query latency. Built semantic search directly into Redshift's engine, eliminating need for external vector database exports, a major operational win for customers</li>
-            <li><strong>Bedrock ML Integrations</strong> Reduced embedding-to-retrieval latency by 50-60%, unblocking 4-5 Bedrock LLM pipeline teams on critical vector retrieval workflows</li>
+            <li><strong>Amazon AUTA AI Hackathon</strong> Org-wide winner among 800+ Amazon interns for a multi-model cost-aware router that cut inference cost 3.2x with only 1.8% accuracy tradeoff</li>
+            <li><strong>Native Vector Search</strong> Shipped a prototype that brings semantic search directly into Redshift's query engine. Sub-100ms latency on 500K-50M vector benchmarks, matching specialized vector DBs while cutting operational overhead of external services</li>
+            <li><strong>Bedrock ML Integrations</strong> Solved two pain points for Bedrock's integration with Redshift ML: in-warehouse embedding generation and state management for long-running inference pipelines. Cut LLM time-to-production from weeks to days</li>
           </ul>
           <p style="margin-top: 16px; color: var(--text-muted); font-size: 0.95em;">
             Prototype brought to near-production readiness. At Redshift's scale, building reliable infrastructure around the model is the hard part. Shipped a working system adopted by cross-org teams.
