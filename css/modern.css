@@ -212,8 +212,8 @@ a:hover { color: var(--text); }
   align-items: center;
 }
 .nav-socials a {
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -228,7 +228,8 @@ a:hover { color: var(--text); }
   border-color: var(--border-strong);
   transform: translateY(-2px);
 }
-.nav-socials svg { width: 16px; height: 16px; }
+.nav-socials svg { width: 18px; height: 18px; }
+.nav-socials { gap: 8px; }
 
 .nav-toggle {
   display: none;
@@ -606,6 +607,33 @@ a:hover { color: var(--text); }
   transition: transform 0.6s ease;
 }
 .project-card:hover .project-thumb img { transform: scale(1.05); }
+
+.project-thumb--branded {
+  background: linear-gradient(135deg, #f5f7fb 0%, #e6ebf3 100%);
+  display: grid;
+  place-items: center;
+}
+.project-thumb--branded .branded-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 24px;
+}
+.project-thumb--branded img {
+  width: auto;
+  height: 54px;
+  object-fit: contain;
+  transition: transform 0.6s ease;
+}
+.project-thumb--branded .branded-caption {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+}
+.project-card:hover .project-thumb--branded img { transform: scale(1.05); }
 
 .project-body {
   padding: 22px 24px 24px;
