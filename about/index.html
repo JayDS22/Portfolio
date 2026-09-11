@@ -112,14 +112,10 @@
             <h2>Senior AI / ML Engineering</h2>
           </div>
           <p>
-            <span class="accent">Senior AI/ML Professional</span> with over <strong>5+ years</strong> in Data Science, AI, Machine Learning and MLOps across healthcare, automotive and financial services.
-            Currently a <strong>Graduate Research Assistant</strong> at the <strong>University of Maryland, College Park</strong>, focused on <span class="accent">7B–70B parameter LLMs</span> and <span class="accent">diffusion models</span> for biomedical applications.
+            <span class="accent">Senior AI/ML Professional</span> with <strong>5+ years</strong> shipping production systems across healthcare, automotive, and fintech. Currently a <strong>Graduate Research Assistant</strong> at <strong>University of Maryland</strong>, researching <span class="accent">LLM scaling and diffusion models</span> for biomedical applications.
           </p>
           <p>
-            Previously, as <strong>Senior AI/ML Engineer</strong> at <span class="accent">Aya Healthcare</span>, I architected production multi-agent LLM platforms processing <strong>2.3M+ patient profiles</strong> with <strong>95% clinical accuracy</strong> and built scalable <span class="accent">RAG infrastructure</span> serving <strong>2,000+ concurrent providers</strong> across <strong>15+ hospital networks</strong>.
-          </p>
-          <p>
-            Before that, I worked as <strong>Software Development Engineer II</strong> at <span class="accent">Cross Country Healthcare</span> (Jan–Aug 2025), building AI/ML–driven healthcare staffing solutions with a focus on demand forecasting and provider matching systems.
+            Recent roles: <strong>Senior AI/ML Engineer</strong> at <span class="accent">Aya Healthcare</span> (multi-agent LLM platforms, 2.3M+ patient profiles, 95% clinical accuracy); <strong>SDE II</strong> at <span class="accent">Cross Country Healthcare</span> (AI-driven staffing, demand forecasting); <strong>Software Engineer (ML)</strong> at <span class="accent">AWS Redshift</span> (production ML infrastructure, AUTA Hackathon winner).
           </p>
         </article>
 
@@ -144,42 +140,15 @@
         <article class="about-block">
           <div class="about-block-head">
             <div class="about-block-icon about-block-icon--gsoc"><img src="../images/gsoc-symbol.png" alt="" loading="lazy"></div>
-            <h2>Open Source · GSoC 2026 with The Linux Foundation</h2>
+            <h2>Google Summer of Code 2026 - The Linux Foundation</h2>
           </div>
           <p>
-            Completed <span class="accent">Google Summer of Code 2026</span> (May–Aug) with <strong>The Linux Foundation</strong> as a contributor on the <span class="accent">Accord Project</span>'s APAP / MCP server - the reference implementation for exposing smart legal templates and agreements to AI clients via the <strong>Model Context Protocol</strong>.
+            Completed <span class="accent">GSoC 2026</span> (May–Aug) on the <span class="accent">Accord Project</span>'s APAP / MCP server, a protocol layer connecting AI agents (Claude, ChatGPT) to smart legal contracts. Delivered a service-layer refactor with four-tier testing (<strong>90%+ coverage</strong>) and POC with <strong>53 tests, 98.55% statement coverage</strong>.
           </p>
           <p>
-            The project (Idea #4: 175 hours over 12 weeks, mentored by <strong>Niall Roche</strong> and <strong>Dan Selman</strong>) covers a shared service-layer refactor that replaces the internal HTTP loop, four-tier testing (unit, integration, contract, E2E) with <strong>90%+ coverage</strong> enforced in CI, and multi-client documentation for Claude, ChatGPT and MCP Inspector. A working
-            <a href="https://github.com/JayDS22/apap-mcp-poc" target="_blank" rel="noopener">proof-of-concept</a>
-            already ships with <strong>53 passing tests</strong> and <strong>98.55% statement coverage</strong>, plus five prior accepted contributions to the Accord codebase.
-            <a href="../post/chapter-10/">Full case study &rarr;</a> | <a href="https://accordproject.org/news/gsoc-2026-rewiring-apap-for-agents/" target="_blank" rel="noopener">Accord Project announcement &rarr;</a>
+            Research output: <em>Framework Wars Are Cheaper Than Most People Think</em> - benchmarked MCP vs OpenAI function calling vs LangGraph. Key finding: tool definition overhead dominates (1,100+ tokens), making selective tool exposure the real cost lever.
+            <a href="../post/chapter-10/">Full case study &rarr;</a>
           </p>
-          <p style="margin-top: 14px;">
-            Research output: <em>Framework Wars Are Cheaper Than Most People Think</em> - a <strong>6-week benchmark</strong> of MCP vs OpenAI function calling vs LangGraph on the same backend.
-            Key finding: framework choice moves ~200 tokens per request, but tool definition overhead is 1,100+ tokens regardless of orchestration library.
-            <a href="../publications/">See technical writeup &rarr;</a>
-          </p>
-
-          <p style="margin-top: 18px;"><strong>Open-source contributions to other Linux Foundation projects:</strong></p>
-          <ul class="lf-list">
-            <li>
-              <strong><span class="accent">Kubeflow (CNCF)</span> - <code>kubeflow/docs-agent</code>:</strong>
-              Contributing toward production-hardening the docs-agent with CI/CD pipelines, test coverage, monitoring, RAGAS benchmarks and idempotent ingestion. Contributions to date include three filed issues
-              (<a href="https://github.com/kubeflow/docs-agent/issues/181" target="_blank" rel="noopener">#181</a> content truncation discarding 60% of indexed content,
-              <a href="https://github.com/kubeflow/docs-agent/issues/182" target="_blank" rel="noopener">#182</a> fragile Feast VARCHAR monkey-patch,
-              <a href="https://github.com/kubeflow/docs-agent/issues/183" target="_blank" rel="noopener">#183</a> SentenceTransformer + Milvus reload compounding to ~3s overhead per search),
-              KEP document comments on the Infrastructure and Ingestion sections, and a working
-              <a href="https://github.com/JayDS22/kubeflow-docs-agent-poc" target="_blank" rel="noopener">end-to-end POC repository</a>
-              demonstrating the fixes against a Kind cluster.
-            </li>
-            <li>
-              <strong><span class="accent">Jenkins (CDF)</span> - resources-ai-chatbot-plugin:</strong>
-              Designed and prototyped a context-aware, multi-agent extension to the
-              <a href="https://github.com/jenkinsci/resources-ai-chatbot-plugin" target="_blank" rel="noopener">Jenkins resources-ai-chatbot-plugin</a>
-              that reads live instance state (build logs, installed plugins, job configs) and routes queries through an LLM intent router to four specialised agents - Troubleshoot, Workflow, Recommend, General. Built on open-source LLMs (LangChain, FAISS + BM25 hybrid retrieval, Llama 3.x via <code>llama.cpp</code>, Ollama for model management), running fully self-hosted with no vendor lock-in.
-            </li>
-          </ul>
         </article>
 
         <style>
@@ -199,9 +168,7 @@
             <h2>AWS Redshift ML Infrastructure · Summer 2026</h2>
           </div>
           <p>
-            Completed an internship as a <span class="accent">Software Engineer (ML)</span> on the <strong>AWS Redshift ML team</strong> (Jun-Aug 2026), designing and implementing ML infrastructure for AI and LLM-based use cases at cloud scale.
-            Won the <span class="accent">Amazon AUTA AI Hackathon</span>, a top winner org-wide across global regions, alongside mentorship from <strong>Geoffrey Washburn</strong> and <strong>Ravi</strong>.
-            Concurrently, completed the <strong>Google Summer of Code 2026</strong> work on the Accord Project's MCP server (both overlapped during May–Aug).
+            Designed and shipped ML infrastructure for AI/LLM use cases at AWS Redshift (Jun-Aug 2026). Won <span class="accent">Amazon AUTA AI Hackathon</span> - org-wide top winner across global regions.
           </p>
           <p>
             Key insight: at Redshift's scale, the hard part is rarely the model. Building reliable, scalable, and predictable infrastructure around the model is where much of the real engineering lives.
@@ -224,18 +191,10 @@
         <article class="about-block">
           <div class="about-block-head">
             <div class="about-block-icon"><svg><use href="#i-rocket"/></svg></div>
-            <h2>Independent Projects &amp; Side Work</h2>
+            <h2>Independent Projects</h2>
           </div>
           <p>
-            Beyond the Accord Project work, my <strong>GitHub portfolio (JayDS22)</strong> spans 30+ production-grade projects including the
-            <em>AgentForge Multi-Agent RAG Platform</em> (98.5% success rate, <span class="accent">LangGraph</span> orchestration),
-            a <em>Real-Time Recommendation Engine</em> (sub-100ms latency on <span class="accent">PySpark + Delta Lake</span>),
-            and a <em>Transportation Demand Forecasting System</em> (MAPE 2.8% with <span class="accent">LSTM</span>).
-          </p>
-          <p>
-            Additional work spans <em>Driver Behavior Analytics</em> using <span class="accent">Bayesian hierarchical modeling</span>,
-            a <em>Real-Time Experimentation Platform</em> built on <span class="accent">Thompson sampling</span> bandits, and a
-            <em>Marketplace Optimization Engine</em> (Hungarian algorithm + linear programming) at <strong>97.2% matching efficiency</strong>.
+            <strong>30+ production projects</strong> on <a href="https://github.com/JayDS22" target="_blank" rel="noopener">GitHub</a>: multi-agent RAG platforms (98.5% success rate), real-time recommendation engines, demand forecasting systems, driver behavior analytics, experimentation platforms, and optimization engines. Focus on systems that combine statistical rigor with production scalability.
           </p>
         </article>
 
@@ -245,20 +204,7 @@
             <h2>Research &amp; Publications</h2>
           </div>
           <p>
-            As an <strong>Analytics Engineer</strong> at <span class="accent">Simplilearn</span>, I built enterprise data pipelines and
-            advised Data Science clients at <strong>Purdue</strong> and <strong>UMass</strong>.
-          </p>
-          <p>
-            Published research includes
-            <em>"Predictive Maintenance in Automotive using Machine Learning"</em> (accepted, <strong>IEEE Journal</strong>, Feb 2025) and
-            <em>"Optimizing Supply Chain using Data Science and AI"</em> (<strong>IJAET</strong>, 2023).
-            Earlier work at <strong>Dhirtek Business Research</strong> applied statistical modeling to liquid biopsy market growth.
-          </p>
-          <p>
-            Technical articles on <strong>Medium / AWS Tips Publication</strong> cover
-            <em>"Streamlining Data Engineering and ML Workflows with AWS"</em> and
-            <em>"Revolutionizing Road Safety: How Machine Learning is Reducing Traffic Accidents."</em>
-            Also published technical deep dives on <em>RL environment engineering</em> and <em>agent framework benchmarking</em>.
+            Published in <strong>IEEE</strong> and <strong>IJAET</strong> on predictive maintenance and supply-chain optimization. Technical articles on <strong>Medium / AWS Tips Publication</strong> and technical deep dives on LLM frameworks and RL systems.
             <a href="../publications/">See all publications &rarr;</a>
           </p>
         </article>
@@ -278,7 +224,7 @@
             <div class="skill-cat">
               <div class="skill-cat-head"><svg><use href="#i-spark"/></svg> GenAI &amp; LLMs</div>
               <ul>
-                <li>vLLM</li><li>LangChain</li><li>LangGraph</li><li>RAG</li><li>AutoGen</li><li>OpenAI</li><li>HuggingFace</li>
+                <li>vLLM</li><li>LangChain</li><li>LangGraph</li><li>RAG</li><li>AutoGen</li><li>MCP</li><li>OpenAI</li><li>HuggingFace</li>
               </ul>
             </div>
             <div class="skill-cat">
