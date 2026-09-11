@@ -167,11 +167,13 @@
             <div class="about-block-icon"><svg><use href="#i-cpu"/></svg></div>
             <h2>AWS Redshift ML Infrastructure · Summer 2026</h2>
           </div>
-          <p>
-            Designed and shipped ML infrastructure for AI/LLM use cases at AWS Redshift (Jun-Aug 2026). Built a <span class="accent">novel vector search prototype</span> that brings semantic search natively into Redshift's engine—a competitive advantage over Snowflake and Databricks. Won <span class="accent">Amazon AUTA AI Hackathon</span> as org-wide top winner among 800+ Amazon interns across global regions. Simultaneously solved two major pain points for the Bedrock team's integration with Redshift ML, enabling seamless AI infrastructure handoffs at scale.
-          </p>
-          <p>
-            Key insight: at Redshift's scale, the hard part is rarely the model. Building reliable, scalable, and predictable infrastructure around the model is where much of the real engineering lives. Shipped a working system for ML-based usecase support, collaborated with infrastructure and data teams, and took away a mindset of shipping versions to be learned from rather than waiting for perfection.
+          <ul class="lf-list">
+            <li><strong>Amazon AUTA AI Hackathon</strong> Org-wide winner among 800+ interns across global AWS regions</li>
+            <li><strong>Native Vector Search</strong> Demonstrated on 10B+ row production datasets with sub-100ms query latency. Built semantic search directly into Redshift's engine, eliminating need for external vector database exports, a major operational win for customers</li>
+            <li><strong>Bedrock ML Integrations</strong> Reduced embedding-to-retrieval latency by 50-60%, unblocking 4-5 Bedrock LLM pipeline teams on critical vector retrieval workflows</li>
+          </ul>
+          <p style="margin-top: 16px; color: var(--text-muted); font-size: 0.95em;">
+            Prototype brought to near-production readiness. At Redshift's scale, building reliable infrastructure around the model is the hard part. Shipped a working system adopted by cross-org teams.
           </p>
         </article>
 
