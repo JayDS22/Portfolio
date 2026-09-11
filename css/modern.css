@@ -38,7 +38,7 @@
   --shadow-lg: 0 32px 80px rgba(12, 20, 36, 0.16);
   --glow: 0 0 80px rgba(29, 78, 216, 0.14);
 
-  --maxw: 1200px;
+  --maxw: 1400px;
   --maxw-narrow: 880px;
 
   --t: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
