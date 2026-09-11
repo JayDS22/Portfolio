@@ -43,15 +43,18 @@
 
   --t: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* Typography scale (modular, 1.125 ratio around 1rem body base) */
+  /* Typography scale (modular, ~1.125 ratio around 1rem body base) */
   --text-2xs: 0.7rem;    /* 11.2px - metric-chip, badge */
   --text-xs:  0.8rem;    /* 12.8px - eyebrow, small labels */
   --text-sm:  0.9rem;    /* 14.4px - meta text, captions */
   --text-base: 1rem;     /* 16px - body */
   --text-lg:  1.125rem;  /* 18px - tagline, lead */
+  --text-md:  1.25rem;   /* 20px - post lead, medium titles */
   --text-xl:  1.35rem;   /* 21.6px - h2 */
+  --text-xl2: 1.5rem;    /* 24px - featured card titles, post h2 */
   --text-2xl: 1.75rem;   /* 28px - h3 large */
-  --text-3xl: 2.25rem;   /* 36px - section h1 */
+  --text-3xl: 2rem;      /* 32px - post h1 */
+  --text-4xl: 2.25rem;   /* 36px - section h1 */
 
   /* Responsive breakpoints (mobile-last, max-width based) */
   --bp-sm: 640px;   /* small phone -> tablet */
@@ -531,7 +534,7 @@ a:hover { color: var(--text); }
 }
 .page-header p {
   color: var(--text-muted);
-  font-size: 1.05rem;
+  font-size: var(--text-lg);
   max-width: 640px;
   margin: 0 auto;
 }
@@ -548,7 +551,7 @@ a:hover { color: var(--text); }
 }
 .section-title {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 2rem;
+  font-size: var(--text-3xl);
   font-weight: 700;
   letter-spacing: -0.02em;
 }
@@ -557,7 +560,7 @@ a:hover { color: var(--text); }
   align-items: center;
   gap: 8px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
   color: var(--accent-2);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -640,7 +643,7 @@ a:hover { color: var(--text); }
   background: var(--accent);
   color: #ffffff;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.68rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -779,7 +782,7 @@ a:hover { color: var(--text); }
 .about-card-img img { width: 100%; height: 100%; object-fit: cover; }
 .about-card h3 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.25rem;
+  font-size: var(--text-md);
   font-weight: 700;
   margin-bottom: 4px;
 }
@@ -875,7 +878,7 @@ a:hover { color: var(--text); }
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
   font-family: 'JetBrains Mono', monospace;
   text-transform: uppercase;
   color: var(--accent-2);
@@ -890,7 +893,7 @@ a:hover { color: var(--text); }
   gap: 6px;
 }
 .skill-cat li {
-  font-size: 0.82rem;
+  font-size: var(--text-xs);
   color: var(--text);
   padding: 4px 10px;
   background: var(--bg-elev);
@@ -937,7 +940,7 @@ a:hover { color: var(--text); }
   align-items: center;
   gap: 6px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.68rem;
+  font-size: var(--text-2xs);
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -1028,7 +1031,7 @@ a:hover { color: var(--text); }
 }
 .pub-title {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.5rem;
+  font-size: var(--text-xl2);
   font-weight: 600;
   letter-spacing: -0.015em;
   margin-bottom: 14px;
@@ -1051,7 +1054,7 @@ a:hover { color: var(--text); }
   border-radius: var(--radius);
 }
 .pub-meta-list li {
-  font-size: 0.86rem;
+  font-size: var(--text-sm);
   color: var(--text-muted);
 }
 .pub-meta-list strong {
@@ -1167,7 +1170,7 @@ a:hover { color: var(--text); }
 .filter-bar.active .filter-clear { display: inline-flex; }
 .filter-status {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
+  font-size: var(--text-xs);
   color: var(--text-dim);
   white-space: nowrap;
   letter-spacing: 0.04em;
@@ -1262,7 +1265,7 @@ a:hover { color: var(--text); }
   flex-direction: column;
   gap: 14px;
 }
-.featured-card-body .project-title { font-size: 1.5rem; }
+.featured-card-body .project-title { font-size: var(--text-xl2); }
 .featured-card-body .project-desc {
   -webkit-line-clamp: unset;
   font-size: var(--text-sm);
@@ -1292,8 +1295,8 @@ a:hover { color: var(--text); }
   margin-bottom: 16px;
   color: var(--text);
 }
-.post-article h1 { font-size: var(--text-3xl); }
-.post-article h2 { font-size: 1.5rem; }
+.post-article h1 { font-size: var(--text-4xl); }
+.post-article h2 { font-size: var(--text-xl2); }
 .post-article p, .post-article li {
   color: var(--text-muted);
   line-height: 1.8;
