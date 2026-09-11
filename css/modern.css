@@ -1264,17 +1264,17 @@ a:hover { color: var(--text); }
   white-space: nowrap;
 }
 .pub-badge--peer {
-  color: var(--accent);
-  border-color: color-mix(in oklab, var(--accent) 40%, transparent);
-  background: color-mix(in oklab, var(--accent) 10%, transparent);
+  color: #ffffff;
+  border-color: var(--accent);
+  background: var(--accent);
 }
 .pub-badge--medium {
-  color: var(--accent-2);
-  border-color: color-mix(in oklab, var(--accent-2) 50%, transparent);
-  background: color-mix(in oklab, var(--accent-2) 12%, transparent);
+  color: #ffffff;
+  border-color: var(--accent-2);
+  background: var(--accent-2);
 }
 .pub-badge--research {
-  color: var(--text-muted);
+  color: var(--text);
   border-color: var(--border-strong);
   background: var(--surface);
 }
