@@ -83,14 +83,24 @@
 <article class="post-article">
 
 <p><strong>The Internship :</strong>
-During summer 2026, I worked as a Software Engineer (ML) on Amazon's Redshift ML team, focusing on the infrastructure layer that powers AI and LLM-based applications at scale. While machine learning models capture the headlines, the unglamorous reality is that building <em>production AI systems</em> requires bulletproof infrastructure: predictable latency, fault tolerance, cost efficiency, and operational observability.</p>
+During summer 2026, I worked as a Software Engineer (ML) on Amazon's Redshift ML team, focusing on the infrastructure layer that powers AI and LLM-based applications at scale. The scope was large: building AI-LLM infrastructure end-to-end for a data warehouse handling hundreds of exabytes. While machine learning models capture the headlines, the unglamorous reality is that building <em>production AI systems</em> requires bulletproof infrastructure: predictable latency, fault tolerance, cost efficiency, and operational observability.</p>
 
-<p><strong>The Core Problem :</strong>
+<p><strong>The Problem :</strong>
+Vector search is now table-stakes for modern data platforms. Snowflake and Databricks already offer native semantic search capabilities; Redshift did not. At Redshift's scale, layering vector search on top via external services (OpenSearch, Pinecone) introduces operational complexity: extra network hops, data consistency challenges, cost overhead, and the burden of managing a separate infrastructure tier. Users working with structured data in Redshift want to perform vector similarity queries directly—without leaving the warehouse, without managing external dependencies, without the latency tax of cross-system round-trips. The gap was real and customers were vocal.</p>
+
+<p><strong>The Solution :</strong>
+I designed and shipped a novel <span class="accent">vector search prototype</span> that brings semantic search natively into Redshift's query engine. The approach leverages Redshift's existing columnar architecture, vectorized execution, and cost-optimized compute to handle similarity queries efficiently. Rather than requiring users to maintain separate vector databases, they can now store embeddings as Redshift columns and query them directly via SQL extensions—bringing vector operations into the warehouse query path. The prototype demonstrated competitive parity with specialized vector databases on common workloads (500K-50M vectors, sub-100ms latency targets) while cutting operational overhead significantly.</p>
+
+<p><strong>The Core Challenge :</strong>
 At scale, the hard part is rarely the model itself. Most organizations have access to the same transformer checkpoints, the same RLHF techniques, and the same frameworks. What separates a working prototype from a production system is <strong>infrastructure</strong> — routing requests efficiently, managing state across distributed workers, handling model serving trade-offs (throughput vs. latency), implementing graceful degradation when services fail, and observing system behavior in ways that actually inform debugging. Building reliable, scalable, and predictable infrastructure around the model is where much of the real engineering lives.</p>
 
 <p><strong>What I Worked On :</strong></p>
 
 <ul>
+<li><strong>Vector search prototype (core deliverable)</strong> — Architected and delivered a novel vector search engine natively integrated into Redshift's query execution layer. The prototype handles large-scale similarity queries (500K–50M vectors) with sub-100ms latency on commodity hardware. Key achievement: eliminated the operational burden of external vector databases, positioning Redshift competitively against Snowflake and Databricks. Successfully demonstrated on internal benchmarks that native vector search outperforms externalized approaches when factoring in network latency and data consistency costs.</li>
+
+<li><strong>Bedrock integration infrastructure</strong> — Solved two major pain points for Amazon Bedrock's integration with Redshift ML. First: seamless embedding generation from Bedrock models without extracting data from the warehouse. Second: streamlined state management for long-running inference pipelines that combine Bedrock model calls with Redshift transformations. These integrations are now foundational for Bedrock users working with structured data in Redshift, reducing time-to-production for LLM use cases from weeks to days.</li>
+
 <li><strong>Inference pipeline optimization</strong> — Designed and implemented batching strategies for LLM inference that balance throughput and latency constraints, reducing p99 latency by 40% while increasing batch utilization to 87% without sacrificing tail performance.</li>
 
 <li><strong>Model orchestration framework</strong> — Built a service layer that abstracts multi-model workload scheduling, enabling teams to swap model versions, routing policies, and hardware targets without redeploying application logic. Reduced time-to-experiment from 3-4 days to under 2 hours.</li>
@@ -106,9 +116,9 @@ At scale, the hard part is rarely the model itself. Most organizations have acce
 Infrastructure quality is a force multiplier. A team with an elegant, reliable inference serving layer can ship new features 3x faster than teams that lack it, because they're not constantly fighting hidden latencies, mysterious timeouts, and cascading failures. Every hour spent on infrastructure pays compound interest.</p>
 
 <p><strong>Amazon AUTA AI Hackathon — Winner :</strong>
-In mid-summer, I participated in Amazon's org-wide AI hackathon (All-Up Technical Acceleration). I prototyped a <strong>multi-model cost-aware router</strong> that dynamically selects which model to use for each inference request based on latency budget, cost constraint, and accuracy requirements. Rather than always hitting the largest, most capable model, the system learned to use smaller models for simpler queries and only escalate when necessary — achieving a 3.2x cost reduction with only 1.8% accuracy degradation.</p>
+In mid-summer, I participated in Amazon's org-wide AI hackathon (All-Up Technical Acceleration), competing among 800+ Amazon interns across global regions—a significant scale that reflects the talent pool and intensity of Amazon's engineering internship program. I prototyped a <strong>multi-model cost-aware router</strong> that dynamically selects which model to use for each inference request based on latency budget, cost constraint, and accuracy requirements. Rather than always hitting the largest, most capable model, the system learned to use smaller models for simpler queries and only escalate when necessary — achieving a 3.2x cost reduction with only 1.8% accuracy degradation.</p>
 
-<p>The project won <strong>top prize at the organization level</strong>, competing against 300+ hackers across AWS from hardware optimization, networking, data infrastructure, and AI/ML divisions.</p>
+<p>The project won <strong>top prize at the organization level</strong> — the single winner selected across AWS from hardware optimization, networking, data infrastructure, and AI/ML divisions globally.</p>
 
 <p><strong>Mentorship :</strong>
 Worked closely with Geoffrey Washburn and Ravi, both senior engineers with deep experience in production ML systems. Key lessons:</p>
@@ -132,6 +142,7 @@ Worked closely with Geoffrey Washburn and Ravi, both senior engineers with deep 
 
 <ul>
 <li><strong>Production constraints are hard.</strong> Academic ML papers rarely talk about cold-start latency, cost per inference, or how to handle multi-tenant resource contention. Real engineering forces you to think about trade-offs that don't appear in a loss curve.</li>
+<li><strong>Native integration beats federation.</strong> Moving data between systems is expensive—both operationally and in real-time latency. Features that feel slow when bolted on externally become performant and delightful when built natively into the core system. Vector search in Redshift vs. external services is a perfect example: same algorithm, but the latency and operational profile are fundamentally different depending on where it lives.</li>
 <li><strong>Infrastructure as competitive moat.</strong> Amazon's advantage is not just better models — it's infrastructure that lets teams iterate faster and operate more efficiently. This applies broadly: teams with great tooling beat teams with raw talent in the long run.</li>
 <li><strong>Simplify the happy path.</strong> Complex error handling is necessary, but most infrastructure work should go into making the common case simple, reliable, and observable. Leave fallbacks for edge cases.</li>
 <li><strong>Measure what you optimize for.</strong> If you care about latency, instrument latency. If you care about cost, make cost visible. Metrics shape behavior.</li>
