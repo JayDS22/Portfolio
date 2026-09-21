@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-20T11:56:33+00:00",
+  "generated_at": "2026-09-21T13:31:28+00:00",
   "user": "JayDS22",
   "domain_count": 9,
-  "repo_count": 71,
+  "repo_count": 72,
   "nodes": [
     {
       "id": "domain:computer-vision",
@@ -523,6 +523,19 @@
       "updated_at": "2026-05-17T03:36:12Z"
     },
     {
+      "id": "repo:dpo-qwen-ultrafeedback",
+      "name": "dpo qwen ultrafeedback",
+      "type": "repo",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "DPO fine-tune reference: Qwen2.5-1.5B-Instruct + LoRA + UltraFeedback + vLLM serve + pairwise win-rate eval.",
+      "url": "https://github.com/JayDS22/dpo-qwen-ultrafeedback",
+      "updated_at": "2026-09-20T16:59:51Z"
+    },
+    {
       "id": "repo:Driver-Behavior-Analytics-Crash-Prediction-System",
       "name": "Driver Behavior Analytics Crash Prediction System",
       "type": "repo",
@@ -754,7 +767,7 @@
       "language": "Python",
       "description": "ResNet18 transfer learning pipeline for industrial metal surface defect classification with Grad-CAM interpretability",
       "url": "https://github.com/JayDS22/Metal-Surface-Detection-Pipeline",
-      "updated_at": "2026-04-04T04:49:12Z"
+      "updated_at": "2026-09-21T11:05:53Z"
     },
     {
       "id": "repo:ML-Model-Integration-for-Chip-Design-Automation",
@@ -1131,6 +1144,10 @@
     {
       "source": "repo:Distributed-Logs-Aggregation-System",
       "target": "domain:mlops-infra"
+    },
+    {
+      "source": "repo:dpo-qwen-ultrafeedback",
+      "target": "domain:llm-agents"
     },
     {
       "source": "repo:Driver-Behavior-Analytics-Crash-Prediction-System",
