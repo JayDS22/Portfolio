@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-21T13:31:28+00:00",
+  "generated_at": "2026-09-22T12:15:56+00:00",
   "user": "JayDS22",
   "domain_count": 9,
-  "repo_count": 72,
+  "repo_count": 74,
   "nodes": [
     {
       "id": "domain:computer-vision",
@@ -848,6 +848,19 @@
       "updated_at": "2026-05-17T03:45:33Z"
     },
     {
+      "id": "repo:nvidia-semiconductor-mcp-agentic-platform",
+      "name": "nvidia semiconductor mcp agentic platform",
+      "type": "repo",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "MCP-based multi-agent AI platform PoC for semiconductor manufacturing: wafer yield analysis, BOM verification, supplier risk. Reference for Enterprise Agentic AI Platform teams.",
+      "url": "https://github.com/JayDS22/nvidia-semiconductor-mcp-agentic-platform",
+      "updated_at": "2026-09-22T00:44:51Z"
+    },
+    {
       "id": "repo:Pedestrian-Safety-ADA-Compliance-ML-System",
       "name": "Pedestrian Safety ADA Compliance ML System",
       "type": "repo",
@@ -976,6 +989,19 @@
       "description": "Banking regulatory compliance platform for automated stress testing and capital adequacy analysis under Basel III/IV frameworks with scenario simulation.",
       "url": "https://github.com/JayDS22/Regulatory-Capital-Stress-Testing",
       "updated_at": "2026-05-17T03:36:27Z"
+    },
+    {
+      "id": "repo:replit-agent-bench",
+      "name": "replit agent bench",
+      "type": "repo",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "Reproducible benchmark: Replit Agent vs Cursor+Sonnet vs raw Claude API on 7 realistic dev tasks. 6-axis rubric adapted from PrismBench.",
+      "url": "https://github.com/JayDS22/replit-agent-bench",
+      "updated_at": "2026-09-21T18:26:17Z"
     },
     {
       "id": "repo:Spam-Detection",
@@ -1246,6 +1272,10 @@
       "target": "domain:time-series"
     },
     {
+      "source": "repo:nvidia-semiconductor-mcp-agentic-platform",
+      "target": "domain:llm-agents"
+    },
+    {
       "source": "repo:Pedestrian-Safety-ADA-Compliance-ML-System",
       "target": "domain:computer-vision"
     },
@@ -1284,6 +1314,10 @@
     {
       "source": "repo:Regulatory-Capital-Stress-Testing",
       "target": "domain:stats-bayesian"
+    },
+    {
+      "source": "repo:replit-agent-bench",
+      "target": "domain:llm-agents"
     },
     {
       "source": "repo:Spam-Detection",
