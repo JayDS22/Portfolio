@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-27T12:37:16+00:00",
+  "generated_at": "2026-09-28T14:49:36+00:00",
   "user": "JayDS22",
   "domain_count": 9,
-  "repo_count": 74,
+  "repo_count": 75,
   "nodes": [
     {
       "id": "domain:computer-vision",
@@ -432,6 +432,19 @@
       "updated_at": "2026-05-17T03:45:36Z"
     },
     {
+      "id": "repo:chart-abstraction-llm-eval",
+      "name": "chart abstraction llm eval",
+      "type": "repo",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "LLM-powered structured extraction from unstructured clinical notes with a PrismBench-shape evaluation harness. Diagnoses / meds / procedures / labs / timeline extraction + per-field F1 scoring + hallucination check + Streamlit UI.",
+      "url": "https://github.com/JayDS22/chart-abstraction-llm-eval",
+      "updated_at": "2026-09-27T14:45:55Z"
+    },
+    {
       "id": "repo:Churn-Prediction",
       "name": "Churn Prediction",
       "type": "repo",
@@ -443,6 +456,19 @@
       "description": "Build an End-to-End Data Science Project to predict customer churn for the Telecom industry and provide prescriptive countermeasures.",
       "url": "https://github.com/JayDS22/Churn-Prediction",
       "updated_at": "2026-05-17T03:04:38Z"
+    },
+    {
+      "id": "repo:comet-shaped-web-agent",
+      "name": "comet shaped web agent",
+      "type": "repo",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "Playwright + CDP + Claude Sonnet 4.6 tool_use browser agent with a payload-classified permission layer and 6-axis eval harness",
+      "url": "https://github.com/JayDS22/comet-shaped-web-agent",
+      "updated_at": "2026-09-27T18:55:39Z"
     },
     {
       "id": "repo:Credit-Risk-PD-LGD-EAD-Modeling-Platform",
@@ -1004,19 +1030,6 @@
       "updated_at": "2026-09-21T18:26:17Z"
     },
     {
-      "id": "repo:Spam-Detection",
-      "name": "Spam Detection",
-      "type": "repo",
-      "domain": "nlp-speech",
-      "color": "#f472b6",
-      "val": 3,
-      "stars": 0,
-      "language": "Jupyter Notebook",
-      "description": "Build an End-to-End Data Science project to predict the Spam & Legit emails",
-      "url": "https://github.com/JayDS22/Spam-Detection",
-      "updated_at": "2021-12-09T20:02:09Z"
-    },
-    {
       "id": "repo:Transportation_And_Demand_Forecasting",
       "name": "Transportation And Demand Forecasting",
       "type": "repo",
@@ -1144,8 +1157,16 @@
       "target": "domain:computer-vision"
     },
     {
+      "source": "repo:chart-abstraction-llm-eval",
+      "target": "domain:llm-agents"
+    },
+    {
       "source": "repo:Churn-Prediction",
       "target": "domain:ml-general"
+    },
+    {
+      "source": "repo:comet-shaped-web-agent",
+      "target": "domain:llm-agents"
     },
     {
       "source": "repo:Credit-Risk-PD-LGD-EAD-Modeling-Platform",
@@ -1318,10 +1339,6 @@
     {
       "source": "repo:replit-agent-bench",
       "target": "domain:llm-agents"
-    },
-    {
-      "source": "repo:Spam-Detection",
-      "target": "domain:nlp-speech"
     },
     {
       "source": "repo:Transportation_And_Demand_Forecasting",
