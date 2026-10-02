@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T14:05:06+00:00",
+  "generated_at": "2026-10-02T13:25:55+00:00",
   "user": "JayDS22",
   "domain_count": 9,
   "repo_count": 75,
@@ -406,19 +406,6 @@
       "updated_at": "2026-01-25T04:00:20Z"
     },
     {
-      "id": "repo:Breast-Cancer-Wisconsin-Diagnostic",
-      "name": "Breast Cancer Wisconsin Diagnostic",
-      "type": "repo",
-      "domain": "computer-vision",
-      "color": "#7c5cff",
-      "val": 3,
-      "stars": 0,
-      "language": "Jupyter Notebook",
-      "description": "Build an End to End Data Science project to Detect Breast Cancer using UCI dataset",
-      "url": "https://github.com/JayDS22/Breast-Cancer-Wisconsin-Diagnostic",
-      "updated_at": "2021-12-09T20:44:19Z"
-    },
-    {
       "id": "repo:Bridgestone-Vehicle-Safety-Computer-Vision",
       "name": "Bridgestone Vehicle Safety Computer Vision",
       "type": "repo",
@@ -677,6 +664,19 @@
       "description": "Complete production-ready system achieving 94.2% accuracy with YOLOv8 + ResNet-50 ensemble, processing 500+ images/minute with <150ms inference time for automated defect detection in manufacturing environments.",
       "url": "https://github.com/JayDS22/Industrial-Quality-Control-Computer-Vision-System-",
       "updated_at": "2026-05-17T03:45:40Z"
+    },
+    {
+      "id": "repo:InfraRL",
+      "name": "InfraRL",
+      "type": "repo",
+      "domain": "rl-robotics",
+      "color": "#ef4444",
+      "val": 3,
+      "stars": 0,
+      "language": "",
+      "description": "RL for Use-Case-Driven AI Infrastructure Recommendation | MSAI/MSML 635 Reinforcement Learning @ UMD",
+      "url": "https://github.com/JayDS22/InfraRL",
+      "updated_at": "2026-10-01T20:57:38Z"
     },
     {
       "id": "repo:Insurance_Modelling",
@@ -1149,10 +1149,6 @@
       "target": "domain:quant-finance"
     },
     {
-      "source": "repo:Breast-Cancer-Wisconsin-Diagnostic",
-      "target": "domain:computer-vision"
-    },
-    {
       "source": "repo:Bridgestone-Vehicle-Safety-Computer-Vision",
       "target": "domain:computer-vision"
     },
@@ -1231,6 +1227,10 @@
     {
       "source": "repo:Industrial-Quality-Control-Computer-Vision-System-",
       "target": "domain:computer-vision"
+    },
+    {
+      "source": "repo:InfraRL",
+      "target": "domain:rl-robotics"
     },
     {
       "source": "repo:Insurance_Modelling",
