@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-05T15:27:29+00:00",
+  "generated_at": "2026-10-06T13:49:54+00:00",
   "user": "JayDS22",
   "domain_count": 9,
-  "repo_count": 75,
+  "repo_count": 77,
   "nodes": [
     {
       "id": "domain:computer-vision",
@@ -575,6 +575,19 @@
       "updated_at": "2022-04-29T02:52:24Z"
     },
     {
+      "id": "repo:enterprise-assistant-reference",
+      "name": "enterprise assistant reference",
+      "type": "repo",
+      "domain": "ml-general",
+      "color": "#94a3b8",
+      "val": 3,
+      "stars": 0,
+      "language": "TypeScript",
+      "description": "Reference impl of an enterprise AI assistant: Agents SDK + Responses API + Next.js + Postgres RLS + OTel. Tenant-isolated by construction.",
+      "url": "https://github.com/JayDS22/enterprise-assistant-reference",
+      "updated_at": "2026-10-05T22:55:39Z"
+    },
+    {
       "id": "repo:Enterprise-Data-Warehouse",
       "name": "Enterprise Data Warehouse",
       "type": "repo",
@@ -885,6 +898,19 @@
       "description": "MCP-based multi-agent AI platform PoC for semiconductor manufacturing: wafer yield analysis, BOM verification, supplier risk. Reference for Enterprise Agentic AI Platform teams.",
       "url": "https://github.com/JayDS22/nvidia-semiconductor-mcp-agentic-platform",
       "updated_at": "2026-09-22T00:44:51Z"
+    },
+    {
+      "id": "repo:openai-evals-enterprise-pack",
+      "name": "openai evals enterprise pack",
+      "type": "repo",
+      "domain": "computer-vision",
+      "color": "#7c5cff",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "20 enterprise scenarios for the openai/evals registry format, plus 3 novel evals the public corpus does not have: tool-use trajectory grading, streaming-cancel structured-output validity, PII leak through tool arguments.",
+      "url": "https://github.com/JayDS22/openai-evals-enterprise-pack",
+      "updated_at": "2026-10-06T03:45:49Z"
     },
     {
       "id": "repo:Pedestrian-Safety-ADA-Compliance-ML-System",
@@ -1201,6 +1227,10 @@
       "target": "domain:ml-general"
     },
     {
+      "source": "repo:enterprise-assistant-reference",
+      "target": "domain:ml-general"
+    },
+    {
       "source": "repo:Enterprise-Data-Warehouse",
       "target": "domain:mlops-infra"
     },
@@ -1295,6 +1325,10 @@
     {
       "source": "repo:nvidia-semiconductor-mcp-agentic-platform",
       "target": "domain:llm-agents"
+    },
+    {
+      "source": "repo:openai-evals-enterprise-pack",
+      "target": "domain:computer-vision"
     },
     {
       "source": "repo:Pedestrian-Safety-ADA-Compliance-ML-System",
