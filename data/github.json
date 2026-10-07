@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T13:49:54+00:00",
+  "generated_at": "2026-10-07T14:07:32+00:00",
   "user": "JayDS22",
   "domain_count": 9,
   "repo_count": 77,
@@ -562,30 +562,17 @@
       "updated_at": "2026-05-17T03:45:33Z"
     },
     {
-      "id": "repo:E-Commerce-Shipping",
-      "name": "E Commerce Shipping",
-      "type": "repo",
-      "domain": "ml-general",
-      "color": "#94a3b8",
-      "val": 3,
-      "stars": 0,
-      "language": "Jupyter Notebook",
-      "description": "This is an End-to-End Data Science Project built in order to help an International E-commerce Company to predict whether their product will be delivered on the committed Delivery Time or not",
-      "url": "https://github.com/JayDS22/E-Commerce-Shipping",
-      "updated_at": "2022-04-29T02:52:24Z"
-    },
-    {
       "id": "repo:enterprise-assistant-reference",
       "name": "enterprise assistant reference",
       "type": "repo",
-      "domain": "ml-general",
-      "color": "#94a3b8",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
       "val": 3,
       "stars": 0,
       "language": "TypeScript",
-      "description": "Reference impl of an enterprise AI assistant: Agents SDK + Responses API + Next.js + Postgres RLS + OTel. Tenant-isolated by construction.",
+      "description": "Multi-agent enterprise reference impl: Agents SDK + Responses API + Postgres RLS. Live demo at the homepage.",
       "url": "https://github.com/JayDS22/enterprise-assistant-reference",
-      "updated_at": "2026-10-05T22:55:39Z"
+      "updated_at": "2026-10-06T23:18:04Z"
     },
     {
       "id": "repo:Enterprise-Data-Warehouse",
@@ -614,19 +601,6 @@
       "updated_at": "2024-10-19T18:24:24Z"
     },
     {
-      "id": "repo:Face-Mask-Detection",
-      "name": "Face Mask Detection",
-      "type": "repo",
-      "domain": "computer-vision",
-      "color": "#7c5cff",
-      "val": 3,
-      "stars": 0,
-      "language": "Jupyter Notebook",
-      "description": "High Performance Neural Network Web App: Face Mask Detection",
-      "url": "https://github.com/JayDS22/Face-Mask-Detection",
-      "updated_at": "2022-04-29T02:52:28Z"
-    },
-    {
       "id": "repo:Financial-Budget-Planner",
       "name": "Financial Budget Planner",
       "type": "repo",
@@ -638,6 +612,32 @@
       "description": "VisionFi \u2014 A full-stack AI-powered financial planner built with Node.js, Express, sql.js, and the Anthropic Claude API, featuring budgeting, credit monitoring, investment tracking, smart automations, and goal-oriented chat.",
       "url": "https://github.com/JayDS22/Financial-Budget-Planner",
       "updated_at": "2026-05-17T03:36:14Z"
+    },
+    {
+      "id": "repo:gtm-semantic-layer",
+      "name": "gtm semantic layer",
+      "type": "repo",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "Governed, self-service GTM analytics stack: dbt-core + MetricFlow + DuckDB/Snowflake + a versioned skills/ markdown folder consumed by Claude-style assistants. 22 public metrics, column-level PII enforcement, CI-gated.",
+      "url": "https://github.com/JayDS22/gtm-semantic-layer",
+      "updated_at": "2026-10-06T23:13:34Z"
+    },
+    {
+      "id": "repo:hex-gtm-dashboard",
+      "name": "hex gtm dashboard",
+      "type": "repo",
+      "domain": "mlops-infra",
+      "color": "#a855f7",
+      "val": 3,
+      "stars": 0,
+      "language": "",
+      "description": "Executive GTM command center in Hex, powered by the dbt + MetricFlow companion repo gtm-semantic-layer. 7 panels, 4 sections, 4 filters, dbt Semantic Layer backend.",
+      "url": "https://github.com/JayDS22/hex-gtm-dashboard",
+      "updated_at": "2026-10-07T00:12:48Z"
     },
     {
       "id": "repo:HPC-llm-bench",
@@ -908,9 +908,9 @@
       "val": 3,
       "stars": 0,
       "language": "Python",
-      "description": "20 enterprise scenarios for the openai/evals registry format, plus 3 novel evals the public corpus does not have: tool-use trajectory grading, streaming-cancel structured-output validity, PII leak through tool arguments.",
+      "description": "20 enterprise scenarios for the openai/evals registry format + 3 novel evals the public corpus lacks: tool-use trajectory, streaming-cancel JSON validity, PII leak through tool arguments.",
       "url": "https://github.com/JayDS22/openai-evals-enterprise-pack",
-      "updated_at": "2026-10-06T03:45:49Z"
+      "updated_at": "2026-10-06T22:59:50Z"
     },
     {
       "id": "repo:Pedestrian-Safety-ADA-Compliance-ML-System",
@@ -1223,12 +1223,8 @@
       "target": "domain:ml-general"
     },
     {
-      "source": "repo:E-Commerce-Shipping",
-      "target": "domain:ml-general"
-    },
-    {
       "source": "repo:enterprise-assistant-reference",
-      "target": "domain:ml-general"
+      "target": "domain:llm-agents"
     },
     {
       "source": "repo:Enterprise-Data-Warehouse",
@@ -1239,12 +1235,16 @@
       "target": "domain:mlops-infra"
     },
     {
-      "source": "repo:Face-Mask-Detection",
+      "source": "repo:Financial-Budget-Planner",
       "target": "domain:computer-vision"
     },
     {
-      "source": "repo:Financial-Budget-Planner",
-      "target": "domain:computer-vision"
+      "source": "repo:gtm-semantic-layer",
+      "target": "domain:llm-agents"
+    },
+    {
+      "source": "repo:hex-gtm-dashboard",
+      "target": "domain:mlops-infra"
     },
     {
       "source": "repo:HPC-llm-bench",
