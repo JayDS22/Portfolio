@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T14:07:32+00:00",
+  "generated_at": "2026-10-08T14:17:49+00:00",
   "user": "JayDS22",
   "domain_count": 9,
   "repo_count": 77,
@@ -572,7 +572,7 @@
       "language": "TypeScript",
       "description": "Multi-agent enterprise reference impl: Agents SDK + Responses API + Postgres RLS. Live demo at the homepage.",
       "url": "https://github.com/JayDS22/enterprise-assistant-reference",
-      "updated_at": "2026-10-06T23:18:04Z"
+      "updated_at": "2026-10-07T16:26:21Z"
     },
     {
       "id": "repo:Enterprise-Data-Warehouse",
@@ -624,7 +624,7 @@
       "language": "Python",
       "description": "Governed, self-service GTM analytics stack: dbt-core + MetricFlow + DuckDB/Snowflake + a versioned skills/ markdown folder consumed by Claude-style assistants. 22 public metrics, column-level PII enforcement, CI-gated.",
       "url": "https://github.com/JayDS22/gtm-semantic-layer",
-      "updated_at": "2026-10-06T23:13:34Z"
+      "updated_at": "2026-10-07T17:34:14Z"
     },
     {
       "id": "repo:hex-gtm-dashboard",
@@ -910,7 +910,7 @@
       "language": "Python",
       "description": "20 enterprise scenarios for the openai/evals registry format + 3 novel evals the public corpus lacks: tool-use trajectory, streaming-cancel JSON validity, PII leak through tool arguments.",
       "url": "https://github.com/JayDS22/openai-evals-enterprise-pack",
-      "updated_at": "2026-10-06T22:59:50Z"
+      "updated_at": "2026-10-07T16:30:21Z"
     },
     {
       "id": "repo:Pedestrian-Safety-ADA-Compliance-ML-System",
