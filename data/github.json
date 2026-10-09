@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T14:17:49+00:00",
+  "generated_at": "2026-10-09T14:02:35+00:00",
   "user": "JayDS22",
   "domain_count": 9,
   "repo_count": 77,
@@ -624,7 +624,7 @@
       "language": "Python",
       "description": "Governed, self-service GTM analytics stack: dbt-core + MetricFlow + DuckDB/Snowflake + a versioned skills/ markdown folder consumed by Claude-style assistants. 22 public metrics, column-level PII enforcement, CI-gated.",
       "url": "https://github.com/JayDS22/gtm-semantic-layer",
-      "updated_at": "2026-10-07T17:34:14Z"
+      "updated_at": "2026-10-08T19:24:58Z"
     },
     {
       "id": "repo:hex-gtm-dashboard",
@@ -634,10 +634,10 @@
       "color": "#a855f7",
       "val": 3,
       "stars": 0,
-      "language": "",
+      "language": "Shell",
       "description": "Executive GTM command center in Hex, powered by the dbt + MetricFlow companion repo gtm-semantic-layer. 7 panels, 4 sections, 4 filters, dbt Semantic Layer backend.",
       "url": "https://github.com/JayDS22/hex-gtm-dashboard",
-      "updated_at": "2026-10-07T00:12:48Z"
+      "updated_at": "2026-10-08T20:42:57Z"
     },
     {
       "id": "repo:HPC-llm-bench",
