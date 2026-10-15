@@ -1,89 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" fill="none" role="img" aria-label="Agent benchmark schematic: three agent rails measured against seven realistic development tasks, pass and fail marks per intersection">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" fill="none">
   <style>
-    .label { font: 500 11px "JetBrains Mono", ui-monospace, monospace; fill: currentColor; letter-spacing: 0.06em; }
-    .big   { font: 600 22px "Space Grotesk", "Inter", sans-serif; fill: currentColor; letter-spacing: -0.01em; }
-    .kick  { font: 500 10px "JetBrains Mono", ui-monospace, monospace; fill: currentColor; opacity: 0.6; letter-spacing: 0.14em; text-transform: uppercase; }
-    .rail  { stroke: currentColor; stroke-width: 1.4; fill: none; opacity: 0.35; }
-    .taskaxis { stroke: currentColor; stroke-width: 1; opacity: 0.2; fill: none; }
-    .pass-fill { fill: #1d4ed8; }
-    .fail-stroke { stroke: currentColor; stroke-width: 1.2; fill: none; opacity: 0.5; }
-    .rail-label { font: 600 10px "JetBrains Mono", ui-monospace, monospace; fill: currentColor; letter-spacing: 0.08em; }
-    .task-label { font: 500 9px "JetBrains Mono", ui-monospace, monospace; fill: currentColor; opacity: 0.55; letter-spacing: 0.04em; }
-    .legend-text { font: 500 10px "JetBrains Mono", ui-monospace, monospace; fill: currentColor; opacity: 0.75; letter-spacing: 0.04em; }
+    .rail       { stroke: currentColor; stroke-width: 2; fill: none; opacity: 0.35; }
+    .taskaxis   { stroke: currentColor; stroke-width: 1.4; opacity: 0.18; fill: none; }
+    .pass-fill  { fill: #1d4ed8; }
+    .fail-stroke{ stroke: currentColor; stroke-width: 1.8; fill: none; opacity: 0.5; }
+    .rail-label { fill: currentColor; font: 700 20px "JetBrains Mono", ui-monospace, monospace; letter-spacing: 0.1em; }
+    .task-label { fill: currentColor; opacity: 0.6; font: 500 16px "JetBrains Mono", ui-monospace, monospace; letter-spacing: 0.06em; }
+    .legend     { fill: currentColor; opacity: 0.75; font: 500 16px "JetBrains Mono", ui-monospace, monospace; letter-spacing: 0.06em; }
+    .foot       { fill: currentColor; opacity: 0.4; font: 500 14px "JetBrains Mono", ui-monospace, monospace; letter-spacing: 0.05em; }
   </style>
 
-  <!-- Title block -->
-  <text class="kick" x="40" y="56">AGENT BENCHMARKS · SEP 2026</text>
-  <text class="big"  x="40" y="92">Agent Bench · 7 Tasks</text>
-  <text class="label" x="40" y="118" opacity="0.75">replit · cursor+sonnet · claude api</text>
-
   <!-- Three agent rails -->
-  <!-- rail 1: Replit, x=440 -->
-  <line class="rail" x1="440" y1="90" x2="440" y2="250"/>
-  <text class="rail-label" x="440" y="78" text-anchor="middle">REPLIT</text>
+  <line class="rail" x1="330" y1="120" x2="330" y2="420"/>
+  <text class="rail-label" x="330" y="100" text-anchor="middle">REPLIT</text>
 
-  <!-- rail 2: Cursor, x=550 -->
-  <line class="rail" x1="550" y1="90" x2="550" y2="250"/>
-  <text class="rail-label" x="550" y="78" text-anchor="middle">CURSOR</text>
+  <line class="rail" x1="500" y1="120" x2="500" y2="420"/>
+  <text class="rail-label" x="500" y="100" text-anchor="middle">CURSOR</text>
 
-  <!-- rail 3: Claude, x=660 -->
-  <line class="rail" x1="660" y1="90" x2="660" y2="250"/>
-  <text class="rail-label" x="660" y="78" text-anchor="middle">CLAUDE</text>
+  <line class="rail" x1="670" y1="120" x2="670" y2="420"/>
+  <text class="rail-label" x="670" y="100" text-anchor="middle">CLAUDE</text>
 
-  <!-- Task axis labels and horizontal guides (7 rows) -->
-  <!-- Rows at y: 100, 122, 144, 166, 188, 210, 232 -->
+  <!-- Task axis labels and horizontal guides (7 rows, y = 140, 180, 220, 260, 300, 340, 380) -->
   <g>
-    <line class="taskaxis" x1="400" y1="100" x2="700" y2="100"/>
-    <text class="task-label" x="394" y="104" text-anchor="end">t1</text>
-    <line class="taskaxis" x1="400" y1="122" x2="700" y2="122"/>
-    <text class="task-label" x="394" y="126" text-anchor="end">t2</text>
-    <line class="taskaxis" x1="400" y1="144" x2="700" y2="144"/>
-    <text class="task-label" x="394" y="148" text-anchor="end">t3</text>
-    <line class="taskaxis" x1="400" y1="166" x2="700" y2="166"/>
-    <text class="task-label" x="394" y="170" text-anchor="end">t4</text>
-    <line class="taskaxis" x1="400" y1="188" x2="700" y2="188"/>
-    <text class="task-label" x="394" y="192" text-anchor="end">t5</text>
-    <line class="taskaxis" x1="400" y1="210" x2="700" y2="210"/>
-    <text class="task-label" x="394" y="214" text-anchor="end">t6</text>
-    <line class="taskaxis" x1="400" y1="232" x2="700" y2="232"/>
-    <text class="task-label" x="394" y="236" text-anchor="end">t7</text>
+    <line class="taskaxis" x1="260" y1="140" x2="740" y2="140"/>
+    <text class="task-label" x="252" y="146" text-anchor="end">t1</text>
+    <line class="taskaxis" x1="260" y1="180" x2="740" y2="180"/>
+    <text class="task-label" x="252" y="186" text-anchor="end">t2</text>
+    <line class="taskaxis" x1="260" y1="220" x2="740" y2="220"/>
+    <text class="task-label" x="252" y="226" text-anchor="end">t3</text>
+    <line class="taskaxis" x1="260" y1="260" x2="740" y2="260"/>
+    <text class="task-label" x="252" y="266" text-anchor="end">t4</text>
+    <line class="taskaxis" x1="260" y1="300" x2="740" y2="300"/>
+    <text class="task-label" x="252" y="306" text-anchor="end">t5</text>
+    <line class="taskaxis" x1="260" y1="340" x2="740" y2="340"/>
+    <text class="task-label" x="252" y="346" text-anchor="end">t6</text>
+    <line class="taskaxis" x1="260" y1="380" x2="740" y2="380"/>
+    <text class="task-label" x="252" y="386" text-anchor="end">t7</text>
   </g>
 
-  <!-- Pass/fail marks per (agent, task) -->
-  <!-- Pattern illustrative only, not real data. Mix suggests competitive measurement. -->
-  <!-- REPLIT (440) -->
-  <circle cx="440" cy="100" r="5" class="pass-fill"/>
-  <circle cx="440" cy="122" r="5" class="fail-stroke"/>
-  <circle cx="440" cy="144" r="5" class="pass-fill"/>
-  <circle cx="440" cy="166" r="5" class="pass-fill"/>
-  <circle cx="440" cy="188" r="5" class="fail-stroke"/>
-  <circle cx="440" cy="210" r="5" class="pass-fill"/>
-  <circle cx="440" cy="232" r="5" class="fail-stroke"/>
+  <!-- Marks: pattern is illustrative only, not real data -->
+  <!-- REPLIT -->
+  <circle cx="330" cy="140" r="9" class="pass-fill"/>
+  <circle cx="330" cy="180" r="9" class="fail-stroke"/>
+  <circle cx="330" cy="220" r="9" class="pass-fill"/>
+  <circle cx="330" cy="260" r="9" class="pass-fill"/>
+  <circle cx="330" cy="300" r="9" class="fail-stroke"/>
+  <circle cx="330" cy="340" r="9" class="pass-fill"/>
+  <circle cx="330" cy="380" r="9" class="fail-stroke"/>
 
-  <!-- CURSOR (550) -->
-  <circle cx="550" cy="100" r="5" class="pass-fill"/>
-  <circle cx="550" cy="122" r="5" class="pass-fill"/>
-  <circle cx="550" cy="144" r="5" class="pass-fill"/>
-  <circle cx="550" cy="166" r="5" class="fail-stroke"/>
-  <circle cx="550" cy="188" r="5" class="pass-fill"/>
-  <circle cx="550" cy="210" r="5" class="pass-fill"/>
-  <circle cx="550" cy="232" r="5" class="fail-stroke"/>
+  <!-- CURSOR -->
+  <circle cx="500" cy="140" r="9" class="pass-fill"/>
+  <circle cx="500" cy="180" r="9" class="pass-fill"/>
+  <circle cx="500" cy="220" r="9" class="pass-fill"/>
+  <circle cx="500" cy="260" r="9" class="fail-stroke"/>
+  <circle cx="500" cy="300" r="9" class="pass-fill"/>
+  <circle cx="500" cy="340" r="9" class="pass-fill"/>
+  <circle cx="500" cy="380" r="9" class="fail-stroke"/>
 
-  <!-- CLAUDE (660) -->
-  <circle cx="660" cy="100" r="5" class="pass-fill"/>
-  <circle cx="660" cy="122" r="5" class="pass-fill"/>
-  <circle cx="660" cy="144" r="5" class="fail-stroke"/>
-  <circle cx="660" cy="166" r="5" class="pass-fill"/>
-  <circle cx="660" cy="188" r="5" class="pass-fill"/>
-  <circle cx="660" cy="210" r="5" class="pass-fill"/>
-  <circle cx="660" cy="232" r="5" class="pass-fill"/>
+  <!-- CLAUDE -->
+  <circle cx="670" cy="140" r="9" class="pass-fill"/>
+  <circle cx="670" cy="180" r="9" class="pass-fill"/>
+  <circle cx="670" cy="220" r="9" class="fail-stroke"/>
+  <circle cx="670" cy="260" r="9" class="pass-fill"/>
+  <circle cx="670" cy="300" r="9" class="pass-fill"/>
+  <circle cx="670" cy="340" r="9" class="pass-fill"/>
+  <circle cx="670" cy="380" r="9" class="pass-fill"/>
 
-  <!-- Legend bottom -->
-  <circle cx="406" cy="268" r="5" class="pass-fill"/>
-  <text class="legend-text" x="418" y="272">pass</text>
-  <circle cx="470" cy="268" r="5" class="fail-stroke"/>
-  <text class="legend-text" x="482" y="272">fail</text>
+  <!-- Legend -->
+  <circle cx="270" cy="455" r="9" class="pass-fill"/>
+  <text class="legend" x="290" y="462">pass</text>
+  <circle cx="370" cy="455" r="9" class="fail-stroke"/>
+  <text class="legend" x="390" y="462">fail</text>
 
-  <!-- Illustrative note -->
-  <text class="legend-text" x="700" y="272" text-anchor="end" opacity="0.5">illustrative, see repo for live run</text>
+  <text class="foot" x="740" y="462" text-anchor="end">illustrative, see repo for live run</text>
 </svg>

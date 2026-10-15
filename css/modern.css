@@ -709,6 +709,10 @@ html[data-theme="dark"] .chapter-hero-schematic,
 html[data-theme="dark"] .project-thumb--schematic,
 html[data-theme="dark"] .featured-card-img--schematic { color: var(--text); }
 
+@media (max-width: 640px) {
+  .chapter-hero { display: none; }
+}
+
 .project-thumb--branded .branded-caption {
   font-family: 'JetBrains Mono', monospace;
   font-size: var(--text-2xs);

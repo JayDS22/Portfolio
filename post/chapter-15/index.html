@@ -77,9 +77,14 @@
 
 <section class="page-header" style="padding: 48px 0 32px;">
   <div class="container-narrow" style="text-align:left;">
-    <a href="../../post/" class="btn btn-secondary" style="margin-bottom: 24px;">
-      <svg><use href="#i-back"/></svg> All projects
-    </a>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;">
+      <a href="../../post/" class="btn btn-secondary">
+        <svg><use href="#i-back"/></svg> All projects
+      </a>
+      <a href="https://github.com/JayDS22/openai-evals-enterprise-pack" class="btn btn-primary" target="_blank" rel="noopener">
+        <svg><use href="#i-github"/></svg> Repository
+      </a>
+    </div>
     <div class="section-kicker" style="justify-content:flex-start;"><svg width="14" height="14"><use href="#i-spark"/></svg> LLM Evaluation · October 2026</div>
     <h1 style="text-align:left;">Enterprise LLM Evals: Three Evaluations Missing From The Public Corpus</h1>
     <p style="margin-left:0;text-align:left;">Twenty enterprise scenarios in the openai/evals registry format, plus three novel evaluations the public corpus does not cover: tool-use trajectory, streaming-cancel JSON validity, and PII leakage through tool arguments.</p>

@@ -368,6 +368,70 @@
 
       <article class="featured-card">
         <div class="featured-card-img featured-card-img--schematic">
+          <img src="images/schematics/chapter-12-multi-agent.svg" alt="Multi-agent enterprise assistant schematic">
+        </div>
+        <div class="featured-card-body">
+          <div class="project-meta">
+            <span>Oct 2026</span> <span>·</span> <span>Agent Systems</span>
+          </div>
+          <h3 class="project-title">
+            <a href="post/chapter-12/">Enterprise Assistant Reference: Multi-Agent Production Patterns</a>
+          </h3>
+          <p class="project-desc">
+            Reference implementation of a multi-agent enterprise assistant: one orchestrator, three specialist workers,
+            Postgres Row-Level Security as the data-side guardrail. Live demo deployed on Fly.io.
+          </p>
+          <div class="project-metrics">
+            <span class="metric-chip">Agents SDK</span>
+            <span class="metric-chip">Postgres RLS</span>
+            <span class="metric-chip">Live demo</span>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">Agents SDK</span>
+            <span class="tech-tag">Postgres RLS</span>
+          </div>
+          <a class="project-link" href="post/chapter-12/">
+            Read case study <svg><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="featured-card">
+        <div class="featured-card-img featured-card-img--schematic">
+          <img src="images/schematics/chapter-14-benchmark.svg" alt="Agent benchmark schematic">
+        </div>
+        <div class="featured-card-body">
+          <div class="project-meta">
+            <span>Sep 2026</span> <span>·</span> <span>Benchmarks</span>
+          </div>
+          <h3 class="project-title">
+            <a href="post/chapter-14/">Replit Agent Bench: Head-to-Head on 7 Realistic Dev Tasks</a>
+          </h3>
+          <p class="project-desc">
+            Reproducible benchmark comparing Replit Agent, Cursor paired with Claude Sonnet, and the raw Claude API across
+            seven real-world development tasks. One command to run, pinned model versions, open scoring rubric.
+          </p>
+          <div class="project-metrics">
+            <span class="metric-chip">3 agents · 7 tasks</span>
+            <span class="metric-chip">make bench</span>
+            <span class="metric-chip">Quarterly reruns</span>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">pytest</span>
+            <span class="tech-tag">Anthropic SDK</span>
+            <span class="tech-tag">Docker</span>
+          </div>
+          <a class="project-link" href="post/chapter-14/">
+            Read case study <svg><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="featured-card">
+        <div class="featured-card-img featured-card-img--schematic">
           <img src="images/schematics/chapter-13-browser-agent.svg" alt="Comet-shaped browser agent schematic">
         </div>
         <div class="featured-card-body">
@@ -393,74 +457,6 @@
             <span class="tech-tag">CDP</span>
           </div>
           <a class="project-link" href="post/chapter-13/">
-            Read case study <svg><use href="#i-arrow"/></svg>
-          </a>
-        </div>
-      </article>
-
-      <article class="featured-card">
-        <div class="featured-card-img">
-          <img src="images/driver-behaviour-analysis.jpg" alt="Driver Behaviour Analytics">
-        </div>
-        <div class="featured-card-body">
-          <div class="project-meta">
-            <span>Project 01</span> <span>·</span> <span>Bayesian + Survival Analytics</span>
-          </div>
-          <h3 class="project-title">
-            <a href="post/chapter-9/">Driver Behaviour Analytics System</a>
-          </h3>
-          <p class="project-desc">
-            Comprehensive driver risk analytics for 300K+ drivers using survival analysis and Bayesian modeling, with a real-time
-            assessment API integrated into the Bridgestone ecosystem.
-          </p>
-          <div class="project-metrics">
-            <span class="metric-chip">88% churn accuracy</span>
-            <span class="metric-chip">10K+ daily req</span>
-            <span class="metric-chip">&lt;200ms P95</span>
-            <span class="metric-chip">40% faster claims</span>
-          </div>
-          <div class="project-tech">
-            <span class="tech-tag">Apache Kafka</span>
-            <span class="tech-tag">PyMC3</span>
-            <span class="tech-tag">FastAPI</span>
-            <span class="tech-tag">PostgreSQL</span>
-            <span class="tech-tag">AWS S3</span>
-          </div>
-          <a class="project-link" href="post/chapter-9/">
-            Read case study <svg><use href="#i-arrow"/></svg>
-          </a>
-        </div>
-      </article>
-
-      <article class="featured-card">
-        <div class="featured-card-img">
-          <img src="images/llm-serving.png" alt="Production LLM Serving">
-        </div>
-        <div class="featured-card-body">
-          <div class="project-meta">
-            <span>Project 02</span> <span>·</span> <span>LLM Infrastructure</span>
-          </div>
-          <h3 class="project-title">
-            <a href="post/chapter-8/">Production LLM Serving Optimization Framework</a>
-          </h3>
-          <p class="project-desc">
-            High-performance LLM serving with vLLM continuous batching, INT8/INT4 quantization and multi-GPU tensor parallelism.
-            Distributed inference with token streaming and full Prometheus/Grafana observability.
-          </p>
-          <div class="project-metrics">
-            <span class="metric-chip">12.3K req/s</span>
-            <span class="metric-chip">42ms P50</span>
-            <span class="metric-chip">70% memory cut</span>
-            <span class="metric-chip">2.3× CUDA speedup</span>
-          </div>
-          <div class="project-tech">
-            <span class="tech-tag">vLLM</span>
-            <span class="tech-tag">FastAPI</span>
-            <span class="tech-tag">Docker</span>
-            <span class="tech-tag">Kubernetes</span>
-            <span class="tech-tag">Prometheus</span>
-          </div>
-          <a class="project-link" href="post/chapter-8/">
             Read case study <svg><use href="#i-arrow"/></svg>
           </a>
         </div>

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" fill="none">
+  <defs>
+    <marker id="arrowhead-11" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <polygon points="0 0, 9 4.5, 0 9" fill="currentColor" opacity="0.55"/>
+    </marker>
+  </defs>
+  <style>
+    .col-stroke { stroke: currentColor; stroke-width: 2; fill: none; }
+    .col-cap    { fill: currentColor; opacity: 0.85; }
+    .edge       { stroke: currentColor; stroke-width: 2; fill: none; opacity: 0.6; }
+    .edge-label { fill: currentColor; opacity: 0.6; font: 500 15px "JetBrains Mono", ui-monospace, monospace; letter-spacing: 0.08em; }
+    .label      { fill: currentColor; font: 700 22px "JetBrains Mono", ui-monospace, monospace; letter-spacing: 0.1em; }
+    .accent-fill{ fill: #1d4ed8; }
+    .accent-text{ fill: #ffffff; font: 700 22px "JetBrains Mono", ui-monospace, monospace; letter-spacing: 0.08em; }
+    .vec-dot    { fill: #1d4ed8; opacity: 0.9; }
+    .vec-ring   { stroke: #1d4ed8; stroke-width: 1.6; fill: none; stroke-dasharray: 4 6; opacity: 0.5; }
+    .metric     { fill: currentColor; opacity: 0.75; font: 600 16px "JetBrains Mono", ui-monospace, monospace; letter-spacing: 0.08em; }
+    .metric-sep { stroke: currentColor; opacity: 0.3; stroke-width: 1.6; }
+    .bronze     { fill: #b88746; }
+  </style>
+
+  <!-- REDSHIFT: three column stacks on the left -->
+  <g transform="translate(130,170)">
+    <!-- stack 1 -->
+    <rect x="0"  y="0"  width="14" height="140" class="col-stroke"/>
+    <rect x="0"  y="22" width="14" height="24"  class="col-cap"/>
+    <rect x="0"  y="60" width="14" height="12"  class="col-cap"/>
+    <rect x="0"  y="88" width="14" height="40"  class="col-cap"/>
+    <!-- stack 2 -->
+    <rect x="24" y="0"  width="14" height="140" class="col-stroke"/>
+    <rect x="24" y="12" width="14" height="40"  class="col-cap"/>
+    <rect x="24" y="66" width="14" height="22"  class="col-cap"/>
+    <rect x="24" y="104" width="14" height="20" class="col-cap"/>
+    <!-- stack 3 -->
+    <rect x="48" y="0"  width="14" height="140" class="col-stroke"/>
+    <rect x="48" y="8"  width="14" height="18"  class="col-cap"/>
+    <rect x="48" y="40" width="14" height="34"  class="col-cap"/>
+    <rect x="48" y="90" width="14" height="30"  class="col-cap"/>
+    <text x="31" y="178" text-anchor="middle" class="label">REDSHIFT</text>
+  </g>
+
+  <!-- Edge Redshift -> Vectors (bidirectional) -->
+  <path class="edge" d="M 210 240 L 400 240" marker-end="url(#arrowhead-11)"/>
+  <path class="edge" d="M 400 268 L 210 268" marker-end="url(#arrowhead-11)"/>
+  <text class="edge-label" x="305" y="228" text-anchor="middle">native vector search</text>
+
+  <!-- VECTORS: scatter cluster -->
+  <g transform="translate(430,170)">
+    <ellipse cx="80" cy="60" rx="88" ry="56" class="vec-ring"/>
+    <!-- scatter dots -->
+    <circle cx="40"  cy="40" r="4" class="vec-dot"/>
+    <circle cx="60"  cy="30" r="4" class="vec-dot"/>
+    <circle cx="90"  cy="22" r="4" class="vec-dot"/>
+    <circle cx="120" cy="36" r="4" class="vec-dot"/>
+    <circle cx="150" cy="50" r="4" class="vec-dot"/>
+    <circle cx="30"  cy="68" r="4" class="vec-dot"/>
+    <circle cx="54"  cy="78" r="4" class="vec-dot"/>
+    <circle cx="80"  cy="60" r="4" class="vec-dot"/>
+    <circle cx="110" cy="72" r="4" class="vec-dot"/>
+    <circle cx="138" cy="78" r="4" class="vec-dot"/>
+    <circle cx="46"  cy="92" r="4" class="vec-dot"/>
+    <circle cx="76"  cy="100" r="4" class="vec-dot"/>
+    <circle cx="104" cy="94" r="4" class="vec-dot"/>
+    <circle cx="130" cy="98" r="4" class="vec-dot"/>
+    <text x="80" y="178" text-anchor="middle" class="label">VECTORS</text>
+  </g>
+
+  <!-- Edge Vectors -> Bedrock -->
+  <path class="edge" d="M 610 254 L 800 254" marker-end="url(#arrowhead-11)"/>
+  <text class="edge-label" x="705" y="242" text-anchor="middle">embed</text>
+
+  <!-- BEDROCK: filled accent node -->
+  <g transform="translate(830,254)">
+    <circle cx="0" cy="0" r="52" class="accent-fill"/>
+    <text x="0" y="7" text-anchor="middle" class="accent-text">BR</text>
+    <text x="0" y="94" text-anchor="middle" class="label">BEDROCK</text>
+  </g>
+
+  <!-- Metric strip -->
+  <g transform="translate(130,440)">
+    <text class="metric" x="0"  y="20">sub-100ms latency</text>
+    <line class="metric-sep" x1="200" y1="4" x2="200" y2="28"/>
+    <text class="metric" x="220" y="20">500K to 50M vectors</text>
+    <line class="metric-sep" x1="460" y1="4" x2="460" y2="28"/>
+    <text class="metric" x="480" y="20">3.2x cost cut</text>
+    <line class="metric-sep" x1="620" y1="4" x2="620" y2="28"/>
+    <text class="metric" x="640" y="20" fill="#b88746">AUTA winner</text>
+  </g>
+</svg>
