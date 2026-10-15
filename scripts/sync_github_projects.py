@@ -168,23 +168,33 @@ def infer_domain(repo: dict) -> str:
 
 
 def fetch_repos() -> list:
-    url = (
-        f"https://api.github.com/users/{GITHUB_USER}/repos"
-        "?per_page=100&sort=updated"
-    )
-    req = urllib.request.Request(
-        url,
-        headers={
-            "Accept": "application/vnd.github+json",
-            "User-Agent": f"{GITHUB_USER}-portfolio-sync",
-            "X-GitHub-Api-Version": "2022-11-28",
-        },
-    )
+    # Paginate: GitHub caps per_page at 100. Once the user crosses 100 repos
+    # a single-page fetch silently drops the oldest-updated ones from /explore/.
     token = os.environ.get("GITHUB_TOKEN")
-    if token:
-        req.add_header("Authorization", f"Bearer {token}")
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return json.load(r)
+    out: list = []
+    for page in range(1, 11):  # hard cap at 1000 repos; more than enough
+        url = (
+            f"https://api.github.com/users/{GITHUB_USER}/repos"
+            f"?per_page=100&sort=updated&page={page}"
+        )
+        req = urllib.request.Request(
+            url,
+            headers={
+                "Accept": "application/vnd.github+json",
+                "User-Agent": f"{GITHUB_USER}-portfolio-sync",
+                "X-GitHub-Api-Version": "2022-11-28",
+            },
+        )
+        if token:
+            req.add_header("Authorization", f"Bearer {token}")
+        with urllib.request.urlopen(req, timeout=30) as r:
+            batch = json.load(r)
+        if not batch:
+            break
+        out.extend(batch)
+        if len(batch) < 100:
+            break
+    return out
 
 
 def build_payload(repos: list) -> dict:

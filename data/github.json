@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-15T12:22:07+00:00",
+  "generated_at": "2026-10-13T18:12:58+00:00",
   "user": "JayDS22",
   "domain_count": 9,
-  "repo_count": 77,
+  "repo_count": 81,
   "nodes": [
     {
       "id": "domain:computer-vision",
@@ -575,6 +575,19 @@
       "updated_at": "2026-10-07T16:26:21Z"
     },
     {
+      "id": "repo:enterprise-assistant-reference",
+      "name": "enterprise assistant reference",
+      "type": "repo",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
+      "val": 3,
+      "stars": 0,
+      "language": "TypeScript",
+      "description": "Multi-agent enterprise reference impl: Agents SDK + Responses API + Postgres RLS. Live demo at the homepage.",
+      "url": "https://github.com/JayDS22/enterprise-assistant-reference",
+      "updated_at": "2026-10-07T16:26:21Z"
+    },
+    {
       "id": "repo:Enterprise-Data-Warehouse",
       "name": "Enterprise Data Warehouse",
       "type": "repo",
@@ -1056,6 +1069,19 @@
       "updated_at": "2026-09-21T18:26:17Z"
     },
     {
+      "id": "repo:Spam-Detection",
+      "name": "Spam Detection",
+      "type": "repo",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
+      "val": 3,
+      "stars": 0,
+      "language": "Python",
+      "description": "Reproducible benchmark: Replit Agent vs Cursor+Sonnet vs raw Claude API on 7 realistic dev tasks. 6-axis rubric adapted from PrismBench.",
+      "url": "https://github.com/JayDS22/replit-agent-bench",
+      "updated_at": "2026-09-21T18:26:17Z"
+    },
+    {
       "id": "repo:Transportation_And_Demand_Forecasting",
       "name": "Transportation And Demand Forecasting",
       "type": "repo",
@@ -1227,6 +1253,10 @@
       "target": "domain:llm-agents"
     },
     {
+      "source": "repo:enterprise-assistant-reference",
+      "target": "domain:llm-agents"
+    },
+    {
       "source": "repo:Enterprise-Data-Warehouse",
       "target": "domain:mlops-infra"
     },
@@ -1237,6 +1267,14 @@
     {
       "source": "repo:Financial-Budget-Planner",
       "target": "domain:computer-vision"
+    },
+    {
+      "source": "repo:gtm-semantic-layer",
+      "target": "domain:llm-agents"
+    },
+    {
+      "source": "repo:hex-gtm-dashboard",
+      "target": "domain:mlops-infra"
     },
     {
       "source": "repo:gtm-semantic-layer",
@@ -1373,6 +1411,10 @@
     {
       "source": "repo:replit-agent-bench",
       "target": "domain:llm-agents"
+    },
+    {
+      "source": "repo:Spam-Detection",
+      "target": "domain:nlp-speech"
     },
     {
       "source": "repo:Transportation_And_Demand_Forecasting",
