@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Comet-Shaped Web Agent | Jay Guwalani</title>
+  <meta name="description" content="A browser agent built on Playwright and the Chrome DevTools Protocol, driven by Claude Sonnet 4.6 with tool use, that classifies the payload of each proposed action to decide whether it needs a stricter permission scope.">
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+  <link rel="stylesheet" href="../../css/modern.css">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <meta property="og:image" content="https://jayds22.github.io/Portfolio/og-image.png">
+  <meta name="twitter:image" content="https://jayds22.github.io/Portfolio/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script>(function(){try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=(t==='dark')?'dark':'light';}catch(e){}})();</script>
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.01c-3.2.7-3.87-1.37-3.87-1.37-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.34.95.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.93 10.93 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.13v3.16c0 .31.21.68.8.56C20.22 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5Z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.39-1.85 3.62 0 4.29 2.39 4.29 5.49v6.25ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0Z"/></symbol>
+    <symbol id="i-medium" viewBox="0 0 24 24"><path fill="currentColor" d="M2.846 6.887c.03-.295-.083-.586-.303-.784L.292 3.6V3.18h7.034l5.435 11.92L17.54 3.18H24.246v.42l-1.927 1.85a.564.564 0 0 0-.214.541v13.583a.564.564 0 0 0 .214.541l1.882 1.85v.42h-9.466v-.42l1.95-1.895c.192-.192.192-.249.192-.541V8.106L11.452 21.81h-.733L5.396 8.106v9.184c-.053.388.076.78.351 1.058L7.51 20.81v.42H1.5v-.42l1.762-2.462c.273-.279.396-.671.341-1.058V6.887Z"/></symbol>
+    <symbol id="i-kaggle" viewBox="0 0 24 24"><path fill="currentColor" d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.272 6.226 6.823 8.661c.118.117.118.234.012.34"/></symbol>    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M12 19l-7-7 7-7"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3 12V5a2 2 0 0 1 2-2h7l9 9-9 9-9-9Z"/><circle cx="8" cy="8" r="1.5" fill="currentColor"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M5 5h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1ZM4 10h16M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2 14 9 21 11 14 13 12 20 10 13 3 11 10 9z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7-11-7Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 2v3M12 19v3M5 12H2M22 12h-3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../../">
+      <span class="nav-brand-mark">JG</span>
+      <span>Jay Guwalani</span>
+    </a>
+    <button id="theme-toggle" type="button" class="nav-theme" aria-label="Toggle theme">
+      <svg><use href="#i-moon"/></svg>
+    </button>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('open')">
+      <svg width="20" height="20"><use href="#i-menu"/></svg>
+    </button>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+      <li><a href="../../">Home</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a class="active" aria-current="page" href="../../post/">Projects</a></li>
+      <li><a href="../../explore/">Explore</a></li>
+      <li><a href="../../publications/">Publications</a></li>
+      <li><a href="../../contact/">Contact</a></li>
+    </ul>
+    </nav>
+    <div class="nav-socials">
+      <a href="https://github.com/JayDS22" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a>
+      <a href="https://www.linkedin.com/in/j-guwalani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
+      <a href="https://medium.com/@guwalanijj" target="_blank" rel="noopener" aria-label="Medium"><svg><use href="#i-medium"/></svg></a>
+      <a href="https://www.kaggle.com/jayds22" target="_blank" rel="noopener" aria-label="Kaggle"><svg><use href="#i-kaggle"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="chapter-hero">
+  <div class="container-narrow">
+    <img class="chapter-hero-schematic" src="../../images/schematics/chapter-13-browser-agent.svg" alt="Browser agent diagram: Claude Sonnet 4.6 proposing three actions, each payload passing through a classifier gate that assigns pass, confirm, or block.">
+  </div>
+</section>
+
+<section class="page-header" style="padding: 48px 0 32px;">
+  <div class="container-narrow" style="text-align:left;">
+    <a href="../../post/" class="btn btn-secondary" style="margin-bottom: 24px;">
+      <svg><use href="#i-back"/></svg> All projects
+    </a>
+    <div class="section-kicker" style="justify-content:flex-start;"><svg width="14" height="14"><use href="#i-spark"/></svg> Browser Agents · September 2026</div>
+    <h1 style="text-align:left;">Comet-Shaped Web Agent: Payload-Classified Permissions for Browser Automation</h1>
+    <p style="margin-left:0;text-align:left;">A browser agent built on Playwright and the Chrome DevTools Protocol, driven by Claude Sonnet 4.6 with tool use. Each proposed action is classified by its payload content before dispatch, so permission scope depends on what the agent is about to do, not just where.</p>
+    <div class="project-metrics" style="margin-top:18px;">
+      <span class="metric-chip">Claude Sonnet 4.6</span>
+      <span class="metric-chip">Playwright + CDP</span>
+      <span class="metric-chip">Payload-classified permissions</span>
+    </div>
+  </div>
+</section>
+
+<article class="post-article">
+
+<p><strong>What it is :</strong>
+A browser agent. Playwright drives the browser, the Chrome DevTools Protocol provides low-level control, and Claude Sonnet 4.6 handles reasoning and tool-use. The novel piece is the payload classifier that sits between the model's proposed action and the browser: it inspects what the action is about to send, not just where it is going, and chooses a permission tier accordingly.</p>
+
+<p><strong>Why payload classification :</strong>
+Most browser agents classify by URL or domain. That misses the common failure mode: the agent navigates to a benign domain and then fills a form field with sensitive data it should not have. Classifying by payload content catches that case. A "post to pastebin.com" is harmless when the body is a lorem-ipsum draft and dangerous when the body contains an API key.</p>
+
+<p><strong>Demo :</strong><br>
+<em>[Hero GIF placeholder: 10 to 15 seconds of the agent completing one task end-to-end, with the payload classifier badge visible in the HUD.]</em></p>
+
+<p><strong>Architecture :</strong></p>
+
+<ul>
+<li><strong>Playwright</strong> owns the browser context, isolated per-session, with a stripped-down default permission set.</li>
+<li><strong>Chrome DevTools Protocol</strong> provides interception hooks for network, storage, and input events.</li>
+<li><strong>Claude Sonnet 4.6</strong> drives action selection via tool use. Each tool call is a structured action proposal, not a free-form response.</li>
+<li><strong>Payload classifier</strong> runs on every proposed action: inputs include target URL, request body or form payload, and an action-type tag. Output is a permission tier.</li>
+<li><strong>Permission gate</strong> enforces tier: pass, require re-confirmation, or block.</li>
+</ul>
+
+<p><strong>Permission classes :</strong>
+<em>[TODO: list the five classes with one-line definitions and one example payload per class.]</em></p>
+
+<p><strong>Failure gallery :</strong>
+<em>[TODO: five specific prompts that broke the agent, with root cause and fix status. Candidates include: ambiguous target disambiguation, classifier false-positive on legitimate credential pasting, state races between CDP interception and page navigation.]</em></p>
+
+<p><strong>Cost and latency :</strong>
+<em>[TODO: measured table. Columns: task tier (easy, medium, hard), median latency, p99 latency, median tokens, dollar cost per task. Rows: with payload classifier on, with classifier off, baseline raw tool-use loop.]</em></p>
+
+<p><strong>Honest comparison to Anthropic's computer use :</strong>
+Anthropic ships computer use directly in the Claude API. For many tasks that is the right tool. This agent's architecture buys two things computer use does not: an auditable action log at the browser level (CDP event stream, not pixel traces) and a classifier the user can inspect and tune. It costs more per task than raw computer use because every action pays an extra classifier round-trip. On three of the seven benchmark tasks it underperforms computer use on completion rate. The repo documents which three and why.</p>
+
+<p><strong>What this does not do :</strong></p>
+
+<ul>
+<li>Not a general-purpose RPA tool. The task catalog is small and deliberate.</li>
+<li>Classifier is a model, not a formal verifier. False negatives are possible by design.</li>
+<li>No sandboxing beyond Playwright's defaults. Running against untrusted sites still carries the usual browser-automation risks.</li>
+<li>CDP coverage is Chromium-only. Firefox and WebKit paths are stubbed.</li>
+</ul>
+
+<p><strong>What's next :</strong></p>
+
+<ul>
+<li>Measured failure gallery and cost table published.</li>
+<li>MCP server variant so the agent can be driven by another host.</li>
+<li>Extended-thinking budget tuning per task tier, with the measurement showing where it helps and where it does not.</li>
+</ul>
+
+<p><strong>Tech stack :</strong><br>
+<strong>Runtime:</strong> TypeScript, Node.js<br>
+<strong>Browser:</strong> Playwright (Chromium), Chrome DevTools Protocol<br>
+<strong>Model:</strong> Claude Sonnet 4.6 via the Anthropic SDK, tool use with JSON schema inputs, prompt caching on the system prompt<br>
+<strong>Classifier:</strong> Smaller Claude Haiku pass with a tight schema, cached across similar payloads<br>
+<strong>Observability:</strong> Structured action log, CDP event stream capture, trace replay on failure</p>
+
+<div style="margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); display:flex; gap:12px; flex-wrap:wrap;">
+  <a class="btn btn-primary" href="https://github.com/JayDS22/comet-shaped-web-agent" target="_blank" rel="noopener">
+    <svg><use href="#i-github"/></svg> Repository
+  </a>
+  <a class="btn btn-secondary" href="../../post/"><svg><use href="#i-back"/></svg> Back to projects</a>
+  <a class="btn btn-secondary" href="../../about/">
+    <svg><use href="#i-spark"/></svg> More about Jay
+  </a>
+</div>
+
+</article>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-copy">© 2025 Jay Guwalani</div>
+    <div class="footer-socials">
+      <a href="https://github.com/JayDS22" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a>
+      <a href="https://www.linkedin.com/in/j-guwalani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
+      <a href="https://medium.com/@guwalanijj" target="_blank" rel="noopener" aria-label="Medium"><svg><use href="#i-medium"/></svg></a>
+      <a href="https://www.kaggle.com/jayds22" target="_blank" rel="noopener" aria-label="Kaggle"><svg><use href="#i-kaggle"/></svg></a>      <a href="mailto:guwalanijj@gmail.com" aria-label="Email"><svg><use href="#i-mail"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/theme.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" fill="none" role="img" aria-label="Browser agent schematic: Claude Sonnet 4.6 proposing actions, each payload classified into pass, confirm, or block tiers">
+  <style>
+    .label { font: 500 11px "JetBrains Mono", ui-monospace, monospace; fill: currentColor; letter-spacing: 0.06em; }
+    .big   { font: 600 22px "Space Grotesk", "Inter", sans-serif; fill: currentColor; letter-spacing: -0.01em; }
+    .kick  { font: 500 10px "JetBrains Mono", ui-monospace, monospace; fill: currentColor; opacity: 0.6; letter-spacing: 0.14em; text-transform: uppercase; }
+    .node  { stroke: currentColor; stroke-width: 1.5; fill: none; }
+    .frame { stroke: currentColor; stroke-width: 1.5; fill: none; }
+    .edge  { stroke: currentColor; stroke-width: 1.2; fill: none; opacity: 0.65; }
+    .gate  { stroke: #b88746; stroke-width: 1.4; stroke-dasharray: 4 4; fill: none; }
+    .gatelabel { font: 600 10px "JetBrains Mono", ui-monospace, monospace; fill: #b88746; letter-spacing: 0.12em; }
+    .tierlabel { font: 600 10px "JetBrains Mono", ui-monospace, monospace; letter-spacing: 0.08em; }
+    .accent-fill { fill: #1d4ed8; }
+    .bronze-stroke { stroke: #b88746; stroke-width: 1.6; fill: none; }
+    .dim-stroke { stroke: currentColor; stroke-width: 1.4; opacity: 0.4; fill: none; }
+    .mono { font: 500 10px "JetBrains Mono", ui-monospace, monospace; fill: currentColor; opacity: 0.85; letter-spacing: 0.04em; }
+  </style>
+
+  <!-- Title block -->
+  <text class="kick" x="40" y="56">BROWSER AGENTS · SEP 2026</text>
+  <text class="big"  x="40" y="92">Payload-Classified Permissions</text>
+  <text class="label" x="40" y="118" opacity="0.75">playwright · CDP · sonnet 4.6 tool use</text>
+
+  <!-- Browser window frame -->
+  <rect class="frame" x="360" y="68" width="180" height="156" rx="6"/>
+  <!-- Browser top bar -->
+  <line class="frame" x1="360" y1="88" x2="540" y2="88"/>
+  <circle cx="372" cy="78" r="2.5" fill="currentColor" opacity="0.6"/>
+  <circle cx="382" cy="78" r="2.5" fill="currentColor" opacity="0.6"/>
+  <circle cx="392" cy="78" r="2.5" fill="currentColor" opacity="0.6"/>
+  <!-- Fake URL bar -->
+  <rect x="410" y="74" width="118" height="8" rx="3" fill="currentColor" opacity="0.1"/>
+
+  <!-- Proposed actions (3 arrows out of the browser) -->
+  <text class="mono" x="378" y="112">action.1</text>
+  <path class="edge" d="M 440 108 L 560 108" marker-end="url(#arrowhead)"/>
+
+  <text class="mono" x="378" y="150">action.2</text>
+  <path class="edge" d="M 440 146 L 560 146" marker-end="url(#arrowhead)"/>
+
+  <text class="mono" x="378" y="188">action.3</text>
+  <path class="edge" d="M 440 184 L 560 184" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrowhead def -->
+  <defs>
+    <marker id="arrowhead" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="currentColor" opacity="0.65"/>
+    </marker>
+  </defs>
+
+  <!-- Classifier gate (vertical dashed column) -->
+  <line class="gate" x1="580" y1="68"  x2="580" y2="224"/>
+  <text class="gatelabel" x="548" y="60" text-anchor="start">CLASSIFIER GATE</text>
+
+  <!-- Outcomes beyond gate -->
+  <!-- Pass (filled accent) -->
+  <circle cx="620" cy="108" r="10" class="accent-fill"/>
+  <text class="tierlabel" x="640" y="112" fill="#1d4ed8">PASS</text>
+
+  <!-- Confirm (bronze outline) -->
+  <circle cx="620" cy="146" r="10" class="bronze-stroke"/>
+  <text class="tierlabel" x="640" y="150" fill="#b88746">CONFIRM</text>
+
+  <!-- Block (dim outline + diagonal slash) -->
+  <circle cx="620" cy="184" r="10" class="dim-stroke"/>
+  <line x1="613" y1="177" x2="627" y2="191" class="dim-stroke"/>
+  <text class="tierlabel" x="640" y="188" fill="currentColor" opacity="0.6">BLOCK</text>
+</svg>

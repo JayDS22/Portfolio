@@ -142,6 +142,94 @@
       </article>
 
       <article class="project-card">
+        <div class="project-thumb project-thumb--schematic">
+          <img src="../images/schematics/chapter-15-evals.svg" alt="Enterprise LLM evals schematic">
+        </div>
+        <div class="project-body">
+          <div class="project-meta"><span>Oct 2026</span> <span>·</span> <span>LLM Evaluation</span></div>
+          <h3 class="project-title">
+            <a href="../post/chapter-15/">Enterprise LLM Evals: Three Evaluations Missing From The Public Corpus</a>
+          </h3>
+          <p class="project-desc">Twenty enterprise scenarios in openai/evals format plus three novel evals the public corpus does not cover: tool-use trajectory, streaming-cancel JSON validity, and PII leakage through tool arguments. Cross-model: Sonnet 4.6, Opus 4.7, GPT-4.X.</p>
+          <div class="project-metrics">
+            <span class="metric-chip">20 scenarios</span>
+            <span class="metric-chip">3 novel evals</span>
+            <span class="metric-chip">Cross-model</span>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span><span class="tech-tag">Anthropic SDK</span><span class="tech-tag">openai/evals</span><span class="tech-tag">Prompt caching</span>
+          </div>
+          <a class="project-link" href="../post/chapter-15/">View case study <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-thumb project-thumb--schematic">
+          <img src="../images/schematics/chapter-13-browser-agent.svg" alt="Comet-shaped browser agent schematic">
+        </div>
+        <div class="project-body">
+          <div class="project-meta"><span>Sep 2026</span> <span>·</span> <span>Browser Agents</span></div>
+          <h3 class="project-title">
+            <a href="../post/chapter-13/">Comet-Shaped Web Agent: Payload-Classified Permissions</a>
+          </h3>
+          <p class="project-desc">Browser agent on Playwright and CDP, driven by Claude Sonnet 4.6 with tool use. Each proposed action classified by payload content before dispatch, so permission scope depends on what the agent is about to do, not just where.</p>
+          <div class="project-metrics">
+            <span class="metric-chip">Sonnet 4.6</span>
+            <span class="metric-chip">Playwright + CDP</span>
+            <span class="metric-chip">Payload tiers</span>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">TypeScript</span><span class="tech-tag">Claude Sonnet 4.6</span><span class="tech-tag">Playwright</span><span class="tech-tag">CDP</span>
+          </div>
+          <a class="project-link" href="../post/chapter-13/">View case study <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-thumb project-thumb--schematic">
+          <img src="../images/schematics/chapter-14-benchmark.svg" alt="Agent benchmark schematic">
+        </div>
+        <div class="project-body">
+          <div class="project-meta"><span>Sep 2026</span> <span>·</span> <span>Benchmarks</span></div>
+          <h3 class="project-title">
+            <a href="../post/chapter-14/">Replit Agent Bench: Head-to-Head on 7 Realistic Dev Tasks</a>
+          </h3>
+          <p class="project-desc">Reproducible benchmark comparing Replit Agent, Cursor paired with Claude Sonnet, and the raw Claude API across 7 real-world development tasks. One command to run, pinned model versions, open scoring rubric.</p>
+          <div class="project-metrics">
+            <span class="metric-chip">3 agents · 7 tasks</span>
+            <span class="metric-chip">make bench</span>
+            <span class="metric-chip">Quarterly reruns</span>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span><span class="tech-tag">pytest</span><span class="tech-tag">Anthropic SDK</span><span class="tech-tag">Docker</span>
+          </div>
+          <a class="project-link" href="../post/chapter-14/">View case study <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-thumb project-thumb--schematic">
+          <img src="../images/schematics/chapter-12-multi-agent.svg" alt="Multi-agent enterprise assistant schematic">
+        </div>
+        <div class="project-body">
+          <div class="project-meta"><span>Oct 2026</span> <span>·</span> <span>Agent Systems</span></div>
+          <h3 class="project-title">
+            <a href="../post/chapter-12/">Enterprise Assistant Reference: Multi-Agent Production Patterns</a>
+          </h3>
+          <p class="project-desc">Reference implementation of a multi-agent enterprise assistant: one orchestrator, three specialist workers, Postgres Row-Level Security as the data-side guardrail. Live demo deployed on Fly.io.</p>
+          <div class="project-metrics">
+            <span class="metric-chip">Agents SDK</span>
+            <span class="metric-chip">Postgres RLS</span>
+            <span class="metric-chip">Live demo</span>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">TypeScript</span><span class="tech-tag">Next.js</span><span class="tech-tag">Agents SDK</span><span class="tech-tag">Postgres RLS</span>
+          </div>
+          <a class="project-link" href="../post/chapter-12/">View case study <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+
+      <article class="project-card">
         <div class="project-thumb">
           <img src="../images/gsoc-2026-accord-card.png" alt="GSoC 2026 - Linux Foundation - Accord Project: APAP and MCP Server" style="object-fit:contain;background:#f3f4ee;">
         </div>
