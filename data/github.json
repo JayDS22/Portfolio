@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T18:12:58+00:00",
+  "generated_at": "2026-10-16T12:02:11+00:00",
   "user": "JayDS22",
   "domain_count": 9,
   "repo_count": 81,
@@ -406,6 +406,19 @@
       "updated_at": "2026-01-25T04:00:20Z"
     },
     {
+      "id": "repo:Breast-Cancer-Wisconsin-Diagnostic",
+      "name": "Breast Cancer Wisconsin Diagnostic",
+      "type": "repo",
+      "domain": "computer-vision",
+      "color": "#7c5cff",
+      "val": 3,
+      "stars": 0,
+      "language": "Jupyter Notebook",
+      "description": "Build an End to End Data Science project to Detect Breast Cancer using UCI dataset",
+      "url": "https://github.com/JayDS22/Breast-Cancer-Wisconsin-Diagnostic",
+      "updated_at": "2021-12-09T20:44:19Z"
+    },
+    {
       "id": "repo:Bridgestone-Vehicle-Safety-Computer-Vision",
       "name": "Bridgestone Vehicle Safety Computer Vision",
       "type": "repo",
@@ -562,17 +575,17 @@
       "updated_at": "2026-05-17T03:45:33Z"
     },
     {
-      "id": "repo:enterprise-assistant-reference",
-      "name": "enterprise assistant reference",
+      "id": "repo:E-Commerce-Shipping",
+      "name": "E Commerce Shipping",
       "type": "repo",
-      "domain": "llm-agents",
-      "color": "#22d3ee",
+      "domain": "ml-general",
+      "color": "#94a3b8",
       "val": 3,
       "stars": 0,
-      "language": "TypeScript",
-      "description": "Multi-agent enterprise reference impl: Agents SDK + Responses API + Postgres RLS. Live demo at the homepage.",
-      "url": "https://github.com/JayDS22/enterprise-assistant-reference",
-      "updated_at": "2026-10-07T16:26:21Z"
+      "language": "Jupyter Notebook",
+      "description": "This is an End-to-End Data Science Project built in order to help an International E-commerce Company to predict whether their product will be delivered on the committed Delivery Time or not",
+      "url": "https://github.com/JayDS22/E-Commerce-Shipping",
+      "updated_at": "2022-04-29T02:52:24Z"
     },
     {
       "id": "repo:enterprise-assistant-reference",
@@ -612,6 +625,19 @@
       "description": "This repository contains ETL Pipeline Projects built using various applications.",
       "url": "https://github.com/JayDS22/ETL-Pipeline-Airflow",
       "updated_at": "2024-10-19T18:24:24Z"
+    },
+    {
+      "id": "repo:Face-Mask-Detection",
+      "name": "Face Mask Detection",
+      "type": "repo",
+      "domain": "computer-vision",
+      "color": "#7c5cff",
+      "val": 3,
+      "stars": 0,
+      "language": "Jupyter Notebook",
+      "description": "High Performance Neural Network Web App: Face Mask Detection",
+      "url": "https://github.com/JayDS22/Face-Mask-Detection",
+      "updated_at": "2022-04-29T02:52:28Z"
     },
     {
       "id": "repo:Financial-Budget-Planner",
@@ -1072,14 +1098,14 @@
       "id": "repo:Spam-Detection",
       "name": "Spam Detection",
       "type": "repo",
-      "domain": "llm-agents",
-      "color": "#22d3ee",
+      "domain": "nlp-speech",
+      "color": "#f472b6",
       "val": 3,
       "stars": 0,
-      "language": "Python",
-      "description": "Reproducible benchmark: Replit Agent vs Cursor+Sonnet vs raw Claude API on 7 realistic dev tasks. 6-axis rubric adapted from PrismBench.",
-      "url": "https://github.com/JayDS22/replit-agent-bench",
-      "updated_at": "2026-09-21T18:26:17Z"
+      "language": "Jupyter Notebook",
+      "description": "Build an End-to-End Data Science project to predict the Spam & Legit emails",
+      "url": "https://github.com/JayDS22/Spam-Detection",
+      "updated_at": "2021-12-09T20:02:09Z"
     },
     {
       "id": "repo:Transportation_And_Demand_Forecasting",
@@ -1201,6 +1227,10 @@
       "target": "domain:quant-finance"
     },
     {
+      "source": "repo:Breast-Cancer-Wisconsin-Diagnostic",
+      "target": "domain:computer-vision"
+    },
+    {
       "source": "repo:Bridgestone-Vehicle-Safety-Computer-Vision",
       "target": "domain:computer-vision"
     },
@@ -1249,8 +1279,8 @@
       "target": "domain:ml-general"
     },
     {
-      "source": "repo:enterprise-assistant-reference",
-      "target": "domain:llm-agents"
+      "source": "repo:E-Commerce-Shipping",
+      "target": "domain:ml-general"
     },
     {
       "source": "repo:enterprise-assistant-reference",
@@ -1265,16 +1295,12 @@
       "target": "domain:mlops-infra"
     },
     {
-      "source": "repo:Financial-Budget-Planner",
+      "source": "repo:Face-Mask-Detection",
       "target": "domain:computer-vision"
     },
     {
-      "source": "repo:gtm-semantic-layer",
-      "target": "domain:llm-agents"
-    },
-    {
-      "source": "repo:hex-gtm-dashboard",
-      "target": "domain:mlops-infra"
+      "source": "repo:Financial-Budget-Planner",
+      "target": "domain:computer-vision"
     },
     {
       "source": "repo:gtm-semantic-layer",
