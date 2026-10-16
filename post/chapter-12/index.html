@@ -71,7 +71,7 @@
 
 <section class="chapter-hero">
   <div class="container-narrow">
-    <img class="chapter-hero-schematic" src="../../images/project-heros/chapter-12-real.jpg" alt="A telephone switchboard operator, c. 1950, routing calls between callers and specialists. The orchestrator-worker pattern this chapter builds, in its earliest physical form. Photo via Wikimedia Commons, public domain.">
+    <img class="chapter-hero-schematic" src="../../images/project-heros/chapter-12-ui-chat.svg" alt="Mock of the Next.js chat UI deployed on Fly.io. Left column shows an agent-trace timeline with orchestrator and worker events. Right column shows a user question about customer billing and the assistant's structured BillingSummary response. A cache-hit badge shows 72 percent token hit rate.">
   </div>
 </section>
 
@@ -139,11 +139,6 @@ System prompts and tool catalogs sit above the user turn boundary so repeat sess
 
 <p><strong>Live demo :</strong>
 Each visitor gets a scoped session seeded with sample tenant data. A reset button clears session state. Daily per-IP cap in place to keep costs bounded. Repo and live URL: <a href="https://github.com/JayDS22/enterprise-assistant-reference" target="_blank" rel="noopener">github.com/JayDS22/enterprise-assistant-reference</a>.</p>
-
-<figure>
-  <img src="../../images/project-heros/chapter-12-ui-chat.svg" alt="Mock of the Next.js chat UI deployed on Fly.io. Left column shows an agent-trace timeline with orchestrator and worker events. Right column shows a user question about customer billing and the assistant's structured BillingSummary response. A cache-hit badge shows 72 percent token hit rate.">
-  <figcaption>The live demo UI. User asks a billing question; the orchestrator routes to the SQL worker; the response arrives as structured JSON with the trace visible on the left. Prompt-cache hit rate shown as a badge in the response.</figcaption>
-</figure>
 
 <p><strong>What this does not do :</strong></p>
 
