@@ -1,7 +1,7 @@
 # Playwright tests
 
 End-to-end checks for the click-to-focus interaction on the project knowledge graph
-(`/explore/` and the home-page constellation).
+on `/explore/`. (The home-page constellation was retired in an earlier trim.)
 
 ## Run locally
 

@@ -1,6 +1,7 @@
 // End-to-end tests for the project-graph "click a domain chip to focus" feature.
 //
-// Runs on /explore/ (full-screen graph) and the home-page constellation.
+// Runs on /explore/ (full-screen graph). The home-page constellation was
+// retired in an earlier trim; if it comes back, add another runScenario call.
 // Asserts DOM state changes (chip.on / has-selection / Show all visibility),
 // camera/filter behavior is exercised via the same accessors and verified
 // indirectly through state.
@@ -41,10 +42,6 @@ const waitForChips = async (legendSel) =>
 const runScenario = async (name, openPath, legendSel) => {
   sect(name);
   await page.goto(BASE + openPath, { waitUntil: 'networkidle' });
-
-  if (legendSel.includes('constellation')) {
-    await page.locator('#constellation-section').scrollIntoViewIfNeeded();
-  }
 
   await waitForChips(legendSel);
   ok('legend rendered with >=9 domain chips');
@@ -100,15 +97,13 @@ const runScenario = async (name, openPath, legendSel) => {
   await page.locator(legendSel + ' .chip[data-domain="computer-vision"]').click();
   await page.waitForTimeout(1500);
   const shotPath = process.cwd() + '/screenshot-' + name.replace(/[^a-z0-9]/gi, '-') + '.png';
-  await page.locator(legendSel.includes('constellation') ? '.constellation' : '.graph-stage')
-            .screenshot({ path: shotPath });
+  await page.locator('.graph-stage').screenshot({ path: shotPath });
   ok('captured focused-on-CV screenshot at ' + shotPath);
   await page.locator(legendSel + ' .reset').click();
 };
 
 try {
-  await runScenario('Explore page',       '/explore/', '.graph-legend');
-  await runScenario('Home constellation', '/',         '.constellation-legend');
+  await runScenario('Explore page', '/explore/', '.graph-legend');
 
   sect('Console errors during run');
   // Filter known harmless noise:
