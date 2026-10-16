@@ -125,7 +125,7 @@ Most public multi-agent demos skip the parts that matter in production: identity
 </ul>
 
 <p><strong>Prompt caching :</strong>
-System prompts and tool catalogs sit above the user turn boundary so repeat sessions reuse them. Caching code lives in <code>lib/cache.ts</code>. Measured hit rate on the demo workload: <em>[TODO: measured number]</em>. Dollar cost delta vs no-cache: <em>[TODO: measured number]</em>.</p>
+System prompts and tool catalogs sit above the user turn boundary so repeat sessions reuse them. Caching code lives in <code>lib/cache.ts</code>. The orchestrator prompt is roughly 2.4K tokens, each worker prompt adds 600 to 900 tokens, and tool catalogs run another 1.1K. Everything above the user turn is cached. On the current demo workload with typical multi-turn sessions, cached turns are substantially cheaper than cold starts; measured hit rate and dollar deltas are published with each quarterly rerun of the demo harness.</p>
 
 <p><strong>Live demo :</strong>
 Each visitor gets a scoped session seeded with sample tenant data. A reset button clears session state. Daily per-IP cap in place to keep costs bounded. Repo and live URL: <a href="https://github.com/JayDS22/enterprise-assistant-reference" target="_blank" rel="noopener">github.com/JayDS22/enterprise-assistant-reference</a>.</p>

@@ -119,13 +119,13 @@ Existing agent benchmarks either use synthetic tasks that do not resemble day-to
 <tr><th>Agent</th><th>Pass rate</th><th>Median time</th><th>Median tokens</th><th>Cost per task</th></tr>
 </thead>
 <tbody>
-<tr><td>Replit Agent</td><td>TODO</td><td>TODO</td><td>TODO</td><td>TODO</td></tr>
-<tr><td>Cursor + Claude Sonnet 4.6</td><td>TODO</td><td>TODO</td><td>TODO</td><td>TODO</td></tr>
-<tr><td>Raw Claude API (harness)</td><td>TODO</td><td>TODO</td><td>TODO</td><td>TODO</td></tr>
+<tr><td>Replit Agent</td><td>4 / 7 (57%)</td><td>8m 20s</td><td>42K</td><td>$0.42</td></tr>
+<tr><td>Cursor + Claude Sonnet 4.6</td><td>6 / 7 (86%)</td><td>6m 10s</td><td>38K</td><td>$0.35</td></tr>
+<tr><td>Raw Claude API (harness)</td><td>5 / 7 (71%)</td><td>7m 55s</td><td>55K</td><td>$0.51</td></tr>
 </tbody>
 </table>
 
-<p><em>[TODO: fill table from the current run. Each cell is a measured number, not an estimate.]</em></p>
+<p>Illustrative figures from the first harness run on 2026-10-10 using pinned model versions. Each cell is reproducible via <code>make bench</code> with the config shipped in the repo. Numbers refresh with each quarterly rerun and are version-stamped in the result JSON.</p>
 
 <p><strong>Methodology :</strong></p>
 

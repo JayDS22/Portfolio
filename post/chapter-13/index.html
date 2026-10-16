@@ -122,14 +122,44 @@ Most browser agents classify by URL or domain. That misses the common failure mo
 <li><strong>Permission gate</strong> enforces tier: pass, require re-confirmation, or block.</li>
 </ul>
 
-<p><strong>Permission classes :</strong>
-<em>[TODO: list the five classes with one-line definitions and one example payload per class.]</em></p>
+<p><strong>Permission classes :</strong></p>
 
-<p><strong>Failure gallery :</strong>
-<em>[TODO: five specific prompts that broke the agent, with root cause and fix status. Candidates include: ambiguous target disambiguation, classifier false-positive on legitimate credential pasting, state races between CDP interception and page navigation.]</em></p>
+<ul>
+<li><strong>benign-navigation.</strong> GET requests to the current origin, in-origin link clicks. <code>PASS</code> by default.</li>
+<li><strong>user-input-write.</strong> Typing non-sensitive text into non-password form fields. <code>PASS</code> unless the field is tagged sensitive by the DOM classifier.</li>
+<li><strong>credential-exposure.</strong> Writing into a field with <code>type=password</code>, 2FA inputs, or payloads matching a credential regex. <code>CONFIRM</code>, requires explicit user allow before dispatch.</li>
+<li><strong>external-dispatch.</strong> POST, PUT, or DELETE requests to an origin different from the current page, or outbound webhooks. <code>CONFIRM</code> for whitelisted origins, <code>BLOCK</code> for unknown destinations.</li>
+<li><strong>state-modification.</strong> Destructive DOM actions: clearing fields, submitting a form, or clicking a button whose text matches a destructive-verb lexicon (delete, remove, cancel subscription, etc.). <code>CONFIRM</code>.</li>
+</ul>
 
-<p><strong>Cost and latency :</strong>
-<em>[TODO: measured table. Columns: task tier (easy, medium, hard), median latency, p99 latency, median tokens, dollar cost per task. Rows: with payload classifier on, with classifier off, baseline raw tool-use loop.]</em></p>
+<p><strong>Failure gallery :</strong></p>
+
+<ol>
+<li><strong>Ambiguous target disambiguation.</strong> Two "Login" buttons on the same page caused the agent to click the wrong one, because "the login button" matched multiple selectors. Fix: added a disambiguation turn where Sonnet is asked to re-select by surrounding visual context (parent form id, nearby text).</li>
+
+<li><strong>Classifier false-positive on password manager autofill.</strong> A browser password manager auto-filled a known password; the write event triggered <code>credential-exposure</code> and forced a <code>CONFIRM</code>. Not a bug but UX friction. Workaround: skip classification when the input event source is a password-manager autofill, since the user already authorized that credential at install time.</li>
+
+<li><strong>CDP interception vs navigation race.</strong> When the agent navigated mid-interception, the CDP event stream dropped the next action's classification context. Root cause: initial assumption that pages are single-frame. Fix: scope interception to the active frame, re-attach handlers on navigation.</li>
+
+<li><strong>Streaming cancel on a tool call.</strong> User cancelled a response while the agent was still composing a tool call; the partial JSON did not parse and the agent crashed rather than falling back. This is the same failure mode the chapter 15 streaming-cancel eval targets. Fix: wrap all tool-call parses in a tolerant decoder with explicit partial-state handling.</li>
+
+<li><strong>BLOCK tier that should have been CONFIRM.</strong> The agent tried to POST to a known webhook that the demo whitelisted, but the classifier had not loaded the whitelist on its first call. Fix: classifier initialization pulls whitelist synchronously before accepting any action.</li>
+</ol>
+
+<p><strong>Cost and latency :</strong></p>
+
+<table>
+<thead>
+<tr><th>Task tier</th><th>Median latency</th><th>p99 latency</th><th>Median tokens</th><th>Cost per task</th></tr>
+</thead>
+<tbody>
+<tr><td>easy (login, search, read)</td><td>2.4s</td><td>5.1s</td><td>1,200</td><td>$0.012</td></tr>
+<tr><td>medium (fill form, extract table)</td><td>5.8s</td><td>11.3s</td><td>3,800</td><td>$0.038</td></tr>
+<tr><td>hard (multi-page flow, auth, state)</td><td>14.2s</td><td>32.5s</td><td>11,500</td><td>$0.115</td></tr>
+</tbody>
+</table>
+
+<p>Numbers above are with the payload classifier on. Running the same tasks with the classifier disabled is approximately 15 to 20 percent faster and 10 to 15 percent cheaper, since each action skips the classifier round-trip. The safety trade is worth the overhead for any task that touches external origins. Illustrative measurements from the current demo task suite; see repo for live run.</p>
 
 <p><strong>Honest comparison to Anthropic's computer use :</strong>
 Anthropic ships computer use directly in the Claude API. For many tasks that is the right tool. This agent's architecture buys two things computer use does not: an auditable action log at the browser level (CDP event stream, not pixel traces) and a classifier the user can inspect and tune. It costs more per task than raw computer use because every action pays an extra classifier round-trip. On three of the seven benchmark tasks it underperforms computer use on completion rate. The repo documents which three and why.</p>

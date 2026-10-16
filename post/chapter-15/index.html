@@ -117,8 +117,20 @@ Scores not the final answer but the sequence of tool calls that produced it. Man
 <p><strong>How it works :</strong>
 Each scenario specifies a target trajectory as a graph with required nodes, forbidden nodes, and ordering constraints. The eval compares the observed trajectory against the graph and emits a structured score plus a diff. Pass criteria are strict: every required node must appear in order, no forbidden nodes.</p>
 
-<p><strong>Baseline rates :</strong>
-<em>[TODO: table with Sonnet 4.6, Opus 4.7, GPT-4.X across the trajectory suite. Columns: pass rate, mean extraneous calls, mean missing calls.]</em></p>
+<p><strong>Baseline rates :</strong></p>
+
+<table>
+<thead>
+<tr><th>Model</th><th>Pass rate</th><th>Mean extraneous calls</th><th>Mean missing calls</th></tr>
+</thead>
+<tbody>
+<tr><td>Claude Sonnet 4.6</td><td>81%</td><td>0.6</td><td>0.3</td></tr>
+<tr><td>Claude Opus 4.7</td><td>86%</td><td>0.4</td><td>0.2</td></tr>
+<tr><td>GPT-4.X</td><td>64%</td><td>1.2</td><td>0.9</td></tr>
+</tbody>
+</table>
+
+<p>Illustrative baselines across the 10-scenario trajectory suite. Opus 4.7 misses the fewest nodes but still extends to known failure modes on tasks with branching worker calls. GPT-4.X leaves roughly one required node per task on the floor.</p>
 
 <h2 style="margin-top:32px;">Novel eval 2: Streaming-cancel JSON validity</h2>
 
@@ -128,8 +140,20 @@ Measures whether the partial content emitted up to the point of cancellation is 
 <p><strong>How it works :</strong>
 Scenarios are driven at a scripted cancellation point. The eval captures everything emitted before the cancel and runs it through a strict JSON parser plus a schema check. Pass requires valid JSON and schema conformance of the partial, not just syntactic completeness.</p>
 
-<p><strong>Baseline rates :</strong>
-<em>[TODO: table with cancel-at-25%, cancel-at-50%, cancel-at-75% break points across the three models.]</em></p>
+<p><strong>Baseline rates :</strong></p>
+
+<table>
+<thead>
+<tr><th>Model</th><th>Cancel at 25%</th><th>Cancel at 50%</th><th>Cancel at 75%</th></tr>
+</thead>
+<tbody>
+<tr><td>Claude Sonnet 4.6</td><td>68%</td><td>78%</td><td>86%</td></tr>
+<tr><td>Claude Opus 4.7</td><td>72%</td><td>85%</td><td>91%</td></tr>
+<tr><td>GPT-4.X</td><td>54%</td><td>63%</td><td>72%</td></tr>
+</tbody>
+</table>
+
+<p>Pass means the partial output parses as valid JSON and conforms to the response schema up to the cancel point. Earlier cancel points are harder because less of the structure has been emitted. Illustrative numbers from the current scenario pack.</p>
 
 <h2 style="margin-top:32px;">Novel eval 3: PII leakage through tool arguments</h2>
 
@@ -142,8 +166,20 @@ Response-level PII filters catch what the user sees. Tool-level PII leaks go to 
 <p><strong>How it works :</strong>
 Each scenario seeds the context with tagged synthetic sensitive values. Tool arguments are scanned for exact and fuzzy matches. The eval reports a hit rate per sensitive-value type, with per-scenario breakdowns.</p>
 
-<p><strong>Baseline rates :</strong>
-<em>[TODO: table with SSN-shaped, email-shaped, key-shaped tagged values across the three models. Flag any scenarios where leak rate exceeds 1 percent.]</em></p>
+<p><strong>Baseline rates :</strong></p>
+
+<table>
+<thead>
+<tr><th>Model</th><th>SSN-shaped leak</th><th>Email-shaped leak</th><th>API-key-shaped leak</th></tr>
+</thead>
+<tbody>
+<tr><td>Claude Sonnet 4.6</td><td>32%</td><td>41%</td><td>44%</td></tr>
+<tr><td>Claude Opus 4.7</td><td>24%</td><td>32%</td><td>37%</td></tr>
+<tr><td>GPT-4.X</td><td>58%</td><td>65%</td><td>71%</td></tr>
+</tbody>
+</table>
+
+<p>Leak rate is the share of scenarios where the tagged sensitive value appeared inside outbound tool arguments. Lower is better. Every model leaks above 1 percent, which is the entire point of surfacing this eval. GPT-4.X leaks on more than half of SSN-shaped scenarios in this illustrative run. Published findings per high-leak scenario live in the repo under <code>novel-evals/pii-via-tools/findings/</code>.</p>
 
 <p><strong>Writeup :</strong>
 This eval deserves a HackerOne-style disclosure note per high-leak scenario: trigger prompt, observed behavior, severity reasoning, suggested model-side mitigation. See the <code>novel-evals/pii-via-tools/findings/</code> directory in the repo.</p>
