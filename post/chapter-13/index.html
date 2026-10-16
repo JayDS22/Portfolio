@@ -71,7 +71,7 @@
 
 <section class="chapter-hero">
   <div class="container-narrow">
-    <img class="chapter-hero-schematic" src="../../images/project-heros/chapter-13-hero.png" alt="Browser window with a mock login page on the left and an Agent HUD panel on the right showing four queued actions, each tagged pass, confirm, or block by the payload classifier.">
+    <img class="chapter-hero-schematic" src="../../images/project-heros/chapter-13-real.jpg" alt="Screenshot of NCSA Mosaic, one of the first graphical web browsers (1993). The programmable browser lineage this agent extends. Image via Wikimedia Commons, public domain.">
   </div>
 </section>
 
@@ -100,6 +100,11 @@
 
 <p><strong>What it is :</strong>
 A browser agent. Playwright drives the browser, the Chrome DevTools Protocol provides low-level control, and Claude Sonnet 4.6 handles reasoning and tool-use. The novel piece is the payload classifier that sits between the model's proposed action and the browser: it inspects what the action is about to send, not just where it is going, and chooses a permission tier accordingly.</p>
+
+<figure>
+  <img src="../../images/project-heros/chapter-13-hero.png" alt="Browser window with mock login page on the left and an Agent HUD panel on the right. Four queued actions, each tagged pass, confirm, or block.">
+  <figcaption>Illustrative HUD view of the agent mid-task. Three pass tiers, one confirm (credential class), one block (unknown webhook destination).</figcaption>
+</figure>
 
 <p><strong>Why payload classification :</strong>
 Most browser agents classify by URL or domain. That misses the common failure mode: the agent navigates to a benign domain and then fills a form field with sensitive data it should not have. Classifying by payload content catches that case. A "post to pastebin.com" is harmless when the body is a lorem-ipsum draft and dangerous when the body contains an API key.</p>

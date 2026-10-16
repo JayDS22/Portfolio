@@ -71,7 +71,7 @@
 
 <section class="chapter-hero">
   <div class="container-narrow">
-    <img class="chapter-hero-schematic" src="../../images/project-heros/chapter-15-hero.png" alt="Cross-model eval scorecard heatmap: three novel evaluations and five enterprise scenarios scored against Claude Sonnet 4.6, Claude Opus 4.7, and GPT-4.X. Illustrative data.">
+    <img class="chapter-hero-schematic" src="../../images/project-heros/chapter-15-real.jpg" alt="University of Oxford students about to sit exams. Human evaluation is the oldest version of this problem. Photo via Geograph on Wikimedia Commons, CC BY-SA 2.0.">
   </div>
 </section>
 
@@ -100,6 +100,11 @@
 
 <p><strong>What it is :</strong>
 A pack of evaluations shaped for the openai/evals registry. Twenty are enterprise-flavored variants of patterns the public eval corpus already touches, filled in with scenarios that look like real applied work. The three novel evaluations are the point of the project. Each one targets a specific failure mode that general benchmarks do not catch.</p>
+
+<figure>
+  <img src="../../images/project-heros/chapter-15-hero.png" alt="Cross-model scorecard heatmap. Three novel evaluations and five enterprise scenarios scored against Claude Sonnet 4.6, Claude Opus 4.7, and GPT-4.X. Illustrative data.">
+  <figcaption>Illustrative cross-model scorecard. The PII row (bronze label) pulls the floor on GPT-4.X to 38 percent, which is why the eval exists.</figcaption>
+</figure>
 
 <p><strong>Why these three :</strong>
 Capability benchmarks like MMLU, HumanEval, and GSM8K measure what a model knows and can do on well-posed tasks. Production failure modes rarely look like that. They look like: a tool call that is almost-but-not-quite valid JSON, a streaming response that gets cancelled halfway, an argument to a tool that quietly contains data the model should never have surfaced. These three evals are built around those shapes.</p>

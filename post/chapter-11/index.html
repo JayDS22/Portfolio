@@ -71,7 +71,7 @@
 
 <section class="chapter-hero">
   <div class="container-narrow">
-    <img class="chapter-hero-schematic" src="../../images/project-heros/chapter-11-hero.png" alt="AWS Redshift ML architecture: Amazon Redshift columnar cluster on the left, native vector search in the middle, Amazon Bedrock foundation model on the right, with metric chips below.">
+    <img class="chapter-hero-schematic" src="../../images/project-heros/chapter-11-real.jpg" alt="AWS servers racked at the Ashburn, Virginia data center. Photo credit: Vahurzpu on Wikimedia Commons, CC BY-SA 4.0.">
   </div>
 </section>
 
@@ -95,6 +95,11 @@
 
 <p><strong>The Internship :</strong>
 During summer 2026, I worked as a Software Engineer (ML) on Amazon's Redshift ML team, focusing on the infrastructure layer that powers AI and LLM-based applications at scale. The scope was large: building AI-LLM infrastructure end-to-end for a data warehouse handling hundreds of exabytes. While machine learning models capture the headlines, the unglamorous reality is that building <em>production AI systems</em> requires bulletproof infrastructure: predictable latency, fault tolerance, cost efficiency, and operational observability.</p>
+
+<figure>
+  <img src="../../images/project-heros/chapter-11-hero.png" alt="Architecture diagram: Amazon Redshift columnar cluster on the left, native vector search space in the middle, Amazon Bedrock foundation model on the right, bidirectional data flow arrows, metric chips below.">
+  <figcaption>Architecture of the vector-search prototype. Redshift columnar store on the left, native similarity index in the middle, Bedrock embedding and inference on the right.</figcaption>
+</figure>
 
 <p><strong>The Problem :</strong>
 Vector search is now table-stakes for modern data platforms. Snowflake and Databricks already offer native semantic search capabilities; Redshift did not. At Redshift's scale, layering vector search on top via external services (OpenSearch, Pinecone) introduces operational complexity: extra network hops, data consistency challenges, cost overhead, and the burden of managing a separate infrastructure tier. Users working with structured data in Redshift want to perform vector similarity queries directly - without leaving the warehouse, without managing external dependencies, without the latency tax of cross-system round-trips. The gap was real and customers were vocal.</p>

@@ -71,7 +71,7 @@
 
 <section class="chapter-hero">
   <div class="container-narrow">
-    <img class="chapter-hero-schematic" src="../../images/project-heros/chapter-12-hero.png" alt="Illustrative server log of a multi-agent request: orchestrator routes, retrieval and SQL workers run, RLS policy enforced at the database, output composed, 200 OK.">
+    <img class="chapter-hero-schematic" src="../../images/project-heros/chapter-12-real.jpg" alt="A telephone switchboard operator, c. 1950, routing calls between callers and specialists. The orchestrator-worker pattern this chapter builds, in its earliest physical form. Photo via Wikimedia Commons, public domain.">
   </div>
 </section>
 
@@ -100,6 +100,11 @@
 
 <p><strong>What it is :</strong>
 A reference implementation of a multi-agent enterprise assistant. One orchestrator routes requests, three specialist workers handle retrieval, SQL, and structured output generation. The data layer uses Postgres with Row-Level Security policies keyed to the authenticated session, so agents cannot read rows the user cannot read, regardless of how they are prompted. Deployed as a Next.js app on Fly.io with a live demo.</p>
+
+<figure>
+  <img src="../../images/project-heros/chapter-12-hero.png" alt="Illustrative server log of a multi-agent request: orchestrator routes, retrieval and SQL workers run, RLS policy enforced at the database, output composed, 200 OK.">
+  <figcaption>Illustrative trace of one request through the orchestrator and three workers, with the RLS enforcement line highlighted. Measured traces land here once the demo collects telemetry.</figcaption>
+</figure>
 
 <p><strong>Why I built it :</strong>
 Most public multi-agent demos skip the parts that matter in production: identity, data boundaries, cost, and failure handling. This repo exists as a working counter-example. Scope is deliberately small so the structure stays readable: one orchestrator prompt, three worker prompts, one RLS policy, one tracing hook.</p>
