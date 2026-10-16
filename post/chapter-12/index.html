@@ -114,7 +114,17 @@ Most public multi-agent demos skip the parts that matter in production: identity
 
 <p>The orchestrator receives the user request plus a scoped session token. It picks workers based on a short routing prompt. Workers are stateless and receive only the subset of session context they need. Every Postgres query runs under the user's RLS session, not a service account. A prompt-injection attack cannot escalate what rows are visible, because escalation would require database-level identity, not just a convincing prompt.</p>
 
+<figure>
+  <img src="../../images/project-heros/chapter-12-code-rls.png" alt="Code excerpt: TypeScript session factory that opens a Postgres transaction with SET LOCAL app.current_user_id and SET LOCAL ROLE agent_session, so every query inside the transaction runs under the user's identity and triggers the RLS policies.">
+  <figcaption>The session factory. Every worker query flows through <code>makeSession(req)</code>, which opens a transaction, sets the session-local user id, and switches to the <code>agent_session</code> role. RLS policies on the tables filter by <code>current_user_id</code>.</figcaption>
+</figure>
+
 <p><strong>Threat model :</strong></p>
+
+<figure>
+  <img src="../../images/project-heros/chapter-12-threat-model.svg" alt="Trust-boundary diagram: agent plane with orchestrator and three workers above, Postgres data plane below, RLS boundary dashed between them, with session-identity enforcement badges on each worker-to-database arrow.">
+  <figcaption>Trust boundaries. Session identity is enforced at the database on every query, not at the agent layer. Prompt-injection escalation cannot cross the RLS boundary without database-level identity.</figcaption>
+</figure>
 
 <ul>
 <li><strong>Prevented:</strong> cross-tenant data read via prompt injection. RLS enforces identity at the database, independent of agent reasoning.</li>
@@ -129,6 +139,11 @@ System prompts and tool catalogs sit above the user turn boundary so repeat sess
 
 <p><strong>Live demo :</strong>
 Each visitor gets a scoped session seeded with sample tenant data. A reset button clears session state. Daily per-IP cap in place to keep costs bounded. Repo and live URL: <a href="https://github.com/JayDS22/enterprise-assistant-reference" target="_blank" rel="noopener">github.com/JayDS22/enterprise-assistant-reference</a>.</p>
+
+<figure>
+  <img src="../../images/project-heros/chapter-12-ui-chat.svg" alt="Mock of the Next.js chat UI deployed on Fly.io. Left column shows an agent-trace timeline with orchestrator and worker events. Right column shows a user question about customer billing and the assistant's structured BillingSummary response. A cache-hit badge shows 72 percent token hit rate.">
+  <figcaption>The live demo UI. User asks a billing question; the orchestrator routes to the SQL worker; the response arrives as structured JSON with the trace visible on the left. Prompt-cache hit rate shown as a badge in the response.</figcaption>
+</figure>
 
 <p><strong>What this does not do :</strong></p>
 

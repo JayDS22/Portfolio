@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" font-family="'JetBrains Mono', 'SF Mono', 'DejaVu Sans Mono', monospace">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="arrowSmall" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+
+  <style>
+    .box        { fill: #ecf0f6; stroke: #475467; stroke-width: 1.4; }
+    .boxlabel   { fill: #0c1424; font-size: 13px; font-weight: 700; letter-spacing: 0.5px; }
+    .sublabel   { fill: #475467; font-size: 10px; }
+    .listitem   { fill: #475467; font-size: 9.5px; }
+    .arrow      { stroke: #1d4ed8; stroke-width: 1.8; fill: none; }
+    .arrowThin  { stroke: #1d4ed8; stroke-width: 1.2; fill: none; opacity: 0.75; }
+    .agentlabel { fill: #0c1424; font-size: 10.5px; }
+    .agentmeta  { fill: #475467; font-size: 8.5px; }
+    .glyph      { fill: #1d4ed8; }
+    .stageNum   { fill: #b88746; font-size: 9px; font-weight: 700; letter-spacing: 1px; }
+    .divider    { stroke: #475467; stroke-width: 0.6; stroke-dasharray: 2 2; }
+  </style>
+
+  <!-- Stage 1: TASK POOL -->
+  <rect class="box" x="20" y="60" width="160" height="280" rx="6"/>
+  <text class="stageNum"  x="36"  y="78">STAGE 01</text>
+  <text class="boxlabel"  x="100" y="98"  text-anchor="middle">TASK POOL</text>
+  <text class="sublabel"  x="100" y="116" text-anchor="middle">7 realistic dev tasks</text>
+  <line class="divider" x1="36" y1="128" x2="164" y2="128"/>
+  <text class="listitem" x="36" y="148">1. implement feature</text>
+  <text class="listitem" x="36" y="166">2. fix non-obvious bug</text>
+  <text class="listitem" x="36" y="184">3. add tests</text>
+  <text class="listitem" x="36" y="202">4. refactor</text>
+  <text class="listitem" x="36" y="220">5. migration</text>
+  <text class="listitem" x="36" y="238">6. API endpoint</text>
+  <text class="listitem" x="36" y="256">7. perf regression</text>
+  <line class="divider" x1="36" y1="272" x2="164" y2="272"/>
+  <text class="sublabel" x="36" y="290">pinned, versioned</text>
+  <text class="sublabel" x="36" y="304">prompts per task</text>
+
+  <!-- arrow 1 -> 2 -->
+  <line class="arrow" x1="182" y1="200" x2="214" y2="200" marker-end="url(#arrow)"/>
+
+  <!-- Stage 2: LEAKAGE CONTROL -->
+  <rect class="box" x="216" y="130" width="150" height="140" rx="6"/>
+  <text class="stageNum" x="232" y="148">STAGE 02</text>
+  <text class="boxlabel" x="291" y="178" text-anchor="middle">LEAKAGE</text>
+  <text class="boxlabel" x="291" y="194" text-anchor="middle">CONTROL</text>
+  <line class="divider" x1="232" y1="208" x2="350" y2="208"/>
+  <text class="sublabel" x="291" y="226" text-anchor="middle">rename identifiers,</text>
+  <text class="sublabel" x="291" y="240" text-anchor="middle">private forks</text>
+  <text class="sublabel" x="291" y="258" text-anchor="middle">(no train-set hits)</text>
+
+  <!-- arrow 2 -> 3 -->
+  <line class="arrow" x1="368" y1="200" x2="400" y2="200" marker-end="url(#arrow)"/>
+
+  <!-- Stage 3: AGENT RUN (with 3 branches) -->
+  <rect class="box" x="402" y="80" width="170" height="240" rx="6"/>
+  <text class="stageNum" x="418" y="98">STAGE 03</text>
+  <text class="boxlabel" x="487" y="118" text-anchor="middle">AGENT RUN</text>
+  <line class="divider" x1="418" y1="132" x2="556" y2="132"/>
+
+  <!-- Replit Agent row -->
+  <rect class="glyph" x="422" y="155" width="8" height="8"/>
+  <text class="agentlabel" x="438" y="163">Replit Agent</text>
+  <text class="agentmeta"  x="438" y="178">v2026-Q3 pin</text>
+
+  <!-- Cursor + Sonnet row -->
+  <rect class="glyph" x="422" y="208" width="8" height="8"/>
+  <text class="agentlabel" x="438" y="216">Cursor+Sonnet</text>
+  <text class="agentmeta"  x="438" y="231">sonnet-4.6</text>
+
+  <!-- Claude API row -->
+  <rect class="glyph" x="422" y="261" width="8" height="8"/>
+  <text class="agentlabel" x="438" y="269">Claude API</text>
+  <text class="agentmeta"  x="438" y="284">raw, no agent loop</text>
+
+  <!-- arrow 3 -> 4 -->
+  <line class="arrow" x1="574" y1="200" x2="606" y2="200" marker-end="url(#arrow)"/>
+
+  <!-- Stage 4: SCRIPTED SCORING -->
+  <rect class="box" x="608" y="130" width="150" height="140" rx="6"/>
+  <text class="stageNum" x="624" y="148">STAGE 04</text>
+  <text class="boxlabel" x="683" y="178" text-anchor="middle">SCRIPTED</text>
+  <text class="boxlabel" x="683" y="194" text-anchor="middle">SCORING</text>
+  <line class="divider" x1="624" y1="208" x2="742" y2="208"/>
+  <text class="sublabel" x="683" y="226" text-anchor="middle">pass/fail per task,</text>
+  <text class="sublabel" x="683" y="240" text-anchor="middle">no LLM judge</text>
+  <text class="sublabel" x="683" y="258" text-anchor="middle">(unit tests + diff)</text>
+
+  <!-- arrow 4 -> 5 -->
+  <line class="arrow" x1="760" y1="200" x2="792" y2="200" marker-end="url(#arrow)"/>
+
+  <!-- Stage 5: VERSION-STAMPED JSON -->
+  <rect class="box" x="794" y="110" width="92" height="180" rx="6"/>
+  <text class="stageNum" x="800" y="128">STAGE 05</text>
+  <text class="boxlabel" x="840" y="156" text-anchor="middle">VERSION-</text>
+  <text class="boxlabel" x="840" y="172" text-anchor="middle">STAMPED</text>
+  <text class="boxlabel" x="840" y="188" text-anchor="middle">JSON</text>
+  <line class="divider" x1="802" y1="202" x2="878" y2="202"/>
+  <text class="sublabel" x="840" y="220" text-anchor="middle">quarterly</text>
+  <text class="sublabel" x="840" y="234" text-anchor="middle">rerun</text>
+  <text class="sublabel" x="840" y="256" text-anchor="middle">model_ver,</text>
+  <text class="sublabel" x="840" y="270" text-anchor="middle">harness_sha,</text>
+  <text class="sublabel" x="840" y="284" text-anchor="middle">utc_ts</text>
+</svg>

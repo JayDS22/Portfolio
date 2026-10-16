@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="'JetBrains Mono', monospace">
+  <rect width="1600" height="900" fill="#0c1424"/>
+
+  <!-- ========== LEFT: Browser window (~55% = 880px) ========== -->
+  <g transform="translate(40,40)">
+    <!-- Browser chrome -->
+    <rect x="0" y="0" width="840" height="820" rx="12" fill="#ecf0f6" stroke="#475467" stroke-width="1.5"/>
+    <!-- Title bar -->
+    <rect x="0" y="0" width="840" height="52" rx="12" fill="#1a2236"/>
+    <rect x="0" y="40" width="840" height="12" fill="#1a2236"/>
+    <!-- traffic lights -->
+    <circle cx="24" cy="26" r="7" fill="#e06c6c"/>
+    <circle cx="48" cy="26" r="7" fill="#e0b86c"/>
+    <circle cx="72" cy="26" r="7" fill="#a3d9a5"/>
+    <!-- URL bar -->
+    <rect x="110" y="14" width="620" height="24" rx="6" fill="#f7f8fb" stroke="#475467" stroke-width="0.8"/>
+    <text x="124" y="30" font-size="12" fill="#0c1424" font-family="'JetBrains Mono', monospace">shop.example.com/checkout</text>
+
+    <!-- Page content: checkout mock -->
+    <rect x="0" y="52" width="840" height="768" fill="#f7f8fb"/>
+
+    <!-- Checkout header -->
+    <text x="40" y="110" font-size="22" fill="#0c1424" font-family="sans-serif" font-weight="700">Checkout</text>
+    <text x="40" y="134" font-size="12" fill="#475467" font-family="sans-serif">Order #41820 · 1 item</text>
+    <line x1="40" y1="152" x2="800" y2="152" stroke="#475467" stroke-width="0.6" opacity="0.4"/>
+
+    <!-- Shipping summary -->
+    <text x="40" y="186" font-size="13" fill="#475467" font-family="sans-serif" font-weight="600">SHIP TO</text>
+    <text x="40" y="208" font-size="13" fill="#0c1424" font-family="sans-serif">Jay Guwalani</text>
+    <text x="40" y="226" font-size="13" fill="#0c1424" font-family="sans-serif">College Park, MD 20740</text>
+
+    <!-- Payment section -->
+    <text x="40" y="276" font-size="13" fill="#475467" font-family="sans-serif" font-weight="600">PAYMENT</text>
+
+    <!-- Card number label + input -->
+    <text x="40" y="310" font-size="12" fill="#475467" font-family="sans-serif">Card number</text>
+    <rect x="40" y="320" width="500" height="42" rx="6" fill="#ecf0f6" stroke="#1d4ed8" stroke-width="1.5"/>
+    <text x="56" y="348" font-size="15" fill="#0c1424" font-family="'JetBrains Mono', monospace">4532  ••••  ••••  1842</text>
+
+    <!-- Expiry input -->
+    <text x="40" y="394" font-size="12" fill="#475467" font-family="sans-serif">Expiry</text>
+    <rect x="40" y="404" width="140" height="42" rx="6" fill="#ecf0f6" stroke="#475467" stroke-width="1"/>
+    <text x="56" y="432" font-size="15" fill="#0c1424" font-family="'JetBrains Mono', monospace">09 / 28</text>
+
+    <!-- CVV input -->
+    <text x="200" y="394" font-size="12" fill="#475467" font-family="sans-serif">CVV</text>
+    <rect x="200" y="404" width="140" height="42" rx="6" fill="#ecf0f6" stroke="#475467" stroke-width="1"/>
+    <text x="216" y="432" font-size="15" fill="#0c1424" font-family="'JetBrains Mono', monospace">•••</text>
+
+    <!-- Name on card -->
+    <text x="360" y="394" font-size="12" fill="#475467" font-family="sans-serif">Name on card</text>
+    <rect x="360" y="404" width="180" height="42" rx="6" fill="#ecf0f6" stroke="#475467" stroke-width="1"/>
+    <text x="376" y="432" font-size="13" fill="#0c1424" font-family="sans-serif">Jay Guwalani</text>
+
+    <!-- Order summary -->
+    <line x1="40" y1="490" x2="800" y2="490" stroke="#475467" stroke-width="0.6" opacity="0.4"/>
+    <text x="40" y="520" font-size="13" fill="#475467" font-family="sans-serif">Subtotal</text>
+    <text x="800" y="520" font-size="13" fill="#0c1424" font-family="sans-serif" text-anchor="end">$132.00</text>
+    <text x="40" y="546" font-size="13" fill="#475467" font-family="sans-serif">Tax</text>
+    <text x="800" y="546" font-size="13" fill="#0c1424" font-family="sans-serif" text-anchor="end">$10.00</text>
+    <text x="40" y="580" font-size="15" fill="#0c1424" font-family="sans-serif" font-weight="700">Total</text>
+    <text x="800" y="580" font-size="15" fill="#0c1424" font-family="sans-serif" font-weight="700" text-anchor="end">$142.00</text>
+
+    <!-- Pay button (hovered highlight) -->
+    <rect x="40" y="620" width="500" height="56" rx="8" fill="#1d4ed8" stroke="#b88746" stroke-width="2.5"/>
+    <text x="290" y="655" font-size="17" fill="#f7f8fb" font-family="sans-serif" font-weight="700" text-anchor="middle">Pay $142.00</text>
+    <!-- cursor hover indicator -->
+    <polygon points="520,660 540,676 530,676 536,692 528,696 522,680 512,684" fill="#0c1424" stroke="#f7f8fb" stroke-width="1"/>
+
+    <!-- footer line -->
+    <text x="40" y="720" font-size="11" fill="#475467" font-family="sans-serif">Secure checkout · encrypted in transit</text>
+  </g>
+
+  <!-- ========== RIGHT: AGENT HUD (~45% = 680px) ========== -->
+  <g transform="translate(920,40)">
+    <rect x="0" y="0" width="640" height="820" rx="12" fill="#1a2236" stroke="#475467" stroke-width="1"/>
+
+    <!-- HUD Header -->
+    <rect x="0" y="0" width="640" height="56" rx="12" fill="#0c1424"/>
+    <rect x="0" y="44" width="640" height="12" fill="#0c1424"/>
+    <circle cx="24" cy="28" r="5" fill="#a3d9a5"/>
+    <text x="42" y="32" font-size="13" fill="#f7f8fb" font-family="'JetBrains Mono', monospace">AGENT HUD · sonnet-4.6 · session s_7f3d</text>
+
+    <!-- Section 1: RECENT ACTIONS -->
+    <text x="24" y="94" font-size="11" fill="#8899aa" font-family="'JetBrains Mono', monospace" letter-spacing="1.2">RECENT ACTIONS</text>
+    <line x1="24" y1="104" x2="616" y2="104" stroke="#475467" stroke-width="0.6" opacity="0.4"/>
+
+    <!-- Action rows -->
+    <g font-family="'JetBrains Mono', monospace" font-size="12">
+      <!-- row 1 -->
+      <text x="24"  y="132" fill="#8899aa">#1</text>
+      <text x="60"  y="132" fill="#f7f8fb">nav[shop.example.com]</text>
+      <rect x="470" y="118" width="90" height="20" rx="4" fill="#a3d9a5"/>
+      <text x="515" y="132" fill="#0c1424" font-weight="700" text-anchor="middle">PASS</text>
+
+      <!-- row 2 -->
+      <text x="24"  y="162" fill="#8899aa">#2</text>
+      <text x="60"  y="162" fill="#f7f8fb">click[item.add-to-cart]</text>
+      <rect x="470" y="148" width="90" height="20" rx="4" fill="#a3d9a5"/>
+      <text x="515" y="162" fill="#0c1424" font-weight="700" text-anchor="middle">PASS</text>
+
+      <!-- row 3 -->
+      <text x="24"  y="192" fill="#8899aa">#3</text>
+      <text x="60"  y="192" fill="#f7f8fb">nav[/checkout]</text>
+      <rect x="470" y="178" width="90" height="20" rx="4" fill="#a3d9a5"/>
+      <text x="515" y="192" fill="#0c1424" font-weight="700" text-anchor="middle">PASS</text>
+
+      <!-- row 4 -->
+      <text x="24"  y="222" fill="#8899aa">#4</text>
+      <text x="60"  y="222" fill="#f7f8fb">fill[card.number, ••••1842]</text>
+      <rect x="450" y="208" width="110" height="20" rx="4" fill="#b88746"/>
+      <text x="505" y="222" fill="#f7f8fb" font-weight="700" text-anchor="middle">CONFIRM</text>
+
+      <!-- row 5 -->
+      <text x="24"  y="252" fill="#8899aa">#5</text>
+      <text x="60"  y="252" fill="#f7f8fb">fill[card.cvv, •••]</text>
+      <rect x="450" y="238" width="110" height="20" rx="4" fill="#b88746"/>
+      <text x="505" y="252" fill="#f7f8fb" font-weight="700" text-anchor="middle">CONFIRM</text>
+
+      <!-- row 6 -->
+      <text x="24"  y="282" fill="#8899aa">#6</text>
+      <text x="60"  y="282" fill="#f7f8fb">click[pay-button]</text>
+      <rect x="400" y="268" width="190" height="20" rx="4" fill="#b88746"/>
+      <text x="495" y="282" fill="#f7f8fb" font-weight="700" text-anchor="middle">CONFIRM (awaiting)</text>
+    </g>
+
+    <!-- Section 2: CLASSIFIER CONTEXT -->
+    <text x="24" y="340" font-size="11" fill="#8899aa" font-family="'JetBrains Mono', monospace" letter-spacing="1.2">CLASSIFIER CONTEXT</text>
+    <line x1="24" y1="350" x2="616" y2="350" stroke="#475467" stroke-width="0.6" opacity="0.4"/>
+
+    <g font-family="'JetBrains Mono', monospace" font-size="12">
+      <text x="24" y="380" fill="#8899aa">origin_trust</text>
+      <text x="220" y="380" fill="#f7f8fb">shop.example.com</text>
+      <rect x="470" y="366" width="90" height="20" rx="4" fill="#88c0d0"/>
+      <text x="515" y="380" fill="#0c1424" font-weight="700" text-anchor="middle">KNOWN</text>
+
+      <text x="24" y="410" fill="#8899aa">whitelist</text>
+      <text x="220" y="410" fill="#f7f8fb">POST allowed on 3 hosts</text>
+      <rect x="470" y="396" width="90" height="20" rx="4" fill="#a3d9a5"/>
+      <text x="515" y="410" fill="#0c1424" font-weight="700" text-anchor="middle">MATCH</text>
+
+      <text x="24" y="440" fill="#8899aa">risk_score</text>
+      <text x="220" y="440" fill="#f7f8fb">0.62  (credential-exposure)</text>
+      <rect x="470" y="426" width="90" height="20" rx="4" fill="#b88746"/>
+      <text x="515" y="440" fill="#f7f8fb" font-weight="700" text-anchor="middle">MEDIUM</text>
+    </g>
+
+    <!-- Section 3: policy excerpt -->
+    <text x="24" y="498" font-size="11" fill="#8899aa" font-family="'JetBrains Mono', monospace" letter-spacing="1.2">POLICY MATCH</text>
+    <line x1="24" y1="508" x2="616" y2="508" stroke="#475467" stroke-width="0.6" opacity="0.4"/>
+    <g font-family="'JetBrains Mono', monospace" font-size="11.5" fill="#8899aa">
+      <text x="24" y="534">rule:  payment.submit =&gt; CONFIRM</text>
+      <text x="24" y="556">match: kind=click, target~=/pay/i</text>
+      <text x="24" y="578">bind:  origin trust_known, cvv_filled</text>
+      <text x="24" y="600">next:  await user_confirm (timeout 30s)</text>
+    </g>
+
+    <!-- Divider before footer -->
+    <line x1="24" y1="720" x2="616" y2="720" stroke="#475467" stroke-width="0.6" opacity="0.4"/>
+
+    <!-- Pulsing indicator footer -->
+    <circle cx="40" cy="760" r="8" fill="#b88746"/>
+    <circle cx="40" cy="760" r="14" fill="none" stroke="#b88746" stroke-width="1" opacity="0.5"/>
+    <circle cx="40" cy="760" r="20" fill="none" stroke="#b88746" stroke-width="0.6" opacity="0.25"/>
+    <text x="62" y="765" font-size="14" fill="#f7f8fb" font-family="'JetBrains Mono', monospace">waiting for user confirm...</text>
+    <text x="62" y="786" font-size="11" fill="#8899aa" font-family="'JetBrains Mono', monospace">[Y] approve   [N] discard   [E] edit payload</text>
+  </g>
+</svg>

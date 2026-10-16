@@ -106,6 +106,11 @@ A pack of evaluations shaped for the openai/evals registry. Twenty are enterpris
   <figcaption>Illustrative cross-model scorecard. The PII row (bronze label) pulls the floor on GPT-4.X to 38 percent, which is why the eval exists.</figcaption>
 </figure>
 
+<figure>
+  <img src="../../images/project-heros/chapter-15-eval-architecture.svg" alt="Eval architecture: a shared scenario runner feeds three parallel evaluation columns. Trajectory diffs observed call graphs against targets. Cancel validity scripts a cancellation and checks whether the partial JSON parses. PII leak compares outbound tool arguments against tagged sensitive values. All three write to a shared aggregate scorer.">
+  <figcaption>How the three novel evals are instrumented. One scenario runner, three scoring columns, one aggregate results file.</figcaption>
+</figure>
+
 <p><strong>Why these three :</strong>
 Capability benchmarks like MMLU, HumanEval, and GSM8K measure what a model knows and can do on well-posed tasks. Production failure modes rarely look like that. They look like: a tool call that is almost-but-not-quite valid JSON, a streaming response that gets cancelled halfway, an argument to a tool that quietly contains data the model should never have surfaced. These three evals are built around those shapes.</p>
 
@@ -183,6 +188,11 @@ Each scenario seeds the context with tagged synthetic sensitive values. Tool arg
 
 <p><strong>Writeup :</strong>
 This eval deserves a HackerOne-style disclosure note per high-leak scenario: trigger prompt, observed behavior, severity reasoning, suggested model-side mitigation. See the <code>novel-evals/pii-via-tools/findings/</code> directory in the repo.</p>
+
+<figure>
+  <img src="../../images/project-heros/chapter-15-code-pii-scorer.png" alt="Code excerpt: Python PII-via-tools scorer. Compiles regex patterns for SSN, email, and API-key shapes. Scans tool-call args for matches against tagged sensitive values from the context. Returns a list of Finding dataclasses per hit.">
+  <figcaption>The PII-via-tools scorer. Regex screens the common sensitive shapes; a tagged-value cross-check ensures only context-seeded values count as hits, so model-generated plausible emails do not false-positive.</figcaption>
+</figure>
 
 <h2 style="margin-top:32px;">Running the pack</h2>
 

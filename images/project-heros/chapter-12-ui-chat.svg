@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="JetBrains Mono, SF Mono, DejaVu Sans Mono, monospace">
+  <!-- Page background (pale) -->
+  <rect x="0" y="0" width="1600" height="900" fill="#ecf0f6"/>
+
+  <!-- Browser chrome frame -->
+  <rect x="60" y="40" width="1480" height="820" rx="14" fill="#f7f8fb" stroke="#475467" stroke-width="1.2"/>
+
+  <!-- Chrome top bar -->
+  <rect x="60" y="40" width="1480" height="56" rx="14" fill="#1a2236"/>
+  <rect x="60" y="80" width="1480" height="16" fill="#1a2236"/>
+
+  <!-- Traffic lights -->
+  <circle cx="92" cy="68" r="7" fill="#ff5f57"/>
+  <circle cx="114" cy="68" r="7" fill="#febc2e"/>
+  <circle cx="136" cy="68" r="7" fill="#28c840"/>
+
+  <!-- URL bar -->
+  <rect x="200" y="54" width="900" height="28" rx="6" fill="#2a3148"/>
+  <text x="220" y="73" fill="#f7f8fb" font-size="13">https://enterprise-assistant.fly.dev/chat</text>
+
+  <!-- Right side nav text -->
+  <text x="1520" y="73" fill="#8899aa" font-size="12" text-anchor="end">user@acme.io</text>
+
+  <!-- Content area background (near-white workspace) -->
+  <rect x="60" y="96" width="1480" height="764" fill="#f7f8fb"/>
+
+  <!-- ==================== LEFT COLUMN: trace timeline ==================== -->
+  <rect x="60" y="96" width="360" height="764" fill="#ecf0f6" stroke="#475467" stroke-width="0.6"/>
+
+  <text x="90" y="134" fill="#475467" font-size="11" letter-spacing="2">AGENT TRACE</text>
+  <line x1="90" y1="146" x2="390" y2="146" stroke="#475467" stroke-width="0.6"/>
+
+  <!-- Vertical timeline rail -->
+  <line x1="104" y1="170" x2="104" y2="640" stroke="#1d4ed8" stroke-width="1.5" stroke-dasharray="3,4"/>
+
+  <!-- Trace entries -->
+  <g font-size="12" fill="#0c1424">
+    <!-- entry 1 -->
+    <circle cx="104" cy="180" r="5" fill="#1d4ed8"/>
+    <text x="124" y="178" fill="#8899aa" font-size="10">12:04:03.221</text>
+    <text x="124" y="195" fill="#1d4ed8" font-weight="700">orch.route</text>
+    <text x="124" y="212" fill="#475467" font-size="11">intent: lookup_customer_billing</text>
+
+    <!-- entry 2 -->
+    <circle cx="104" cy="246" r="5" fill="#1d4ed8"/>
+    <text x="124" y="244" fill="#8899aa" font-size="10">12:04:03.287</text>
+    <text x="124" y="261" fill="#1d4ed8" font-weight="700">worker.ret</text>
+    <text x="124" y="278" fill="#475467" font-size="11">pgvector top_k=6, cache HIT</text>
+
+    <!-- entry 3 (RLS-enforced) -->
+    <circle cx="104" cy="312" r="5" fill="#b88746"/>
+    <text x="124" y="310" fill="#8899aa" font-size="10">12:04:03.891</text>
+    <text x="124" y="327" fill="#b88746" font-weight="700">worker.sql.rls-enforced</text>
+    <text x="124" y="344" fill="#475467" font-size="11">session=s_a3f2e9  rows=12</text>
+    <text x="124" y="360" fill="#475467" font-size="11">filtered from 2,847 raw</text>
+
+    <!-- entry 4 -->
+    <circle cx="104" cy="394" r="5" fill="#1d4ed8"/>
+    <text x="124" y="392" fill="#8899aa" font-size="10">12:04:04.198</text>
+    <text x="124" y="409" fill="#1d4ed8" font-weight="700">worker.out</text>
+    <text x="124" y="426" fill="#475467" font-size="11">schema: BillingSummary</text>
+
+    <!-- entry 5 -->
+    <circle cx="104" cy="460" r="5" fill="#1d4ed8"/>
+    <text x="124" y="458" fill="#8899aa" font-size="10">12:04:04.456</text>
+    <text x="124" y="475" fill="#1d4ed8" font-weight="700">orch.reply</text>
+    <text x="124" y="492" fill="#475467" font-size="11">200 OK  chain=4 hops</text>
+  </g>
+
+  <!-- Footer status in left column -->
+  <text x="90" y="820" fill="#8899aa" font-size="10">trace id: 7f21-aa09-c3b4</text>
+  <text x="90" y="836" fill="#8899aa" font-size="10">region: fly-ord</text>
+
+  <!-- ==================== RIGHT COLUMN: chat UI ==================== -->
+  <!-- Chat header -->
+  <text x="460" y="134" fill="#475467" font-size="11" letter-spacing="2">CHAT</text>
+  <line x1="460" y1="146" x2="1510" y2="146" stroke="#475467" stroke-width="0.6"/>
+
+  <!-- Message 1: user (right-aligned bubble) -->
+  <rect x="900" y="178" width="580" height="56" rx="12" fill="#1d4ed8"/>
+  <text x="922" y="212" fill="#f7f8fb" font-size="15">How much did customer 4802 spend last quarter?</text>
+  <text x="1480" y="252" fill="#8899aa" font-size="10" text-anchor="end">you  12:04:03</text>
+
+  <!-- Message 2: assistant short answer -->
+  <rect x="460" y="286" width="760" height="56" rx="12" fill="#ecf0f6" stroke="#475467" stroke-width="0.6"/>
+  <text x="482" y="320" fill="#0c1424" font-size="15">Customer 4802 spent $48,210.44 across 12 invoices in Q3 2026.</text>
+  <text x="482" y="360" fill="#8899aa" font-size="10">assistant  12:04:04</text>
+
+  <!-- Message 3: structured BillingSummary JSON card -->
+  <rect x="460" y="390" width="760" height="316" rx="12" fill="#1a2236" stroke="#2a3148" stroke-width="1"/>
+  <text x="482" y="416" fill="#8899aa" font-size="11" letter-spacing="1.5">BillingSummary</text>
+
+  <g font-size="14" font-family="JetBrains Mono, SF Mono, DejaVu Sans Mono, monospace">
+    <text x="482" y="446" fill="#f7f8fb">{</text>
+    <text x="508" y="470" fill="#b88746">"customer_id"</text>
+    <text x="648" y="470" fill="#8899aa">:</text>
+    <text x="666" y="470" fill="#a3d9a5">4802</text>
+    <text x="710" y="470" fill="#8899aa">,</text>
+
+    <text x="508" y="494" fill="#b88746">"period"</text>
+    <text x="604" y="494" fill="#8899aa">:</text>
+    <text x="622" y="494" fill="#a3d9a5">"2026-Q3"</text>
+    <text x="738" y="494" fill="#8899aa">,</text>
+
+    <text x="508" y="518" fill="#b88746">"total_usd"</text>
+    <text x="636" y="518" fill="#8899aa">:</text>
+    <text x="654" y="518" fill="#a3d9a5">48210.44</text>
+    <text x="754" y="518" fill="#8899aa">,</text>
+
+    <text x="508" y="542" fill="#b88746">"invoice_count"</text>
+    <text x="684" y="542" fill="#8899aa">:</text>
+    <text x="702" y="542" fill="#a3d9a5">12</text>
+    <text x="724" y="542" fill="#8899aa">,</text>
+
+    <text x="508" y="566" fill="#b88746">"top_sku"</text>
+    <text x="614" y="566" fill="#8899aa">:</text>
+    <text x="632" y="566" fill="#a3d9a5">"ent-seat-annual"</text>
+    <text x="834" y="566" fill="#8899aa">,</text>
+
+    <text x="508" y="590" fill="#b88746">"status"</text>
+    <text x="604" y="590" fill="#8899aa">:</text>
+    <text x="622" y="590" fill="#a3d9a5">"paid"</text>
+    <text x="482" y="614" fill="#f7f8fb">}</text>
+  </g>
+
+  <!-- Cached badge (bronze, subtle) -->
+  <rect x="460" y="720" width="248" height="30" rx="15" fill="none" stroke="#b88746" stroke-width="1"/>
+  <circle cx="478" cy="735" r="4" fill="#b88746"/>
+  <text x="492" y="740" fill="#b88746" font-size="12">cached: 72% token hit rate</text>
+
+  <!-- Chat input bar (bottom) -->
+  <rect x="460" y="800" width="1050" height="40" rx="20" fill="#ecf0f6" stroke="#475467" stroke-width="0.6"/>
+  <text x="484" y="825" fill="#8899aa" font-size="13">Ask about billing, docs, or events...</text>
+  <circle cx="1484" cy="820" r="14" fill="#1d4ed8"/>
+  <path d="M1478,820 L1490,820 M1486,814 L1490,820 L1486,826" stroke="#f7f8fb" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

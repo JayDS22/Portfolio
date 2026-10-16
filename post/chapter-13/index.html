@@ -109,6 +109,11 @@ A browser agent. Playwright drives the browser, the Chrome DevTools Protocol pro
 <p><strong>Why payload classification :</strong>
 Most browser agents classify by URL or domain. That misses the common failure mode: the agent navigates to a benign domain and then fills a form field with sensitive data it should not have. Classifying by payload content catches that case. A "post to pastebin.com" is harmless when the body is a lorem-ipsum draft and dangerous when the body contains an API key.</p>
 
+<figure>
+  <img src="../../images/project-heros/chapter-13-code-classifier.png" alt="Code excerpt: TypeScript classifyAction function. It inspects the proposed action's kind, target, and body. Benign same-origin navigation gets pass. Writing into a password field triggers credential-exposure confirm. Outbound POST to a non-whitelisted host triggers external-dispatch block. Ambiguous cases fall back to a model-driven classifier.">
+  <figcaption>The classifier. Fast-path rules handle the common cases without a model call. Ambiguous actions fall back to a smaller Claude Haiku pass for context-aware classification.</figcaption>
+</figure>
+
 <p><strong>Demo :</strong><br>
 <em>[Hero GIF placeholder: 10 to 15 seconds of the agent completing one task end-to-end, with the payload classifier badge visible in the HUD.]</em></p>
 
@@ -124,6 +129,11 @@ Most browser agents classify by URL or domain. That misses the common failure mo
 
 <p><strong>Permission classes :</strong></p>
 
+<figure>
+  <img src="../../images/project-heros/chapter-13-tier-flow.svg" alt="Flow diagram: proposed action enters the payload classifier, which branches into three outcomes. Benign navigation and non-sensitive input dispatch directly. Credential exposure and known external dispatch require user confirm. Unknown destinations and uncontextualized destructive actions get blocked and logged.">
+  <figcaption>Classifier decision flow. Every action passes through content-based classification, not just origin or destination inspection. The three tiers map to concrete payload patterns.</figcaption>
+</figure>
+
 <ul>
 <li><strong>benign-navigation.</strong> GET requests to the current origin, in-origin link clicks. <code>PASS</code> by default.</li>
 <li><strong>user-input-write.</strong> Typing non-sensitive text into non-password form fields. <code>PASS</code> unless the field is tagged sensitive by the DOM classifier.</li>
@@ -131,6 +141,13 @@ Most browser agents classify by URL or domain. That misses the common failure mo
 <li><strong>external-dispatch.</strong> POST, PUT, or DELETE requests to an origin different from the current page, or outbound webhooks. <code>CONFIRM</code> for whitelisted origins, <code>BLOCK</code> for unknown destinations.</li>
 <li><strong>state-modification.</strong> Destructive DOM actions: clearing fields, submitting a form, or clicking a button whose text matches a destructive-verb lexicon (delete, remove, cancel subscription, etc.). <code>CONFIRM</code>.</li>
 </ul>
+
+<p><strong>Agent HUD during a run :</strong></p>
+
+<figure>
+  <img src="../../images/project-heros/chapter-13-ui-expanded.svg" alt="Expanded view of the agent in action. Left half shows a browser on an example-shop checkout page with a credit card number being filled. Right half is the agent HUD showing six queued actions, three passed and three awaiting confirm. Classifier context panel shows origin trust, whitelist state, and risk score.">
+  <figcaption>Expanded HUD during a checkout task. First three actions pass the classifier. The two card-field writes and the pay-button click each flip to <code>CONFIRM</code> because the classifier recognizes credential-exposure and destructive-state tiers. The agent waits for the user before dispatching.</figcaption>
+</figure>
 
 <p><strong>Failure gallery :</strong></p>
 

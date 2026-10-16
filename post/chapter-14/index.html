@@ -129,6 +129,11 @@ Existing agent benchmarks either use synthetic tasks that do not resemble day-to
 
 <p><strong>Methodology :</strong></p>
 
+<figure>
+  <img src="../../images/project-heros/chapter-14-methodology.svg" alt="Benchmark methodology flow. Task pool with seven realistic development tasks, then leakage control (identifier renames, private forks), then agent run across Replit, Cursor plus Sonnet, and Claude API, then scripted scoring without an LLM judge, then version-stamped JSON output on quarterly rerun.">
+  <figcaption>Benchmark pipeline. Seven tasks run through identical leakage controls and scripted scoring; results write out version-stamped so quarterly reruns can be diffed over time.</figcaption>
+</figure>
+
 <ul>
 <li><strong>Task selection.</strong> Seven tasks were picked by sampling from recent personal projects, not from a benchmark dataset. Reduces train-test leakage risk at the cost of statistical significance.</li>
 <li><strong>Pass criteria.</strong> Every task has a scripted test that returns pass or fail. No LLM-as-judge.</li>
@@ -138,6 +143,11 @@ Existing agent benchmarks either use synthetic tasks that do not resemble day-to
 </ul>
 
 <p><strong>Reproducibility :</strong></p>
+
+<figure>
+  <img src="../../images/project-heros/chapter-14-code-harness.png" alt="Code excerpt: Python benchmark harness. Loads a tasks catalog YAML, iterates each task against each agent in a cross product, measures seconds and tokens, and writes a results JSON with pass or fail per cell.">
+  <figcaption>The runner. Each row in <code>results.json</code> is one agent on one task with pass flag, wall time, and tokens. Scoring is scripted; no LLM-as-judge in the primary metrics.</figcaption>
+</figure>
 
 <ul>
 <li>Single command: <code>make bench</code></li>
