@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <filter id="browserShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="6" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.08"/></feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="browserInner">
+      <rect x="80" y="190" width="1140" height="700" rx="0"/>
+    </clipPath>
+  </defs>
+
+  <!-- ========== LEFT: BROWSER WINDOW (65%) ========== -->
+  <g filter="url(#browserShadow)">
+    <!-- Browser frame -->
+    <rect x="80" y="110" width="1140" height="820" rx="14" fill="#ffffff" stroke="#d9dde6" stroke-width="1"/>
+
+    <!-- Title bar -->
+    <rect x="80" y="110" width="1140" height="80" rx="14" fill="#f3f4f8"/>
+    <rect x="80" y="160" width="1140" height="30" fill="#f3f4f8"/>
+
+    <!-- Traffic lights -->
+    <circle cx="118" cy="150" r="8" fill="#c9ccd3"/>
+    <circle cx="146" cy="150" r="8" fill="#c9ccd3"/>
+    <circle cx="174" cy="150" r="8" fill="#c9ccd3"/>
+
+    <!-- URL bar -->
+    <rect x="230" y="130" width="860" height="42" rx="21" fill="#ffffff" stroke="#dfe2ea" stroke-width="1"/>
+    <!-- Lock glyph -->
+    <g transform="translate(252,142)">
+      <rect x="2" y="7" width="14" height="11" rx="2" fill="none" stroke="#8a909c" stroke-width="1.6"/>
+      <path d="M5 7 V5 a4 4 0 0 1 8 0 V7" fill="none" stroke="#8a909c" stroke-width="1.6"/>
+    </g>
+    <text x="286" y="158" font-size="18" fill="#475467" font-family="'JetBrains Mono', 'Menlo', monospace">https://login.example.com/signin</text>
+
+    <!-- Reload icon -->
+    <g transform="translate(1130,142)" stroke="#8a909c" stroke-width="1.8" fill="none">
+      <path d="M2 10 a8 8 0 1 1 2.4 5.6"/>
+      <polyline points="2,16 2,10 8,10"/>
+    </g>
+
+    <!-- Browser inner (page content) -->
+    <rect x="80" y="190" width="1140" height="740" fill="#ecf0f6"/>
+
+    <g clip-path="url(#browserInner)">
+      <!-- Login card -->
+      <rect x="400" y="320" width="500" height="440" rx="12" fill="#ffffff" stroke="#dfe2ea" stroke-width="1"/>
+
+      <!-- Logo dot + wordmark -->
+      <circle cx="440" cy="368" r="12" fill="#1d4ed8"/>
+      <text x="462" y="374" font-size="18" font-weight="600" fill="#0c1424">example</text>
+
+      <!-- Title -->
+      <text x="440" y="440" font-size="30" font-weight="700" fill="#0c1424">Sign in</text>
+      <text x="440" y="470" font-size="14" fill="#475467">Welcome back. Enter your details to continue.</text>
+
+      <!-- Email -->
+      <text x="440" y="516" font-size="13" font-weight="600" fill="#0c1424">Email</text>
+      <rect x="440" y="528" width="420" height="46" rx="8" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.6"/>
+      <text x="456" y="557" font-size="16" fill="#0c1424" font-family="'JetBrains Mono', 'Menlo', monospace">j@test.io</text>
+      <!-- Caret -->
+      <rect x="542" y="542" width="2" height="20" fill="#1d4ed8"/>
+
+      <!-- Password -->
+      <text x="440" y="608" font-size="13" font-weight="600" fill="#0c1424">Password</text>
+      <rect x="440" y="620" width="420" height="46" rx="8" fill="#ffffff" stroke="#dfe2ea" stroke-width="1"/>
+      <text x="456" y="649" font-size="20" fill="#0c1424" letter-spacing="2">•••••••</text>
+
+      <!-- Sign in button -->
+      <rect x="440" y="692" width="420" height="48" rx="8" fill="#1d4ed8"/>
+      <text x="650" y="722" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">Sign in</text>
+
+      <!-- Agent focus ring on email input (showing where the agent is acting) -->
+      <rect x="436" y="524" width="428" height="54" rx="10" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-dasharray="4 4" opacity="0.55"/>
+    </g>
+  </g>
+
+  <!-- ========== RIGHT: AGENT HUD (35%) ========== -->
+  <g>
+    <!-- HUD panel -->
+    <rect x="1270" y="110" width="570" height="820" rx="14" fill="#1a2236"/>
+
+    <!-- Header strip -->
+    <rect x="1270" y="110" width="570" height="68" rx="14" fill="#111827"/>
+    <rect x="1270" y="152" width="570" height="26" fill="#111827"/>
+
+    <!-- Status dot -->
+    <circle cx="1296" cy="144" r="6" fill="#1d4ed8"/>
+    <circle cx="1296" cy="144" r="10" fill="none" stroke="#1d4ed8" stroke-width="1" opacity="0.35"/>
+
+    <text x="1316" y="150" font-size="16" font-weight="700" fill="#f7f8fb" font-family="'JetBrains Mono', 'Menlo', monospace" letter-spacing="1.2">AGENT HUD  ·  sonnet-4.6</text>
+
+    <!-- Separator -->
+    <line x1="1294" y1="178" x2="1816" y2="178" stroke="#2a3348" stroke-width="1"/>
+
+    <!-- Section: ACTION QUEUE -->
+    <text x="1294" y="214" font-size="12" font-weight="700" fill="#8899aa" font-family="'JetBrains Mono', 'Menlo', monospace" letter-spacing="2">ACTION QUEUE</text>
+    <text x="1816" y="214" font-size="12" fill="#8899aa" font-family="'JetBrains Mono', 'Menlo', monospace" text-anchor="end" letter-spacing="1">step 4 / 4</text>
+
+    <!-- Row 1: PASS -->
+    <g transform="translate(1294,236)">
+      <rect x="0" y="0" width="522" height="64" rx="8" fill="#20293e" stroke="#2a3348" stroke-width="1"/>
+      <rect x="0" y="0" width="4" height="64" rx="2" fill="#1d4ed8"/>
+      <text x="20" y="28" font-size="14" fill="#8899aa" font-family="'JetBrains Mono', 'Menlo', monospace">#1</text>
+      <text x="56" y="28" font-size="14" fill="#f7f8fb" font-family="'JetBrains Mono', 'Menlo', monospace">click[login btn]</text>
+      <text x="20" y="50" font-size="11" fill="#8899aa" font-family="'JetBrains Mono', 'Menlo', monospace">cdp.dispatchMouseEvent · 42ms</text>
+      <!-- Verdict pill -->
+      <rect x="438" y="20" width="72" height="24" rx="12" fill="#1d4ed8"/>
+      <text x="474" y="37" font-size="12" font-weight="700" fill="#ffffff" font-family="'JetBrains Mono', 'Menlo', monospace" text-anchor="middle" letter-spacing="1">PASS</text>
+    </g>
+
+    <!-- Row 2: PASS -->
+    <g transform="translate(1294,312)">
+      <rect x="0" y="0" width="522" height="64" rx="8" fill="#20293e" stroke="#2a3348" stroke-width="1"/>
+      <rect x="0" y="0" width="4" height="64" rx="2" fill="#1d4ed8"/>
+      <text x="20" y="28" font-size="14" fill="#8899aa" font-family="'JetBrains Mono', 'Menlo', monospace">#2</text>
+      <text x="56" y="28" font-size="14" fill="#f7f8fb" font-family="'JetBrains Mono', 'Menlo', monospace">fill[email, j@test.io]</text>
+      <text x="20" y="50" font-size="11" fill="#8899aa" font-family="'JetBrains Mono', 'Menlo', monospace">payload: non-sensitive · 18ms</text>
+      <rect x="438" y="20" width="72" height="24" rx="12" fill="#1d4ed8"/>
+      <text x="474" y="37" font-size="12" font-weight="700" fill="#ffffff" font-family="'JetBrains Mono', 'Menlo', monospace" text-anchor="middle" letter-spacing="1">PASS</text>
+    </g>
+
+    <!-- Row 3: CONFIRM (bronze) -->
+    <g transform="translate(1294,388)">
+      <rect x="0" y="0" width="522" height="64" rx="8" fill="#2a2619" stroke="#3b331f" stroke-width="1"/>
+      <rect x="0" y="0" width="4" height="64" rx="2" fill="#b88746"/>
+      <text x="20" y="28" font-size="14" fill="#8899aa" font-family="'JetBrains Mono', 'Menlo', monospace">#3</text>
+      <text x="56" y="28" font-size="14" fill="#f7f8fb" font-family="'JetBrains Mono', 'Menlo', monospace">fill[password, •••••••]</text>
+      <text x="20" y="50" font-size="11" fill="#c9a26b" font-family="'JetBrains Mono', 'Menlo', monospace">payload: credential · awaiting user</text>
+      <rect x="422" y="20" width="88" height="24" rx="12" fill="#b88746"/>
+      <text x="466" y="37" font-size="12" font-weight="700" fill="#1a1206" font-family="'JetBrains Mono', 'Menlo', monospace" text-anchor="middle" letter-spacing="1">CONFIRM</text>
+    </g>
+
+    <!-- Row 4: BLOCK (muted + strike) -->
+    <g transform="translate(1294,464)">
+      <rect x="0" y="0" width="522" height="64" rx="8" fill="#1f2535" stroke="#2a3348" stroke-width="1"/>
+      <rect x="0" y="0" width="4" height="64" rx="2" fill="#475467"/>
+      <text x="20" y="28" font-size="14" fill="#5a6476" font-family="'JetBrains Mono', 'Menlo', monospace">#4</text>
+      <text x="56" y="28" font-size="14" fill="#5a6476" font-family="'JetBrains Mono', 'Menlo', monospace" text-decoration="line-through">POST /api/webhook (ext)</text>
+      <text x="20" y="50" font-size="11" fill="#5a6476" font-family="'JetBrains Mono', 'Menlo', monospace">cross-origin exfil · denied by policy</text>
+      <rect x="438" y="20" width="72" height="24" rx="12" fill="#475467"/>
+      <text x="474" y="37" font-size="12" font-weight="700" fill="#f7f8fb" font-family="'JetBrains Mono', 'Menlo', monospace" text-anchor="middle" letter-spacing="1">BLOCK</text>
+    </g>
+
+    <!-- Separator -->
+    <line x1="1294" y1="564" x2="1816" y2="564" stroke="#2a3348" stroke-width="1"/>
+
+    <!-- Section: PAYLOAD CLASSIFIER -->
+    <text x="1294" y="594" font-size="12" font-weight="700" fill="#8899aa" font-family="'JetBrains Mono', 'Menlo', monospace" letter-spacing="2">PAYLOAD CLASSIFIER</text>
+
+    <!-- Tier legend -->
+    <g transform="translate(1294,614)" font-family="'JetBrains Mono', 'Menlo', monospace" font-size="12">
+      <!-- PASS row -->
+      <rect x="0" y="4" width="10" height="10" rx="2" fill="#1d4ed8"/>
+      <text x="20" y="14" fill="#f7f8fb">PASS</text>
+      <text x="110" y="14" fill="#8899aa">public DOM, idempotent navigation</text>
+
+      <!-- CONFIRM row -->
+      <rect x="0" y="30" width="10" height="10" rx="2" fill="#b88746"/>
+      <text x="20" y="40" fill="#f7f8fb">CONFIRM</text>
+      <text x="110" y="40" fill="#8899aa">credentials, PII, payment, destructive</text>
+
+      <!-- BLOCK row -->
+      <rect x="0" y="56" width="10" height="10" rx="2" fill="#475467"/>
+      <text x="20" y="66" fill="#f7f8fb">BLOCK</text>
+      <text x="110" y="66" fill="#8899aa">cross-origin exfil, off-allowlist I/O</text>
+    </g>
+
+    <!-- Classifier annotation line -->
+    <rect x="1294" y="710" width="522" height="56" rx="8" fill="#111827" stroke="#2a3348" stroke-width="1"/>
+    <text x="1310" y="733" font-size="11" fill="#8899aa" font-family="'JetBrains Mono', 'Menlo', monospace" letter-spacing="1.5">INSPECTOR</text>
+    <text x="1310" y="755" font-size="13" fill="#f7f8fb" font-family="'JetBrains Mono', 'Menlo', monospace">classify(payload, origin, side_effect) -&gt; tier</text>
+
+    <!-- Footer transport line -->
+    <line x1="1294" y1="800" x2="1816" y2="800" stroke="#2a3348" stroke-width="1"/>
+    <g font-family="'JetBrains Mono', 'Menlo', monospace" font-size="12">
+      <text x="1294" y="828" fill="#8899aa">transport</text>
+      <text x="1816" y="828" fill="#f7f8fb" text-anchor="end">Playwright + CDP</text>
+
+      <text x="1294" y="854" fill="#8899aa">tab</text>
+      <text x="1816" y="854" fill="#f7f8fb" text-anchor="end">login.example.com</text>
+
+      <text x="1294" y="880" fill="#8899aa">allowlist</text>
+      <text x="1816" y="880" fill="#f7f8fb" text-anchor="end">example.com, *.example.com</text>
+
+      <text x="1294" y="906" fill="#8899aa">latency p50</text>
+      <text x="1816" y="906" fill="#f7f8fb" text-anchor="end">31 ms</text>
+    </g>
+  </g>
+
+  <!-- ========== CAPTION ========== -->
+  <g font-family="'JetBrains Mono', 'Menlo', monospace">
+    <text x="960" y="990" font-size="18" font-weight="700" fill="#0c1424" text-anchor="middle" letter-spacing="3">ILLUSTRATIVE AGENT TRACE.  SEE REPO FOR LIVE RUN.</text>
+    <text x="960" y="1018" font-size="13" fill="#475467" text-anchor="middle" letter-spacing="1.5">browser agent · Playwright + Chrome DevTools Protocol · payload-classified permissions</text>
+  </g>
+</svg>
