@@ -107,7 +107,7 @@
       <button type="button" class="filter-clear" id="filter-clear" aria-label="Clear search">
         <svg width="14" height="14"><use href="#i-x"/></svg>
       </button>
-      <div class="filter-status" id="filter-status">11 projects</div>
+      <div class="filter-status" id="filter-status">12 projects</div>
     </div>
 
     <div class="filter-empty" id="filter-empty" hidden>
@@ -438,6 +438,8 @@
   clear.addEventListener('click', () => { input.value = ''; apply(); input.focus(); });
   // Esc clears.
   input.addEventListener('keydown', e => { if (e.key === 'Escape') { input.value = ''; apply(); } });
+  // Set initial counter from JS so it stays accurate as cards are added or removed.
+  apply();
 })();
 </script>
 
