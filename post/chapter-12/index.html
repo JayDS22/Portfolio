@@ -109,8 +109,7 @@ A reference implementation of a multi-agent enterprise assistant. One orchestrat
 <p><strong>Why I built it :</strong>
 Most public multi-agent demos skip the parts that matter in production: identity, data boundaries, cost, and failure handling. This repo exists as a working counter-example. Scope is deliberately small so the structure stays readable: one orchestrator prompt, three worker prompts, one RLS policy, one tracing hook.</p>
 
-<p><strong>Architecture :</strong><br>
-<em>[Hero diagram placeholder: orchestrator at top, three workers below, Postgres with RLS below, trust boundaries labelled between the agent plane and the data plane.]</em></p>
+<p><strong>Architecture :</strong></p>
 
 <p>The orchestrator receives the user request plus a scoped session token. It picks workers based on a short routing prompt. Workers are stateless and receive only the subset of session context they need. Every Postgres query runs under the user's RLS session, not a service account. A prompt-injection attack cannot escalate what rows are visible, because escalation would require database-level identity, not just a convincing prompt.</p>
 
