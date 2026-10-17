@@ -10,8 +10,8 @@
   </defs>
   <style>
     .kicker { fill: #8899aa; font: 600 20px "JetBrains Mono", ui-monospace, monospace; letter-spacing: 0.18em; text-transform: uppercase; }
-    .headline { fill: #f7f8fb; font: 700 56px "Space Grotesk", "Inter", sans-serif; letter-spacing: -0.02em; }
-    .headline-accent { fill: #1d4ed8; font: 700 56px "Space Grotesk", "Inter", sans-serif; letter-spacing: -0.02em; }
+    .headline-accent { fill: #1d4ed8; font: 700 68px "Space Grotesk", "Inter", sans-serif; letter-spacing: -0.02em; }
+    .headline { fill: #f7f8fb; font: 700 48px "Space Grotesk", "Inter", sans-serif; letter-spacing: -0.01em; }
     .node-label { fill: #f7f8fb; font: 700 20px "JetBrains Mono", ui-monospace, monospace; letter-spacing: 0.08em; }
     .node-sub   { fill: #8899aa; font: 500 13px "JetBrains Mono", ui-monospace, monospace; letter-spacing: 0.04em; }
     .edge-label { fill: #8899aa; font: 500 12px "JetBrains Mono", ui-monospace, monospace; letter-spacing: 0.08em; }
@@ -30,9 +30,6 @@
   <!-- Subtle dot grid -->
   <g opacity="0.08">
     <circle cx="60"  cy="80"  r="1.2" fill="#f7f8fb"/>
-    <circle cx="120" cy="80"  r="1.2" fill="#f7f8fb"/>
-    <circle cx="180" cy="80"  r="1.2" fill="#f7f8fb"/>
-    <circle cx="840" cy="80"  r="1.2" fill="#f7f8fb"/>
     <circle cx="900" cy="80"  r="1.2" fill="#f7f8fb"/>
     <circle cx="60"  cy="480" r="1.2" fill="#f7f8fb"/>
     <circle cx="900" cy="480" r="1.2" fill="#f7f8fb"/>
@@ -41,10 +38,9 @@
   <!-- Kicker -->
   <text class="kicker" x="60" y="78">AWS Redshift ML · Summer 2026</text>
 
-  <!-- Headline (two lines, split by accent) -->
-  <text class="headline" x="60" y="150">Native</text>
-  <text class="headline-accent" x="192" y="150">vector search</text>
-  <text class="headline" x="60" y="210">in a columnar warehouse</text>
+  <!-- Headline, two lines, non-overlapping -->
+  <text class="headline-accent" x="60" y="156">Vector search</text>
+  <text class="headline" x="60" y="208">at warehouse scale.</text>
 
   <!-- Three-service architecture row -->
   <!-- Redshift (columnar stacks) -->
