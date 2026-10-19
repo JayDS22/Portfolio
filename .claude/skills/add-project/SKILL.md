@@ -1,6 +1,6 @@
 ---
 name: add-project
-description: Scaffold a new case-study chapter in Jay's Portfolio. Produces a chapter page, finds and installs a real tech-savvy thumbnail (never a hand-crafted SVG), adds inline figures, wires the card into /post/ listing in chronological reverse order, considers home-featured placement, and visually verifies via shot-scraper before commit. Triggered by "add project", "new chapter", "add case study", "feature this repo on the portfolio", or /add-project. Also use when the user says "add chapter N for <repo>".
+description: Scaffold a new case-study chapter in Jay's Portfolio repo at /Users/DELL/Documents/Portfolio (or wherever the repo lives). Produces a chapter page, finds and installs a real tech-savvy thumbnail (never a hand-crafted SVG), adds inline figures, wires the card into /post/ listing in chronological reverse order, considers home-featured placement, and visually verifies via shot-scraper before commit. Triggered only inside the Portfolio repo when the user explicitly says "/add-project", "scaffold a new case study", "add new case-study chapter", or "add chapter N to the portfolio". Does NOT fire on bare "add project" or "new chapter" (too generic for other contexts).
 ---
 
 # Add a project to Jay's Portfolio
@@ -43,6 +43,8 @@ Ask or infer:
 ### 2. Pick the next chapter number
 
 Current max: run `/bin/ls post/ | /usr/bin/grep -oE 'chapter-[0-9]+' | /usr/bin/sort -V | /usr/bin/tail -1`. Increment by 1. Skip numbers already taken.
+
+**Idempotency check (REQUIRED before any file creation):** confirm `post/chapter-<N>/` does NOT already exist. If it does, STOP and ask the user whether to pick a higher number, overwrite, or abort. Do not blindly scaffold on top of an existing chapter.
 
 ### 3. Find a real tech-savvy thumbnail
 
@@ -225,25 +227,29 @@ Replace every TODO with real or illustrative content:
 
 ### 10. Visual verification
 
-Install if missing:
+Install if missing (portable, works on macOS/Linux):
 
 ```bash
-pip3 install --user --break-system-packages shot-scraper playwright
+python3 -m pip install --user --break-system-packages shot-scraper playwright
 python3 -m playwright install chromium
 ```
 
-Serve + screenshot:
+Serve + screenshot. Invoke shot-scraper via `python3 -m shot_scraper` so no hardcoded install path is needed:
 
 ```bash
-SHOT="/Users/DELL/Library/Python/3.14/bin/shot-scraper"
+cd $PORTFOLIO_ROOT  # the repo root, wherever it lives
 python3 -m http.server 4000 --bind 127.0.0.1 >/dev/null 2>&1 &
 PID=$!
 sleep 2
 
 mkdir -p /tmp/portfolio-audit
-"$SHOT" "http://127.0.0.1:4000/post/chapter-<N>/" -o /tmp/portfolio-audit/new-chapter.png --width 1440 --wait 2500
-"$SHOT" "http://127.0.0.1:4000/post/" -o /tmp/portfolio-audit/post.png --width 1440 --wait 2500
-"$SHOT" "http://127.0.0.1:4000/" -o /tmp/portfolio-audit/home.png --width 1440 --height 2800 --wait 3500 --javascript "window.scrollTo(0, 1800);"
+python3 -m shot_scraper "http://127.0.0.1:4000/post/chapter-<N>/" -o /tmp/portfolio-audit/new-chapter.png --width 1440 --wait 2500
+python3 -m shot_scraper "http://127.0.0.1:4000/post/" -o /tmp/portfolio-audit/post.png --width 1440 --wait 2500
+python3 -m shot_scraper "http://127.0.0.1:4000/" -o /tmp/portfolio-audit/home.png --width 1440 --height 2800 --wait 3500 --javascript "window.scrollTo(0, 1800);"
+
+# ALSO capture dark mode and mobile for the chapter page (hero hides below 640px, verify page still readable)
+python3 -m shot_scraper "http://127.0.0.1:4000/post/chapter-<N>/" -o /tmp/portfolio-audit/new-chapter-dark.png --width 1440 --wait 2500 --javascript "document.documentElement.dataset.theme = 'dark'; localStorage.setItem('theme', 'dark');"
+python3 -m shot_scraper "http://127.0.0.1:4000/post/chapter-<N>/" -o /tmp/portfolio-audit/new-chapter-mobile.png --width 400 --wait 2500
 
 kill $PID
 ```
@@ -252,6 +258,8 @@ Then use Read tool to view each PNG. Confirm:
 - Hero image renders at full width, not stretched/clipped
 - Thumbnail renders in /post/ grid without overlap
 - Home featured card (if added) renders with the new image
+- Dark-mode screenshot: text contrast ok, dark-panel figures do not disappear into page bg
+- Mobile screenshot (400px): hero is hidden by media query, title + article body readable
 - No visible TODO text
 - No em-dashes
 - No stretched text / overlapping headlines (the AWS SVG issue was exactly this)
@@ -271,9 +279,21 @@ kill $PID
 
 All should return 200.
 
-### 12. Commit + rebase + push
+### 12. Commit + checkpoint + push
 
-Commit style: neutral, factual, no AI tells, no Co-Authored-By. Example:
+**Hard-fail enforcement (REQUIRED before `git add`):** run the three checks below. If any fails, STOP and fix. Do not proceed to commit.
+
+```bash
+# a) No TODO fragments
+if /usr/bin/grep -rn "TODO\|\[TODO\|\[Hero.*placeholder" post/chapter-<N>/ ; then
+  echo "ABORT: TODO or placeholder fragment still visible" >&2 ; exit 1 ; fi
+# b) No em-dashes anywhere in files you touched
+python3 -c "import pathlib,sys; bad=[f for f in [pathlib.Path('post/chapter-<N>/index.html'),pathlib.Path('post/index.html'),pathlib.Path('index.html')] if any(c in f.read_text() for c in [chr(8212),chr(8211)])]; sys.exit(0 if not bad else (print('ABORT: em/en-dash in',bad) or 1))"
+# c) Thumbnail is a real image, not an HTML error page
+/usr/bin/file images/project-heros/chapter-<N>-thumb.jpg | /usr/bin/grep -qE 'JPEG|PNG' || { echo "ABORT: thumb is not a real image" >&2 ; exit 1 ; }
+```
+
+Commit style: neutral, factual, no AI tells, no `Co-Authored-By`. Example:
 
 ```bash
 git add post/chapter-<N> images/project-heros/chapter-<N>-thumb.jpg \
@@ -285,7 +305,15 @@ Scaffolded from chapter-11 template. Hero and listing thumbnail use
 <SOURCE> graphic, see CREDITS.md for attribution. Inline figures:
 <brief list>. Added card to /post/ listing in chronological order,
 <added to home featured | not on home>. Sitemap entry added."
+```
 
+**Checkpoint before push (REQUIRED):** show the user `git log -1 --stat` and `git diff HEAD~1 -- post/index.html index.html` (the two most-visible-to-visitors files). Ask explicitly:
+
+> "Ready to push to `main` (goes live on jayds22.github.io/Portfolio within ~45s). Confirm?"
+
+Only after the user confirms, run the rebase and push:
+
+```bash
 git pull --rebase -X theirs origin main 2>&1 | tail -3
 git push origin main 2>&1 | tail -3
 ```
@@ -326,12 +354,12 @@ Four chapters were pruned from the listing in Oct 2026 (0, 1, 4, 5) but their so
 - `/ui-ux-pro-max` for design-system questions on new UI mockups
 - `/ponytail-review` to audit a new chapter page for over-engineering before shipping
 
-## Reference: current state as of 2026-10-17
+## Reference pointers (do not rely on live counts here, they rot)
 
-- 12 chapters in `/post/` listing (0, 1, 4, 5 pruned from the grid; 2, 3, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 live)
-- Home featured: 11, 15, 8, 13 (left to right); GSoC chapter-10 strip above as separate banner
-- /explore/ graph shows 79 repos (post-pagination-fix)
-- Chapter-11 is "flagship" (project-card--flagship class)
-- Design tokens defined in `css/modern.css`:root; dark theme at `html[data-theme="dark"]`
-- Sitemap entries hand-maintained in `sitemap.xml`
+- Current chapter count: run `/bin/ls post/ | /usr/bin/grep -cE '^chapter-[0-9]+$'`
+- Current /post/ listing cards: run `/usr/bin/grep -c '<article class="project-card' post/index.html`
+- Home featured order: read the `.featured-projects` block in `index.html`
+- Flagship: whichever card carries the `project-card--flagship` class on `/post/`
+- Design tokens: defined in `css/modern.css`:root; dark theme at `html[data-theme="dark"]`
+- Sitemap entries: hand-maintained in `sitemap.xml` (add on new chapter, remove on delete)
 - CLAUDE.md itself is gitignored and must stay that way
