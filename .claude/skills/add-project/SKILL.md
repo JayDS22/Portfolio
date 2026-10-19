@@ -234,22 +234,24 @@ python3 -m pip install --user --break-system-packages shot-scraper playwright
 python3 -m playwright install chromium
 ```
 
-Serve + screenshot. Invoke shot-scraper via `python3 -m shot_scraper` so no hardcoded install path is needed:
+`shot-scraper` is a CLI, not a runnable module. Add the Python user-base `bin` to PATH at call time so no hardcoded path is needed:
 
 ```bash
+export PATH="$(python3 -c 'import site; print(site.USER_BASE)')/bin:$PATH"
+
 cd $PORTFOLIO_ROOT  # the repo root, wherever it lives
 python3 -m http.server 4000 --bind 127.0.0.1 >/dev/null 2>&1 &
 PID=$!
 sleep 2
 
 mkdir -p /tmp/portfolio-audit
-python3 -m shot_scraper "http://127.0.0.1:4000/post/chapter-<N>/" -o /tmp/portfolio-audit/new-chapter.png --width 1440 --wait 2500
-python3 -m shot_scraper "http://127.0.0.1:4000/post/" -o /tmp/portfolio-audit/post.png --width 1440 --wait 2500
-python3 -m shot_scraper "http://127.0.0.1:4000/" -o /tmp/portfolio-audit/home.png --width 1440 --height 2800 --wait 3500 --javascript "window.scrollTo(0, 1800);"
+shot-scraper "http://127.0.0.1:4000/post/chapter-<N>/" -o /tmp/portfolio-audit/new-chapter.png --width 1440 --wait 2500
+shot-scraper "http://127.0.0.1:4000/post/" -o /tmp/portfolio-audit/post.png --width 1440 --wait 2500
+shot-scraper "http://127.0.0.1:4000/" -o /tmp/portfolio-audit/home.png --width 1440 --height 2800 --wait 3500 --javascript "window.scrollTo(0, 1800);"
 
 # ALSO capture dark mode and mobile for the chapter page (hero hides below 640px, verify page still readable)
-python3 -m shot_scraper "http://127.0.0.1:4000/post/chapter-<N>/" -o /tmp/portfolio-audit/new-chapter-dark.png --width 1440 --wait 2500 --javascript "document.documentElement.dataset.theme = 'dark'; localStorage.setItem('theme', 'dark');"
-python3 -m shot_scraper "http://127.0.0.1:4000/post/chapter-<N>/" -o /tmp/portfolio-audit/new-chapter-mobile.png --width 400 --wait 2500
+shot-scraper "http://127.0.0.1:4000/post/chapter-<N>/" -o /tmp/portfolio-audit/new-chapter-dark.png --width 1440 --wait 2500 --javascript "document.documentElement.dataset.theme = 'dark'; localStorage.setItem('theme', 'dark');"
+shot-scraper "http://127.0.0.1:4000/post/chapter-<N>/" -o /tmp/portfolio-audit/new-chapter-mobile.png --width 400 --wait 2500
 
 kill $PID
 ```
