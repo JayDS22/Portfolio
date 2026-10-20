@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-19T14:14:01+00:00",
+  "generated_at": "2026-10-20T12:27:44+00:00",
   "user": "JayDS22",
   "domain_count": 9,
-  "repo_count": 81,
+  "repo_count": 82,
   "nodes": [
     {
       "id": "domain:computer-vision",
@@ -1095,6 +1095,19 @@
       "updated_at": "2026-09-21T18:26:17Z"
     },
     {
+      "id": "repo:rust-inference-router",
+      "name": "rust inference router",
+      "type": "repo",
+      "domain": "llm-agents",
+      "color": "#22d3ee",
+      "val": 3,
+      "stars": 0,
+      "language": "Rust",
+      "description": "Prefix-cache-aware LLM inference request router. Rust port of NVIDIA Dynamo's KV-router subsystem. tokio + tonic + prefix radix tree + consistent-hash fallback.",
+      "url": "https://github.com/JayDS22/rust-inference-router",
+      "updated_at": "2026-10-19T22:08:32Z"
+    },
+    {
       "id": "repo:Spam-Detection",
       "name": "Spam Detection",
       "type": "repo",
@@ -1436,6 +1449,10 @@
     },
     {
       "source": "repo:replit-agent-bench",
+      "target": "domain:llm-agents"
+    },
+    {
+      "source": "repo:rust-inference-router",
       "target": "domain:llm-agents"
     },
     {
