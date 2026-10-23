@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T12:42:04+00:00",
+  "generated_at": "2026-10-23T12:19:33+00:00",
   "user": "JayDS22",
   "domain_count": 9,
   "repo_count": 82,
@@ -725,10 +725,10 @@
       "color": "#ef4444",
       "val": 3,
       "stars": 0,
-      "language": "",
+      "language": "Python",
       "description": "RL for Use-Case-Driven AI Infrastructure Recommendation | MSAI/MSML 635 Reinforcement Learning @ UMD",
       "url": "https://github.com/JayDS22/InfraRL",
-      "updated_at": "2026-10-01T20:57:38Z"
+      "updated_at": "2026-10-22T23:19:08Z"
     },
     {
       "id": "repo:Insurance_Modelling",
