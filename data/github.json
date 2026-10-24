@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T12:19:33+00:00",
+  "generated_at": "2026-10-24T11:46:13+00:00",
   "user": "JayDS22",
   "domain_count": 9,
   "repo_count": 82,
@@ -105,32 +105,6 @@
       "description": "Real-Time Recommendation Engine with sub-100ms latency using PySpark, Delta Lake, MLflow & Kafka. Achieves NDCG@10: 0.78, MAP@10: 0.73, Hit Rate@20: 0.91 through advanced matrix factorization (SVD/NMF).",
       "url": "https://github.com/JayDS22/Real-Time-Recommendation-Engine",
       "updated_at": "2026-05-17T03:36:26Z"
-    },
-    {
-      "id": "repo:Transformer-based-Trajectory-Forecasting-system",
-      "name": "Transformer based Trajectory Forecasting system",
-      "type": "repo",
-      "domain": "computer-vision",
-      "color": "#7c5cff",
-      "val": 11,
-      "stars": 2,
-      "language": "Python",
-      "description": "Transformer + Diffusion (DDPM) architecture for multi-agent pedestrian trajectory forecasting with temporal self-attention, social cross-attention, and DDIM sampling - evaluated on ETH/UCY benchmark with ablation study",
-      "url": "https://github.com/JayDS22/Transformer-based-Trajectory-Forecasting-system",
-      "updated_at": "2026-05-17T03:36:30Z"
-    },
-    {
-      "id": "repo:Vehicle-Durability-Forecasting-and-Predictive-Maintanence-System",
-      "name": "Vehicle Durability Forecasting and Predictive Maintanence System",
-      "type": "repo",
-      "domain": "stats-bayesian",
-      "color": "#facc15",
-      "val": 11,
-      "stars": 2,
-      "language": "Python",
-      "description": "ML-powered predictive maintenance system achieving $122.9M+ cost savings through vehicle durability forecasting (MAPE: 2.8%), customer complaint analysis (F1: 0.91), and survival modeling (C-index: 0.78) with automated SQL pipelines and Power BI reporting.",
-      "url": "https://github.com/JayDS22/Vehicle-Durability-Forecasting-and-Predictive-Maintanence-System",
-      "updated_at": "2026-05-17T03:10:23Z"
     },
     {
       "id": "repo:apap-mcp-poc",
@@ -250,19 +224,6 @@
       "updated_at": "2026-04-08T16:01:35Z"
     },
     {
-      "id": "repo:Real-Time-Multi-Target-Detection-and-Tracking-Pipeline",
-      "name": "Real Time Multi Target Detection and Tracking Pipeline",
-      "type": "repo",
-      "domain": "computer-vision",
-      "color": "#7c5cff",
-      "val": 7,
-      "stars": 1,
-      "language": "C++",
-      "description": "Real-time multi-target detection & tracking in C++17. Python prototype \u2192 optimized native implementation. Zero external deps. Includes benchmarks and 17 unit tests.",
-      "url": "https://github.com/JayDS22/Real-Time-Multi-Target-Detection-and-Tracking-Pipeline",
-      "updated_at": "2026-05-17T03:36:24Z"
-    },
-    {
       "id": "repo:Risk-Analytics-Fraud-Detection",
       "name": "Risk Analytics Fraud Detection",
       "type": "repo",
@@ -289,17 +250,30 @@
       "updated_at": "2026-05-17T03:36:28Z"
     },
     {
-      "id": "repo:Space-Image-Detection-pipeline",
-      "name": "Space Image Detection pipeline",
+      "id": "repo:Transformer-based-Trajectory-Forecasting-system",
+      "name": "Transformer based Trajectory Forecasting system",
       "type": "repo",
       "domain": "computer-vision",
       "color": "#7c5cff",
       "val": 7,
       "stars": 1,
-      "language": "C++",
-      "description": "Point-source and streak detection pipeline for space surveillance imagery \u2014 C++ (OpenCV) with Python prototypes, sub-pixel centroid refinement, and Hough-based streak clustering",
-      "url": "https://github.com/JayDS22/Space-Image-Detection-pipeline",
-      "updated_at": "2026-05-17T03:36:29Z"
+      "language": "Python",
+      "description": "Transformer + Diffusion (DDPM) architecture for multi-agent pedestrian trajectory forecasting with temporal self-attention, social cross-attention, and DDIM sampling - evaluated on ETH/UCY benchmark with ablation study",
+      "url": "https://github.com/JayDS22/Transformer-based-Trajectory-Forecasting-system",
+      "updated_at": "2026-10-23T16:11:59Z"
+    },
+    {
+      "id": "repo:Vehicle-Durability-Forecasting-and-Predictive-Maintanence-System",
+      "name": "Vehicle Durability Forecasting and Predictive Maintanence System",
+      "type": "repo",
+      "domain": "stats-bayesian",
+      "color": "#facc15",
+      "val": 7,
+      "stars": 1,
+      "language": "Python",
+      "description": "ML-powered predictive maintenance system achieving $122.9M+ cost savings through vehicle durability forecasting (MAPE: 2.8%), customer complaint analysis (F1: 0.91), and survival modeling (C-index: 0.78) with automated SQL pipelines and Power BI reporting.",
+      "url": "https://github.com/JayDS22/Vehicle-Durability-Forecasting-and-Predictive-Maintanence-System",
+      "updated_at": "2026-10-23T16:11:40Z"
     },
     {
       "id": "repo:5g-Service-and-Network-Orchestrator",
@@ -728,7 +702,7 @@
       "language": "Python",
       "description": "RL for Use-Case-Driven AI Infrastructure Recommendation | MSAI/MSML 635 Reinforcement Learning @ UMD",
       "url": "https://github.com/JayDS22/InfraRL",
-      "updated_at": "2026-10-22T23:19:08Z"
+      "updated_at": "2026-10-23T19:12:03Z"
     },
     {
       "id": "repo:Insurance_Modelling",
@@ -1043,6 +1017,19 @@
       "updated_at": "2026-05-17T03:10:18Z"
     },
     {
+      "id": "repo:Real-Time-Multi-Target-Detection-and-Tracking-Pipeline",
+      "name": "Real Time Multi Target Detection and Tracking Pipeline",
+      "type": "repo",
+      "domain": "computer-vision",
+      "color": "#7c5cff",
+      "val": 3,
+      "stars": 0,
+      "language": "C++",
+      "description": "Real-time multi-target detection & tracking in C++17. Python prototype \u2192 optimized native implementation. Zero external deps. Includes benchmarks and 17 unit tests.",
+      "url": "https://github.com/JayDS22/Real-Time-Multi-Target-Detection-and-Tracking-Pipeline",
+      "updated_at": "2026-10-23T16:11:37Z"
+    },
+    {
       "id": "repo:Real-Time-Multimodal-Health-Assistant-IOS",
       "name": "Real Time Multimodal Health Assistant IOS",
       "type": "repo",
@@ -1108,6 +1095,19 @@
       "updated_at": "2026-10-19T22:08:32Z"
     },
     {
+      "id": "repo:Space-Image-Detection-pipeline",
+      "name": "Space Image Detection pipeline",
+      "type": "repo",
+      "domain": "computer-vision",
+      "color": "#7c5cff",
+      "val": 3,
+      "stars": 0,
+      "language": "C++",
+      "description": "Point-source and streak detection pipeline for space surveillance imagery \u2014 C++ (OpenCV) with Python prototypes, sub-pixel centroid refinement, and Hough-based streak clustering",
+      "url": "https://github.com/JayDS22/Space-Image-Detection-pipeline",
+      "updated_at": "2026-10-23T16:11:36Z"
+    },
+    {
       "id": "repo:Spam-Detection",
       "name": "Spam Detection",
       "type": "repo",
@@ -1148,14 +1148,6 @@
       "target": "domain:mlops-infra"
     },
     {
-      "source": "repo:Transformer-based-Trajectory-Forecasting-system",
-      "target": "domain:computer-vision"
-    },
-    {
-      "source": "repo:Vehicle-Durability-Forecasting-and-Predictive-Maintanence-System",
-      "target": "domain:stats-bayesian"
-    },
-    {
       "source": "repo:apap-mcp-poc",
       "target": "domain:ml-general"
     },
@@ -1192,10 +1184,6 @@
       "target": "domain:stats-bayesian"
     },
     {
-      "source": "repo:Real-Time-Multi-Target-Detection-and-Tracking-Pipeline",
-      "target": "domain:computer-vision"
-    },
-    {
       "source": "repo:Risk-Analytics-Fraud-Detection",
       "target": "domain:quant-finance"
     },
@@ -1204,8 +1192,12 @@
       "target": "domain:stats-bayesian"
     },
     {
-      "source": "repo:Space-Image-Detection-pipeline",
+      "source": "repo:Transformer-based-Trajectory-Forecasting-system",
       "target": "domain:computer-vision"
+    },
+    {
+      "source": "repo:Vehicle-Durability-Forecasting-and-Predictive-Maintanence-System",
+      "target": "domain:stats-bayesian"
     },
     {
       "source": "repo:5g-Service-and-Network-Orchestrator",
@@ -1436,6 +1428,10 @@
       "target": "domain:stats-bayesian"
     },
     {
+      "source": "repo:Real-Time-Multi-Target-Detection-and-Tracking-Pipeline",
+      "target": "domain:computer-vision"
+    },
+    {
       "source": "repo:Real-Time-Multimodal-Health-Assistant-IOS",
       "target": "domain:ml-general"
     },
@@ -1454,6 +1450,10 @@
     {
       "source": "repo:rust-inference-router",
       "target": "domain:llm-agents"
+    },
+    {
+      "source": "repo:Space-Image-Detection-pipeline",
+      "target": "domain:computer-vision"
     },
     {
       "source": "repo:Spam-Detection",
